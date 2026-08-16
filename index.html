@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Ramp-Up · Interactive Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Schibsted+Grotesk:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0D1B1E;
+  --panel:#14262B;
+  --panel2:#1B3138;
+  --bone:#EFE7D8;
+  --muted:#9AAFAB;
+  --amber:#E8A33D;
+  --coral:#FF6B5E;
+  --line:rgba(239,231,216,.12);
+  --ok:#7BC496;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--bone);
+  font-family:'Schibsted Grotesk',sans-serif;
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+.atmos{position:fixed;inset:0;z-index:0;pointer-events:none}
+.atmos::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(1100px 600px at 85% -10%, rgba(232,163,61,.10), transparent 60%),
+    radial-gradient(900px 700px at -10% 90%, rgba(255,107,94,.07), transparent 55%),
+    radial-gradient(700px 500px at 50% 55%, rgba(27,49,56,.65), transparent 70%);
+}
+.atmos::after{
+  content:"";position:absolute;inset:0;opacity:.35;
+  background-image:repeating-radial-gradient(circle at 82% 12%, transparent 0 58px, rgba(239,231,216,.035) 58px 59px);
+}
+.wrap{position:relative;z-index:1;max-width:1060px;margin:0 auto;padding:0 24px 120px}
+
+/* ---------- hero ---------- */
+header{padding:72px 0 48px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.eyebrow{
+  font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.22em;
+  color:var(--amber);text-transform:uppercase;margin-bottom:18px;
+}
+h1{
+  font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.4rem,5.5vw,4rem);
+  line-height:1.04;letter-spacing:-.01em;margin-bottom:20px;
+}
+h1 em{font-style:italic;font-weight:300;color:var(--amber)}
+.lede{color:var(--muted);max-width:52ch;font-size:1.02rem}
+.lede strong{color:var(--bone);font-weight:500}
+
+/* aperture progress dial */
+.dial{width:190px;height:190px;position:relative;flex-shrink:0}
+.dial svg{width:100%;height:100%;transform:rotate(-90deg)}
+.dial .seg{fill:none;stroke:var(--panel2);stroke-width:11;stroke-linecap:butt;transition:stroke .5s ease}
+.dial .seg.done{stroke:var(--amber)}
+.dial .ticks line{stroke:rgba(239,231,216,.25);stroke-width:1}
+.dial-center{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+}
+.dial-center .big{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;line-height:1}
+.dial-center .small{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--muted);margin-top:6px;text-transform:uppercase}
+.fstop{font-family:'Spline Sans Mono',monospace;font-size:.58rem;color:rgba(239,231,216,.3);text-align:center;margin-top:8px;letter-spacing:.1em}
+
+/* ---------- chapter rail ---------- */
+.rail{display:flex;flex-direction:column;gap:14px;margin-top:12px}
+.ch-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:22px 26px;display:grid;grid-template-columns:64px 1fr auto;gap:22px;align-items:center;
+  cursor:pointer;transition:border-color .25s,transform .25s,background .25s;
+  text-align:left;color:inherit;width:100%;font:inherit;
+}
+.ch-card:hover,.ch-card:focus-visible{border-color:rgba(232,163,61,.5);transform:translateX(6px);background:var(--panel2)}
+.ch-card:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.ch-num{
+  font-family:'Fraunces',serif;font-size:1.9rem;font-weight:300;color:var(--muted);
+  border-right:1px solid var(--line);padding-right:18px;line-height:1;
+}
+.ch-card.is-done .ch-num{color:var(--amber)}
+.ch-title{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;margin-bottom:4px}
+.ch-tag{color:var(--muted);font-size:.9rem}
+.ch-meta{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.ch-time{font-family:'Spline Sans Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.1em}
+.pill{
+  font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 12px;border-radius:100px;border:1px solid var(--line);color:var(--muted);
+}
+.pill.done{border-color:var(--amber);color:var(--amber)}
+.pill.started{border-color:var(--coral);color:var(--coral)}
+
+/* tech chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{
+  font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.08em;
+  padding:5px 12px;border-radius:6px;background:rgba(232,163,61,.08);
+  border:1px solid rgba(232,163,61,.28);color:var(--amber);
+}
+
+/* staggered reveal */
+.reveal{opacity:0;transform:translateY(18px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  .ch-card:hover{transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- chapter view ---------- */
+.view{display:none}
+.view.active{display:block}
+.back{
+  background:none;border:1px solid var(--line);color:var(--muted);border-radius:100px;
+  padding:8px 20px;font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.14em;
+  cursor:pointer;margin:36px 0 28px;text-transform:uppercase;transition:.2s;
+}
+.back:hover{color:var(--bone);border-color:var(--bone)}
+.ch-head{margin-bottom:36px}
+.ch-head h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:600;line-height:1.1;margin:10px 0 14px}
+.ch-head p{color:var(--muted);max-width:60ch}
+.section-label{
+  font-family:'Spline Sans Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--amber);margin:40px 0 16px;display:flex;align-items:center;gap:14px;
+}
+.section-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.obj-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.obj-list li{padding-left:26px;position:relative;color:var(--bone)}
+.obj-list li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:1px;background:var(--amber)}
+
+/* resources */
+.res{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:12px;display:grid;grid-template-columns:auto 1fr;gap:16px;transition:border-color .2s}
+.res.checked{border-color:rgba(123,196,150,.45)}
+.res input[type=checkbox]{
+  appearance:none;width:22px;height:22px;border:1.5px solid var(--muted);border-radius:6px;cursor:pointer;
+  position:relative;margin-top:3px;transition:.2s;flex-shrink:0;background:transparent;
+}
+.res input[type=checkbox]:checked{background:var(--ok);border-color:var(--ok)}
+.res input[type=checkbox]:checked::after{
+  content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:var(--ink);font-weight:700;font-size:.85rem;
+}
+.res-name{font-weight:700;font-size:1rem}
+.res-name a{color:var(--bone);text-decoration:none;border-bottom:1px solid rgba(232,163,61,.45)}
+.res-name a:hover{color:var(--amber)}
+.res-provider{font-family:'Spline Sans Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:var(--amber);text-transform:uppercase;margin:2px 0 6px}
+.res-note{color:var(--muted);font-size:.9rem}
+.badge{font-family:'Spline Sans Mono',monospace;font-size:.58rem;letter-spacing:.12em;padding:2px 8px;border-radius:4px;margin-left:8px;vertical-align:2px}
+.badge.free{background:rgba(123,196,150,.15);color:var(--ok)}
+.badge.paid{background:rgba(255,107,94,.15);color:var(--coral)}
+
+/* project */
+.project{background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid rgba(232,163,61,.3);border-radius:14px;padding:26px 28px}
+.project h4{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;margin-bottom:10px;color:var(--amber)}
+.project p{color:var(--bone);font-size:.95rem}
+
+/* quiz */
+.q-block{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-bottom:14px}
+.q-text{font-weight:700;margin-bottom:14px}
+.q-opts{display:flex;flex-direction:column;gap:8px}
+.q-opt{
+  background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px 16px;
+  cursor:pointer;text-align:left;color:var(--bone);font:inherit;font-size:.92rem;transition:.15s;width:100%;
+}
+.q-opt:hover:not(:disabled){border-color:var(--amber)}
+.q-opt:disabled{cursor:default;opacity:.75}
+.q-opt.correct{border-color:var(--ok);background:rgba(123,196,150,.12);opacity:1}
+.q-opt.wrong{border-color:var(--coral);background:rgba(255,107,94,.1)}
+.q-explain{margin-top:12px;font-size:.88rem;color:var(--muted);border-left:2px solid var(--amber);padding-left:14px;display:none}
+.q-explain.show{display:block}
+
+.complete-btn{
+  margin-top:36px;width:100%;padding:16px;border-radius:12px;border:1px solid var(--amber);
+  background:transparent;color:var(--amber);font:inherit;font-weight:700;font-size:1rem;cursor:pointer;transition:.2s;
+}
+.complete-btn:hover{background:var(--amber);color:var(--ink)}
+.complete-btn.done{background:var(--amber);color:var(--ink);cursor:default}
+.ch-nav{display:flex;justify-content:space-between;margin-top:20px;gap:12px}
+.ch-nav button{background:none;border:none;color:var(--muted);font:inherit;font-size:.85rem;cursor:pointer;padding:8px 0}
+.ch-nav button:hover{color:var(--amber)}
+.save-note{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.12em;color:var(--muted);text-align:center;margin-top:16px;text-transform:uppercase}
+
+footer{margin-top:80px;padding-top:28px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;max-width:70ch}
+
+@media (max-width:720px){
+  header{grid-template-columns:1fr;justify-items:start}
+  .dial{width:150px;height:150px}
+  .ch-card{grid-template-columns:44px 1fr;gap:14px;padding:18px}
+  .ch-meta{grid-column:2;flex-direction:row;align-items:center}
+  .ch-num{font-size:1.4rem;padding-right:12px}
+}
+</style>
+</head>
+<body>
+<div class="atmos" aria-hidden="true"></div>
+<div class="wrap">
+
+<!-- ============ HOME ============ -->
+<div id="home" class="view active">
+  <header>
+    <div>
+      <div class="eyebrow reveal">Ramp-Up Program · Thirteen Chapters · 2026 Edition</div>
+      <h1 class="reveal" style="animation-delay:.08s">The AI Ramp-Up,<br><em>Interactive Edition</em></h1>
+      <p class="lede reveal" style="animation-delay:.16s">Fundamentals to <strong>AI program leadership</strong>, across the full platform: models, the Kafka-to-lakehouse backbone, databases, runtime, cloud AI, and governance. Progress saves automatically.</p>
+    </div>
+    <div class="reveal" style="animation-delay:.24s">
+      <div class="dial" role="img" aria-label="Progress dial">
+        <svg viewBox="0 0 200 200" id="dialSvg"></svg>
+        <div class="dial-center">
+          <div class="big"><span id="doneCount">0</span>/<span id="totalCount">13</span></div>
+          <div class="small">Chapters</div>
+        </div>
+      </div>
+      <div class="fstop">f/1.4 · 2 · 2.8 · 4 · 5.6 · 8 · 11 · 16 · 22 · 32 · 45 · 64 · 90</div>
+    </div>
+  </header>
+  <div class="rail" id="rail"></div>
+  <footer class="reveal" style="animation-delay:.4s">
+    Curated from 2026 course roundups, provider catalogs, and the technologies named in current AI platform job postings. Free options marked; nothing requires payment to progress.
+  </footer>
+</div>
+
+<!-- ============ CHAPTER ============ -->
+<div id="chapter" class="view">
+  <button class="back" onclick="goHome()">← All chapters</button>
+  <div id="chapterContent"></div>
+  <div class="save-note">Progress saved automatically</div>
+</div>
+
+</div>
+
+<script>
+const CHAPTERS=[
+{
+ id:"ch1",num:"01",title:"AI Foundations and Fluency",tag:"What AI can and cannot do, in executive language",time:"8-10 hrs",
+ tech:["GenAI concepts","ML vs DL vs GenAI","AI lifecycle"],
+ why:"The vocabulary and judgment layer. It lets you frame AI trade-offs for stakeholders without hand-waving.",
+ objectives:[
+  "Distinguish traditional ML, deep learning, and generative AI in plain language",
+  "Spot which business problems are, and are not, an AI fit",
+  "Describe the AI feature lifecycle from data to deployment"
+ ],
+ resources:[
+  {name:"Elements of AI",provider:"University of Helsinki",url:"https://www.elementsofai.com/",note:"The gold-standard non-technical intro. No math, no code.",free:true},
+  {name:"AI for Everyone",provider:"DeepLearning.AI · Andrew Ng",url:"https://www.coursera.org/learn/ai-for-everyone",note:"Seven hours on what AI can do at work. Free to audit.",free:true},
+  {name:"Introduction to Generative AI path",provider:"Google Skills",url:"https://www.cloudskillsboost.google/paths/118",note:"Two hours, free badge. Fast landscape orientation.",free:true},
+  {name:"Claude 101 + AI Fluency track",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"Free, with certificates worth posting.",free:true}
+ ],
+ project:{title:"Field exercise",desc:"Pick three workflows from your current practice. Rate each as AI fit, partial fit, or bad fit, one paragraph apiece. Future interview material."},
+ quiz:[
+  {q:"'Can AI just read all our records and tell us the answer?' The accurate framing:",
+   o:["Yes, it is fully reliable","It accelerates extraction and summarization, but outputs need verification against sources","AI cannot process documents","Only fine-tuned models read documents"],
+   a:1,e:"Strong at extraction, capable of hallucination. Human verification stays in the loop."},
+  {q:"Worst fit for generative AI:",
+   o:["Summarizing transcripts","Drafting first-pass correspondence","Computing exact statutory benefit amounts","Clustering similar claims"],
+   a:2,e:"Deterministic math with liability attached belongs in deterministic code. LLMs are probabilistic."},
+  {q:"The AI feature lifecycle runs:",
+   o:["Idea → launch → done","Framing → prototype → evaluation → deployment → monitoring and iteration","Model training only","Procurement → invoice"],
+   a:1,e:"AI features are never done at launch. Evaluation and monitoring are where the PM work concentrates."}
+ ]
+},
+{
+ id:"ch2",num:"02",title:"How LLMs Actually Work",tag:"Tokens, transformers, and why models behave as they do",time:"15-20 hrs",
+ tech:["Transformers","Embeddings","Tokenization","Fine-tuning","RLHF"],
+ why:"Enough mechanism to predict failure modes, ask sharp questions in reviews, and not get snowed by vendors. No math derivations required.",
+ objectives:[
+  "Trace text through tokens, embeddings, and predictions",
+  "Use attention and context windows to reason about cost and latency",
+  "Know when pre-training, fine-tuning, and RLHF each matter"
+ ],
+ resources:[
+  {name:"LLM Course",provider:"Hugging Face",url:"https://huggingface.co/learn/llm-course",note:"The best free technical resource. Needs basic Python.",free:true},
+  {name:"LLM University",provider:"Cohere",url:"https://cohere.com/llmu",note:"Embeddings, attention, semantic search, from the ground up.",free:true},
+  {name:"Neural Networks series",provider:"3Blue1Brown",url:"https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",note:"The visual intuition layer. Watch the transformer and attention chapters.",free:true},
+  {name:"Zero to Hero",provider:"Andrej Karpathy",url:"https://karpathy.ai/zero-to-hero.html",note:"Optional deep end: build GPT from scratch. First two videos suffice.",free:true}
+ ],
+ project:{title:"Field exercise",desc:"Write a one-page 'How an LLM answers a question' explainer for a non-technical executive. If tokenization lands for them, it lands anywhere."},
+ quiz:[
+  {q:"Why does context window size matter to a PM?",
+   o:["It sets the model's IQ","It bounds what fits per request, driving chunking, cost, and latency","Only affects image models","It sets training data size"],
+   a:1,e:"Context windows drive real product decisions: chunking strategy, cost per call, response speed."},
+  {q:"Fine-tuning is right when:",
+   o:["You need yesterday's facts","You need consistent style or domain behavior that prompting cannot achieve","You want cheaper calls","Prompting is untried"],
+   a:1,e:"Fresh facts are a retrieval problem. Fine-tune for behavior, retrieve for knowledge, exhaust prompting first."},
+  {q:"Temperature controls:",
+   o:["GPU heat","Randomness of token selection","Context length","Training speed"],
+   a:1,e:"Higher temperature, more diverse output. Consistency-critical surfaces run low."}
+ ]
+},
+{
+ id:"ch3",num:"03",title:"Prompt and Context Engineering",tag:"Instructions, examples, and everything around the model",time:"10-12 hrs",
+ tech:["Prompt patterns","Context engineering","System prompts","Structured output"],
+ why:"Prompting is table stakes; context engineering is the 2026 skill. Deciding what surrounds the model is a design discipline, and a PM-shaped one.",
+ objectives:[
+  "Apply core patterns: role, structure, examples, chain of thought",
+  "Split context across system prompt, retrieval, and tools",
+  "Build a prompt library for your own workflows"
+ ],
+ resources:[
+  {name:"Prompt Engineering documentation",provider:"Anthropic",url:"https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview",note:"The canonical reference. One full read, then lookup.",free:true},
+  {name:"ChatGPT Prompt Engineering for Developers",provider:"DeepLearning.AI",url:"https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",note:"The classic 90-minute primer.",free:true},
+  {name:"Context Engineering course",provider:"Hugging Face",url:"https://huggingface.co/learn",note:"Skills, tools, MCP, and subagents as context. The newer layer.",free:true},
+  {name:"Prompting guide",provider:"OpenAI",url:"https://platform.openai.com/docs/guides/prompt-engineering",note:"Compare against Anthropic's; note where they converge.",free:true}
+ ],
+ project:{title:"Field exercise",desc:"Build a production-grade prompt for your IOL drafting workflow: role, structure, two examples, output format, anti-fabrication guardrails. Test on a redacted file; log the breaks."},
+ quiz:[
+  {q:"Few-shot examples help by:",
+   o:["Permanently upgrading the model","Demonstrating the exact format and reasoning to reproduce","Cutting API cost","Expanding the context window"],
+   a:1,e:"Showing beats telling. Examples are the highest-leverage prompting tool."},
+  {q:"Context engineering vs prompt engineering:",
+   o:["Just longer prompts","Designing the full environment: retrieval, tools, memory, structure","It replaces prompting","Open-source only"],
+   a:1,e:"Prompting is the instruction; context engineering is the operating environment. Architecture lives in the second."},
+  {q:"Prompt keeps fabricating citations. First fix:",
+   o:["Raise temperature","Constrain citations to supplied sources, delivered via retrieval","Switch vendors","Shorten the prompt"],
+   a:1,e:"Hallucinated citations are a grounding problem, not a vendor problem."}
+ ]
+},
+{
+ id:"ch4",num:"04",title:"Data Foundations and the Modern Data Stack",tag:"Snowflake, Databricks, dbt: where enterprise AI gets its fuel",time:"20-25 hrs",
+ tech:["SQL","Snowflake","Snowflake Cortex","Databricks","dbt","Lakehouse"],
+ why:"Models are the visible part; the platform feeding them is where AI programs succeed or die. This layer is named in nearly every AI program posting.",
+ objectives:[
+  "Read and write intermediate SQL",
+  "Place Snowflake and Databricks on the warehouse-lake-lakehouse map",
+  "Treat transformation (dbt) and data quality as AI preconditions",
+  "Know what in-platform AI (Snowflake Cortex, Mosaic AI) changes"
+ ],
+ resources:[
+  {name:"SQLBolt interactive lessons",provider:"SQLBolt",url:"https://sqlbolt.com/",note:"Working SQL in an afternoon or two.",free:true},
+  {name:"Snowflake hands-on badges",provider:"Snowflake University",url:"https://learn.snowflake.com/",note:"Free badges on the platform itself. Data Warehousing first, then Cortex.",free:true},
+  {name:"Snowflake Cortex overview",provider:"Snowflake",url:"https://www.snowflake.com/en/product/features/cortex/",note:"LLMs inside the governed platform: AI comes to the data.",free:true},
+  {name:"Databricks free training",provider:"Databricks Academy",url:"https://www.databricks.com/learn",note:"Lakehouse, Spark basics, Mosaic AI. Fundamentals accreditation is free.",free:true},
+  {name:"dbt Fundamentals",provider:"dbt Labs",url:"https://learn.getdbt.com/",note:"The transformation layer: version-controlled, tested SQL. Short, high-signal.",free:true}
+ ],
+ project:{title:"Field exercise",desc:"Snowflake free trial: load a CSV, write five queries, run one Cortex LLM function on a text column. Half a page on what governed, in-platform AI means for a regulated business."},
+ quiz:[
+  {q:"A lakehouse combines:",
+   o:["Two data lakes","Warehouse reliability and performance with data lake openness and scale","On-prem and cloud","SQL and NoSQL"],
+   a:1,e:"Warehouse-grade guarantees over open files. Snowflake and Databricks approach it from opposite ends and converge."},
+  {q:"Snowflake Cortex matters because:",
+   o:["It replaces LLM providers","LLM functions run inside the platform, so governed data never leaves its security boundary","New database engine","Forecasting only"],
+   a:1,e:"Bringing the model to the data simplifies privacy and governance review. That is why enterprises name it."},
+  {q:"dbt's role:",
+   o:["Visualization","The transformation layer: version-controlled, testable SQL models","Cloud hosting","Replacing SQL"],
+   a:1,e:"Software engineering discipline applied to SQL. AI features inherit the quality of these upstream models."},
+  {q:"AI feature gives wrong answers; model and prompt test fine. Look first at:",
+   o:["Parameter count","Upstream data quality and pipeline freshness","UI colors","API pricing tier"],
+   a:1,e:"Stale or broken pipelines are the most common silent killer of production AI."}
+ ]
+},
+{
+ id:"st1",num:"05",title:"Streaming and the Lakehouse Backbone",tag:"Kafka into S3 with Hive and Iceberg, queried by Spark SQL and Trino",time:"25-30 hrs",
+ tech:["Kafka","S3","Hive","Iceberg","Spark SQL","Trino/Presto"],
+ why:"The backbone of modern platforms: events through Kafka, into object storage as open tables, queried in place. AI sits downstream of this pipeline.",
+ objectives:[
+  "Explain the event streaming model: topics, partitions, replay",
+  "Know what Hive Metastore and Iceberg each add to S3",
+  "Use Iceberg snapshots for AI data versioning and reproducibility",
+  "Choose between Spark SQL and Trino/Presto per workload"
+ ],
+ resources:[
+  {name:"Kafka 101 and streaming courses",provider:"Confluent Developer",url:"https://developer.confluent.io/courses/",note:"The best free structured Kafka path.",free:true},
+  {name:"Apache Kafka quickstart",provider:"Apache",url:"https://kafka.apache.org/quickstart",note:"Run it locally: topic, produce, consume. Thirty minutes, permanent intuition.",free:true},
+  {name:"Apache Iceberg documentation",provider:"Apache",url:"https://iceberg.apache.org/",note:"Why table formats exist: ACID on object storage, schema evolution, time travel.",free:true},
+  {name:"Spark SQL programming guide",provider:"Apache Spark",url:"https://spark.apache.org/docs/latest/sql-programming-guide.html",note:"Your SQL, running distributed over lakehouse data.",free:true},
+  {name:"Trino documentation + free ebook",provider:"Trino / Starburst",url:"https://trino.io/docs/current/",note:"Federated SQL across S3, Postgres, Cassandra, without moving data. Starburst gives the O'Reilly guide free.",free:true}
+ ],
+ project:{title:"Field exercise",desc:"Run the Kafka quickstart, then diagram the backbone on one page: topics to S3 Iceberg tables, Spark and Trino as query paths. Annotate where AI attaches: stream-fresh features, snapshot-pinned training sets, lakehouse-fed RAG. Interview gold."},
+ quiz:[
+  {q:"Kafka's core value:",
+   o:["Cheap forever-storage","A durable, replayable event log that decouples producers from consumers","Replacing databases","Running SQL"],
+   a:1,e:"New consumers attach without touching producers; replay rebuilds downstream state. Teams decouple along with systems."},
+  {q:"Iceberg adds to a data lake:",
+   o:["Faster networking","ACID transactions, schema evolution, and time travel over object storage files","Visualization","Message queuing"],
+   a:1,e:"Raw S3 files are not a database. Iceberg is the table layer that makes them behave like one."},
+  {q:"Trino over Spark SQL when:",
+   o:["Multi-hour ETL","Fast interactive queries and federated joins across sources","Model training","Event streaming"],
+   a:1,e:"Spark for heavy fault-tolerant batch; Trino for interactive federation. Many platforms run both on the same tables."},
+  {q:"Iceberg time travel matters to AI because:",
+   o:["Faster queries","Snapshot-pinned training and eval data makes results reproducible and auditable","Zero storage cost","It replaces evals"],
+   a:1,e:"'What data trained this model?' A snapshot ID is a defensible answer. In regulated settings, a requirement."}
+ ]
+},
+{
+ id:"db1",num:"06",title:"Operational Databases and Search",tag:"Postgres, Aurora, Cassandra, DynamoDB, Elasticsearch: one engine per access pattern",time:"20-25 hrs",
+ tech:["Postgres","Aurora MySQL","Cassandra","DynamoDB","Elasticsearch","Polyglot persistence"],
+ why:"Real platforms run several engines, each chosen for an access pattern. Know why each exists, what it costs, and how it touches AI.",
+ objectives:[
+  "Place Postgres and Aurora MySQL, and their managed variants",
+  "Know when NoSQL wins: DynamoDB's access-pattern design, Cassandra's write-heavy strengths",
+  "Connect Elasticsearch to hybrid RAG retrieval",
+  "Weigh consistency, availability, and operational cost across engines"
+ ],
+ resources:[
+  {name:"PostgreSQL Tutorial",provider:"postgresqltutorial.com",url:"https://www.postgresqltutorial.com/",note:"The default relational engine; with pgvector, also an AI store.",free:true},
+  {name:"The DynamoDB Guide",provider:"Alex DeBrie",url:"https://www.dynamodbguide.com/",note:"Access patterns first, single-table thinking, flat scaling.",free:true},
+  {name:"Cassandra fundamentals",provider:"DataStax Academy",url:"https://www.datastax.com/learn",note:"Masterless replication, tunable consistency, write-heavy multi-region.",free:true},
+  {name:"Elasticsearch free training",provider:"Elastic",url:"https://www.elastic.co/training/free",note:"Indexing, relevance, querying. Feeds straight into RAG retrieval quality.",free:true},
+  {name:"Amazon Aurora overview",provider:"AWS",url:"https://aws.amazon.com/rds/aurora/",note:"MySQL/Postgres compatibility, storage decoupled from compute. Know the pitch and price model.",free:true},
+  {name:"Designing Data-Intensive Applications",provider:"Martin Kleppmann · O'Reilly",url:"https://dataintensive.net/",note:"The canonical book under every senior data conversation. Read slowly.",free:false}
+ ],
+ project:{title:"Field exercise",desc:"One-page engine-selection memo for a claims platform: transactional records, event history, document search, AI retrieval. Justify each with an access pattern, a consistency need, and a cost."},
+ quiz:[
+  {q:"Polyglot persistence means:",
+   o:["Translating between languages","Multiple engines, each chosen for a specific access pattern","Open-source only","Multi-region storage"],
+   a:1,e:"Transactions, key-value scale, write-heavy history, and search have different physics. Pick per pattern, pay integration knowingly."},
+  {q:"DynamoDB design starts from:",
+   o:["Third normal form","Access patterns first, keys modeled around them","Writing JOINs","Installing servers"],
+   a:1,e:"That inversion is the whole idea: predictable latency at any scale, at the cost of ad hoc queries."},
+  {q:"Cassandra fits when the workload is:",
+   o:["Small and transactional","Write-heavy at volume across regions, availability first, consistency tunable","Full-text search","Spreadsheets"],
+   a:1,e:"Masterless replication keeps writes flowing through failures. Trade-off: eventual consistency, queries known upfront."},
+  {q:"Elasticsearch appears in AI architectures because:",
+   o:["It trains models","It powers keyword, vector, and hybrid retrieval behind production RAG","It replaces warehouses","Required by law"],
+   a:1,e:"Teams already running it for search add vector fields and get hybrid RAG from infrastructure they know."}
+ ]
+},
+{
+ id:"ch5",num:"07",title:"Building with APIs and RAG",tag:"From chat user to builder: retrieval and real applications",time:"25-30 hrs",
+ tech:["Claude API","LangChain","LlamaIndex","Vector DBs","pgvector","Hybrid search"],
+ why:"The most PM-relevant technical skill in 2026 hiring. Building one small system converts you from talking about AI to having shipped it.",
+ objectives:[
+  "Call APIs with system prompts, streaming, and tool use",
+  "Explain embeddings, vector search, and hybrid trade-offs",
+  "Know when to use LangChain, LlamaIndex, or neither",
+  "Build and evaluate one end-to-end RAG app"
+ ],
+ resources:[
+  {name:"Building with the Claude API",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"84 lessons: auth, streaming, tools, caching, production patterns. Free with certificate.",free:true},
+  {name:"LLM Zoomcamp",provider:"DataTalks.Club",url:"https://github.com/DataTalksClub/llm-zoomcamp",note:"RAG, vector and hybrid search, evaluation, monitoring. Needs Python and Docker basics.",free:true},
+  {name:"RAG and vector search guides",provider:"Pinecone Learning Center",url:"https://www.pinecone.io/learn/",note:"Embeddings, chunking, retrieval quality. Compare pgvector, the Postgres-native option.",free:true},
+  {name:"LlamaIndex documentation",provider:"LlamaIndex",url:"https://docs.llamaindex.ai/",note:"Skim the concepts section for the RAG mental model.",free:true},
+  {name:"LangChain Academy",provider:"LangChain",url:"https://academy.langchain.com/",note:"The most-named framework in postings. Take Introduction to LangGraph; it feeds chapter 8.",free:true}
+ ],
+ project:{title:"Capstone build",desc:"Build a small RAG system over a rule set or redacted documents: ingest, chunk, embed, retrieve, answer with citations. Even local deployment counts. Worth more than any certificate."},
+ quiz:[
+  {q:"RAG improves answers by:",
+   o:["Retraining on your data","Retrieving relevant passages at query time and grounding the answer in them","More parameters","Caching answers"],
+   a:1,e:"The model stays frozen; knowledge arrives fresh per query."},
+  {q:"Chunking matters because:",
+   o:["Smaller files upload faster","Retrieval quality depends on chunks carrying coherent, self-contained meaning","Charged per chunk","It changes weights"],
+   a:1,e:"Bad chunking splits meaning; retrieval returns noise. High-impact, unglamorous."},
+  {q:"Hybrid search combines:",
+   o:["Two LLMs","Semantic vector search with keyword search","RAG with fine-tuning","Cloud with on-prem"],
+   a:1,e:"Vectors catch meaning; keywords catch exact terms like statute numbers. Legal retrieval wants both."},
+  {q:"A dedicated vector DB is unnecessary when:",
+   o:["Never","The corpus is modest and pgvector in existing Postgres meets scale and latency","Using RAG","Data is sensitive"],
+   a:1,e:"Many production RAG systems run happily on pgvector. Dedicated vector DBs are a scale decision, not a default."}
+ ]
+},
+{
+ id:"ch6",num:"08",title:"Agents, MCP, and Orchestration",tag:"Systems that use tools, take actions, coordinate work",time:"20-25 hrs",
+ tech:["Agent loops","MCP","LangGraph","CrewAI","Tool use","Multi-agent"],
+ why:"Agentic experience appears in roughly a third of senior AI postings. This is the frontier where AI program management is being defined.",
+ objectives:[
+  "Explain the agent loop: reason, act, observe, repeat",
+  "Know MCP as the model-to-tools standard",
+  "Compare LangGraph, CrewAI, AutoGen, and direct API",
+  "Design guardrails and failure containment for acting systems"
+ ],
+ resources:[
+  {name:"AI Agents Course",provider:"Hugging Face",url:"https://huggingface.co/learn/agents-course",note:"The structured free path across major frameworks.",free:true},
+  {name:"AI Agents for Beginners",provider:"Microsoft",url:"https://github.com/microsoft/ai-agents-for-beginners",note:"21 open-source lessons on agentic patterns.",free:true},
+  {name:"MCP Introduction + Advanced Topics",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"How agents connect to tools and data. The catalog's most recommended pair.",free:true},
+  {name:"Introduction to LangGraph",provider:"LangChain Academy",url:"https://academy.langchain.com/",note:"The framework most named for production orchestration. Understand the graph model.",free:true},
+  {name:"Agent Skills + Subagents",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"Reusable capabilities and delegation patterns.",free:true}
+ ],
+ project:{title:"Field exercise",desc:"Design on paper an agent that assembles a medical chronology: needed tools, dangerous failure points, what stays human-approved. Then prototype a thin slice."},
+ quiz:[
+  {q:"Agent vs single LLM call:",
+   o:["Bigger models","A loop: reason, call tools, observe, decide next steps toward a goal","No mistakes","Requires fine-tuning"],
+   a:1,e:"The loop and tools are the definition, and why agents need different risk controls: they act."},
+  {q:"MCP is:",
+   o:["A proprietary model","An open standard connecting models to external tools, data, and services","A prompt format","A vector database"],
+   a:1,e:"Build the integration once, not per model."},
+  {q:"Most important control for an acting agent:",
+   o:["Bigger context window","Human approval gates on irreversible, high-stakes actions","Faster inference","More agents"],
+   a:1,e:"Permission boundaries are the core safety design, and a product decision."},
+  {q:"LangGraph earns its complexity when:",
+   o:["Any LLM call","Workflows need state, branching, retries, and human-in-the-loop checkpoints","Building a chatbot","The team knows Python"],
+   a:1,e:"Simple flows are simpler as direct calls. Orchestration pays off when the workflow itself has structure."}
+ ]
+},
+{
+ id:"ch7",num:"09",title:"Evals, Guardrails, and Quality",tag:"The number one skill gap in AI PM hiring",time:"12-15 hrs",
+ tech:["Eval rubrics","Golden sets","LLM-as-judge","Regression testing"],
+ why:"Eval writing is the most cited AI PM skill gap of 2026. The rubric, coverage, and quality bar behind every eval is a product decision.",
+ objectives:[
+  "Design an eval stack: task success, hallucination, latency, cost, safety",
+  "Write graded rubrics and small labeled test sets",
+  "Use LLM-as-judge without being fooled by it",
+  "Compare models on product criteria, not leaderboards"
+ ],
+ resources:[
+  {name:"Evaluation guides",provider:"Anthropic docs",url:"https://docs.claude.com/en/docs/build-with-claude/develop-tests",note:"Success criteria and eval construction. Start here.",free:true},
+  {name:"Evaluating and Debugging short courses",provider:"DeepLearning.AI",url:"https://www.deeplearning.ai/short-courses/",note:"Several short courses on evaluating LLM apps and agents.",free:true},
+  {name:"Your AI Product Needs Evals",provider:"Hamel Husain",url:"https://hamel.dev/blog/posts/evals/",note:"The practitioner essay on evals that actually improve products.",free:true},
+  {name:"LLM Zoomcamp evaluation modules",provider:"DataTalks.Club",url:"https://github.com/DataTalksClub/llm-zoomcamp",note:"Hands-on retrieval and response evaluation, same course as chapter 7.",free:true}
+ ],
+ project:{title:"Field exercise",desc:"Full eval spec for the chapter 3 prompt: 20 test cases, graded rubric, pass thresholds, rollback triggers. A portfolio piece."},
+ quiz:[
+  {q:"Leaderboard scores fail for model selection because:",
+   o:["Always fraudulent","They measure general tasks, not your task-fit, cost, latency, and failure modes","Too hard","Too slow to update"],
+   a:1,e:"The benchmark winner can lose on your task and your budget. Product-relevant evals decide."},
+  {q:"A good rubric for AI drafting:",
+   o:["Pass/fail on 'looks good'","Graded criteria per dimension with anchored score definitions","Engineer's preference","Star ratings only"],
+   a:1,e:"Anchored rubrics make quality measurable and disagreements resolvable."},
+  {q:"LLM-as-judge is best used:",
+   o:["As the only signal","To scale grading against a human-anchored rubric, spot-checked regularly","Never","Creative writing only"],
+   a:1,e:"It scales cheaply but drifts and favors length. Anchor and audit it, or it becomes a rubber stamp."},
+  {q:"Eval score drops after a ship. Mature response:",
+   o:["Ignore without complaints","Threshold-triggered rollback, then root cause","Delete the eval","Retrain the model"],
+   a:1,e:"Evals only create value when thresholds connect to actions."}
+ ]
+},
+{
+ id:"rt1",num:"10",title:"Containers, Orchestration, and the Polyglot Platform",tag:"Docker, Kubernetes, Nomad, Airflow, and the languages around them",time:"20-25 hrs",
+ tech:["Docker","Kubernetes","Nomad","Airflow","Python","Go","Java","TypeScript"],
+ why:"Everything in this program runs somewhere: containers, schedulers, workflow engines, a handful of languages. Reading fluency here earns engineer trust.",
+ objectives:[
+  "Read a Dockerfile without flinching",
+  "Compare Kubernetes and Nomad honestly",
+  "Read Airflow DAGs as the sequencing layer for data and ML",
+  "Reach review-level fluency in Go, Java, and TypeScript alongside daily Python and SQL"
+ ],
+ resources:[
+  {name:"Docker getting started",provider:"Docker",url:"https://docs.docker.com/get-started/",note:"Build and run one container; the concept clicks permanently.",free:true},
+  {name:"Kubernetes Basics tutorial",provider:"kubernetes.io",url:"https://kubernetes.io/docs/tutorials/kubernetes-basics/",note:"Pods, deployments, services, scaling. Enough to follow any platform discussion.",free:true},
+  {name:"Nomad tutorials",provider:"HashiCorp",url:"https://developer.hashicorp.com/nomad",note:"Simpler orchestration, container and non-container alike. Know the trade-off both ways.",free:true},
+  {name:"Airflow fundamentals",provider:"Astronomer Academy",url:"https://academy.astronomer.io/",note:"DAGs, scheduling, retries, backfills: how pipelines actually sequence.",free:true},
+  {name:"A Tour of Go",provider:"go.dev",url:"https://go.dev/tour/",note:"The language of infrastructure. A few hours to reading fluency.",free:true},
+  {name:"Exercism language tracks",provider:"Exercism",url:"https://exercism.org/",note:"Free Java and TypeScript practice. The bar is reading PRs, not shipping code.",free:true}
+ ],
+ project:{title:"Field exercise",desc:"Containerize your chapter 7 RAG app: Dockerfile, build, run. Then one page assigning this app and its pipelines across Kubernetes, Nomad, and Airflow, with reasons. Platform interviews probe exactly this judgment."},
+ quiz:[
+  {q:"Containers solve:",
+   o:["Slow internet","Packaging an app with its dependencies to run identically everywhere","Database backups","Code review"],
+   a:1,e:"'Works on my machine' dies here. Containers are also the unit every orchestrator schedules."},
+  {q:"Nomad vs Kubernetes:",
+   o:["Nomad is older","A far simpler single-binary scheduler for mixed workloads, minus the Kubernetes ecosystem","AWS-only","Fully managed"],
+   a:1,e:"Kubernetes brings ecosystem and complexity; Nomad brings simplicity and mixed workloads. Splitting by workload type is a leadership decision."},
+  {q:"An Airflow DAG is:",
+   o:["A database schema","A workflow of dependent tasks with ordering, scheduling, retries, backfills","A neural network","A container image"],
+   a:1,e:"When AI data is stale, the first question is which DAG failed and what its retry policy did."},
+  {q:"The right language bar for a platform leader:",
+   o:["Production code in all of them","Reading fluency: follow a PR or stack trace well enough to ask precise questions","Ignore them","Memorize syntax"],
+   a:1,e:"Credibility comes from precise questions. Reading fluency takes weeks and pays off in every review."}
+ ]
+},
+{
+ id:"ch8",num:"11",title:"Cloud AI Platforms, MLOps, and FinOps",tag:"Bedrock, Vertex, Azure: production AI and what it costs",time:"25-30 hrs",
+ tech:["AWS Bedrock","SageMaker","Vertex AI","Azure AI Foundry","Terraform","FinOps"],
+ why:"The infrastructure half of your positioning. Bedrock, Vertex, and Azure appear by name in postings; so does cost ownership.",
+ objectives:[
+  "Know the production lifecycle: serving, monitoring, retraining, rollback",
+  "Compare Bedrock, Vertex, Azure AI Foundry, direct APIs, self-hosted",
+  "Speak IaC and CI/CD as they apply to AI systems",
+  "Own unit economics: cost per request, caching, model tiering"
+ ],
+ resources:[
+  {name:"Amazon Bedrock courses",provider:"AWS Skill Builder",url:"https://skillbuilder.aws/",note:"Model access, knowledge bases, agents, guardrails. The most-named platform in postings; use the free tier.",free:true},
+  {name:"Vertex AI learning path",provider:"Google Cloud Skills Boost",url:"https://www.cloudskillsboost.google/",note:"One end-to-end lab, so you can compare to Bedrock concretely.",free:true},
+  {name:"Azure AI Foundry training",provider:"Microsoft Learn",url:"https://learn.microsoft.com/en-us/training/",note:"Microsoft-agreement enterprises default here. Know the shape.",free:true},
+  {name:"Claude on Bedrock / Vertex",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"Frontier models on cloud infrastructure. On-target for your headline.",free:true},
+  {name:"Made With ML",provider:"Goku Mohandas",url:"https://madewithml.com/",note:"The canonical open MLOps reference. Architecture and monitoring chapters minimum.",free:true},
+  {name:"FinOps for AI",provider:"FinOps Foundation",url:"https://www.finops.org/",note:"The cost discipline by name: showback, unit economics, commitments.",free:true},
+  {name:"AI Engineering (book)",provider:"Chip Huyen",url:"https://www.oreilly.com/library/view/ai-engineering/9781098166298/",note:"The standard text on building with foundation models. Worth buying.",free:false}
+ ],
+ project:{title:"Field exercise",desc:"Two-page build-vs-buy memo: document-analysis AI across direct API, Bedrock, Azure AI Foundry, and a vendor, on cost per 1,000 documents, privacy, latency, lock-in. Cost model at three volume tiers. Recommend one."},
+ quiz:[
+  {q:"Prompt caching reduces:",
+   o:["Hallucinations","Cost and latency for repeated context like long system prompts","Model size","Training time"],
+   a:1,e:"For document-heavy workloads, often the single biggest cost lever."},
+  {q:"Bedrock or Vertex over direct APIs because:",
+   o:["Smarter models there","Enterprise controls: residency, compliance, IAM, unified billing inside existing agreements","Always cheaper","No evals needed"],
+   a:1,e:"Enterprises pay for governance and procurement fit, not model quality. Knowing this is the infra-PM value-add."},
+  {q:"AI FinOps means:",
+   o:["Free AI","Owning unit economics: cost per request and outcome, tiering, caching, showback","Cheapest model always","Quarterly billing review"],
+   a:1,e:"AI spend scales with usage, so cost is an architecture decision made daily. Tier easy tasks to small models."},
+  {q:"Post-deployment, watch:",
+   o:["Only uptime","Latency, cost per request, eval scores over time, drift, error and refusal rates","GitHub stars","Parameter count"],
+   a:1,e:"AI degrades silently through drift. Monitoring quality over time is the LLMOps difference."}
+ ]
+},
+{
+ id:"ch9",num:"12",title:"Security, Governance, and Responsible AI",tag:"Prompt injection, risk frameworks, regulation: the trust layer",time:"12-15 hrs",
+ tech:["OWASP LLM Top 10","Prompt injection","NIST AI RMF","EU AI Act","Data privacy"],
+ why:"Your unfair advantage. Every AI program needs someone who holds the line on security and compliance, and most builders are weakest exactly here.",
+ objectives:[
+  "Recognize the major LLM risks, especially prompt injection and data leakage",
+  "Use the NIST AI RMF vocabulary: govern, map, measure, manage",
+  "Classify use cases under the EU AI Act's risk tiers",
+  "Design human oversight, audit trails, and data controls into features"
+ ],
+ resources:[
+  {name:"OWASP Top 10 for LLM Applications",provider:"OWASP GenAI Security Project",url:"https://genai.owasp.org/",note:"The standard risk list. Short; read all ten.",free:true},
+  {name:"AI Risk Management Framework",provider:"NIST",url:"https://www.nist.gov/itl/ai-risk-management-framework",note:"The framework enterprises actually cite. Learn the four functions.",free:true},
+  {name:"EU AI Act explorer",provider:"artificialintelligenceact.eu",url:"https://artificialintelligenceact.eu/",note:"Risk tiers and obligations, in plain language. US companies benchmark against it too.",free:true},
+  {name:"Red Teaming LLM Applications",provider:"DeepLearning.AI",url:"https://www.deeplearning.ai/short-courses/",note:"Probing LLM apps for vulnerabilities. Pairs with the OWASP list.",free:true},
+  {name:"Guardrails and safety guidance",provider:"Anthropic docs",url:"https://docs.claude.com/en/docs/",note:"Mitigating jailbreaks, injection, and unsafe output in production.",free:true}
+ ],
+ project:{title:"Field exercise",desc:"Draft an AI governance one-pager for document-analysis adoption: permitted and prohibited uses, data handling, human review, incident response. You are more qualified to write this than most working AI PMs."},
+ quiz:[
+  {q:"Prompt injection is:",
+   o:["A syringe emoji","Untrusted content carrying instructions the model follows as if from the user","An inference speedup","Chatbot-only"],
+   a:1,e:"Tops the OWASP list. Mitigations: treat external content as data, limit privileges, gate consequential actions."},
+  {q:"NIST AI RMF's four functions:",
+   o:["Buy, build, ship, forget","Govern, map, measure, manage","Train, test, deploy, delete","Plan, do, check, act"],
+   a:1,e:"Using this vocabulary marks you as governance-literate in interviews."},
+  {q:"EU AI Act obligations scale with:",
+   o:["Company size","The use case's risk tier, minimal through unacceptable","Parameter count","Vendor's country"],
+   a:1,e:"Same model, different regulation depending on use. PMs own use-case classification."},
+  {q:"Before sending client documents to a third-party API, verify first:",
+   o:["Speed","Data terms: training use, retention, residency, zero-retention enterprise options","Benchmark score","Dashboard color"],
+   a:1,e:"Consumer and enterprise tiers differ enormously. In regulated contexts, this gates everything."}
+ ]
+},
+{
+ id:"ch10",num:"13",title:"AI Program Leadership",tag:"Strategy, portfolio artifacts, and landing the role",time:"15-20 hrs + ongoing",
+ tech:["Roadmapping","Build vs buy","Portfolio","Stakeholder comms"],
+ why:"The synthesis. Everything before this becomes evidence; this chapter turns it into positioning and interview-ready judgment.",
+ objectives:[
+  "Frame AI initiatives as roadmaps with outcomes, risks, rollout",
+  "Assemble the portfolio: RAG build, eval spec, build-vs-buy memo, governance one-pager",
+  "Speak fluently across model, data, runtime, cloud, and governance layers",
+  "Turn your domain depth into positioning"
+ ],
+ resources:[
+  {name:"AI Learning Roadmap for Product Managers",provider:"Product School",url:"https://productschool.com/blog/artificial-intelligence/ai-learning-roadmap",note:"Useful for pacing and eval-stack practice.",free:true},
+  {name:"IBM AI Product Manager Professional Certificate",provider:"Coursera",url:"https://www.coursera.org/professional-certificates/ibm-ai-product-manager",note:"Recognizable credential. Audit free; certificate paid.",free:false},
+  {name:"AI PM Bootcamp",provider:"Maven · Marily Nika",url:"https://maven.com/marily-nika/ai-pm-bootcamp",note:"The best-known cohort option. Paid; for network and accountability.",free:false},
+  {name:"Anthropic Academy certificates",provider:"Anthropic",url:"https://www.anthropic.com/learn",note:"Finish the certificates from chapters 7-11 and post them.",free:true}
+ ],
+ project:{title:"Capstone",desc:"The flagship portfolio piece: a full AI feature spec (problem, users, model strategy, data and platform architecture, evals, governance, rollout, cost, metrics). Pair with the chapter 7 RAG build and chapter 5 backbone diagram. Update the resume."},
+ quiz:[
+  {q:"Strongest evidence of AI PM capability:",
+   o:["Certificate count","Shipped artifacts: a working build, an eval spec, decision memos showing judgment","Reading AI news","Framework name recall"],
+   a:1,e:"Certificates open conversations; artifacts close them."},
+  {q:"'Should we build our own model?' starts with:",
+   o:["Always own your stack","The problem, the data, and cost-benefit against prompting, RAG, and fine-tuning","Never","Loudest engineer wins"],
+   a:1,e:"Almost no one should pre-train. Walk the ladder with costs attached; that is the judgment being tested."},
+  {q:"Your domain background in an AI PM interview:",
+   o:["Downplay it","Depth in a high-stakes, compliance-heavy field where quality and governance matter most","Irrelevant","Proof you can argue"],
+   a:1,e:"Regulated-industry fluency plus AI fluency is rare. Lead with it."}
+ ]
+}
+];
+
+/* ---------- state + persistence ---------- */
+const KEY="airampup:v2";
+let state={checks:{},quiz:{},done:{}};
+
+/* Storage adapter: window.storage inside claude.ai artifacts,
+   localStorage when self-hosted (GitHub Pages, local file),
+   in-memory as last resort. */
+const store={
+  async get(k){
+    if(typeof window.storage!=="undefined"){
+      const r=await window.storage.get(k);
+      return r?r.value:null;
+    }
+    try{return localStorage.getItem(k);}catch(e){return null;}
+  },
+  async set(k,v){
+    if(typeof window.storage!=="undefined"){
+      return window.storage.set(k,v);
+    }
+    try{localStorage.setItem(k,v);}catch(e){/* in-memory only */}
+  }
+};
+
+async function loadState(){
+  try{
+    const v=await store.get(KEY);
+    if(v)state=JSON.parse(v);
+  }catch(e){/* first run or no storage */}
+  render();
+}
+async function saveState(){
+  try{await store.set(KEY,JSON.stringify(state));}
+  catch(e){/* best effort */}
+}
+
+/* ---------- dial ---------- */
+function drawDial(){
+  const svg=document.getElementById('dialSvg');
+  const n=CHAPTERS.length;
+  const cx=100,cy=100,r=86,gap=5,segAngle=(360-n*gap)/n;
+  let html="";
+  html+='<g class="ticks">';
+  for(let i=0;i<40;i++){
+    const a=(i/40)*2*Math.PI;
+    const r1=70,r2=i%5===0?76:73;
+    html+=`<line x1="${cx+r1*Math.cos(a)}" y1="${cy+r1*Math.sin(a)}" x2="${cx+r2*Math.cos(a)}" y2="${cy+r2*Math.sin(a)}"/>`;
+  }
+  html+='</g>';
+  CHAPTERS.forEach((c,i)=>{
+    const start=(i*(segAngle+gap))*Math.PI/180;
+    const end=start+segAngle*Math.PI/180;
+    const x1=cx+r*Math.cos(start),y1=cy+r*Math.sin(start);
+    const x2=cx+r*Math.cos(end),y2=cy+r*Math.sin(end);
+    html+=`<path class="seg ${state.done[c.id]?'done':''}" d="M ${x1} ${y1} A ${r} ${r} 0 0 1 ${x2} ${y2}"/>`;
+  });
+  svg.innerHTML=html;
+  document.getElementById('doneCount').textContent=CHAPTERS.filter(c=>state.done[c.id]).length;
+  document.getElementById('totalCount').textContent=n;
+}
+
+/* ---------- home rail ---------- */
+function chapterStatus(c){
+  if(state.done[c.id])return'done';
+  const anyCheck=c.resources.some((_,i)=>state.checks[c.id+'-'+i]);
+  const anyQuiz=c.quiz.some((_,i)=>state.quiz[c.id+'-'+i]!==undefined);
+  return(anyCheck||anyQuiz)?'started':'new';
+}
+function render(){
+  drawDial();
+  const rail=document.getElementById('rail');
+  rail.innerHTML=CHAPTERS.map((c,i)=>{
+    const st=chapterStatus(c);
+    const pillTxt=st==='done'?'Complete':st==='started'?'In progress':'Not started';
+    return `<button class="ch-card reveal ${st==='done'?'is-done':''}" style="animation-delay:${.28+i*.05}s" onclick="openChapter('${c.id}')">
+      <div class="ch-num">${c.num}</div>
+      <div>
+        <div class="ch-title">${c.title}</div>
+        <div class="ch-tag">${c.tag}</div>
+      </div>
+      <div class="ch-meta">
+        <span class="ch-time">${c.time}</span>
+        <span class="pill ${st==='done'?'done':st==='started'?'started':''}">${pillTxt}</span>
+      </div>
+    </button>`;
+  }).join('');
+}
+
+/* ---------- chapter view ---------- */
+let currentId=null;
+function openChapter(id){
+  currentId=id;
+  const c=CHAPTERS.find(x=>x.id===id);
+  const idx=CHAPTERS.indexOf(c);
+  const el=document.getElementById('chapterContent');
+  el.innerHTML=`
+    <div class="ch-head">
+      <div class="eyebrow">Chapter ${c.num} · ${c.time}</div>
+      <h2>${c.title}</h2>
+      <p>${c.why}</p>
+      <div class="chips">${c.tech.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+    </div>
+    <div class="section-label">Objectives</div>
+    <ul class="obj-list">${c.objectives.map(o=>`<li>${o}</li>`).join('')}</ul>
+    <div class="section-label">Resources</div>
+    ${c.resources.map((r,i)=>{
+      const k=c.id+'-'+i;
+      return `<div class="res ${state.checks[k]?'checked':''}" id="res-${k}">
+        <input type="checkbox" ${state.checks[k]?'checked':''} onchange="toggleCheck('${k}')" aria-label="Mark ${r.name} done">
+        <div>
+          <div class="res-name"><a href="${r.url}" target="_blank" rel="noopener">${r.name}</a><span class="badge ${r.free?'free':'paid'}">${r.free?'Free':'Paid'}</span></div>
+          <div class="res-provider">${r.provider}</div>
+          <div class="res-note">${r.note}</div>
+        </div>
+      </div>`;
+    }).join('')}
+    <div class="section-label">Hands-on</div>
+    <div class="project"><h4>${c.project.title}</h4><p>${c.project.desc}</p></div>
+    <div class="section-label">Self-check</div>
+    ${c.quiz.map((q,qi)=>{
+      const k=c.id+'-'+qi;
+      const answered=state.quiz[k];
+      return `<div class="q-block">
+        <div class="q-text">${qi+1}. ${q.q}</div>
+        <div class="q-opts">
+          ${q.o.map((opt,oi)=>{
+            let cls='';
+            if(answered!==undefined){
+              if(oi===q.a)cls='correct';
+              else if(oi===answered&&answered!==q.a)cls='wrong';
+            }
+            return `<button class="q-opt ${cls}" ${answered!==undefined?'disabled':''} onclick="answer('${k}',${oi},${q.a})">${opt}</button>`;
+          }).join('')}
+        </div>
+        <div class="q-explain ${answered!==undefined?'show':''}" id="exp-${k}">${q.e}</div>
+      </div>`;
+    }).join('')}
+    <button class="complete-btn ${state.done[c.id]?'done':''}" id="completeBtn" onclick="markDone('${c.id}')">${state.done[c.id]?'✓ Chapter complete':'Mark chapter complete'}</button>
+    <div class="ch-nav">
+      <button onclick="${idx>0?`openChapter('${CHAPTERS[idx-1].id}')`:'goHome()'}">${idx>0?'← '+CHAPTERS[idx-1].title:'← Overview'}</button>
+      <button onclick="${idx<CHAPTERS.length-1?`openChapter('${CHAPTERS[idx+1].id}')`:'goHome()'}">${idx<CHAPTERS.length-1?CHAPTERS[idx+1].title+' →':'Overview →'}</button>
+    </div>`;
+  document.getElementById('home').classList.remove('active');
+  document.getElementById('chapter').classList.add('active');
+  window.scrollTo({top:0,behavior:'auto'});
+}
+function goHome(){
+  document.getElementById('chapter').classList.remove('active');
+  document.getElementById('home').classList.add('active');
+  render();
+  window.scrollTo({top:0,behavior:'auto'});
+}
+function toggleCheck(k){
+  state.checks[k]=!state.checks[k];
+  document.getElementById('res-'+k).classList.toggle('checked',state.checks[k]);
+  saveState();
+}
+function answer(k,chosen,correct){
+  if(state.quiz[k]!==undefined)return;
+  state.quiz[k]=chosen;
+  saveState();
+  openChapter(currentId);
+  requestAnimationFrame(()=>{
+    const exp=document.getElementById('exp-'+k);
+    if(exp)exp.scrollIntoView({block:'center',behavior:'auto'});
+  });
+}
+function markDone(id){
+  state.done[id]=!state.done[id];
+  saveState();
+  openChapter(id);
+}
+
+loadState();
+</script>
+</body>
+</html>
