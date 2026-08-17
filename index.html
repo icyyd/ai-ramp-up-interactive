@@ -256,8 +256,8 @@ const CHAPTERS=[
   {name:"Data Engineering Zoomcamp",provider:"DataTalks.Club",url:"https://github.com/DataTalksClub/data-engineering-zoomcamp",note:"Skim the first modules to see the pipeline work every AI feature quietly depends on.",free:true}
  ],
  certs:[
-  {name:"AWS Certified AI Practitioner (AIF-C01)",provider:"AWS",url:"https://aws.amazon.com/certification/certified-ai-practitioner/",note:"The foundational AI credential named most often in job screeners. ~$100 exam; free tier prep on Skill Builder.",free:false},
-  {name:"Azure AI Fundamentals (AI-900)",provider:"Microsoft",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/",note:"The easiest entry cert; Microsoft-shop resumes expect it. ~$99, free prep on Microsoft Learn.",free:false}
+  {name:"AWS Certified AI Practitioner (AIF-C01)",provider:"AWS",url:"https://aws.amazon.com/certification/certified-ai-practitioner/",note:"The foundational AI credential named most often in job screeners. ~$100 exam.",free:false,prep:{name:"AWS Skill Builder exam-prep plan",url:"https://skillbuilder.aws/exam-prep/ai-practitioner",note:"free"}},
+  {name:"Azure AI Fundamentals (AI-900)",provider:"Microsoft",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/",note:"The easiest entry cert; Microsoft-shop resumes expect it. ~$99.",free:false,prep:{name:"AI-900 course on Microsoft Learn",url:"https://learn.microsoft.com/en-us/training/courses/ai-900t00",note:"free, self-paced"}}
  ],
  project:{title:"Field exercise",desc:"Pick three workflows from your current practice. Rate each as AI fit, partial fit, or bad fit, one paragraph apiece. Future interview material."},
  quiz:[
@@ -349,9 +349,9 @@ const CHAPTERS=[
   {name:"dbt Fundamentals",provider:"dbt Labs",url:"https://learn.getdbt.com/",note:"The transformation layer: version-controlled, tested SQL. Short, high-signal.",free:true}
  ],
  certs:[
-  {name:"SnowPro Core Certification",provider:"Snowflake",url:"https://learn.snowflake.com/en/certifications/",note:"The Snowflake baseline named in data platform postings. ~$175.",free:false},
-  {name:"Databricks Certified Data Engineer Associate",provider:"Databricks",url:"https://www.databricks.com/learn/certification/data-engineer-associate",note:"The lakehouse-side equivalent; strong signal for Data and AI Platform roles. ~$200.",free:false},
-  {name:"dbt Analytics Engineering Certification",provider:"dbt Labs",url:"https://www.getdbt.com/dbt-certification",note:"The transformation-layer credential. ~$200; prep is the free dbt Fundamentals course.",free:false}
+  {name:"SnowPro Core Certification",provider:"Snowflake",url:"https://learn.snowflake.com/en/certifications/",note:"The Snowflake baseline named in data platform postings. ~$175.",free:false,prep:{name:"Snowflake University courses and badges",url:"https://learn.snowflake.com/",note:"free"}},
+  {name:"Databricks Certified Data Engineer Associate",provider:"Databricks",url:"https://www.databricks.com/learn/certification/data-engineer-associate",note:"The lakehouse-side equivalent; strong signal for Data and AI Platform roles. ~$200.",free:false,prep:{name:"Databricks Academy self-paced training",url:"https://www.databricks.com/learn/training/home",note:"free tier covers the exam topics"}},
+  {name:"dbt Analytics Engineering Certification",provider:"dbt Labs",url:"https://www.getdbt.com/dbt-certification",note:"The transformation-layer credential. ~$200.",free:false,prep:{name:"dbt Fundamentals course",url:"https://learn.getdbt.com/",note:"free; doubles as this chapter's dbt resource"}}
  ],
  project:{title:"Field exercise",desc:"Snowflake free trial: load a CSV, write five queries, run one Cortex LLM function on a text column. Half a page on what governed, in-platform AI means for a regulated business."},
  quiz:[
@@ -387,7 +387,7 @@ const CHAPTERS=[
   {name:"Trino documentation + free ebook",provider:"Trino / Starburst",url:"https://trino.io/docs/current/",note:"Federated SQL across S3, Postgres, Cassandra, without moving data. Starburst gives the O'Reilly guide free.",free:true}
  ],
  certs:[
-  {name:"Confluent Certified Developer for Apache Kafka (CCDAK)",provider:"Confluent",url:"https://www.confluent.io/certification/",note:"The Kafka credential streaming-heavy postings name. ~$150.",free:false}
+  {name:"Confluent Certified Developer for Apache Kafka (CCDAK)",provider:"Confluent",url:"https://www.confluent.io/certification/",note:"The Kafka credential streaming-heavy postings name. ~$150.",free:false,prep:{name:"Confluent Developer courses",url:"https://developer.confluent.io/courses/",note:"free"}}
  ],
  project:{title:"Field exercise",desc:"Run the Kafka quickstart, then diagram the backbone on one page: topics to S3 Iceberg tables, Spark and Trino as query paths. Annotate where AI attaches: stream-fresh features, snapshot-pinned training sets, lakehouse-fed RAG. Interview gold."},
  quiz:[
@@ -459,7 +459,7 @@ const CHAPTERS=[
   {name:"dlt (data load tool) documentation",provider:"dltHub",url:"https://dlthub.com/docs/intro",note:"The lightweight pattern for the unglamorous half of RAG: getting documents out of source systems on a schedule.",free:true}
  ],
  certs:[
-  {name:"Databricks Certified Generative AI Engineer Associate",provider:"Databricks",url:"https://www.databricks.com/learn/certification/genai-engineer-associate",note:"Covers exactly this chapter: RAG, vector search, chains, evaluation. ~$200; the strongest applied-GenAI cert signal right now.",free:false}
+  {name:"Databricks Certified Generative AI Engineer Associate",provider:"Databricks",url:"https://www.databricks.com/learn/certification/genai-engineer-associate",note:"Covers exactly this chapter: RAG, vector search, chains, evaluation. ~$200; the strongest applied-GenAI cert signal right now.",free:false,prep:{name:"Databricks Academy GenAI self-paced training",url:"https://www.databricks.com/learn/training/home",note:"free tier"}}
  ],
  project:{title:"Capstone build",desc:"Build a small RAG system over a rule set or redacted documents: ingest, chunk, embed, retrieve, answer with citations. Even local deployment counts. Worth more than any certificate."},
  quiz:[
@@ -576,8 +576,8 @@ const CHAPTERS=[
   {name:"Exercism language tracks",provider:"Exercism",url:"https://exercism.org/",note:"Free Java and TypeScript practice. The bar is reading PRs, not shipping code.",free:true}
  ],
  certs:[
-  {name:"Certified Kubernetes Administrator (CKA)",provider:"Linux Foundation / CNCF",url:"https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/",note:"The flagship infrastructure cert; hands-on exam, heavy signal for Cloud and Platform roles. ~$445, frequent discounts.",free:false},
-  {name:"HashiCorp Certified: Terraform Associate",provider:"HashiCorp",url:"https://developer.hashicorp.com/certifications/infrastructure-automation",note:"The IaC credential Cloud postings name. ~$70; the cheapest strong infra signal.",free:false},
+  {name:"Certified Kubernetes Administrator (CKA)",provider:"Linux Foundation / CNCF",url:"https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/",note:"The flagship infrastructure cert; hands-on exam, heavy signal for Cloud and Platform roles. ~$445, frequent discounts.",free:false,prep:{name:"killer.sh exam simulator",url:"https://killer.sh/",note:"two sessions included with registration; pair with the kubernetes.io tutorials above"}},
+  {name:"HashiCorp Certified: Terraform Associate",provider:"HashiCorp",url:"https://developer.hashicorp.com/certifications/infrastructure-automation",note:"The IaC credential Cloud postings name. ~$70; the cheapest strong infra signal.",free:false,prep:{name:"Official Terraform Associate prep tutorials",url:"https://developer.hashicorp.com/terraform/tutorials/certification-003",note:"free"}},
   {name:"Astronomer Certification: Apache Airflow Fundamentals",provider:"Astronomer",url:"https://academy.astronomer.io/",note:"Free badge on the same academy as the fundamentals course. Quick win for the pipeline layer.",free:true}
  ],
  project:{title:"Field exercise",desc:"Containerize your chapter 7 RAG app: Dockerfile, build, run. Then one page assigning this app and its pipelines across Kubernetes, Nomad, and Airflow, with reasons. Platform interviews probe exactly this judgment."},
@@ -621,9 +621,9 @@ const CHAPTERS=[
   {name:"AI Engineering (book)",provider:"Chip Huyen",url:"https://www.oreilly.com/library/view/ai-engineering/9781098166298/",note:"The standard text on building with foundation models. Worth buying.",free:false}
  ],
  certs:[
-  {name:"AWS Certified Machine Learning Engineer – Associate (MLA-C01)",provider:"AWS",url:"https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",note:"The production-ML cert on the most-named cloud. ~$150.",free:false},
-  {name:"Google Cloud Professional Machine Learning Engineer",provider:"Google Cloud",url:"https://cloud.google.com/learn/certification/machine-learning-engineer",note:"The hardest and most respected of the three cloud ML certs. ~$200.",free:false},
-  {name:"Azure AI Engineer Associate (AI-102)",provider:"Microsoft",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/",note:"The applied-AI cert for Microsoft-agreement enterprises. ~$165.",free:false}
+  {name:"AWS Certified Machine Learning Engineer – Associate (MLA-C01)",provider:"AWS",url:"https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",note:"The production-ML cert on the most-named cloud. ~$150.",free:false,prep:{name:"AWS Skill Builder exam-prep plan",url:"https://skillbuilder.aws/exam-prep/machine-learning-engineer-associate",note:"free"}},
+  {name:"Google Cloud Professional Machine Learning Engineer",provider:"Google Cloud",url:"https://cloud.google.com/learn/certification/machine-learning-engineer",note:"The hardest and most respected of the three cloud ML certs. ~$200.",free:false,prep:{name:"Google Skills certification path",url:"https://www.skills.google/paths/17",note:"courses, labs, and badges; free tier available"}},
+  {name:"Azure AI Engineer Associate (AI-102)",provider:"Microsoft",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/",note:"The applied-AI cert for Microsoft-agreement enterprises. ~$165.",free:false,prep:{name:"AI-102 course on Microsoft Learn",url:"https://learn.microsoft.com/en-us/training/courses/ai-102t00",note:"free, self-paced"}}
  ],
  project:{title:"Field exercise",desc:"Two-page build-vs-buy memo: document-analysis AI across direct API, Bedrock, Azure AI Foundry, and a vendor, on cost per 1,000 documents, privacy, latency, lock-in. Cost model at three volume tiers. Recommend one."},
  quiz:[
@@ -668,7 +668,7 @@ const CHAPTERS=[
   {name:"OpenLineage documentation",provider:"OpenLineage (LF AI & Data)",url:"https://openlineage.io/docs/",note:"How lineage is actually tracked through pipelines. The mechanism behind 'can we prove what data trained or fed this model.'",free:true}
  ],
  certs:[
-  {name:"IAPP Artificial Intelligence Governance Professional (AIGP)",provider:"IAPP",url:"https://iapp.org/certify/aigp/",note:"The AI governance credential enterprises recognize; rare among engineers, which is the point. ~$649.",free:false}
+  {name:"IAPP Artificial Intelligence Governance Professional (AIGP)",provider:"IAPP",url:"https://iapp.org/certify/aigp/",note:"The AI governance credential enterprises recognize; rare among engineers, which is the point. ~$649.",free:false,prep:{name:"IAPP AIGP training options",url:"https://iapp.org/train/aigp-training/",note:"paid; the chapter's NIST and EU AI Act resources cover much of the body of knowledge free"}}
  ],
  project:{title:"Field exercise",desc:"Draft an AI governance one-pager for document-analysis adoption: permitted and prohibited uses, data handling, human review, incident response. Most applied-AI teams have no one who can write this; the one who can holds the line."},
  quiz:[
@@ -710,7 +710,7 @@ const CHAPTERS=[
   {name:"Anthropic Academy certificates",provider:"Anthropic",url:"https://www.anthropic.com/learn",note:"Finish the certificates from chapters 7-11 and post them.",free:true}
  ],
  certs:[
-  {name:"Google Cloud Generative AI Leader",provider:"Google Cloud",url:"https://cloud.google.com/learn/certification/generative-ai-leader",note:"The strategy-level GenAI cert, built for exactly the Senior Manager/Director altitude. ~$99.",free:false},
+  {name:"Google Cloud Generative AI Leader",provider:"Google Cloud",url:"https://cloud.google.com/learn/certification/generative-ai-leader",note:"The strategy-level GenAI cert, built for exactly the Senior Manager/Director altitude. ~$99.",free:false,prep:{name:"Google Skills Gen AI Leader path",url:"https://www.skills.google/paths/1951",note:"five activities, free"}},
   {name:"Anthropic Academy certificates",provider:"Anthropic",url:"https://www.anthropic.com/learn",note:"Free certificates from the chapter 7-11 coursework. Collect and post the set.",free:true}
  ],
  project:{title:"Capstone",desc:"The flagship portfolio piece: a full AI feature spec (problem, users, model strategy, data and platform architecture, evals, governance, rollout, cost, metrics). Pair with the chapter 7 RAG build and chapter 5 backbone diagram. Update the resume."},
@@ -855,6 +855,7 @@ function openChapter(id){
           <div class="res-name"><a href="${r.url}" target="_blank" rel="noopener">${r.name}</a><span class="badge ${r.free?'free':'paid'}">${r.free?'Free':'Paid'}</span></div>
           <div class="res-provider">${r.provider}</div>
           <div class="res-note">${r.note}</div>
+          ${r.prep?`<div class="res-note">↳ Prep: <a href="${r.prep.url}" target="_blank" rel="noopener">${r.prep.name}</a>${r.prep.note?' — '+r.prep.note:''}</div>`:''}
         </div>
       </div>`;
     }).join('')}`:''}
