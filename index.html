@@ -245,13 +245,15 @@ const CHAPTERS=[
  objectives:[
   "Distinguish traditional ML, deep learning, and generative AI in plain language",
   "Spot which business problems are, and are not, an AI fit",
-  "Describe the AI feature lifecycle from data to deployment"
+  "Describe the AI feature lifecycle from data to deployment",
+  "Recognize that data engineering, not just model choice, decides whether an AI feature ships"
  ],
  resources:[
   {name:"Elements of AI",provider:"University of Helsinki",url:"https://www.elementsofai.com/",note:"The gold-standard non-technical intro. No math, no code.",free:true},
   {name:"AI for Everyone",provider:"DeepLearning.AI · Andrew Ng",url:"https://www.coursera.org/learn/ai-for-everyone",note:"Seven hours on what AI can do at work. Free to audit.",free:true},
   {name:"Introduction to Generative AI path",provider:"Google Skills",url:"https://www.cloudskillsboost.google/paths/118",note:"Two hours, free badge. Fast landscape orientation.",free:true},
-  {name:"Claude 101 + AI Fluency track",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"Free, with certificates worth posting.",free:true}
+  {name:"Claude 101 + AI Fluency track",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"Free, with certificates worth posting.",free:true},
+  {name:"Data Engineering Zoomcamp",provider:"DataTalks.Club",url:"https://github.com/DataTalksClub/data-engineering-zoomcamp",note:"Skim the first modules to see the pipeline work every AI feature quietly depends on.",free:true}
  ],
  project:{title:"Field exercise",desc:"Pick three workflows from your current practice. Rate each as AI fit, partial fit, or bad fit, one paragraph apiece. Future interview material."},
  quiz:[
@@ -273,13 +275,15 @@ const CHAPTERS=[
  objectives:[
   "Trace text through tokens, embeddings, and predictions",
   "Use attention and context windows to reason about cost and latency",
-  "Know when pre-training, fine-tuning, and RLHF each matter"
+  "Know when pre-training, fine-tuning, and RLHF each matter",
+  "See how pretraining data curation, deduplication, and filtering shape what a model actually knows"
  ],
  resources:[
   {name:"LLM Course",provider:"Hugging Face",url:"https://huggingface.co/learn/llm-course",note:"The best free technical resource. Needs basic Python.",free:true},
   {name:"LLM University",provider:"Cohere",url:"https://cohere.com/llmu",note:"Embeddings, attention, semantic search, from the ground up.",free:true},
   {name:"Neural Networks series",provider:"3Blue1Brown",url:"https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",note:"The visual intuition layer. Watch the transformer and attention chapters.",free:true},
-  {name:"Zero to Hero",provider:"Andrej Karpathy",url:"https://karpathy.ai/zero-to-hero.html",note:"Optional deep end: build GPT from scratch. First two videos suffice.",free:true}
+  {name:"Zero to Hero",provider:"Andrej Karpathy",url:"https://karpathy.ai/zero-to-hero.html",note:"Optional deep end: build GPT from scratch. First two videos suffice.",free:true},
+  {name:"FineWeb: decanting the web for the finest text data",provider:"Hugging Face",url:"https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1",note:"The data engineering behind a frontier model: filtering, dedup, and quality scoring at web scale.",free:true}
  ],
  project:{title:"Field exercise",desc:"Write a one-page 'How an LLM answers a question' explainer for a non-technical executive. If tokenization lands for them, it lands anywhere."},
  quiz:[
@@ -301,7 +305,8 @@ const CHAPTERS=[
  objectives:[
   "Apply core patterns: role, structure, examples, chain of thought",
   "Split context across system prompt, retrieval, and tools",
-  "Build a prompt library for your own workflows"
+  "Build a prompt library for your own workflows",
+  "Treat retrieval freshness as a data engineering problem: which pipeline keeps context current"
  ],
  resources:[
   {name:"Prompt Engineering documentation",provider:"Anthropic",url:"https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview",note:"The canonical reference. One full read, then lookup.",free:true},
@@ -424,20 +429,22 @@ const CHAPTERS=[
 },
 {
  id:"ch5",num:"07",title:"Building with APIs and RAG",tag:"From chat user to builder: retrieval and real applications",time:"25-30 hrs",
- tech:["Claude API","LangChain","LlamaIndex","Vector DBs","pgvector","Hybrid search"],
+ tech:["Claude API","LangChain","LlamaIndex","Vector DBs","pgvector","Hybrid search","Ingestion pipelines"],
  why:"The most PM-relevant technical skill in 2026 hiring. Building one small system converts you from talking about AI to having shipped it.",
  objectives:[
   "Call APIs with system prompts, streaming, and tool use",
   "Explain embeddings, vector search, and hybrid trade-offs",
   "Know when to use LangChain, LlamaIndex, or neither",
-  "Build and evaluate one end-to-end RAG app"
+  "Build and evaluate one end-to-end RAG app",
+  "Treat ingestion and embedding refresh as a pipeline: source, chunk, embed, upsert, re-index on a schedule"
  ],
  resources:[
   {name:"Building with the Claude API",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"84 lessons: auth, streaming, tools, caching, production patterns. Free with certificate.",free:true},
   {name:"LLM Zoomcamp",provider:"DataTalks.Club",url:"https://github.com/DataTalksClub/llm-zoomcamp",note:"RAG, vector and hybrid search, evaluation, monitoring. Needs Python and Docker basics.",free:true},
   {name:"RAG and vector search guides",provider:"Pinecone Learning Center",url:"https://www.pinecone.io/learn/",note:"Embeddings, chunking, retrieval quality. Compare pgvector, the Postgres-native option.",free:true},
   {name:"LlamaIndex documentation",provider:"LlamaIndex",url:"https://docs.llamaindex.ai/",note:"Skim the concepts section for the RAG mental model.",free:true},
-  {name:"LangChain Academy",provider:"LangChain",url:"https://academy.langchain.com/",note:"The most-named framework in postings. Take Introduction to LangGraph; it feeds chapter 8.",free:true}
+  {name:"LangChain Academy",provider:"LangChain",url:"https://academy.langchain.com/",note:"The most-named framework in postings. Take Introduction to LangGraph; it feeds chapter 8.",free:true},
+  {name:"dlt (data load tool) documentation",provider:"dltHub",url:"https://dlthub.com/docs/intro",note:"The lightweight pattern for the unglamorous half of RAG: getting documents out of source systems on a schedule.",free:true}
  ],
  project:{title:"Capstone build",desc:"Build a small RAG system over a rule set or redacted documents: ingest, chunk, embed, retrieve, answer with citations. Even local deployment counts. Worth more than any certificate."},
  quiz:[
@@ -452,7 +459,10 @@ const CHAPTERS=[
    a:1,e:"Vectors catch meaning; keywords catch exact terms like statute numbers. Legal retrieval wants both."},
   {q:"A dedicated vector DB is unnecessary when:",
    o:["Never","The corpus is modest and pgvector in existing Postgres meets scale and latency","Using RAG","Data is sensitive"],
-   a:1,e:"Many production RAG systems run happily on pgvector. Dedicated vector DBs are a scale decision, not a default."}
+   a:1,e:"Many production RAG systems run happily on pgvector. Dedicated vector DBs are a scale decision, not a default."},
+  {q:"Answers go stale days after source documents change. The fix lives in:",
+   o:["A bigger model","The ingestion pipeline: re-run extraction, chunking, and embedding on a schedule or trigger","More few-shot examples","Higher temperature"],
+   a:1,e:"RAG quality decays the moment the index falls behind the source. Freshness is a data engineering SLA, not a model setting."}
  ]
 },
 {
@@ -463,7 +473,8 @@ const CHAPTERS=[
   "Explain the agent loop: reason, act, observe, repeat",
   "Know MCP as the model-to-tools standard",
   "Compare LangGraph, CrewAI, AutoGen, and direct API",
-  "Design guardrails and failure containment for acting systems"
+  "Design guardrails and failure containment for acting systems",
+  "See MCP servers as a data engineering integration layer: the governed doorway between an agent and a warehouse, lakehouse, or API"
  ],
  resources:[
   {name:"AI Agents Course",provider:"Hugging Face",url:"https://huggingface.co/learn/agents-course",note:"The structured free path across major frameworks.",free:true},
@@ -485,24 +496,29 @@ const CHAPTERS=[
    a:1,e:"Permission boundaries are the core safety design, and a product decision."},
   {q:"LangGraph earns its complexity when:",
    o:["Any LLM call","Workflows need state, branching, retries, and human-in-the-loop checkpoints","Building a chatbot","The team knows Python"],
-   a:1,e:"Simple flows are simpler as direct calls. Orchestration pays off when the workflow itself has structure."}
+   a:1,e:"Simple flows are simpler as direct calls. Orchestration pays off when the workflow itself has structure."},
+  {q:"An agent needs live figures from the warehouse. The right pattern:",
+   o:["Paste a CSV into the prompt","An MCP server exposing scoped, read-only queries against the warehouse","Fine-tune on the whole database","Screenshot a dashboard"],
+   a:1,e:"MCP servers are how agents reach governed data without every team hand-rolling a bespoke connector."}
  ]
 },
 {
  id:"ch7",num:"09",title:"Evals, Guardrails, and Quality",tag:"The number one skill gap in AI PM hiring",time:"12-15 hrs",
- tech:["Eval rubrics","Golden sets","LLM-as-judge","Regression testing"],
+ tech:["Eval rubrics","Golden sets","LLM-as-judge","Regression testing","Data quality"],
  why:"Eval writing is the most cited AI PM skill gap of 2026. The rubric, coverage, and quality bar behind every eval is a product decision.",
  objectives:[
   "Design an eval stack: task success, hallucination, latency, cost, safety",
   "Write graded rubrics and small labeled test sets",
   "Use LLM-as-judge without being fooled by it",
-  "Compare models on product criteria, not leaderboards"
+  "Compare models on product criteria, not leaderboards",
+  "Apply data-quality discipline, validation, versioning, drift checks, to golden eval sets the same way you would to a production table"
  ],
  resources:[
   {name:"Evaluation guides",provider:"Anthropic docs",url:"https://docs.claude.com/en/docs/build-with-claude/develop-tests",note:"Success criteria and eval construction. Start here.",free:true},
   {name:"Evaluating and Debugging short courses",provider:"DeepLearning.AI",url:"https://www.deeplearning.ai/short-courses/",note:"Several short courses on evaluating LLM apps and agents.",free:true},
   {name:"Your AI Product Needs Evals",provider:"Hamel Husain",url:"https://hamel.dev/blog/posts/evals/",note:"The practitioner essay on evals that actually improve products.",free:true},
-  {name:"LLM Zoomcamp evaluation modules",provider:"DataTalks.Club",url:"https://github.com/DataTalksClub/llm-zoomcamp",note:"Hands-on retrieval and response evaluation, same course as chapter 7.",free:true}
+  {name:"LLM Zoomcamp evaluation modules",provider:"DataTalks.Club",url:"https://github.com/DataTalksClub/llm-zoomcamp",note:"Hands-on retrieval and response evaluation, same course as chapter 7.",free:true},
+  {name:"Great Expectations documentation",provider:"Great Expectations",url:"https://docs.greatexpectations.io/",note:"The standard data-quality validation framework. Golden sets rot the same way tables do; version and validate both.",free:true}
  ],
  project:{title:"Field exercise",desc:"Full eval spec for the chapter 3 prompt: 20 test cases, graded rubric, pass thresholds, rollback triggers. A portfolio piece."},
  quiz:[
@@ -517,7 +533,10 @@ const CHAPTERS=[
    a:1,e:"It scales cheaply but drifts and favors length. Anchor and audit it, or it becomes a rubber stamp."},
   {q:"Eval score drops after a ship. Mature response:",
    o:["Ignore without complaints","Threshold-triggered rollback, then root cause","Delete the eval","Retrain the model"],
-   a:1,e:"Evals only create value when thresholds connect to actions."}
+   a:1,e:"Evals only create value when thresholds connect to actions."},
+  {q:"A golden eval set silently drifts as edge cases get added ad hoc. The data engineering fix:",
+   o:["Bigger test set, unreviewed","Version it like a dataset: change log, review, reproducible snapshots per model release","Trust memory","Delete old cases"],
+   a:1,e:"Untracked eval sets make regressions unprovable. Treat the golden set with the same rigor as a production table."}
  ]
 },
 {
@@ -535,6 +554,7 @@ const CHAPTERS=[
   {name:"Kubernetes Basics tutorial",provider:"kubernetes.io",url:"https://kubernetes.io/docs/tutorials/kubernetes-basics/",note:"Pods, deployments, services, scaling. Enough to follow any platform discussion.",free:true},
   {name:"Nomad tutorials",provider:"HashiCorp",url:"https://developer.hashicorp.com/nomad",note:"Simpler orchestration, container and non-container alike. Know the trade-off both ways.",free:true},
   {name:"Airflow fundamentals",provider:"Astronomer Academy",url:"https://academy.astronomer.io/",note:"DAGs, scheduling, retries, backfills: how pipelines actually sequence.",free:true},
+  {name:"dbt Fundamentals",provider:"dbt Labs Learn",url:"https://learn.getdbt.com/",note:"The transformation layer Airflow schedules. Feature tables and RAG source tables both usually pass through here first.",free:true},
   {name:"A Tour of Go",provider:"go.dev",url:"https://go.dev/tour/",note:"The language of infrastructure. A few hours to reading fluency.",free:true},
   {name:"Exercism language tracks",provider:"Exercism",url:"https://exercism.org/",note:"Free Java and TypeScript practice. The bar is reading PRs, not shipping code.",free:true}
  ],
@@ -556,13 +576,14 @@ const CHAPTERS=[
 },
 {
  id:"ch8",num:"11",title:"Cloud AI Platforms, MLOps, and FinOps",tag:"Bedrock, Vertex, Azure: production AI and what it costs",time:"25-30 hrs",
- tech:["AWS Bedrock","SageMaker","Vertex AI","Azure AI Foundry","Terraform","FinOps"],
+ tech:["AWS Bedrock","SageMaker","Vertex AI","Azure AI Foundry","Terraform","FinOps","Feature stores"],
  why:"The infrastructure half of your positioning. Bedrock, Vertex, and Azure appear by name in postings; so does cost ownership.",
  objectives:[
   "Know the production lifecycle: serving, monitoring, retraining, rollback",
   "Compare Bedrock, Vertex, Azure AI Foundry, direct APIs, self-hosted",
   "Speak IaC and CI/CD as they apply to AI systems",
-  "Own unit economics: cost per request, caching, model tiering"
+  "Own unit economics: cost per request, caching, model tiering",
+  "Account for data pipeline and storage costs, feature stores, embedding refresh, data egress, in AI unit economics, not just tokens"
  ],
  resources:[
   {name:"Amazon Bedrock courses",provider:"AWS Skill Builder",url:"https://skillbuilder.aws/",note:"Model access, knowledge bases, agents, guardrails. The most-named platform in postings; use the free tier.",free:true},
@@ -571,6 +592,7 @@ const CHAPTERS=[
   {name:"Claude on Bedrock / Vertex",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"Frontier models on cloud infrastructure. On-target for your headline.",free:true},
   {name:"Made With ML",provider:"Goku Mohandas",url:"https://madewithml.com/",note:"The canonical open MLOps reference. Architecture and monitoring chapters minimum.",free:true},
   {name:"FinOps for AI",provider:"FinOps Foundation",url:"https://www.finops.org/",note:"The cost discipline by name: showback, unit economics, commitments.",free:true},
+  {name:"Feast documentation",provider:"Feast (Linux Foundation)",url:"https://docs.feast.dev/",note:"The open-source feature store pattern: one governed path from data pipeline to model input, online and offline.",free:true},
   {name:"AI Engineering (book)",provider:"Chip Huyen",url:"https://www.oreilly.com/library/view/ai-engineering/9781098166298/",note:"The standard text on building with foundation models. Worth buying.",free:false}
  ],
  project:{title:"Field exercise",desc:"Two-page build-vs-buy memo: document-analysis AI across direct API, Bedrock, Azure AI Foundry, and a vendor, on cost per 1,000 documents, privacy, latency, lock-in. Cost model at three volume tiers. Recommend one."},
@@ -586,25 +608,30 @@ const CHAPTERS=[
    a:1,e:"AI spend scales with usage, so cost is an architecture decision made daily. Tier easy tasks to small models."},
   {q:"Post-deployment, watch:",
    o:["Only uptime","Latency, cost per request, eval scores over time, drift, error and refusal rates","GitHub stars","Parameter count"],
-   a:1,e:"AI degrades silently through drift. Monitoring quality over time is the LLMOps difference."}
+   a:1,e:"AI degrades silently through drift. Monitoring quality over time is the LLMOps difference."},
+  {q:"A feature store's main job:",
+   o:["Store trained model weights","Serve the same governed feature definitions consistently to both training pipelines and live inference","Cache API responses","Host the vector database"],
+   a:1,e:"Train/serve skew, features computed differently offline versus online, is a classic silent-failure mode a feature store is built to close."}
  ]
 },
 {
  id:"ch9",num:"12",title:"Security, Governance, and Responsible AI",tag:"Prompt injection, risk frameworks, regulation: the trust layer",time:"12-15 hrs",
- tech:["OWASP LLM Top 10","Prompt injection","NIST AI RMF","EU AI Act","Data privacy"],
+ tech:["OWASP LLM Top 10","Prompt injection","NIST AI RMF","EU AI Act","Data privacy","Data lineage"],
  why:"Your unfair advantage. Every AI program needs someone who holds the line on security and compliance, and most builders are weakest exactly here.",
  objectives:[
   "Recognize the major LLM risks, especially prompt injection and data leakage",
   "Use the NIST AI RMF vocabulary: govern, map, measure, manage",
   "Classify use cases under the EU AI Act's risk tiers",
-  "Design human oversight, audit trails, and data controls into features"
+  "Design human oversight, audit trails, and data controls into features",
+  "Trace data lineage into training, fine-tuning, and retrieval sets so PII and consent obligations can actually be enforced"
  ],
  resources:[
   {name:"OWASP Top 10 for LLM Applications",provider:"OWASP GenAI Security Project",url:"https://genai.owasp.org/",note:"The standard risk list. Short; read all ten.",free:true},
   {name:"AI Risk Management Framework",provider:"NIST",url:"https://www.nist.gov/itl/ai-risk-management-framework",note:"The framework enterprises actually cite. Learn the four functions.",free:true},
   {name:"EU AI Act explorer",provider:"artificialintelligenceact.eu",url:"https://artificialintelligenceact.eu/",note:"Risk tiers and obligations, in plain language. US companies benchmark against it too.",free:true},
   {name:"Red Teaming LLM Applications",provider:"DeepLearning.AI",url:"https://www.deeplearning.ai/short-courses/",note:"Probing LLM apps for vulnerabilities. Pairs with the OWASP list.",free:true},
-  {name:"Guardrails and safety guidance",provider:"Anthropic docs",url:"https://docs.claude.com/en/docs/",note:"Mitigating jailbreaks, injection, and unsafe output in production.",free:true}
+  {name:"Guardrails and safety guidance",provider:"Anthropic docs",url:"https://docs.claude.com/en/docs/",note:"Mitigating jailbreaks, injection, and unsafe output in production.",free:true},
+  {name:"OpenLineage documentation",provider:"OpenLineage (LF AI & Data)",url:"https://openlineage.io/docs/",note:"How lineage is actually tracked through pipelines. The mechanism behind 'can we prove what data trained or fed this model.'",free:true}
  ],
  project:{title:"Field exercise",desc:"Draft an AI governance one-pager for document-analysis adoption: permitted and prohibited uses, data handling, human review, incident response. You are more qualified to write this than most working AI PMs."},
  quiz:[
@@ -619,7 +646,10 @@ const CHAPTERS=[
    a:1,e:"Same model, different regulation depending on use. PMs own use-case classification."},
   {q:"Before sending client documents to a third-party API, verify first:",
    o:["Speed","Data terms: training use, retention, residency, zero-retention enterprise options","Benchmark score","Dashboard color"],
-   a:1,e:"Consumer and enterprise tiers differ enormously. In regulated contexts, this gates everything."}
+   a:1,e:"Consumer and enterprise tiers differ enormously. In regulated contexts, this gates everything."},
+  {q:"A deletion request arrives for a person whose records are indexed in your RAG corpus. What proves you can honor it?",
+   o:["A support ticket","Data lineage: knowing every pipeline and index that ingested that source record","A model retrain","Nothing; embeddings can't be traced"],
+   a:1,e:"Without lineage from source system to embedding store, 'right to be forgotten' is a promise you cannot verify, let alone keep."}
  ]
 },
 {
@@ -630,7 +660,8 @@ const CHAPTERS=[
   "Frame AI initiatives as roadmaps with outcomes, risks, rollout",
   "Assemble the portfolio: RAG build, eval spec, build-vs-buy memo, governance one-pager",
   "Speak fluently across model, data, runtime, cloud, and governance layers",
-  "Turn your domain depth into positioning"
+  "Turn your domain depth into positioning",
+  "Defend an AI roadmap in terms of the data engineering work it actually requires, not just the model it will call"
  ],
  resources:[
   {name:"AI Learning Roadmap for Product Managers",provider:"Product School",url:"https://productschool.com/blog/artificial-intelligence/ai-learning-roadmap",note:"Useful for pacing and eval-stack practice.",free:true},
