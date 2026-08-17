@@ -255,6 +255,10 @@ const CHAPTERS=[
   {name:"Claude 101 + AI Fluency track",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"Free, with certificates worth posting.",free:true},
   {name:"Data Engineering Zoomcamp",provider:"DataTalks.Club",url:"https://github.com/DataTalksClub/data-engineering-zoomcamp",note:"Skim the first modules to see the pipeline work every AI feature quietly depends on.",free:true}
  ],
+ certs:[
+  {name:"AWS Certified AI Practitioner (AIF-C01)",provider:"AWS",url:"https://aws.amazon.com/certification/certified-ai-practitioner/",note:"The foundational AI credential named most often in job screeners. ~$100 exam; free tier prep on Skill Builder.",free:false},
+  {name:"Azure AI Fundamentals (AI-900)",provider:"Microsoft",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/",note:"The easiest entry cert; Microsoft-shop resumes expect it. ~$99, free prep on Microsoft Learn.",free:false}
+ ],
  project:{title:"Field exercise",desc:"Pick three workflows from your current practice. Rate each as AI fit, partial fit, or bad fit, one paragraph apiece. Future interview material."},
  quiz:[
   {q:"'Can AI just read all our records and tell us the answer?' The accurate framing:",
@@ -344,6 +348,11 @@ const CHAPTERS=[
   {name:"Databricks free training",provider:"Databricks Academy",url:"https://www.databricks.com/learn",note:"Lakehouse, Spark basics, Mosaic AI. Fundamentals accreditation is free.",free:true},
   {name:"dbt Fundamentals",provider:"dbt Labs",url:"https://learn.getdbt.com/",note:"The transformation layer: version-controlled, tested SQL. Short, high-signal.",free:true}
  ],
+ certs:[
+  {name:"SnowPro Core Certification",provider:"Snowflake",url:"https://learn.snowflake.com/en/certifications/",note:"The Snowflake baseline named in data platform postings. ~$175.",free:false},
+  {name:"Databricks Certified Data Engineer Associate",provider:"Databricks",url:"https://www.databricks.com/learn/certification/data-engineer-associate",note:"The lakehouse-side equivalent; strong signal for Data and AI Platform roles. ~$200.",free:false},
+  {name:"dbt Analytics Engineering Certification",provider:"dbt Labs",url:"https://www.getdbt.com/dbt-certification",note:"The transformation-layer credential. ~$200; prep is the free dbt Fundamentals course.",free:false}
+ ],
  project:{title:"Field exercise",desc:"Snowflake free trial: load a CSV, write five queries, run one Cortex LLM function on a text column. Half a page on what governed, in-platform AI means for a regulated business."},
  quiz:[
   {q:"A lakehouse combines:",
@@ -376,6 +385,9 @@ const CHAPTERS=[
   {name:"Apache Iceberg documentation",provider:"Apache",url:"https://iceberg.apache.org/",note:"Why table formats exist: ACID on object storage, schema evolution, time travel.",free:true},
   {name:"Spark SQL programming guide",provider:"Apache Spark",url:"https://spark.apache.org/docs/latest/sql-programming-guide.html",note:"Your SQL, running distributed over lakehouse data.",free:true},
   {name:"Trino documentation + free ebook",provider:"Trino / Starburst",url:"https://trino.io/docs/current/",note:"Federated SQL across S3, Postgres, Cassandra, without moving data. Starburst gives the O'Reilly guide free.",free:true}
+ ],
+ certs:[
+  {name:"Confluent Certified Developer for Apache Kafka (CCDAK)",provider:"Confluent",url:"https://www.confluent.io/certification/",note:"The Kafka credential streaming-heavy postings name. ~$150.",free:false}
  ],
  project:{title:"Field exercise",desc:"Run the Kafka quickstart, then diagram the backbone on one page: topics to S3 Iceberg tables, Spark and Trino as query paths. Annotate where AI attaches: stream-fresh features, snapshot-pinned training sets, lakehouse-fed RAG. Interview gold."},
  quiz:[
@@ -445,6 +457,9 @@ const CHAPTERS=[
   {name:"LlamaIndex documentation",provider:"LlamaIndex",url:"https://docs.llamaindex.ai/",note:"Skim the concepts section for the RAG mental model.",free:true},
   {name:"LangChain Academy",provider:"LangChain",url:"https://academy.langchain.com/",note:"The most-named framework in postings. Take Introduction to LangGraph; it feeds chapter 8.",free:true},
   {name:"dlt (data load tool) documentation",provider:"dltHub",url:"https://dlthub.com/docs/intro",note:"The lightweight pattern for the unglamorous half of RAG: getting documents out of source systems on a schedule.",free:true}
+ ],
+ certs:[
+  {name:"Databricks Certified Generative AI Engineer Associate",provider:"Databricks",url:"https://www.databricks.com/learn/certification/genai-engineer-associate",note:"Covers exactly this chapter: RAG, vector search, chains, evaluation. ~$200; the strongest applied-GenAI cert signal right now.",free:false}
  ],
  project:{title:"Capstone build",desc:"Build a small RAG system over a rule set or redacted documents: ingest, chunk, embed, retrieve, answer with citations. Even local deployment counts. Worth more than any certificate."},
  quiz:[
@@ -560,6 +575,11 @@ const CHAPTERS=[
   {name:"A Tour of Go",provider:"go.dev",url:"https://go.dev/tour/",note:"The language of infrastructure. A few hours to reading fluency.",free:true},
   {name:"Exercism language tracks",provider:"Exercism",url:"https://exercism.org/",note:"Free Java and TypeScript practice. The bar is reading PRs, not shipping code.",free:true}
  ],
+ certs:[
+  {name:"Certified Kubernetes Administrator (CKA)",provider:"Linux Foundation / CNCF",url:"https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/",note:"The flagship infrastructure cert; hands-on exam, heavy signal for Cloud and Platform roles. ~$445, frequent discounts.",free:false},
+  {name:"HashiCorp Certified: Terraform Associate",provider:"HashiCorp",url:"https://developer.hashicorp.com/certifications/infrastructure-automation",note:"The IaC credential Cloud postings name. ~$70; the cheapest strong infra signal.",free:false},
+  {name:"Astronomer Certification: Apache Airflow Fundamentals",provider:"Astronomer",url:"https://academy.astronomer.io/",note:"Free badge on the same academy as the fundamentals course. Quick win for the pipeline layer.",free:true}
+ ],
  project:{title:"Field exercise",desc:"Containerize your chapter 7 RAG app: Dockerfile, build, run. Then one page assigning this app and its pipelines across Kubernetes, Nomad, and Airflow, with reasons. Platform interviews probe exactly this judgment."},
  quiz:[
   {q:"Containers solve:",
@@ -599,6 +619,11 @@ const CHAPTERS=[
   {name:"vLLM documentation",provider:"vLLM project",url:"https://docs.vllm.ai/",note:"The default open-source serving engine. Know throughput, batching, and when self-hosting wins.",free:true},
   {name:"Feast documentation",provider:"Feast (Linux Foundation)",url:"https://docs.feast.dev/",note:"The open-source feature store pattern: one governed path from data pipeline to model input, online and offline.",free:true},
   {name:"AI Engineering (book)",provider:"Chip Huyen",url:"https://www.oreilly.com/library/view/ai-engineering/9781098166298/",note:"The standard text on building with foundation models. Worth buying.",free:false}
+ ],
+ certs:[
+  {name:"AWS Certified Machine Learning Engineer – Associate (MLA-C01)",provider:"AWS",url:"https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",note:"The production-ML cert on the most-named cloud. ~$150.",free:false},
+  {name:"Google Cloud Professional Machine Learning Engineer",provider:"Google Cloud",url:"https://cloud.google.com/learn/certification/machine-learning-engineer",note:"The hardest and most respected of the three cloud ML certs. ~$200.",free:false},
+  {name:"Azure AI Engineer Associate (AI-102)",provider:"Microsoft",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/",note:"The applied-AI cert for Microsoft-agreement enterprises. ~$165.",free:false}
  ],
  project:{title:"Field exercise",desc:"Two-page build-vs-buy memo: document-analysis AI across direct API, Bedrock, Azure AI Foundry, and a vendor, on cost per 1,000 documents, privacy, latency, lock-in. Cost model at three volume tiers. Recommend one."},
  quiz:[
@@ -642,6 +667,9 @@ const CHAPTERS=[
   {name:"Guardrails and safety guidance",provider:"Anthropic docs",url:"https://docs.claude.com/en/docs/",note:"Mitigating jailbreaks, injection, and unsafe output in production.",free:true},
   {name:"OpenLineage documentation",provider:"OpenLineage (LF AI & Data)",url:"https://openlineage.io/docs/",note:"How lineage is actually tracked through pipelines. The mechanism behind 'can we prove what data trained or fed this model.'",free:true}
  ],
+ certs:[
+  {name:"IAPP Artificial Intelligence Governance Professional (AIGP)",provider:"IAPP",url:"https://iapp.org/certify/aigp/",note:"The AI governance credential enterprises recognize; rare among engineers, which is the point. ~$649.",free:false}
+ ],
  project:{title:"Field exercise",desc:"Draft an AI governance one-pager for document-analysis adoption: permitted and prohibited uses, data handling, human review, incident response. Most applied-AI teams have no one who can write this; the one who can holds the line."},
  quiz:[
   {q:"Prompt injection is:",
@@ -680,6 +708,10 @@ const CHAPTERS=[
   {name:"The Engineering Executive's Primer (book)",provider:"Will Larson · O'Reilly",url:"https://www.oreilly.com/library/view/the-engineering-executives-primer/9781098149475/",note:"The Director-and-up playbook: strategy, planning, hiring, exec communication.",free:false},
   {name:"AI PM Bootcamp",provider:"Maven · Marily Nika",url:"https://maven.com/marily-nika/ai-pm-bootcamp",note:"The best-known cohort option for the AI PM track. Paid; for network and accountability.",free:false},
   {name:"Anthropic Academy certificates",provider:"Anthropic",url:"https://www.anthropic.com/learn",note:"Finish the certificates from chapters 7-11 and post them.",free:true}
+ ],
+ certs:[
+  {name:"Google Cloud Generative AI Leader",provider:"Google Cloud",url:"https://cloud.google.com/learn/certification/generative-ai-leader",note:"The strategy-level GenAI cert, built for exactly the Senior Manager/Director altitude. ~$99.",free:false},
+  {name:"Anthropic Academy certificates",provider:"Anthropic",url:"https://www.anthropic.com/learn",note:"Free certificates from the chapter 7-11 coursework. Collect and post the set.",free:true}
  ],
  project:{title:"Capstone",desc:"The flagship portfolio piece: a full AI feature spec (problem, users, model strategy, data and platform architecture, evals, governance, rollout, cost, metrics). Pair with the chapter 7 RAG build and chapter 5 backbone diagram. Update the resume."},
  quiz:[
@@ -814,6 +846,18 @@ function openChapter(id){
         </div>
       </div>`;
     }).join('')}
+    ${c.certs?`<div class="section-label">Certifications</div>
+    ${c.certs.map((r,i)=>{
+      const k=c.id+'-cert-'+i;
+      return `<div class="res ${state.checks[k]?'checked':''}" id="res-${k}">
+        <input type="checkbox" ${state.checks[k]?'checked':''} onchange="toggleCheck('${k}')" aria-label="Mark ${r.name} done">
+        <div>
+          <div class="res-name"><a href="${r.url}" target="_blank" rel="noopener">${r.name}</a><span class="badge ${r.free?'free':'paid'}">${r.free?'Free':'Paid'}</span></div>
+          <div class="res-provider">${r.provider}</div>
+          <div class="res-note">${r.note}</div>
+        </div>
+      </div>`;
+    }).join('')}`:''}
     <div class="section-label">Hands-on</div>
     <div class="project"><h4>${c.project.title}</h4><p>${c.project.desc}</p></div>
     <div class="section-label">Self-check</div>

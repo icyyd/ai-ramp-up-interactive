@@ -11,6 +11,7 @@ Thirteen chapters, roughly 230 to 280 hours total. Each chapter includes:
 - A one-line rationale and tech chips showing what stack it covers
 - Learning objectives
 - Curated free-first resources with links (paid options clearly marked)
+- Industry certifications relevant to that layer of the stack, with typical exam costs
 - A hands-on field exercise, several of which double as portfolio artifacts
 - A self-check quiz with instant feedback
 
