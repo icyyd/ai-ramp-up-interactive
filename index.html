@@ -206,7 +206,7 @@ footer{margin-top:80px;padding-top:28px;border-top:1px solid var(--line);color:v
     <div>
       <div class="eyebrow reveal">Ramp-Up Program · Thirteen Chapters · 2026 Edition</div>
       <h1 class="reveal" style="animation-delay:.08s">The AI Ramp-Up,<br><em>Interactive Edition</em></h1>
-      <p class="lede reveal" style="animation-delay:.16s">Fundamentals to <strong>AI program leadership</strong>, across the full platform: models, the Kafka-to-lakehouse backbone, databases, runtime, cloud AI, and governance. Progress saves automatically.</p>
+      <p class="lede reveal" style="animation-delay:.16s">Fundamentals to <strong>forward-deployed and AI platform leadership</strong>: models, the Kafka-to-lakehouse backbone, databases, runtime, cloud AI, and governance — the stack Cloud, Data, AI, and AI Platform Engineering roles actually run on. Progress saves automatically.</p>
     </div>
     <div class="reveal" style="animation-delay:.24s">
       <div class="dial" role="img" aria-label="Progress dial">
@@ -221,7 +221,7 @@ footer{margin-top:80px;padding-top:28px;border-top:1px solid var(--line);color:v
   </header>
   <div class="rail" id="rail"></div>
   <footer class="reveal" style="animation-delay:.4s">
-    Curated from 2026 course roundups, provider catalogs, and the technologies named in current AI platform job postings. Free options marked; nothing requires payment to progress.
+    Curated from 2026 course roundups, provider catalogs, and the technologies named in current Cloud, Data, AI, and AI Platform Engineering postings — forward-deployed and Senior Manager/Director tracks included. Free options marked; nothing requires payment to progress.
     <br><br>
     <em>Disclaimer: this project is for educational purposes only. It was built to serve a specific personal learning need and is shared as-is, with no guarantee of accuracy, completeness, or fitness for any other purpose.</em>
   </footer>
@@ -265,7 +265,7 @@ const CHAPTERS=[
    a:2,e:"Deterministic math with liability attached belongs in deterministic code. LLMs are probabilistic."},
   {q:"The AI feature lifecycle runs:",
    o:["Idea → launch → done","Framing → prototype → evaluation → deployment → monitoring and iteration","Model training only","Procurement → invoice"],
-   a:1,e:"AI features are never done at launch. Evaluation and monitoring are where the PM work concentrates."}
+   a:1,e:"AI features are never done at launch. Evaluation and monitoring are where the real work concentrates."}
  ]
 },
 {
@@ -287,7 +287,7 @@ const CHAPTERS=[
  ],
  project:{title:"Field exercise",desc:"Write a one-page 'How an LLM answers a question' explainer for a non-technical executive. If tokenization lands for them, it lands anywhere."},
  quiz:[
-  {q:"Why does context window size matter to a PM?",
+  {q:"Why does context window size matter beyond the model team?",
    o:["It sets the model's IQ","It bounds what fits per request, driving chunking, cost, and latency","Only affects image models","It sets training data size"],
    a:1,e:"Context windows drive real product decisions: chunking strategy, cost per call, response speed."},
   {q:"Fine-tuning is right when:",
@@ -301,7 +301,7 @@ const CHAPTERS=[
 {
  id:"ch3",num:"03",title:"Prompt and Context Engineering",tag:"Instructions, examples, and everything around the model",time:"10-12 hrs",
  tech:["Prompt patterns","Context engineering","System prompts","Structured output"],
- why:"Prompting is table stakes; context engineering is the 2026 skill. Deciding what surrounds the model is a design discipline, and a PM-shaped one.",
+ why:"Prompting is table stakes; context engineering is the 2026 skill. Deciding what surrounds the model is a design discipline forward-deployed engineers own in the field.",
  objectives:[
   "Apply core patterns: role, structure, examples, chain of thought",
   "Split context across system prompt, retrieval, and tools",
@@ -314,7 +314,7 @@ const CHAPTERS=[
   {name:"Context Engineering course",provider:"Hugging Face",url:"https://huggingface.co/learn",note:"Skills, tools, MCP, and subagents as context. The newer layer.",free:true},
   {name:"Prompting guide",provider:"OpenAI",url:"https://platform.openai.com/docs/guides/prompt-engineering",note:"Compare against Anthropic's; note where they converge.",free:true}
  ],
- project:{title:"Field exercise",desc:"Build a production-grade prompt for your IOL drafting workflow: role, structure, two examples, output format, anti-fabrication guardrails. Test on a redacted file; log the breaks."},
+ project:{title:"Field exercise",desc:"Build a production-grade prompt for a document-heavy workflow you know well: role, structure, two examples, output format, anti-fabrication guardrails. Test on redacted samples; log the breaks. Forward-deployed work is exactly this, done inside a customer's domain."},
  quiz:[
   {q:"Few-shot examples help by:",
    o:["Permanently upgrading the model","Demonstrating the exact format and reasoning to reproduce","Cutting API cost","Expanding the context window"],
@@ -330,7 +330,7 @@ const CHAPTERS=[
 {
  id:"ch4",num:"04",title:"Data Foundations and the Modern Data Stack",tag:"Snowflake, Databricks, dbt: where enterprise AI gets its fuel",time:"20-25 hrs",
  tech:["SQL","Snowflake","Snowflake Cortex","Databricks","dbt","Lakehouse"],
- why:"Models are the visible part; the platform feeding them is where AI programs succeed or die. This layer is named in nearly every AI program posting.",
+ why:"Models are the visible part; the platform feeding them is where AI programs succeed or die. This layer is named in nearly every Data Engineering and AI Platform posting.",
  objectives:[
   "Read and write intermediate SQL",
   "Place Snowflake and Databricks on the warehouse-lake-lakehouse map",
@@ -430,7 +430,7 @@ const CHAPTERS=[
 {
  id:"ch5",num:"07",title:"Building with APIs and RAG",tag:"From chat user to builder: retrieval and real applications",time:"25-30 hrs",
  tech:["Claude API","LangChain","LlamaIndex","Vector DBs","pgvector","Hybrid search","Ingestion pipelines"],
- why:"The most PM-relevant technical skill in 2026 hiring. Building one small system converts you from talking about AI to having shipped it.",
+ why:"The core build skill across AI Engineer, Applied AI, and forward-deployed postings. Building one small system converts you from talking about AI to having shipped it.",
  objectives:[
   "Call APIs with system prompts, streaming, and tool use",
   "Explain embeddings, vector search, and hybrid trade-offs",
@@ -468,7 +468,7 @@ const CHAPTERS=[
 {
  id:"ch6",num:"08",title:"Agents, MCP, and Orchestration",tag:"Systems that use tools, take actions, coordinate work",time:"20-25 hrs",
  tech:["Agent loops","MCP","LangGraph","CrewAI","Tool use","Multi-agent"],
- why:"Agentic experience appears in roughly a third of senior AI postings. This is the frontier where AI program management is being defined.",
+ why:"Agentic experience appears in roughly a third of senior AI postings, and nearly every forward-deployed one. This is the frontier where applied AI work is being defined.",
  objectives:[
   "Explain the agent loop: reason, act, observe, repeat",
   "Know MCP as the model-to-tools standard",
@@ -503,9 +503,9 @@ const CHAPTERS=[
  ]
 },
 {
- id:"ch7",num:"09",title:"Evals, Guardrails, and Quality",tag:"The number one skill gap in AI PM hiring",time:"12-15 hrs",
+ id:"ch7",num:"09",title:"Evals, Guardrails, and Quality",tag:"The number one skill gap across applied AI hiring",time:"12-15 hrs",
  tech:["Eval rubrics","Golden sets","LLM-as-judge","Regression testing","Data quality"],
- why:"Eval writing is the most cited AI PM skill gap of 2026. The rubric, coverage, and quality bar behind every eval is a product decision.",
+ why:"Eval writing is the most cited skill gap of 2026 applied-AI hiring, IC through Director. The rubric, coverage, and quality bar behind every eval is an engineering decision someone must own.",
  objectives:[
   "Design an eval stack: task success, hallucination, latency, cost, safety",
   "Write graded rubrics and small labeled test sets",
@@ -547,6 +547,7 @@ const CHAPTERS=[
   "Read a Dockerfile without flinching",
   "Compare Kubernetes and Nomad honestly",
   "Read Airflow DAGs as the sequencing layer for data and ML",
+  "Follow a CI/CD pipeline from commit to deploy, and know where AI services complicate it: model artifacts, eval gates, prompt versioning",
   "Reach review-level fluency in Go, Java, and TypeScript alongside daily Python and SQL"
  ],
  resources:[
@@ -555,6 +556,7 @@ const CHAPTERS=[
   {name:"Nomad tutorials",provider:"HashiCorp",url:"https://developer.hashicorp.com/nomad",note:"Simpler orchestration, container and non-container alike. Know the trade-off both ways.",free:true},
   {name:"Airflow fundamentals",provider:"Astronomer Academy",url:"https://academy.astronomer.io/",note:"DAGs, scheduling, retries, backfills: how pipelines actually sequence.",free:true},
   {name:"dbt Fundamentals",provider:"dbt Labs Learn",url:"https://learn.getdbt.com/",note:"The transformation layer Airflow schedules. Feature tables and RAG source tables both usually pass through here first.",free:true},
+  {name:"GitHub Actions documentation",provider:"GitHub",url:"https://docs.github.com/en/actions",note:"The default CI/CD in most shops. Build one workflow: test, build image, deploy.",free:true},
   {name:"A Tour of Go",provider:"go.dev",url:"https://go.dev/tour/",note:"The language of infrastructure. A few hours to reading fluency.",free:true},
   {name:"Exercism language tracks",provider:"Exercism",url:"https://exercism.org/",note:"Free Java and TypeScript practice. The bar is reading PRs, not shipping code.",free:true}
  ],
@@ -583,6 +585,7 @@ const CHAPTERS=[
   "Compare Bedrock, Vertex, Azure AI Foundry, direct APIs, self-hosted",
   "Speak IaC and CI/CD as they apply to AI systems",
   "Own unit economics: cost per request, caching, model tiering",
+  "Know the self-hosted serving layer: vLLM, GPU capacity planning, and when it beats per-token APIs",
   "Account for data pipeline and storage costs, feature stores, embedding refresh, data egress, in AI unit economics, not just tokens"
  ],
  resources:[
@@ -592,6 +595,8 @@ const CHAPTERS=[
   {name:"Claude on Bedrock / Vertex",provider:"Anthropic Academy",url:"https://www.anthropic.com/learn",note:"Frontier models on cloud infrastructure. On-target for your headline.",free:true},
   {name:"Made With ML",provider:"Goku Mohandas",url:"https://madewithml.com/",note:"The canonical open MLOps reference. Architecture and monitoring chapters minimum.",free:true},
   {name:"FinOps for AI",provider:"FinOps Foundation",url:"https://www.finops.org/",note:"The cost discipline by name: showback, unit economics, commitments.",free:true},
+  {name:"Terraform tutorials",provider:"HashiCorp",url:"https://developer.hashicorp.com/terraform/tutorials",note:"IaC by name in Cloud and Platform postings. Provision one thing; read the plan/apply loop.",free:true},
+  {name:"vLLM documentation",provider:"vLLM project",url:"https://docs.vllm.ai/",note:"The default open-source serving engine. Know throughput, batching, and when self-hosting wins.",free:true},
   {name:"Feast documentation",provider:"Feast (Linux Foundation)",url:"https://docs.feast.dev/",note:"The open-source feature store pattern: one governed path from data pipeline to model input, online and offline.",free:true},
   {name:"AI Engineering (book)",provider:"Chip Huyen",url:"https://www.oreilly.com/library/view/ai-engineering/9781098166298/",note:"The standard text on building with foundation models. Worth buying.",free:false}
  ],
@@ -602,7 +607,7 @@ const CHAPTERS=[
    a:1,e:"For document-heavy workloads, often the single biggest cost lever."},
   {q:"Bedrock or Vertex over direct APIs because:",
    o:["Smarter models there","Enterprise controls: residency, compliance, IAM, unified billing inside existing agreements","Always cheaper","No evals needed"],
-   a:1,e:"Enterprises pay for governance and procurement fit, not model quality. Knowing this is the infra-PM value-add."},
+   a:1,e:"Enterprises pay for governance and procurement fit, not model quality. Knowing this is the platform-leadership value-add."},
   {q:"AI FinOps means:",
    o:["Free AI","Owning unit economics: cost per request and outcome, tiering, caching, showback","Cheapest model always","Quarterly billing review"],
    a:1,e:"AI spend scales with usage, so cost is an architecture decision made daily. Tier easy tasks to small models."},
@@ -611,7 +616,10 @@ const CHAPTERS=[
    a:1,e:"AI degrades silently through drift. Monitoring quality over time is the LLMOps difference."},
   {q:"A feature store's main job:",
    o:["Store trained model weights","Serve the same governed feature definitions consistently to both training pipelines and live inference","Cache API responses","Host the vector database"],
-   a:1,e:"Train/serve skew, features computed differently offline versus online, is a classic silent-failure mode a feature store is built to close."}
+   a:1,e:"Train/serve skew, features computed differently offline versus online, is a classic silent-failure mode a feature store is built to close."},
+  {q:"Self-hosting an open model on vLLM beats a per-token API when:",
+   o:["Always","Volume is high and steady, latency and data control matter, and GPU utilization stays high","Never","The team likes GPUs"],
+   a:1,e:"Self-hosting trades per-token cost for fixed GPU cost plus ops burden. It wins at sustained utilization, and loses badly at spiky low volume."}
  ]
 },
 {
@@ -623,7 +631,8 @@ const CHAPTERS=[
   "Use the NIST AI RMF vocabulary: govern, map, measure, manage",
   "Classify use cases under the EU AI Act's risk tiers",
   "Design human oversight, audit trails, and data controls into features",
-  "Trace data lineage into training, fine-tuning, and retrieval sets so PII and consent obligations can actually be enforced"
+  "Trace data lineage into training, fine-tuning, and retrieval sets so PII and consent obligations can actually be enforced",
+  "Map customer-environment deployment constraints, VPC isolation, on-prem, data residency, air-gapped, to what each rules in or out: the forward-deployed reality"
  ],
  resources:[
   {name:"OWASP Top 10 for LLM Applications",provider:"OWASP GenAI Security Project",url:"https://genai.owasp.org/",note:"The standard risk list. Short; read all ten.",free:true},
@@ -633,7 +642,7 @@ const CHAPTERS=[
   {name:"Guardrails and safety guidance",provider:"Anthropic docs",url:"https://docs.claude.com/en/docs/",note:"Mitigating jailbreaks, injection, and unsafe output in production.",free:true},
   {name:"OpenLineage documentation",provider:"OpenLineage (LF AI & Data)",url:"https://openlineage.io/docs/",note:"How lineage is actually tracked through pipelines. The mechanism behind 'can we prove what data trained or fed this model.'",free:true}
  ],
- project:{title:"Field exercise",desc:"Draft an AI governance one-pager for document-analysis adoption: permitted and prohibited uses, data handling, human review, incident response. You are more qualified to write this than most working AI PMs."},
+ project:{title:"Field exercise",desc:"Draft an AI governance one-pager for document-analysis adoption: permitted and prohibited uses, data handling, human review, incident response. Most applied-AI teams have no one who can write this; the one who can holds the line."},
  quiz:[
   {q:"Prompt injection is:",
    o:["A syringe emoji","Untrusted content carrying instructions the model follows as if from the user","An inference speedup","Chatbot-only"],
@@ -643,7 +652,7 @@ const CHAPTERS=[
    a:1,e:"Using this vocabulary marks you as governance-literate in interviews."},
   {q:"EU AI Act obligations scale with:",
    o:["Company size","The use case's risk tier, minimal through unacceptable","Parameter count","Vendor's country"],
-   a:1,e:"Same model, different regulation depending on use. PMs own use-case classification."},
+   a:1,e:"Same model, different regulation depending on use. Someone senior must own use-case classification; in forward-deployed work, that someone is you."},
   {q:"Before sending client documents to a third-party API, verify first:",
    o:["Speed","Data terms: training use, retention, residency, zero-retention enterprise options","Benchmark score","Dashboard color"],
    a:1,e:"Consumer and enterprise tiers differ enormously. In regulated contexts, this gates everything."},
@@ -653,33 +662,37 @@ const CHAPTERS=[
  ]
 },
 {
- id:"ch10",num:"13",title:"AI Program Leadership",tag:"Strategy, portfolio artifacts, and landing the role",time:"15-20 hrs + ongoing",
- tech:["Roadmapping","Build vs buy","Portfolio","Stakeholder comms"],
- why:"The synthesis. Everything before this becomes evidence; this chapter turns it into positioning and interview-ready judgment.",
+ id:"ch10",num:"13",title:"Forward-Deployed Practice and AI Leadership",tag:"Customer-facing delivery, strategy, and landing the senior role",time:"15-20 hrs + ongoing",
+ tech:["Forward-deployed delivery","Discovery","Build vs buy","Team topology","Roadmapping","Portfolio"],
+ why:"The synthesis. Forward-deployed and Director-level interviews test the same thing: walk into ambiguity, ship something real against real constraints, and defend every decision across the stack.",
  objectives:[
+  "Run the forward-deployed loop: discovery, scoping, rapid prototype, production hardening, handoff",
   "Frame AI initiatives as roadmaps with outcomes, risks, rollout",
   "Assemble the portfolio: RAG build, eval spec, build-vs-buy memo, governance one-pager",
   "Speak fluently across model, data, runtime, cloud, and governance layers",
-  "Turn your domain depth into positioning",
+  "Operate at Senior Manager/Director altitude: team topology, vendor strategy, and the exec narrative for AI spend",
   "Defend an AI roadmap in terms of the data engineering work it actually requires, not just the model it will call"
  ],
  resources:[
-  {name:"AI Learning Roadmap for Product Managers",provider:"Product School",url:"https://productschool.com/blog/artificial-intelligence/ai-learning-roadmap",note:"Useful for pacing and eval-stack practice.",free:true},
-  {name:"IBM AI Product Manager Professional Certificate",provider:"Coursera",url:"https://www.coursera.org/professional-certificates/ibm-ai-product-manager",note:"Recognizable credential. Audit free; certificate paid.",free:false},
-  {name:"AI PM Bootcamp",provider:"Maven · Marily Nika",url:"https://maven.com/marily-nika/ai-pm-bootcamp",note:"The best-known cohort option. Paid; for network and accountability.",free:false},
+  {name:"A Day in the Life of a Forward Deployed Engineer",provider:"Palantir",url:"https://blog.palantir.com/a-day-in-the-life-of-a-palantir-forward-deployed-software-engineer-45ce02a5cae3",note:"The role that named the pattern: engineers embedded in customer environments, shipping against real constraints.",free:true},
+  {name:"StaffEng stories and guides",provider:"Will Larson",url:"https://staffeng.com/",note:"Operating past senior IC: sponsorship, strategy, getting the title. Reads across directly to Senior Manager tracks.",free:true},
+  {name:"The Engineering Executive's Primer (book)",provider:"Will Larson · O'Reilly",url:"https://www.oreilly.com/library/view/the-engineering-executives-primer/9781098149475/",note:"The Director-and-up playbook: strategy, planning, hiring, exec communication.",free:false},
   {name:"Anthropic Academy certificates",provider:"Anthropic",url:"https://www.anthropic.com/learn",note:"Finish the certificates from chapters 7-11 and post them.",free:true}
  ],
  project:{title:"Capstone",desc:"The flagship portfolio piece: a full AI feature spec (problem, users, model strategy, data and platform architecture, evals, governance, rollout, cost, metrics). Pair with the chapter 7 RAG build and chapter 5 backbone diagram. Update the resume."},
  quiz:[
-  {q:"Strongest evidence of AI PM capability:",
+  {q:"Strongest evidence of applied-AI capability, IC or leadership:",
    o:["Certificate count","Shipped artifacts: a working build, an eval spec, decision memos showing judgment","Reading AI news","Framework name recall"],
    a:1,e:"Certificates open conversations; artifacts close them."},
   {q:"'Should we build our own model?' starts with:",
    o:["Always own your stack","The problem, the data, and cost-benefit against prompting, RAG, and fine-tuning","Never","Loudest engineer wins"],
    a:1,e:"Almost no one should pre-train. Walk the ladder with costs attached; that is the judgment being tested."},
-  {q:"Your domain background in an AI PM interview:",
-   o:["Downplay it","Depth in a high-stakes, compliance-heavy field where quality and governance matter most","Irrelevant","Proof you can argue"],
-   a:1,e:"Regulated-industry fluency plus AI fluency is rare. Lead with it."}
+  {q:"A forward-deployed engagement starts with:",
+   o:["Deploying your standard demo","Discovery: the customer's actual workflow, data, and constraints, before any architecture","A fixed twelve-month roadmap","Fine-tuning on day one"],
+   a:1,e:"The forward-deployed failure mode is shipping your answer to their unexamined problem. Discovery first; the architecture falls out of it."},
+  {q:"Deep domain background in a forward-deployed or Director interview:",
+   o:["Downplay it","Lead with it: embedded delivery lives on domain fluency plus stack fluency","Irrelevant","Proof you can argue"],
+   a:1,e:"Forward-deployed work is translation between a domain and a platform. Depth on one side, fluency on the other, is the hire."}
  ]
 }
 ];
