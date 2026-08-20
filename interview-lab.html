@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A connected interview preparation module for cloud security architecture, governance, technical leadership, and STAR rehearsal.">
+<meta name="description" content="A connected interview preparation module for cloud security architecture, governance, agentic security, and STAR work samples.">
 <title>Interview Lab · Cloud Security Platform Leadership</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Schibsted+Grotesk:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,13 +21,12 @@ abbr{cursor:help;text-decoration:underline dotted rgba(232,163,61,.65);text-unde
 .atmos::after{content:"";position:absolute;inset:0;opacity:.3;background-image:repeating-radial-gradient(circle at 86% 10%,transparent 0 58px,rgba(239,231,216,.035) 58px 59px)}
 .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px 100px}
 .module-nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
-.back-link,.module-mark{font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase}
+.back-link{font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase}
 .back-link{display:inline-flex;align-items:center;gap:9px;color:var(--muted);text-decoration:none;padding:7px 0;transition:color .2s}
 .back-link:hover{color:var(--amber)}
-.back-link:focus-visible,.reset-btn:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.module-mark{color:var(--coral)}
+.back-link:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 .hero{padding:58px 0 34px;display:grid;grid-template-columns:1fr 290px;gap:52px;align-items:end}
-.eyebrow,.section-label,.card-label,.star-key,.case-use,.mini-label,.jd-tag{font-family:'Spline Sans Mono',monospace;text-transform:uppercase;letter-spacing:.14em}
+.eyebrow,.section-label,.card-label,.star-key,.case-use{font-family:'Spline Sans Mono',monospace;text-transform:uppercase;letter-spacing:.14em}
 .eyebrow{font-size:.68rem;color:var(--coral);margin-bottom:15px}
 h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.5rem,5.5vw,4.15rem);line-height:1.02;letter-spacing:-.01em;margin-bottom:18px}
 h1 em{font-style:italic;font-weight:300;color:var(--amber)}
@@ -37,9 +36,9 @@ h1 em{font-style:italic;font-weight:300;color:var(--amber)}
 .scope-card .label{font-family:'Spline Sans Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--coral)}
 .scope-card .role{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:600;line-height:1.25;margin:8px 0}
 .scope-card p{color:var(--muted);font-size:.84rem}
-.chips,.jd-tags{display:flex;flex-wrap:wrap;gap:7px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
 .chips{margin-top:17px}
-.chip,.jd-tag{font-size:.59rem;padding:4px 9px;border-radius:6px}
+.chip{font-size:.59rem;padding:4px 9px;border-radius:6px}
 .chip{font-family:'Spline Sans Mono',monospace;letter-spacing:.07em;background:rgba(232,163,61,.08);border:1px solid rgba(232,163,61,.28);color:var(--amber)}
 .content-layout{display:grid;grid-template-columns:minmax(0,1fr) 268px;grid-template-areas:"main rail";gap:32px;align-items:start}
 .main-content{grid-area:main;min-width:0}
@@ -56,18 +55,7 @@ section{scroll-margin-top:24px}
 .rail-list strong{display:block;color:var(--bone);font-size:.82rem}
 .glossary{display:grid;grid-template-columns:auto 1fr;gap:7px 10px}
 .glossary dt{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.68rem;font-weight:500}
-.glossary dd{color:var(--muted);font-size:.74rem;line-height:1.45}
-.req-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-.req-card,.evidence-card,.risk-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
-.req-card:first-child{grid-column:1/-1;background:linear-gradient(135deg,var(--panel2),var(--panel));border-color:rgba(232,163,61,.32)}
-.mini-label{font-size:.55rem;color:var(--coral);margin-bottom:4px}
-.req-card h2,.evidence-card h3,.risk-card h3{font-family:'Fraunces',serif;font-size:1.02rem;line-height:1.25;margin-bottom:7px}
-.req-card p,.evidence-card p,.evidence-card li,.risk-card p,.risk-card li{color:var(--muted);font-size:.84rem}
-.jd-tags{margin-top:11px}
-.jd-tag{color:var(--ok);border:1px solid rgba(123,196,150,.3);background:rgba(123,196,150,.07)}
-.evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-.evidence-card ul,.risk-card ul{padding-left:18px;margin-top:7px}
-.evidence-card li+li,.risk-card li+li{margin-top:5px}
+.glossary dd{color:var(--muted);font-size:.74rem;line-height:1.45}.risk-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}.risk-card h3{font-family:'Fraunces',serif;font-size:1.02rem;line-height:1.25;margin-bottom:7px}.risk-card p,.risk-card li{color:var(--muted);font-size:.84rem}.risk-card ul{padding-left:18px;margin-top:7px}.risk-card li+li{margin-top:5px}
 .answer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
 details{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:border-color .2s,background .2s}
 details:hover{border-color:rgba(232,163,61,.38)}
@@ -97,10 +85,6 @@ details[open] summary::after{content:"−"}
 .guardrail{background:rgba(13,27,30,.55);border:1px solid var(--line);border-radius:9px;padding:13px}
 .guardrail strong{display:block;color:var(--bone);font-size:.86rem;margin-bottom:3px}
 .guardrail span{color:var(--muted);font-size:.78rem}
-.case-selector{width:100%;border-collapse:collapse;margin-bottom:12px;font-size:.78rem}
-.case-selector th,.case-selector td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-.case-selector th{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.57rem;letter-spacing:.1em;text-transform:uppercase}
-.case-selector td:first-child{color:var(--muted);width:40%}
 .case-stack{display:flex;flex-direction:column;gap:10px}
 .case-card summary{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
 .case-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600}
@@ -110,45 +94,6 @@ details[open] summary::after{content:"−"}
 .star-key{font-size:.56rem;color:var(--amber);padding-top:2px}
 .star-value{color:var(--bone)}
 .proof{margin-top:11px;padding:11px 13px;border-radius:8px;background:rgba(232,163,61,.08);color:var(--muted)}
-.truth{background:rgba(255,107,94,.06);border:1px solid rgba(255,107,94,.28);border-radius:14px;padding:20px}
-.truth p{color:var(--muted);font-size:.87rem}.truth strong{color:var(--bone)}
-.truth ul{padding-left:20px;margin-top:10px;color:var(--muted);font-size:.84rem}.truth li+li{margin-top:5px}
-.study-brief{display:flex;justify-content:space-between;gap:18px;align-items:center;background:linear-gradient(135deg,rgba(232,163,61,.09),var(--panel));border:1px solid rgba(232,163,61,.34);border-radius:14px;padding:18px 20px;margin-bottom:12px}
-.study-brief p{color:var(--muted);font-size:.86rem;max-width:65ch}.study-brief strong{color:var(--bone)}
-.study-total{flex:0 0 auto;text-align:center;background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase}
-.study-plan{display:flex;flex-direction:column;gap:11px}
-.study-day{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:19px}
-.study-day-head{display:flex;justify-content:space-between;gap:16px;align-items:start;padding-bottom:11px;border-bottom:1px solid var(--line)}
-.study-date{font-family:'Spline Sans Mono',monospace;color:var(--coral);font-size:.57rem;letter-spacing:.13em;text-transform:uppercase}
-.study-day h2{font-family:'Fraunces',serif;font-size:1.08rem;line-height:1.25;margin-top:3px}
-.day-time{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.6rem;white-space:nowrap;padding-top:4px}
-.study-list{display:flex;flex-direction:column}
-.study-item{padding:13px 0;border-top:1px solid var(--line)}.study-item:first-child{border-top:0}
-.study-item-head{display:flex;justify-content:space-between;gap:14px;align-items:baseline}
-.study-item h3{font-size:.88rem;color:var(--bone)}
-.study-time{font-family:'Spline Sans Mono',monospace;color:var(--muted);font-size:.56rem;white-space:nowrap}
-.study-item p{color:var(--muted);font-size:.8rem;margin-top:3px}
-.study-outcome{color:var(--bone)!important}.study-outcome strong{color:var(--amber)}
-.study-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
-.study-link{display:inline-flex;align-items:center;gap:7px;color:var(--bone);text-decoration:none;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-family:'Spline Sans Mono',monospace;font-size:.55rem;letter-spacing:.04em;transition:border-color .2s,color .2s,background .2s}
-.study-link::after{content:"↗";color:var(--amber)}
-.study-link:hover{color:var(--amber);border-color:rgba(232,163,61,.5);background:rgba(232,163,61,.06)}
-.study-label{display:inline-block;margin-right:7px;color:var(--ok);font-size:.52rem;text-transform:uppercase;letter-spacing:.1em}
-.friday-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-.friday-list li{background:var(--ink);border:1px solid var(--line);border-radius:9px;padding:11px;color:var(--muted);font-size:.77rem}.friday-list strong{display:block;color:var(--bone);margin-bottom:2px}
-.rehearsal{display:grid;grid-template-columns:1fr 190px;gap:18px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:21px}
-.check-list{display:flex;flex-direction:column;gap:11px}
-.check{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:start;cursor:pointer;color:var(--bone)}
-.check input{appearance:none;width:21px;height:21px;border:1.5px solid var(--muted);border-radius:6px;margin-top:2px;position:relative;cursor:pointer;background:transparent}
-.check input:checked{background:var(--ok);border-color:var(--ok)}
-.check input:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--ink);font-weight:700;font-size:.82rem}
-.check input:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.check small{display:block;color:var(--muted);font-size:.78rem;margin-top:2px}
-.rehearsal-status{text-align:center;background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:18px}
-.score{font-family:'Fraunces',serif;font-size:2rem;line-height:1}
-.score-label{font-family:'Spline Sans Mono',monospace;color:var(--muted);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;margin-top:7px}
-.reset-btn{margin-top:13px;background:none;border:0;color:var(--muted);font-family:'Spline Sans Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-.reset-btn:hover{color:var(--coral)}
 .source-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
 .source{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--bone);transition:border-color .2s,color .2s;font-size:.86rem}
 .source:hover{border-color:var(--amber);color:var(--amber)}
@@ -190,6 +135,10 @@ footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display
 .flow-pill{background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px;flex:1 1 158px;min-width:0}
 .flow-pill b{display:block;font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
 .flow-pill span{color:var(--muted);font-size:.74rem}
+/* ---------- question bank ---------- */
+.qgroup{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 17px}
+.qgroup+.qgroup{margin-top:10px}
+.qgroup-label{font-family:'Spline Sans Mono',monospace;font-size:.57rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral);margin-bottom:9px}
 /* ---------- call index ---------- */
 .idx-group+.idx-group{margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
 .idx-label{font-family:'Spline Sans Mono',monospace;font-size:.52rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
@@ -197,7 +146,6 @@ footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display
 .idx-group a:hover{color:var(--amber);border-left-color:var(--amber)}
 .idx-group.muted .idx-label{color:var(--muted)}
 .idx-group.muted a{color:var(--muted);font-size:.78rem}
-body.live .idx-group.muted{display:none}
 /* ---------- proposals, tiers, AWS map ---------- */
 .proposal-banner{background:rgba(123,196,150,.07);border:1px solid rgba(123,196,150,.32);border-radius:12px;padding:14px 17px;margin-bottom:12px;color:var(--muted);font-size:.84rem}
 .proposal-banner strong{color:var(--ok)}
@@ -219,21 +167,17 @@ body.live .idx-group.muted{display:none}
 .aws-detail .svc{margin-right:3px}
 .buy-build{margin-top:12px;padding:12px 14px;border-radius:9px;background:rgba(232,163,61,.08);color:var(--muted);font-size:.82rem}
 .buy-build strong{color:var(--bone)}
-body.live .hero .lede,body.live .hero .chips,body.live .section-intro,body.live #study-plan,body.live #rehearsal,body.live #credibility,body.live #sources,body.live .live-hint{display:none}
+body.live .hero .lede,body.live .hero .chips,body.live .section-intro,body.live .live-hint{display:none}
 body.live .hero{padding:30px 0 16px}
 body.live .section-label{margin:30px 0 13px}
 @media(max-width:940px){
   .hero{grid-template-columns:1fr 250px;gap:30px}.content-layout{grid-template-columns:1fr;grid-template-areas:"rail" "main"}.reference-rail{position:static;max-height:none;overflow:visible;display:grid;grid-template-columns:1fr 1fr}.rail-panel{min-width:0}
 }
 @media(max-width:700px){
-  .hero{grid-template-columns:1fr;padding-top:42px;gap:24px}.scope-card{max-width:none}.module-mark{display:none}.reference-rail{grid-template-columns:1fr}
-  .req-grid,.evidence-grid,.answer-grid,.risk-grid,.guardrail-grid,.source-grid,.friday-list,.cheat-grid{grid-template-columns:1fr}.req-card:first-child{grid-column:auto}
+  .hero{grid-template-columns:1fr;padding-top:42px;gap:24px}.scope-card{max-width:none}.reference-rail{grid-template-columns:1fr}.answer-grid,.risk-grid,.guardrail-grid,.source-grid,.cheat-grid{grid-template-columns:1fr}
   .router,.tier-table{display:block;overflow-x:auto}.router td:first-child,.router td:nth-child(2),.tier-table td:nth-child(2){width:auto}
   .aws-row{grid-template-columns:1fr;gap:5px}
-  .study-brief,.study-day-head{align-items:flex-start;flex-direction:column}.study-total{text-align:left}.study-item-head{align-items:flex-start}.study-item h3{max-width:25ch}
   .case-card summary{grid-template-columns:1fr;padding-right:49px}.case-use{text-align:left;max-width:none;padding-right:0}.star-row{grid-template-columns:1fr;gap:3px}
-  .case-selector{display:block;overflow-x:auto;white-space:nowrap}
-  .rehearsal{grid-template-columns:1fr}.rehearsal-status{text-align:left;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:11px}.score-label,.reset-btn{margin-top:0}
   footer{align-items:flex-start;flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -290,31 +234,6 @@ body.live .section-label{margin:30px 0 13px}
               </div>
             </div>
 
-            <div class="cheat-card wide" id="router">
-              <h3>Question router</h3>
-              <table class="router">
-                <thead><tr><th>If they ask</th><th>Lead with</th><th>Then prove</th></tr></thead>
-                <tbody>
-                  <tr><td>Walk me through your background</td><td>The twenty-second open, unchanged</td><td>Platform, then security, then the team number</td></tr>
-                  <tr><td>Design a security data platform</td><td>The decision first: what should this team fix, why, how</td><td>Collect → normalize → context → prioritize → deliver, one example each</td></tr>
-                  <tr><td>How do you prioritize vulnerabilities</td><td>CVSS starts the conversation, it does not end it</td><td>KEV, EPSS, exposure, reachability, owner, closure evidence</td></tr>
-                  <tr><td>Shift-left or AppSec</td><td>Prevention at the point of change, not a release gate</td><td>GitGuardian and Snyk before protected branches; block-versus-warn; exception expiry</td></tr>
-                  <tr><td>Identity and least privilege</td><td>Eligible roles, not standing production access</td><td>Entra PIM JIT activation, access packages, reviews, break-glass</td></tr>
-                  <tr><td>Kubernetes or runtime</td><td>Coverage of the deployed workload, gaps are defects</td><td>CrowdStrike Falcon on Kubernetes — state your coverage boundary precisely</td></tr>
-                  <tr><td>Compliance or SOC 2</td><td>Evidence produced continuously, not reconstructed at audit time</td><td>Finding → owner → action → approval → closure, traceable</td></tr>
-                  <tr><td>How hands-on are you</td><td>Architecture, spikes, design and code review</td><td>The JIT identity redesign, then handing off clear ownership</td></tr>
-                  <tr><td>Data engineering depth</td><td>Name the boundary before they find it</td><td>Ingestion, schema evolution, idempotency, replay, lineage — with the engineers who run it</td></tr>
-                  <tr><td>AI, agents, or automation</td><td>AI raises the need for deterministic controls</td><td>Scoped workload identity, approval for material writes, audit and rollback</td></tr>
-                  <tr><td>Letting developers use AI freely</td><td>Govern the blast radius, not the keyboard</td><td>Tier 0 and 1 frictionless; governance concentrated where writes happen</td></tr>
-                  <tr><td>Securing an agentic system</td><td>Four questions: identity, tools, trust, aftermath</td><td>Short-lived creds, policy check before execution, context is data, one audit record</td></tr>
-                  <tr><td>Reviewing AI-generated code</td><td>Same pipeline; the risk is volume and review decay</td><td>Review depth as volume rises, author can explain it, invented dependencies</td></tr>
-                  <tr><td>Who is accountable for an agent</td><td>The named owner who authorized it</td><td>Explicit, revocable, expiring grant; reversibility makes accountability real</td></tr>
-                  <tr><td>Show me AWS specifics</td><td>Stage first, service second</td><td>Security Lake to OCSF; buy stages 1–2, build context and policy</td></tr>
-                  <tr><td>Technical disagreement</td><td>Make the constraints explicit, compare designs against them</td><td>Reversible gets an experiment; identity boundaries need stronger evidence</td></tr>
-                  <tr><td>People leadership</td><td>Ownership by platform area, leads grown through review</td><td>3 to 14, ticket queue replaced by self-service capability</td></tr>
-                </tbody>
-              </table>
-            </div>
 
             <div class="cheat-card wide">
               <h3>The five stages, in order</h3>
@@ -362,26 +281,104 @@ body.live .section-label{margin:30px 0 13px}
         </article>
       </section>
 
-      <section id="jd-map" aria-labelledby="jdTitle">
-        <div class="section-label" id="jdTitle">Job-description alignment</div>
-        <p class="section-intro">Every answer should prove a requirement, not describe a tool.</p>
-        <div class="req-grid">
-          <article class="req-card"><div class="mini-label">Core mission</div><h2>Turn security data into guidance application teams can act on</h2><p>Your strongest bridge is the operating model: GitGuardian and Snyk prevented issues in engineering workflows; Rapid7 findings moved through ownership and remediation; IAM automation made the secure access path faster.</p><div class="jd-tags"><span class="jd-tag">Actionable guidance</span><span class="jd-tag">Developer-facing platform</span><span class="jd-tag">Security outcomes</span></div></article>
-          <article class="req-card"><div class="mini-label">Technical leadership</div><h2>Set strategy and make architecture trade-offs</h2><p>Multi-cloud roadmap ownership, the internal developer platform, identity redesign, acquisition integration, and security guardrail sequencing show decisions across systems rather than isolated implementation.</p><div class="jd-tags"><span class="jd-tag">Architecture</span><span class="jd-tag">Roadmap</span></div></article>
-          <article class="req-card"><div class="mini-label">Data platform</div><h2>Build reliable security telemetry and risk analytics</h2><p>Connect operational experience with Rapid7, CrowdStrike, GitGuardian, Snyk, Microsoft Entra, and audit evidence to a normalized finding and ownership model.</p><div class="jd-tags"><span class="jd-tag">Data quality</span><span class="jd-tag">Telemetry</span></div></article>
-          <article class="req-card"><div class="mini-label">Security domain</div><h2>Cloud, platform, application, identity, and runtime security</h2><p>Your evidence spans code and secrets, Kubernetes runtime protection, vulnerability remediation, privileged access, multi-cloud governance, and SOC 2 audit participation.</p><div class="jd-tags"><span class="jd-tag">Cloud security</span><span class="jd-tag">AppSec</span><span class="jd-tag">Compliance</span></div></article>
-          <article class="req-card"><div class="mini-label">People and collaboration</div><h2>Manage engineers and synthesize ambiguous requirements</h2><p>Growing the organization from 3 to 14, supporting 150+ developers, and translating Security, IT, Product, Finance, and audit requirements into platform work directly match the leadership scope.</p><div class="jd-tags"><span class="jd-tag">Coaching</span><span class="jd-tag">Cross-functional</span></div></article>
-        </div>
-      </section>
+      <section id="questions" aria-labelledby="questionsTitle">
+        <div class="section-label" id="questionsTitle">Question bank</div>
+        <p class="section-intro">Find the question, take the hint, land on a case. “Go to” names the work sample or deep answer that proves it.</p>
 
-      <section id="evidence" aria-labelledby="evidenceTitle">
-        <div class="section-label" id="evidenceTitle">Security evidence inventory</div>
-        <p class="section-intro">Lead with the control objective and outcome; the product name is evidence, not the answer.</p>
-        <div class="evidence-grid">
-          <article class="evidence-card"><div class="mini-label">Identity and access</div><h3>Remove standing production access</h3><ul><li>Refactored <abbr title="Identity and Access Management">IAM</abbr> using Microsoft Entra Privileged Identity Management for <abbr title="Just-in-Time">JIT</abbr> activation.</li><li>Introduced access packages to standardize and streamline provisioning by the IT team.</li><li>Added automated access auditing and review evidence through Microsoft Entra.</li></ul><div class="jd-tags"><span class="jd-tag">Access control</span><span class="jd-tag">Governance</span></div></article>
-          <article class="evidence-card"><div class="mini-label">Application security</div><h3>Shift prevention left</h3><ul><li>Rolled GitGuardian across all company organizations and repositories.</li><li>Implemented Snyk similarly so high-confidence vulnerable code, dependencies, and Infrastructure as Code could be stopped before protected branches and deployment.</li><li>Paired blocking rules with central policy, triage, exceptions, and developer feedback.</li></ul><div class="jd-tags"><span class="jd-tag">Developer guidance</span><span class="jd-tag">Secure SDLC</span></div></article>
-          <article class="evidence-card"><div class="mini-label">Runtime and vulnerability</div><h3>Protect workloads and close findings</h3><ul><li>Worked with CrowdStrike Falcon agents protecting Kubernetes workloads.</li><li>Team owned vulnerability triage and remediation for findings surfaced through Rapid7.</li><li>Connected findings to owners, remediation work, exceptions, and closure evidence.</li></ul><div class="jd-tags"><span class="jd-tag">Kubernetes</span><span class="jd-tag">Vulnerability management</span></div></article>
-          <article class="evidence-card"><div class="mini-label">Compliance and assurance</div><h3>Make controls provable</h3><ul><li>Participated in SOC 2 audits and evidence preparation.</li><li>Treated pipeline logs, identity activation, access reviews, remediation records, and exception expiry as operational evidence.</li><li>Designed governance so evidence is produced continuously, not reconstructed at audit time.</li></ul><div class="jd-tags"><span class="jd-tag">SOC 2</span><span class="jd-tag">Auditability</span></div></article>
+        <div class="qgroup" id="q-open">
+          <div class="qgroup-label">Opening and positioning</div>
+          <table class="router">
+            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
+            <tbody>
+              <tr><td>Walk me through your background</td><td>The twenty-second open, unchanged</td><td>Platform, then security, then the team number</td></tr>
+              <tr><td>Why this role, why here</td><td>The mission is curated, actionable guidance to app teams — the intersection I have been building toward</td><td>Scale and risk discipline are what this adds to what I have done</td></tr>
+              <tr><td>Why are you leaving</td><td>Toward, never away. The scope here is larger than a platform team can reach</td><td>Never criticise the current employer; it reads as future behaviour</td></tr>
+              <tr><td>How hands-on are you</td><td>Architecture, spikes, design and code review</td><td>JIT identity redesign, then handing off ownership</td></tr>
+              <tr><td>What is your management philosophy</td><td>Ownership by area, leads grown through review, output measured as capability not tickets</td><td>Team 3 to 14</td></tr>
+              <tr><td>Where do you want to be in three years</td><td>Running a larger security platform org; depth in regulated scale is the gap I am closing</td><td>Ambition aimed at their org, not away from it</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="qgroup" id="q-technical">
+          <div class="qgroup-label">Security data platform and architecture</div>
+          <table class="router">
+            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
+            <tbody>
+              <tr><td>Design a security data platform</td><td>The decision first: what should this team fix, why, and how</td><td>Five-stage answer, one example per stage</td></tr>
+              <tr><td>How do you prioritize vulnerabilities</td><td>CVSS starts the conversation, it does not end it</td><td>KEV, EPSS, exposure, reachability, owner, closure evidence</td></tr>
+              <tr><td>How would you measure this platform</td><td>Risk retired and time to remediate — never findings created</td><td>Counting findings rewards noise; a platform that creates work is not a platform</td></tr>
+              <tr><td>Build or buy the pipeline</td><td>Buy normalization, build context and policy</td><td>Security Lake gives OCSF free; ownership and explainable priority are the differentiated work</td></tr>
+              <tr><td>What breaks first at ten times the volume</td><td>Not storage — enrichment and owner mapping</td><td>Ownership confidence is the quiet failure; findings arrive with nobody attached</td></tr>
+              <tr><td>How do you handle false positives</td><td>Treat precision as a product metric with a feedback path from the developer</td><td>Block-versus-warn tuning before enforcement · shift-left case</td></tr>
+              <tr><td>Data quality strategy</td><td>Coverage, freshness, completeness, schema version, dedup, owner-mapping confidence</td><td>“If I cannot tell you coverage, I cannot tell you risk”</td></tr>
+              <tr><td>Show me AWS specifics</td><td>Stage first, service second</td><td>AWS service map</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="qgroup" id="q-security">
+          <div class="qgroup-label">Security domain and scenarios</div>
+          <table class="router">
+            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
+            <tbody>
+              <tr><td>Shift-left or AppSec</td><td>Prevention at the point of change, not a release gate</td><td>GitGuardian and Snyk case</td></tr>
+              <tr><td>Identity and least privilege</td><td>Eligible roles, not standing production access</td><td>JIT access with Entra case</td></tr>
+              <tr><td>Kubernetes or runtime</td><td>Coverage of the deployed workload; gaps are defects</td><td>CrowdStrike case — state the coverage boundary precisely</td></tr>
+              <tr><td>Compliance or SOC 2</td><td>Evidence produced continuously, not reconstructed at audit</td><td>Rapid7 to audit-evidence case</td></tr>
+              <tr><td>A secret just leaked to a public repo</td><td>Revoke first, investigate second — rotation before forensics</td><td>Then blast radius, then why prevention missed it, then the control change</td></tr>
+              <tr><td>A team refuses to remediate</td><td>Make the risk and the owner visible rather than escalating first</td><td>Exception with a named owner, compensating control, and expiry</td></tr>
+              <tr><td>Multi-cloud: same controls everywhere</td><td>Common control objectives, provider-specific implementation</td><td>Four-acquisition governance case</td></tr>
+              <tr><td>Where would you start here</td><td>Identity first — it bounds every other plane and is hardest to retrofit</td><td>Program model sequencing</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="qgroup" id="q-ai">
+          <div class="qgroup-label">AI and agentic</div>
+          <table class="router">
+            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
+            <tbody>
+              <tr><td>Letting developers use AI freely</td><td>Govern the blast radius, not the keyboard</td><td>Tiered autonomy model · tiers 0–1 frictionless</td></tr>
+              <tr><td>Securing an agentic system</td><td>Four questions: identity, tools, trust, aftermath</td><td>Full talk track</td></tr>
+              <tr><td>Reviewing AI-generated code</td><td>Same pipeline; the risk is volume and review decay</td><td>Invented dependencies, review depth as a metric</td></tr>
+              <tr><td>Who is accountable for an agent</td><td>The named owner who authorized it</td><td>Explicit, revocable, expiring grant</td></tr>
+              <tr><td>Would you let an agent remediate on its own</td><td>Yes, where the action is reversible and the blast radius is bounded — patch a dev dependency, not rotate production identity</td><td>The tier decides, not the tool</td></tr>
+              <tr><td>How do you know the AI is working</td><td>Evaluate retrieval and reasoning separately; abstention is a valid result</td><td>Adoption and risk retired, not model benchmarks</td></tr>
+              <tr><td>Will AI replace security engineers</td><td>It moves the work up the stack — less triage, more control design and adjudication</td><td>Volume of decisions rises; the judgement is what stays scarce</td></tr>
+              <tr><td>How does AI change the program</td><td>It does not add a plane; it changes what each plane must handle</td><td>Program model, “what AI changes” column</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="qgroup" id="q-leadership">
+          <div class="qgroup-label">Leadership and behavioural</div>
+          <table class="router">
+            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
+            <tbody>
+              <tr><td>Technical disagreement with an engineer</td><td>Make constraints explicit, compare designs against them</td><td>Reversible gets an experiment; identity needs stronger evidence</td></tr>
+              <tr><td>Growing and developing people</td><td>Area ownership, leads grown through design and code review</td><td>Team 3 to 14 case</td></tr>
+              <tr><td>An underperformer on your team</td><td>Name the gap early and specifically; most cases are unclear expectations</td><td>Concrete expectations, support, a timeline, and a decision you actually make</td></tr>
+              <tr><td>Telling an executive no</td><td>Reframe as sequencing and cost, not refusal</td><td>Governance before re-platforming case</td></tr>
+              <tr><td>Competing roadmap: security debt or features</td><td>Price the debt in exposure, then let the trade-off be explicit and owned</td><td>FinOps case — the same move applied to cost</td></tr>
+              <tr><td>Influencing without authority</td><td>Make the secure path the fast path; adoption beats mandate</td><td>Every control I have shipped that stuck did this</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="qgroup" id="q-curveball">
+          <div class="qgroup-label">Curveballs and credibility</div>
+          <table class="router">
+            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
+            <tbody>
+              <tr><td>Data engineering depth</td><td>Name the boundary before they find it</td><td>Ingestion, schema evolution, idempotency, replay, lineage — with the engineers who run it</td></tr>
+              <tr><td>Your biggest failure</td><td>A real one with a control change attached</td><td>Parity-before-value on the platform: broad requirement nearly delayed all value</td></tr>
+              <tr><td>What frustrates your team about you</td><td>Answer it honestly and show the correction</td><td>Going deep on design longer than the team wants; fixed with clearer decision deadlines</td></tr>
+              <tr><td>What do you not know about this domain</td><td>Telemetry at their volume, and their regulatory surface</td><td>Strength is the operating model; I would learn the scale from their engineers</td></tr>
+              <tr><td>Questions for us</td><td>Ask about measurement and ownership, not perks</td><td>Ask-them list</td></tr>
+              <tr><td>Anything else we should know</td><td>The closing line</td><td>Operating model underneath the mission</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -469,31 +466,19 @@ body.live .section-label{margin:30px 0 13px}
             <div class="buy-build"><strong>The line to say:</strong> “Tier 0 and tier 1 cover the overwhelming majority of developer usage, and I would deliberately put almost no friction there. The governance effort belongs at tiers 2 and 3, where an action becomes hard to reverse.”</div>
           </div>
 
-          <div class="cheat-card">
-            <h3>Proposal two · A paved road for agentic development</h3>
-            <p>Freedom comes from good defaults, not from permission. A team that builds on the platform default should get identity, guardrails, logging, and an approved tool catalog for free, and should reach production faster than a team that rolls its own.</p>
+          <div class="cheat-card wide">
+            <h3>Proposal two · The paved road that makes it real</h3>
+            <p>Freedom comes from good defaults, not from permission. A team on the platform default should get identity, guardrails, logging, and an approved tool catalog for free — and reach production faster than a team rolling its own.</p>
             <ul class="ask-list">
-              <li>Model access through one governed endpoint, with <span class="svc">Bedrock Guardrails</span> attached centrally. Because the <span class="svc">ApplyGuardrail</span> API evaluates independently of the model call, teams keep free model choice while the control stays constant.</li>
-              <li>Tools drawn from a reviewed catalog rather than hand-wired per project — <span class="svc">AgentCore Registry</span> gives that a publish, review, and approve workflow.</li>
-              <li>Deterministic policy on every tool call before it executes, authored in Cedar — <span class="svc">AgentCore Policy</span> and <span class="svc">Verified Permissions</span>.</li>
-              <li>Tracing pre-wired, not retrofitted: <span class="svc">AgentCore Observability</span> over OpenTelemetry into <span class="svc">CloudWatch</span>, plus <span class="svc">Bedrock</span> model invocation logging.</li>
-            </ul>
-          </div>
-
-          <div class="cheat-card">
-            <h3>Proposal three · An agent identity and action plane</h3>
-            <p>Most agent risk is not the model, it is the credential and the write path. An agent is a workload, so it gets the same treatment every other workload gets — which is exactly the identity model already in place.</p>
-            <ul class="ask-list">
-              <li>A distinct workload identity per agent with short-lived credentials from <span class="svc">STS</span> — never a shared or long-lived key. <span class="svc">AgentCore Identity</span> federates existing providers including Microsoft Entra, so this extends the identity work rather than replacing it.</li>
-              <li>Read and write permissions separated, with just-in-time elevation for anything privileged — the same PIM pattern, applied to non-human identity.</li>
-              <li>Material writes routed through the existing CI/CD path so changes stay reviewable and revertible. Agents open pull requests; they do not touch production directly.</li>
-              <li>One audit record per action: model and prompt version, retrieved context, tool calls, approvals, identity, and outcome.</li>
-              <li>A revocation path that works in seconds, tested like a break-glass procedure.</li>
+              <li>One governed model endpoint with <span class="svc">Bedrock Guardrails</span> attached centrally. Because <span class="svc">ApplyGuardrail</span> evaluates independently of the model call, teams keep free model choice while the control stays constant.</li>
+              <li>A distinct workload identity per agent with short-lived <span class="svc">STS</span> credentials, never a shared key — <span class="svc">AgentCore Identity</span> federates Microsoft Entra, so this extends the identity work rather than replacing it.</li>
+              <li>Tools from a reviewed catalog with deterministic Cedar policy on every call before it executes — <span class="svc">AgentCore Registry</span> and <span class="svc">AgentCore Policy</span>.</li>
+              <li>Material writes routed through existing CI/CD; agents open pull requests, never touch production directly. Tracing pre-wired via <span class="svc">AgentCore Observability</span> and <span class="svc">Bedrock</span> invocation logging.</li>
             </ul>
           </div>
 
           <div class="cheat-card wide">
-            <h3>Proposal four · The security data platform, in AWS services</h3>
+            <h3>Proposal three · The security data platform, in AWS services</h3>
             <p>Same five stages as the technical answer, made concrete. Use this only if they ask for AWS specifics, and lead with the stage, not the service name.</p>
             <div class="aws-row"><div class="aws-stage">1 · Collect</div><div class="aws-detail"><span class="svc">CloudTrail</span> management and data events, <span class="svc">EKS</span> audit logs, <span class="svc">VPC Flow Logs</span>, <span class="svc">GuardDuty</span>, <span class="svc">Inspector</span> for workload CVEs, <span class="svc">Config</span>, <span class="svc">Security Hub</span> — with Rapid7, CrowdStrike, GitGuardian, Snyk, and Entra arriving as custom sources.</div></div>
             <div class="aws-row"><div class="aws-stage">2 · Normalize</div><div class="aws-detail"><span class="svc">Security Lake</span> converts to the OCSF schema in Parquet on <span class="svc">S3</span>, catalogued through <span class="svc">Glue</span> and <span class="svc">Lake Formation</span> — the managed version of the common finding model.</div></div>
@@ -507,7 +492,6 @@ body.live .section-label{margin:30px 0 13px}
 
       <section id="cases" aria-labelledby="casesTitle">
         <div class="section-label" id="casesTitle">Eight-case STAR bank</div>
-        <table class="case-selector"><thead><tr><th>Interview signal</th><th>Lead case</th></tr></thead><tbody><tr><td>Developer-facing security</td><td>GitGuardian and Snyk shift left</td></tr><tr><td>Identity and governance</td><td>JIT access with Microsoft Entra</td></tr><tr><td>Vulnerability, runtime, audit</td><td>Rapid7, CrowdStrike, and SOC 2 operating model</td></tr><tr><td>Architecture and ambiguity</td><td>Internal developer platform</td></tr><tr><td>Executive risk trade-off</td><td>Governance before re-platforming</td></tr><tr><td>People leadership</td><td>Team growth from 3 to 14</td></tr><tr><td>Actionable data product</td><td>FinOps unit economics</td></tr><tr><td>Regulated 0-to-1</td><td>AI Center of Excellence</td></tr></tbody></table>
         <div class="case-stack">
           <details class="case-card"><summary><div class="case-title">Shift-left security across every repository</div><div class="case-use">AppSec · developer guidance · secure SDLC</div></summary><div class="case-body"><div class="star-row"><div class="star-key">Situation</div><div class="star-value">Secrets and vulnerable code were most expensive when found after merge or deployment, and coverage varied across company organizations and repositories.</div></div><div class="star-row"><div class="star-key">Task</div><div class="star-value">Create consistent prevention without turning Security into a manual release gate.</div></div><div class="star-row"><div class="star-key">Action</div><div class="star-value">My team rolled GitGuardian across all company organizations and repositories and implemented Snyk in the same shift-left model. Checks ran in the engineering workflow so high-confidence secret, code, dependency, and Infrastructure as Code findings could be addressed before protected branches and deployment. We paired policy with central visibility, triage, developer guidance, and exception handling.</div></div><div class="star-row"><div class="star-key">Result</div><div class="star-value">Security feedback moved to the point of change and controls became consistently applied across the code estate rather than dependent on opt-in review.</div></div><div class="star-row"><div class="star-key">Lesson</div><div class="star-value">Separate new-code prevention from legacy backlog remediation and tune blocking thresholds before enforcement.</div></div><div class="proof"><strong>Proof to prepare:</strong> rollout scope and sequence, one real GitGuardian and Snyk finding, block-versus-warn policy, false-positive handling, and exception expiry.</div></div></details>
 
@@ -527,52 +511,6 @@ body.live .section-label{margin:30px 0 13px}
         </div>
       </section>
 
-      <section id="credibility" aria-labelledby="credibilityTitle">
-        <div class="section-label" id="credibilityTitle">Evidence to prepare before the interview</div>
-        <div class="truth"><p><strong>Turn each security claim into a defensible mini-case.</strong> Exact numbers help only when verified; a concrete control flow is stronger than invented precision.</p><ul><li>GitGuardian: number of organizations/repositories if known, rollout sequence, enforcement points, one secret incident, and revocation path.</li><li>Snyk: products or scan types used, warn-to-block sequence, one vulnerable-code or dependency example, and exception process.</li><li>Rapid7: one representative finding from detection through validation, priority, owner, remediation, rescan, and closure.</li><li>CrowdStrike: Kubernetes coverage model, what the Falcon agent observed, ownership boundary, and how gaps were handled.</li><li>Microsoft Entra: privileged roles in scope, JIT duration, approval and MFA, access packages, access reviews, audit outputs, and break-glass path.</li><li>SOC 2: control or evidence area you supported, what artifact was supplied, and what changed after the audit.</li><li>AI agent: keep calling it a proof of concept; distinguish proposed architecture, implemented controls, and measured results.</li></ul></div>
-      </section>
-
-      <section id="study-plan" aria-labelledby="studyTitle">
-        <div class="section-label" id="studyTitle">Friday-ready learning plan</div>
-        <div class="study-brief"><p><strong>Do not try to master every product.</strong> Read only enough to explain the control objective, architecture choice, trade-off, and operating evidence. Spend more time saying the answer aloud than taking notes.</p><div class="study-total">2h 50m total</div></div>
-        <div class="study-plan">
-          <article class="study-day">
-            <header class="study-day-head"><div><div class="study-date">Wednesday · August 19</div><h2>Role, security data, and vulnerability decisions</h2></div><div class="day-time">70 minutes</div></header>
-            <div class="study-list">
-              <div class="study-item"><div class="study-item-head"><h3><span class="study-label">Read</span>Calibrate to Morgan Stanley</h3><span class="study-time">15 min</span></div><p>Re-read the role and the firm's interview guidance. Mark five phrases you must prove: actionable developer guidance, security data, architecture, technical leadership, and people leadership.</p><div class="study-links"><a class="study-link" href="https://morganstanley.eightfold.ai/careers/job/549799409227" target="_blank" rel="noopener">Role description</a><a class="study-link" href="https://www.morganstanley.com/people-opportunities/students-graduates/resources/interview-preparation/" target="_blank" rel="noopener">Interview preparation</a></div><p class="study-outcome"><strong>Use in the interview:</strong> end each major answer with the requirement it proves.</p></div>
-              <div class="study-item"><div class="study-item-head"><h3><span class="study-label">Read</span>Normalize security telemetry</h3><span class="study-time">20 min</span></div><p>Review the Open Cybersecurity Schema Framework overview: vendor-neutral taxonomy, event classes, objects, attributes, profiles, and extensions.</p><div class="study-links"><a class="study-link" href="https://ocsf.io/" target="_blank" rel="noopener">OCSF overview</a></div><p class="study-outcome"><strong>Use in the interview:</strong> explain why Rapid7, CrowdStrike, GitGuardian, Snyk, and Entra data should map into a common finding and asset model.</p></div>
-              <div class="study-item"><div class="study-item-head"><h3><span class="study-label">Read</span>Prioritize vulnerabilities by risk</h3><span class="study-time">35 min</span></div><p>Focus on the difference between severity, exploitation likelihood, known exploitation, asset reachability, business impact, and compensating controls.</p><div class="study-links"><a class="study-link" href="https://www.first.org/epss/using-epss" target="_blank" rel="noopener">Using EPSS</a><a class="study-link" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV catalog</a><a class="study-link" href="https://docs.rapid7.com/insightvm/working-with-risk-strategies-to-analyze-threats" target="_blank" rel="noopener">Rapid7 risk strategies</a><a class="study-link" href="https://docs.rapid7.com/insightvm/remediation-hub/" target="_blank" rel="noopener">Rapid7 remediation</a></div><p class="study-outcome"><strong>Use in the interview:</strong> “CVSS starts the conversation; exploitability, exposure, asset criticality, ownership, and closure evidence drive the decision.”</p></div>
-            </div>
-          </article>
-
-          <article class="study-day">
-            <header class="study-day-head"><div><div class="study-date">Thursday · August 20</div><h2>Deepen the cases you are most likely to use</h2></div><div class="day-time">80 minutes</div></header>
-            <div class="study-list">
-              <div class="study-item"><div class="study-item-head"><h3><span class="study-label">Read</span>JIT identity governance</h3><span class="study-time">25 min</span></div><p>Review eligible versus active roles, time-bound activation, approval, MFA, access packages, expiry, and recurring access reviews.</p><div class="study-links"><a class="study-link" href="https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices" target="_blank" rel="noopener">Entra role best practices</a><a class="study-link" href="https://learn.microsoft.com/en-us/entra/id-governance/deploy-access-reviews" target="_blank" rel="noopener">Access reviews</a></div><p class="study-outcome"><strong>Use in the interview:</strong> tell the full lifecycle: request → approve → activate → expire → review → evidence.</p></div>
-              <div class="study-item"><div class="study-item-head"><h3><span class="study-label">Skim</span>Shift-left security controls</h3><span class="study-time">15 min</span></div><p>Contrast historical repository scanning with new-change prevention, pull-request gates, developer feedback, central policy, and time-bound exceptions.</p><div class="study-links"><a class="study-link" href="https://docs.gitguardian.com/internal-monitoring/integrate-sources/vcs-integrations/github" target="_blank" rel="noopener">GitGuardian GitHub integration</a><a class="study-link" href="https://docs.snyk.io/scan-with-snyk/pull-requests/pull-request-checks/configure-pull-request-checks" target="_blank" rel="noopener">Snyk pull-request checks</a></div><p class="study-outcome"><strong>Use in the interview:</strong> distinguish legacy backlog cleanup from blocking new secrets and vulnerable code.</p></div>
-              <div class="study-item"><div class="study-item-head"><h3><span class="study-label">Skim</span>Kubernetes runtime coverage</h3><span class="study-time">15 min</span></div><p>Review the Falcon Operator custom resources and the difference between node, container, admission, and runtime image controls.</p><div class="study-links"><a class="study-link" href="https://github.com/CrowdStrike/falcon-operator" target="_blank" rel="noopener">CrowdStrike Falcon Operator</a></div><p class="study-outcome"><strong>Use in the interview:</strong> state precisely which sensor and coverage model you worked with; do not imply ownership of controls outside your experience.</p></div>
-              <div class="study-item"><div class="study-item-head"><h3><span class="study-label">Skim</span>SOC 2 evidence model</h3><span class="study-time">10 min</span></div><p>Scan the Trust Services Criteria headings and connect security, availability, confidentiality, processing integrity, and privacy to continuously produced evidence.</p><div class="study-links"><a class="study-link" href="https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022" target="_blank" rel="noopener">AICPA Trust Services Criteria</a></div><p class="study-outcome"><strong>Use in the interview:</strong> separate control design, operating effectiveness, evidence, exceptions, and remediation.</p></div>
-              <div class="study-item"><div class="study-item-head"><h3><span class="study-label">Read</span>AI and agent guardrails</h3><span class="study-time">15 min</span></div><p>Focus on lifecycle risk management and agent-specific boundaries: identity, tool scope, untrusted context, human approval, monitoring, traceability, and rollback.</p><div class="study-links"><a class="study-link" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI RMF</a><a class="study-link" href="https://genai.owasp.org/initiatives/agentic-security-initiative/" target="_blank" rel="noopener">OWASP agentic security</a></div><p class="study-outcome"><strong>Use in the interview:</strong> “AI increases the need for deterministic policy because one wrong decision can execute at machine speed.”</p></div>
-            </div>
-          </article>
-
-          <article class="study-day">
-            <header class="study-day-head"><div><div class="study-date">Friday · August 21</div><h2>Rehearse—do not add new material</h2></div><div class="day-time">20 minutes</div></header>
-            <ul class="friday-list"><li><strong>5 minutes</strong>Elevator pitch and “why this role.”</li><li><strong>7 minutes</strong>Five-stage technical answer and one failure mode.</li><li><strong>8 minutes</strong>JIT IAM, shift-left, and vulnerability/audit STAR cases.</li></ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="rehearsal" aria-labelledby="rehearsalTitle">
-        <div class="section-label" id="rehearsalTitle">Recorded rehearsal</div>
-        <div class="rehearsal"><div class="check-list">
-          <label class="check"><input type="checkbox" data-step="position"><span><strong>Pass 1 · Positioning</strong><small>Elevator pitch, security depth, why the role, hands-on answer, and boundary. Target: under four minutes.</small></span></label>
-          <label class="check"><input type="checkbox" data-step="design"><span><strong>Pass 2 · Live technical answer</strong><small>Use the five stages: collect, normalize, context, prioritize, deliver. Add depth only when prompted.</small></span></label>
-          <label class="check"><input type="checkbox" data-step="security"><span><strong>Pass 3 · Security evidence</strong><small>IAM, GitGuardian, Snyk, Rapid7, CrowdStrike, and SOC 2: one control flow and one proof point each.</small></span></label>
-          <label class="check"><input type="checkbox" data-step="stories"><span><strong>Pass 4 · STAR rotation</strong><small>Eight prompts, distinct cases. Target: 90 seconds before follow-up.</small></span></label>
-        </div><aside class="rehearsal-status" aria-live="polite"><div class="score"><span id="doneCount">0</span>/4</div><div class="score-label">Passes complete</div><button class="reset-btn" id="resetProgress" type="button">Reset</button></aside></div>
-      </section>
-
       <section id="sources" aria-labelledby="sourcesTitle"><div class="section-label" id="sourcesTitle">Primary references</div><div class="source-grid">
         <a class="source" href="https://morganstanley.eightfold.ai/careers/job/549799409227" target="_blank" rel="noopener">Role description<span>Morgan Stanley</span></a>
         <a class="source" href="https://www.morganstanley.com/people-opportunities/students-graduates/resources/interview-preparation/" target="_blank" rel="noopener">Interview preparation<span>Morgan Stanley Careers</span></a>
@@ -586,25 +524,28 @@ body.live .section-label{margin:30px 0 13px}
     <aside class="reference-rail" id="reference" aria-label="Quick reference">
       <details class="rail-panel" id="callIndex" open><summary><div class="card-label">Navigate</div><div class="card-title">Call index</div></summary><div class="rail-body">
         <div class="idx-group">
-          <div class="idx-label">In the call</div>
-          <a href="#cheatsheet">Open, numbers, close</a>
-          <a href="#router">Question router</a>
-          <a href="#program">Program model</a>
-          <a href="#architecture">Technical answer</a>
-          <a href="#cases">STAR bank</a>
+          <div class="idx-label">Open and close</div>
+          <a href="#cheatsheet">Twenty seconds, numbers, close</a>
         </div>
         <div class="idx-group">
-          <div class="idx-label">Depth on request</div>
-          <a href="#talk-tracks">Talk tracks</a>
-          <a href="#proposals">What I'd build</a>
-          <a href="#jd-map">JD map</a>
-          <a href="#evidence">Evidence inventory</a>
+          <div class="idx-label">Questions</div>
+          <a href="#q-open">Opening and positioning</a>
+          <a href="#q-technical">Platform and architecture</a>
+          <a href="#q-security">Security and scenarios</a>
+          <a href="#q-ai">AI and agentic</a>
+          <a href="#q-leadership">Leadership</a>
+          <a href="#q-curveball">Curveballs</a>
+        </div>
+        <div class="idx-group">
+          <div class="idx-label">Work samples</div>
+          <a href="#cases">STAR bank · eight cases</a>
         </div>
         <div class="idx-group muted">
-          <div class="idx-label">Before the call only</div>
-          <a href="#credibility">Proof to prepare</a>
-          <a href="#study-plan">Study plan</a>
-          <a href="#rehearsal">Rehearsal</a>
+          <div class="idx-label">Deep answers</div>
+          <a href="#architecture">Technical answer</a>
+          <a href="#program">Program model</a>
+          <a href="#proposals">What I'd build</a>
+          <a href="#talk-tracks">Full talk tracks</a>
           <a href="#sources">Sources</a>
         </div>
       </div></details>
@@ -619,19 +560,13 @@ body.live .section-label{margin:30px 0 13px}
   <footer><span>Interview Lab · connected to The AI Ramp-Up</span><a class="back-link" href="index.html">Return to the 13-chapter program <span aria-hidden="true">→</span></a></footer>
 </div>
 <script>
-const KEY="airampup:interview-lab:v1";
 const MODEKEY="airampup:interview-lab:mode:v1";
-const checks=[...document.querySelectorAll('[data-step]')];
-const count=document.getElementById('doneCount');
 const glossaryPanel=document.getElementById('acronymPanel');
 const modeBtn=document.getElementById('modeToggle');
 const store={
   async get(k){if(typeof window.storage!=="undefined"){const r=await window.storage.get(k);return r?r.value:null}try{return localStorage.getItem(k)}catch(e){return null}},
   async set(k,v){if(typeof window.storage!=="undefined")return window.storage.set(k,v);try{localStorage.setItem(k,v)}catch(e){}}
 };
-function updateCount(){count.textContent=checks.filter(x=>x.checked).length}
-async function save(){const state={};checks.forEach(x=>state[x.dataset.step]=x.checked);await store.set(KEY,JSON.stringify(state));updateCount()}
-async function load(){try{const raw=await store.get(KEY);const state=raw?JSON.parse(raw):{};checks.forEach(x=>x.checked=Boolean(state[x.dataset.step]))}catch(e){}updateCount()}
 function applyMode(on){
   document.body.classList.toggle('live',on);
   modeBtn.setAttribute('aria-pressed',on?'true':'false');
@@ -641,18 +576,17 @@ function applyMode(on){
     glossaryPanel.open=true;
   }
 }
-async function loadMode(){let on=false;try{on=await store.get(MODEKEY)==="1"}catch(e){}applyMode(on)}
 modeBtn.addEventListener('click',async()=>{
   const on=!document.body.classList.contains('live');
   applyMode(on);
   await store.set(MODEKEY,on?"1":"0");
-  if(on)document.getElementById('cheatsheet').scrollIntoView({block:'start'});
+  if(on)document.getElementById('questions').scrollIntoView({block:'start'});
 });
-checks.forEach(x=>x.addEventListener('change',save));
-document.getElementById('resetProgress').addEventListener('click',async()=>{checks.forEach(x=>x.checked=false);await save()});
-if(window.matchMedia('(min-width: 941px)').matches)glossaryPanel.open=true;
-load();
-loadMode();
+(async()=>{
+  if(window.matchMedia('(min-width: 941px)').matches)glossaryPanel.open=true;
+  let on=false;try{on=await store.get(MODEKEY)==="1"}catch(e){}
+  applyMode(on);
+})();
 </script>
 </body>
 </html>

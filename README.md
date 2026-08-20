@@ -23,18 +23,16 @@ Thirteen chapters, roughly 230 to 280 hours total. Each chapter includes:
 
 The Interview Lab is a separate, connected module for senior cloud security and platform leadership interviews. It includes:
 
-- A **Call index** pinned in the sidebar, grouping every section into "in the call", "depth on request", and "before the call only" so navigation stays fast under pressure
-- A live cheatsheet built for glancing at mid-call: opening and closing lines, defensible numbers, a question router mapping likely questions to the answer and its proof, the five-stage technical flow, a do-not-say list, and questions to ask the interviewer
-- A **Live mode** toggle that hides the study-only material, collapses long-form answers to scannable titles, and remembers the setting
-- A cloud security program model: five planes (identity, delivery, runtime, data, assurance) each with its control objective and an explicit "what AI changes" column, plus the enablement principles that keep governance from becoming a brake
-- A job-description alignment map connecting experience to role requirements
-- Cloud security evidence covering identity, application security, Kubernetes runtime protection, vulnerability remediation, and audit readiness
-- Talk tracks for positioning, leadership, and the agentic topics: developer AI freedom versus control, securing an agentic system, reviewing AI-generated code, and agent accountability
-- A five-stage security-data architecture answer: collect, normalize, add context, prioritize, and deliver
-- Forward-looking proposals, clearly labelled as proposals rather than past work: a tiered AI autonomy model, a paved road for agentic development, an agent identity plane, and the architecture mapped to AWS services
-- Eight expandable STAR cases with credibility checks and proof points to prepare
-- A time-boxed study plan with 15 primary-source learning links
-- A quick-reference acronym glossary and independently saved rehearsal checklist
+The module is built around two things: anticipating the question, and having a work sample ready to prove the answer.
+
+- A **question bank** of 42 likely questions in six groups — opening and positioning, platform and architecture, security and scenarios, AI and agentic, leadership, and curveballs. Each row is *if they ask → lead with → go to*, where "go to" names the work sample or deep answer that proves it.
+- **Eight STAR work samples**, each with situation, task, action, result, lesson, and the proof points to have ready
+- A compact open-and-close card: the twenty-second opening, defensible numbers, a do-not-say list, questions to ask the interviewer, and a closing line
+- A **Call index** pinned in the sidebar linking straight to each question group, so navigation stays fast under pressure
+- A **Live mode** toggle that hides instructional prose, collapses long-form answers to scannable titles, and remembers the setting
+- Deep answers behind the hints: the five-stage security-data architecture answer, a cloud security program model of five planes (identity, delivery, runtime, data, assurance) each with an explicit "what AI changes" column, and talk tracks covering developer AI freedom versus control, securing an agentic system, reviewing AI-generated code, and agent accountability
+- Forward-looking proposals, clearly labelled as proposals rather than past work: a tiered AI autonomy model, the paved road that implements it, and the architecture mapped to AWS services
+- A quick-reference acronym glossary and JD lens
 
 ## Running it
 
@@ -52,11 +50,11 @@ Progress (resource checkmarks, quiz answers, chapter completion) saves automatic
 - Self-hosted or opened locally, it falls back to `localStorage`
 - If neither exists, progress lasts for the session only
 
-The main curriculum is keyed as `airampup:v2`; the Interview Lab uses `airampup:interview-lab:v1`. Clearing site data resets saved progress.
+The main curriculum is keyed as `airampup:v2`; the Interview Lab stores only its Live mode setting, under `airampup:interview-lab:mode:v1`. Clearing site data resets saved progress.
 
 ## Structure
 
 - `index.html` contains the main experience and the `CHAPTERS` curriculum array. Each chapter object defines its id, number, title, tag, time estimate, tech chips, objectives, resources, project, and quiz.
-- `interview-lab.html` contains the standalone interview-preparation module and links back to the main curriculum.
+- `interview-lab.html` contains the standalone interview-preparation module, built around a question bank and a STAR work-sample library, and links back to the main curriculum.
 
 Chapter `id` values key saved progress, so keep them stable when editing the curriculum. The chapter dial and navigation adapt automatically when the `CHAPTERS` array changes.
