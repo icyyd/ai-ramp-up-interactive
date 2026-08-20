@@ -21,9 +21,7 @@ Thirteen chapters, roughly 230 to 280 hours total. Each chapter includes:
 
 ### Connected Interview Lab
 
-The Interview Lab is a separate, connected module for senior cloud security and platform leadership interviews. It includes:
-
-The module is built around two things: anticipating the question, and having a work sample ready to prove the answer.
+The Interview Lab is a separate, connected module for senior cloud security and platform leadership interviews. It is built around two things: anticipating the question, and having a work sample ready to prove the answer.
 
 - A **question bank** of 42 likely questions in six groups — opening and positioning, platform and architecture, security and scenarios, AI and agentic, leadership, and curveballs. Each row is *if they ask → lead with → go to*, where "go to" names the work sample or deep answer that proves it.
 - **Eight STAR work samples**, each with situation, task, action, result, lesson, and the proof points to have ready
