@@ -24,7 +24,7 @@ abbr{cursor:help;text-decoration:underline dotted rgba(232,163,61,.65);text-unde
 .back-link,.module-mark{font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase}
 .back-link{display:inline-flex;align-items:center;gap:9px;color:var(--muted);text-decoration:none;padding:7px 0;transition:color .2s}
 .back-link:hover{color:var(--amber)}
-.back-link:focus-visible,.jump-link:focus-visible,.reset-btn:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.back-link:focus-visible,.reset-btn:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 .module-mark{color:var(--coral)}
 .hero{padding:58px 0 34px;display:grid;grid-template-columns:1fr 290px;gap:52px;align-items:end}
 .eyebrow,.section-label,.card-label,.star-key,.case-use,.mini-label,.jd-tag{font-family:'Spline Sans Mono',monospace;text-transform:uppercase;letter-spacing:.14em}
@@ -41,9 +41,6 @@ h1 em{font-style:italic;font-weight:300;color:var(--amber)}
 .chips{margin-top:17px}
 .chip,.jd-tag{font-size:.59rem;padding:4px 9px;border-radius:6px}
 .chip{font-family:'Spline Sans Mono',monospace;letter-spacing:.07em;background:rgba(232,163,61,.08);border:1px solid rgba(232,163,61,.28);color:var(--amber)}
-.jump-nav{display:flex;flex-wrap:wrap;gap:8px;padding:0 0 18px}
-.jump-link{color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:100px;padding:7px 13px;font-family:'Spline Sans Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;transition:border-color .2s,color .2s}
-.jump-link:hover{color:var(--bone);border-color:rgba(232,163,61,.5)}
 .content-layout{display:grid;grid-template-columns:minmax(0,1fr) 268px;grid-template-areas:"main rail";gap:32px;align-items:start}
 .main-content{grid-area:main;min-width:0}
 .reference-rail{grid-area:rail;position:sticky;top:18px;display:flex;flex-direction:column;gap:12px;max-height:calc(100vh - 36px);overflow:auto;scrollbar-width:thin}
@@ -61,16 +58,16 @@ section{scroll-margin-top:24px}
 .glossary dt{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.68rem;font-weight:500}
 .glossary dd{color:var(--muted);font-size:.74rem;line-height:1.45}
 .req-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-.req-card,.evidence-card,.governance-card,.risk-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+.req-card,.evidence-card,.risk-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
 .req-card:first-child{grid-column:1/-1;background:linear-gradient(135deg,var(--panel2),var(--panel));border-color:rgba(232,163,61,.32)}
 .mini-label{font-size:.55rem;color:var(--coral);margin-bottom:4px}
-.req-card h2,.evidence-card h3,.governance-card h3,.risk-card h3{font-family:'Fraunces',serif;font-size:1.02rem;line-height:1.25;margin-bottom:7px}
-.req-card p,.evidence-card p,.evidence-card li,.governance-card p,.governance-card li,.risk-card p,.risk-card li{color:var(--muted);font-size:.84rem}
+.req-card h2,.evidence-card h3,.risk-card h3{font-family:'Fraunces',serif;font-size:1.02rem;line-height:1.25;margin-bottom:7px}
+.req-card p,.evidence-card p,.evidence-card li,.risk-card p,.risk-card li{color:var(--muted);font-size:.84rem}
 .jd-tags{margin-top:11px}
 .jd-tag{color:var(--ok);border:1px solid rgba(123,196,150,.3);background:rgba(123,196,150,.07)}
-.evidence-grid,.governance-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-.evidence-card ul,.governance-card ul,.risk-card ul{padding-left:18px;margin-top:7px}
-.evidence-card li+li,.governance-card li+li,.risk-card li+li{margin-top:5px}
+.evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.evidence-card ul,.risk-card ul{padding-left:18px;margin-top:7px}
+.evidence-card li+li,.risk-card li+li{margin-top:5px}
 .answer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
 details{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:border-color .2s,background .2s}
 details:hover{border-color:rgba(232,163,61,.38)}
@@ -88,11 +85,6 @@ details[open] summary::after{content:"−"}
 .live-answer{background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid rgba(232,163,61,.32);border-radius:14px;padding:22px}
 .live-answer h2{font-family:'Fraunces',serif;font-size:1.18rem;color:var(--amber);margin-bottom:8px}
 .live-answer blockquote{border-left:2px solid var(--amber);padding-left:14px;color:var(--bone);font-size:.91rem}
-.explain-steps{display:flex;flex-direction:column;gap:8px;margin-top:14px}
-.explain-step{display:grid;grid-template-columns:30px 92px 1fr;gap:11px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.step-num{font-family:'Fraunces',serif;color:var(--coral);font-size:1.15rem;line-height:1.2}
-.step-name{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.61rem;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
-.step-text{color:var(--muted);font-size:.84rem}
 .deeper{margin-top:11px}
 .deeper ul{padding-left:18px}
 .deeper li+li{margin-top:5px}
@@ -101,9 +93,6 @@ details[open] summary::after{content:"−"}
 .tier-list li{padding:7px 0;border-top:1px solid var(--line)}
 .tier-list li:first-child{border-top:0}
 .tier-list strong{color:var(--bone)}
-.ai-guardrails{background:linear-gradient(135deg,rgba(255,107,94,.07),var(--panel));border:1px solid rgba(255,107,94,.27);border-radius:14px;padding:22px}
-.ai-guardrails h2{font-family:'Fraunces',serif;font-size:1.16rem;margin-bottom:7px}
-.ai-guardrails>p{color:var(--muted);font-size:.88rem}
 .guardrail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:13px}
 .guardrail{background:rgba(13,27,30,.55);border:1px solid var(--line);border-radius:9px;padding:13px}
 .guardrail strong{display:block;color:var(--bone);font-size:.86rem;margin-bottom:3px}
@@ -201,6 +190,14 @@ footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display
 .flow-pill{background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px;flex:1 1 158px;min-width:0}
 .flow-pill b{display:block;font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
 .flow-pill span{color:var(--muted);font-size:.74rem}
+/* ---------- call index ---------- */
+.idx-group+.idx-group{margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
+.idx-label{font-family:'Spline Sans Mono',monospace;font-size:.52rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+.idx-group a{display:block;color:var(--bone);text-decoration:none;font-size:.81rem;padding:4px 0 4px 10px;border-left:2px solid transparent;transition:color .2s,border-color .2s}
+.idx-group a:hover{color:var(--amber);border-left-color:var(--amber)}
+.idx-group.muted .idx-label{color:var(--muted)}
+.idx-group.muted a{color:var(--muted);font-size:.78rem}
+body.live .idx-group.muted{display:none}
 /* ---------- proposals, tiers, AWS map ---------- */
 .proposal-banner{background:rgba(123,196,150,.07);border:1px solid rgba(123,196,150,.32);border-radius:12px;padding:14px 17px;margin-bottom:12px;color:var(--muted);font-size:.84rem}
 .proposal-banner strong{color:var(--ok)}
@@ -230,12 +227,12 @@ body.live .section-label{margin:30px 0 13px}
 }
 @media(max-width:700px){
   .hero{grid-template-columns:1fr;padding-top:42px;gap:24px}.scope-card{max-width:none}.module-mark{display:none}.reference-rail{grid-template-columns:1fr}
-  .req-grid,.evidence-grid,.governance-grid,.answer-grid,.risk-grid,.guardrail-grid,.source-grid,.friday-list,.cheat-grid{grid-template-columns:1fr}.req-card:first-child{grid-column:auto}
+  .req-grid,.evidence-grid,.answer-grid,.risk-grid,.guardrail-grid,.source-grid,.friday-list,.cheat-grid{grid-template-columns:1fr}.req-card:first-child{grid-column:auto}
   .router,.tier-table{display:block;overflow-x:auto}.router td:first-child,.router td:nth-child(2),.tier-table td:nth-child(2){width:auto}
   .aws-row{grid-template-columns:1fr;gap:5px}
   .study-brief,.study-day-head{align-items:flex-start;flex-direction:column}.study-total{text-align:left}.study-item-head{align-items:flex-start}.study-item h3{max-width:25ch}
   .case-card summary{grid-template-columns:1fr;padding-right:49px}.case-use{text-align:left;max-width:none;padding-right:0}.star-row{grid-template-columns:1fr;gap:3px}
-  .explain-step{grid-template-columns:28px 1fr}.step-text{grid-column:2}.case-selector{display:block;overflow-x:auto;white-space:nowrap}
+  .case-selector{display:block;overflow-x:auto;white-space:nowrap}
   .rehearsal{grid-template-columns:1fr}.rehearsal-status{text-align:left;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:11px}.score-label,.reset-btn{margin-top:0}
   footer{align-items:flex-start;flex-direction:column}
 }
@@ -263,15 +260,11 @@ body.live .section-label{margin:30px 0 13px}
     </aside>
   </header>
 
-  <nav class="jump-nav" aria-label="Interview Lab sections">
-    <a class="jump-link" href="#cheatsheet">Live cheatsheet</a><a class="jump-link" href="#jd-map">JD map</a><a class="jump-link" href="#evidence">Security evidence</a><a class="jump-link" href="#talk-tracks">Talk tracks</a><a class="jump-link" href="#architecture">Technical answer</a><a class="jump-link" href="#governance">Governance</a><a class="jump-link" href="#ai-guardrails">AI guardrails</a><a class="jump-link" href="#proposals">What I'd build</a><a class="jump-link" href="#cases">STAR cases</a><a class="jump-link" href="#study-plan">Study plan</a><a class="jump-link" href="#reference">Acronyms</a>
-  </nav>
-
   <div class="content-layout">
     <main class="main-content">
       <section id="cheatsheet" aria-labelledby="cheatTitle">
         <div class="section-label" id="cheatTitle">Live cheatsheet</div>
-        <p class="section-intro live-hint">Everything below is glanceable during the call. Turn on <strong>Live mode</strong> in the top bar to collapse the study material and leave only this, the JD map, the talk-track titles, and the technical answer.</p>
+        <p class="section-intro live-hint">Turn on <strong>Live mode</strong> in the top bar to hide the study material and leave only what is useful mid-call. Navigate from the <strong>Call index</strong>.</p>
         <article class="cheat">
           <h2>Open, route, close</h2>
           <p>Three things decide the interview: the first twenty seconds, whether each answer lands on a requirement, and the boundary you refuse to overstate.</p>
@@ -297,7 +290,7 @@ body.live .section-label{margin:30px 0 13px}
               </div>
             </div>
 
-            <div class="cheat-card wide">
+            <div class="cheat-card wide" id="router">
               <h3>Question router</h3>
               <table class="router">
                 <thead><tr><th>If they ask</th><th>Lead with</th><th>Then prove</th></tr></thead>
@@ -371,7 +364,7 @@ body.live .section-label{margin:30px 0 13px}
 
       <section id="jd-map" aria-labelledby="jdTitle">
         <div class="section-label" id="jdTitle">Job-description alignment</div>
-        <p class="section-intro">Use this as the spine of the interview. Every answer should prove one or more requirements from the role, not simply describe a tool.</p>
+        <p class="section-intro">Every answer should prove a requirement, not describe a tool.</p>
         <div class="req-grid">
           <article class="req-card"><div class="mini-label">Core mission</div><h2>Turn security data into guidance application teams can act on</h2><p>Your strongest bridge is the operating model: GitGuardian and Snyk prevented issues in engineering workflows; Rapid7 findings moved through ownership and remediation; IAM automation made the secure access path faster.</p><div class="jd-tags"><span class="jd-tag">Actionable guidance</span><span class="jd-tag">Developer-facing platform</span><span class="jd-tag">Security outcomes</span></div></article>
           <article class="req-card"><div class="mini-label">Technical leadership</div><h2>Set strategy and make architecture trade-offs</h2><p>Multi-cloud roadmap ownership, the internal developer platform, identity redesign, acquisition integration, and security guardrail sequencing show decisions across systems rather than isolated implementation.</p><div class="jd-tags"><span class="jd-tag">Architecture</span><span class="jd-tag">Roadmap</span></div></article>
@@ -383,7 +376,7 @@ body.live .section-label{margin:30px 0 13px}
 
       <section id="evidence" aria-labelledby="evidenceTitle">
         <div class="section-label" id="evidenceTitle">Security evidence inventory</div>
-        <p class="section-intro">These are the facts to weave into answers. Lead with the control objective and outcome; use the product name as implementation evidence.</p>
+        <p class="section-intro">Lead with the control objective and outcome; the product name is evidence, not the answer.</p>
         <div class="evidence-grid">
           <article class="evidence-card"><div class="mini-label">Identity and access</div><h3>Remove standing production access</h3><ul><li>Refactored <abbr title="Identity and Access Management">IAM</abbr> using Microsoft Entra Privileged Identity Management for <abbr title="Just-in-Time">JIT</abbr> activation.</li><li>Introduced access packages to standardize and streamline provisioning by the IT team.</li><li>Added automated access auditing and review evidence through Microsoft Entra.</li></ul><div class="jd-tags"><span class="jd-tag">Access control</span><span class="jd-tag">Governance</span></div></article>
           <article class="evidence-card"><div class="mini-label">Application security</div><h3>Shift prevention left</h3><ul><li>Rolled GitGuardian across all company organizations and repositories.</li><li>Implemented Snyk similarly so high-confidence vulnerable code, dependencies, and Infrastructure as Code could be stopped before protected branches and deployment.</li><li>Paired blocking rules with central policy, triage, exceptions, and developer feedback.</li></ul><div class="jd-tags"><span class="jd-tag">Developer guidance</span><span class="jd-tag">Secure SDLC</span></div></article>
@@ -410,18 +403,11 @@ body.live .section-label{margin:30px 0 13px}
 
       <section id="architecture" aria-labelledby="architectureTitle">
         <div class="section-label" id="architectureTitle">Technical cheatsheet · live explanation</div>
-        <p class="section-intro">Keep the first answer simple. Name the five stages, give one example at each stage, then let the interviewer choose where to go deeper.</p>
+        <p class="section-intro">Name the five stages, one example each, then let them choose where to go deeper.</p>
         <article class="live-answer">
           <h2>Design a security telemetry and developer-guidance platform</h2>
           <blockquote>Start with the decision: an application team needs to know what to fix first, why it matters, and how to fix it. I would collect signals from cloud platforms, Rapid7, CrowdStrike, GitGuardian, Snyk, CI/CD, Microsoft Entra, and the asset catalog. I would normalize them into a common finding model, then add owner, service criticality, exposure, reachability, identity context, and compensating controls. A versioned policy layer would produce an explainable priority and due date. Finally, I would deliver that guidance in the developer workflow and measure whether teams acted. Detection and compliance can reuse the same governed data, but with their own latency and retention requirements.</blockquote>
         </article>
-        <div class="explain-steps" aria-label="Five-stage security guidance flow">
-          <div class="explain-step"><span class="step-num">1</span><span class="step-name">Collect</span><span class="step-text">Ingest scanner, runtime, cloud, identity, code, and asset signals through authenticated sources.</span></div>
-          <div class="explain-step"><span class="step-num">2</span><span class="step-name">Normalize</span><span class="step-text">Convert vendor-specific events into one versioned finding model while preserving raw evidence.</span></div>
-          <div class="explain-step"><span class="step-num">3</span><span class="step-name">Context</span><span class="step-text">Attach owner, business service, criticality, environment, exposure, reachability, and access path.</span></div>
-          <div class="explain-step"><span class="step-num">4</span><span class="step-name">Prioritize</span><span class="step-text">Apply known exploitation, likelihood, policy, business impact, and compensating controls with reason codes.</span></div>
-          <div class="explain-step"><span class="step-num">5</span><span class="step-name">Deliver</span><span class="step-text">Put the action in pull requests, tickets, APIs, or portals; measure adoption, remediation, and risk retired.</span></div>
-        </div>
         <details class="deeper"><summary><div class="card-label">If they go deeper</div><div class="card-title">Reliability, governance, and access controls</div></summary><div class="answer-body"><ul><li><strong>Reliability:</strong> durable buffering, at-least-once delivery, stable finding IDs, idempotent consumers, dead-letter handling, and replay from immutable raw storage.</li><li><strong>Data quality:</strong> source coverage, freshness, completeness, schema version, deduplication, enrichment misses, and owner-mapping confidence.</li><li><strong>Governance:</strong> data classification, retention by purpose, lineage, source evidence, transformation version, and auditable policy decisions.</li><li><strong>Access:</strong> workload identity, least privilege, JIT elevation for operators, separation of duties, and controlled access to sensitive telemetry.</li><li><strong>Success:</strong> time to triage, time to remediate, overdue material exposure, exception age, action rate, and risk retired—not the number of findings created.</li></ul></div></details>
         <div class="risk-grid">
           <article class="risk-card"><h3>Explain vulnerability priority</h3><ul class="tier-list"><li><strong>Urgent:</strong> known exploited, exposed or reachable, and on a material service.</li><li><strong>Short SLA:</strong> high exploit likelihood or attack-path relevance on an important service.</li><li><strong>Planned:</strong> serious severity but not currently exposed or reachable.</li><li><strong>Monitor or accept:</strong> low evidence, with a named owner, rationale, compensating control, and expiry.</li></ul></article>
@@ -429,32 +415,33 @@ body.live .section-label{margin:30px 0 13px}
         </div>
       </section>
 
-      <section id="governance" aria-labelledby="governanceTitle">
-        <div class="section-label" id="governanceTitle">Cloud security and governance</div>
-        <p class="section-intro">Frame governance as an engineering system: clear control objectives, automated enforcement, accountable ownership, evidence, and time-bound exceptions.</p>
-        <div class="governance-grid">
-          <article class="governance-card"><div class="mini-label">Identity plane</div><h3>Least privilege without provisioning drag</h3><ul><li>Eligible rather than standing privileged roles</li><li>JIT activation through Microsoft Entra PIM</li><li>Access packages for consistent request and approval</li><li>Automated access auditing, review evidence, and expiry</li></ul></article>
-          <article class="governance-card"><div class="mini-label">Delivery plane</div><h3>Prevent before production</h3><ul><li>GitGuardian across all organizations and repositories</li><li>Snyk checks before merge and deployment</li><li>Infrastructure as Code and paved paths</li><li>Central policy with local ownership and time-bound exceptions</li></ul></article>
-          <article class="governance-card"><div class="mini-label">Runtime plane</div><h3>Observe the deployed workload</h3><ul><li>CrowdStrike Falcon agents across Kubernetes</li><li>Cloud-provider control-plane and audit logs</li><li>Rapid7 vulnerability findings tied to deployed assets</li><li>Coverage gaps treated as security defects</li></ul></article>
-          <article class="governance-card"><div class="mini-label">Assurance plane</div><h3>Prove the control operates</h3><ul><li>SOC 2 evidence grounded in system records</li><li>Traceable finding, owner, action, approval, and closure</li><li>Exception owner, compensating control, and expiry</li><li>Common objectives across AWS, Azure, and GCP with provider-specific implementation</li></ul></article>
-        </div>
-      </section>
+      <section id="program" aria-labelledby="programTitle">
+        <div class="section-label" id="programTitle">Cloud security program model</div>
+        <p class="section-intro">The spine answer for “how would you run this.” Five planes, one governing loop, and an explicit column for what AI changes — so enablement is part of the model rather than an exception to it.</p>
 
-      <section id="ai-guardrails" aria-labelledby="aiTitle">
-        <div class="section-label" id="aiTitle">Guardrails in the AI context</div>
-        <article class="ai-guardrails">
-          <h2>AI increases the need for deterministic security controls</h2>
-          <p>Generated code and agentic automation amplify both delivery speed and failure speed. The model can assist, but it should not be the enforcement point for security-critical decisions.</p>
-          <div class="guardrail-grid">
-            <div class="guardrail"><strong>Code and dependencies</strong><span>Run GitGuardian, Snyk, tests, and policy checks on AI-generated changes exactly as on human-written changes.</span></div>
-            <div class="guardrail"><strong>Identity and tools</strong><span>Give agents scoped workload identities and short-lived credentials; use JIT access and separate read from write permissions.</span></div>
-            <div class="guardrail"><strong>Action boundaries</strong><span>Read-only evidence gathering can be automated; material writes require a plan, approval, and the existing CI/CD path.</span></div>
-            <div class="guardrail"><strong>Untrusted context</strong><span>Treat retrieved documents and tool output as data, not instructions; defend against prompt injection and data leakage.</span></div>
-            <div class="guardrail"><strong>Quality and abstention</strong><span>Evaluate retrieval and reasoning separately, require evidence, cap iteration, and make insufficient evidence a valid result.</span></div>
-            <div class="guardrail"><strong>Audit and rollback</strong><span>Record prompt/model version, evidence, tool calls, approvals, identity, and outcome; route changes through reversible workflows.</span></div>
-          </div>
-          <div class="script-note"><strong>Live line:</strong> “AI does not replace the control plane. It makes least privilege, deterministic gates, human approval, traceability, and rollback more important because one incorrect decision can execute at machine speed.”</div>
+        <article class="thesis">
+          <h2>Secure defaults, provable outcomes</h2>
+          <p>Every plane answers the same three questions: what is the control objective, how is it enforced automatically, and what evidence does it leave behind. A control that depends on someone remembering is not a control; a control that produces no evidence cannot be audited; and a control that makes the secure path slower will be routed around.</p>
         </article>
+
+        <table class="tier-table">
+          <thead><tr><th>Plane</th><th>Control objective</th><th>What AI changes</th></tr></thead>
+          <tbody>
+            <tr><td>Identity</td><td>Every actor, human or machine, is named, least-privileged, and time-bound</td><td>Agents are non-human identities. Scoped workload identity, short-lived credentials, read separated from write, no shared keys, just-in-time for anything privileged.</td></tr>
+            <tr><td>Delivery</td><td>Prevent at the point of change rather than at a release gate</td><td>Generated code passes the same gates as written code. Volume rises, so review depth becomes something you measure; dependency verification matters more because models invent plausible packages.</td></tr>
+            <tr><td>Runtime</td><td>Observe and contain what is actually deployed</td><td>An agent's tool calls are runtime events. Bounded blast radius, reversible actions, every call logged, and a revocation path tested like break-glass.</td></tr>
+            <tr><td>Data</td><td>Classify, minimize, and control where data comes to rest</td><td>Prompt and retrieved context are an egress path. Retrieval inherits source permissions and never widens them; sensitive data is filtered before it reaches a model, not after.</td></tr>
+            <tr><td>Assurance</td><td>Prove continuously that the control operated</td><td>Evidence extends to model and prompt version, retrieved context, tool calls, and approvals. The system must also be able to decline: insufficient evidence is a valid result.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="guardrail-grid">
+          <div class="guardrail"><strong>Secure default beats secure policy</strong><span>Policy documents get read once. Defaults get used every day. If the paved path is not the fastest path, you have written a policy, not built a control.</span></div>
+          <div class="guardrail"><strong>Govern the action, not the exploration</strong><span>Friction belongs where writes and production data are, not where a developer is trying something. Restricting exploration only relocates it out of view.</span></div>
+          <div class="guardrail"><strong>Keep the control plane deterministic</strong><span>The model may propose anything. Enforcement stays deterministic, reviewable, and independent of the model's judgement.</span></div>
+        </div>
+
+        <div class="buy-build"><strong>If they ask where you would start:</strong> identity first, because it bounds every other plane and it is the hardest to retrofit. Then delivery gates, then runtime containment, then data controls. Assurance is not a phase — each plane ships with its evidence, or it is not done. <br><br><strong>Live line:</strong> “AI does not replace the control plane. It makes least privilege, deterministic gates, human approval, traceability, and rollback more important, because one incorrect decision can now execute at machine speed.”</div>
       </section>
 
       <section id="proposals" aria-labelledby="proposalsTitle">
@@ -597,6 +584,30 @@ body.live .section-label{margin:30px 0 13px}
     </main>
 
     <aside class="reference-rail" id="reference" aria-label="Quick reference">
+      <details class="rail-panel" id="callIndex" open><summary><div class="card-label">Navigate</div><div class="card-title">Call index</div></summary><div class="rail-body">
+        <div class="idx-group">
+          <div class="idx-label">In the call</div>
+          <a href="#cheatsheet">Open, numbers, close</a>
+          <a href="#router">Question router</a>
+          <a href="#program">Program model</a>
+          <a href="#architecture">Technical answer</a>
+          <a href="#cases">STAR bank</a>
+        </div>
+        <div class="idx-group">
+          <div class="idx-label">Depth on request</div>
+          <a href="#talk-tracks">Talk tracks</a>
+          <a href="#proposals">What I'd build</a>
+          <a href="#jd-map">JD map</a>
+          <a href="#evidence">Evidence inventory</a>
+        </div>
+        <div class="idx-group muted">
+          <div class="idx-label">Before the call only</div>
+          <a href="#credibility">Proof to prepare</a>
+          <a href="#study-plan">Study plan</a>
+          <a href="#rehearsal">Rehearsal</a>
+          <a href="#sources">Sources</a>
+        </div>
+      </div></details>
       <details class="rail-panel" open><summary><div class="card-label">Quick reference</div><div class="card-title">JD lens</div></summary><div class="rail-body"><ul class="rail-list"><li><strong>Security data</strong>Rapid7, CrowdStrike, GitGuardian, Snyk, Entra, cloud and asset context</li><li><strong>Actionable guidance</strong>Owner, reason, priority, fix path, due date, exception</li><li><strong>Architecture</strong>Reliable ingestion, common model, governance, serving, measurement</li><li><strong>Leadership</strong>Direction, standards, coaching, accountability, cross-functional trust</li><li><strong>Regulated delivery</strong>SOC 2 evidence, access governance, traceability, expiry</li></ul></div></details>
       <details class="rail-panel" id="acronymPanel"><summary><div class="card-label">Quick reference</div><div class="card-title">Acronym glossary</div></summary><div class="rail-body"><dl class="glossary">
         <dt>AI</dt><dd>Artificial Intelligence</dd><dt>AICPA</dt><dd>American Institute of Certified Public Accountants</dd><dt>API</dt><dd>Application Programming Interface</dd><dt>AppSec</dt><dd>Application Security</dd><dt>AWS</dt><dd>Amazon Web Services</dd><dt>CI/CD</dt><dd>Continuous Integration and Continuous Delivery/Deployment</dd><dt>CISA</dt><dd>Cybersecurity and Infrastructure Security Agency</dd><dt>CSPM</dt><dd>Cloud Security Posture Management</dd><dt>CVE</dt><dd>Common Vulnerabilities and Exposures</dd><dt>CVSS</dt><dd>Common Vulnerability Scoring System</dd><dt>EKS</dt><dd>Elastic Kubernetes Service (AWS)</dd><dt>EPSS</dt><dd>Exploit Prediction Scoring System</dd><dt>FIRST</dt><dd>Forum of Incident Response and Security Teams</dd><dt>GCP</dt><dd>Google Cloud Platform</dd><dt>IAM</dt><dd>Identity and Access Management</dd><dt>IaC</dt><dd>Infrastructure as Code</dd><dt>IT</dt><dd>Information Technology</dd><dt>JD</dt><dd>Job Description</dd><dt>JIT</dt><dd>Just-in-Time access</dd><dt>K8s</dt><dd>Kubernetes</dd><dt>KEV</dt><dd>Known Exploited Vulnerabilities</dd><dt>KPI</dt><dd>Key Performance Indicator</dd><dt>LLM</dt><dd>Large Language Model</dd><dt>MCP</dt><dd>Model Context Protocol</dd><dt>MFA</dt><dd>Multi-Factor Authentication</dd><dt>ML</dt><dd>Machine Learning</dd><dt>MTTR</dt><dd>Mean Time to Remediate or Recover; define usage</dd><dt>NIST</dt><dd>National Institute of Standards and Technology</dd><dt>OCSF</dt><dd>Open Cybersecurity Schema Framework</dd><dt>OTEL</dt><dd>OpenTelemetry</dd><dt>OWASP</dt><dd>Open Worldwide Application Security Project</dd><dt>PIM</dt><dd>Privileged Identity Management</dd><dt>RAG</dt><dd>Retrieval-Augmented Generation</dd><dt>RBAC</dt><dd>Role-Based Access Control</dd><dt>RMF</dt><dd>Risk Management Framework</dd><dt>SCP</dt><dd>Service Control Policy (AWS Organizations)</dd><dt>SDLC</dt><dd>Software Development Life Cycle</dd><dt>SIEM</dt><dd>Security Information and Event Management</dd><dt>SLA</dt><dd>Service-Level Agreement</dd><dt>SLO</dt><dd>Service-Level Objective</dd><dt>SOC 2</dt><dd>System and Organization Controls 2</dd><dt>SP</dt><dd>Special Publication</dd><dt>SSO</dt><dd>Single Sign-On</dd><dt>STAR</dt><dd>Situation, Task, Action, Result</dd><dt>STS</dt><dd>Security Token Service (AWS short-lived credentials)</dd><dt>TSC</dt><dd>Trust Services Criteria</dd><dt>VP</dt><dd>Vice President</dd>

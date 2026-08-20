@@ -23,13 +23,15 @@ Thirteen chapters, roughly 230 to 280 hours total. Each chapter includes:
 
 The Interview Lab is a separate, connected module for senior cloud security and platform leadership interviews. It includes:
 
+- A **Call index** pinned in the sidebar, grouping every section into "in the call", "depth on request", and "before the call only" so navigation stays fast under pressure
 - A live cheatsheet built for glancing at mid-call: opening and closing lines, defensible numbers, a question router mapping likely questions to the answer and its proof, the five-stage technical flow, a do-not-say list, and questions to ask the interviewer
-- A **Live mode** toggle that collapses the study material down to only the at-a-glance sections, and remembers the setting
+- A **Live mode** toggle that hides the study-only material, collapses long-form answers to scannable titles, and remembers the setting
+- A cloud security program model: five planes (identity, delivery, runtime, data, assurance) each with its control objective and an explicit "what AI changes" column, plus the enablement principles that keep governance from becoming a brake
 - A job-description alignment map connecting experience to role requirements
 - Cloud security evidence covering identity, application security, Kubernetes runtime protection, vulnerability remediation, and audit readiness
-- Concise elevator, security-depth, leadership, and technical talk tracks
+- Talk tracks for positioning, leadership, and the agentic topics: developer AI freedom versus control, securing an agentic system, reviewing AI-generated code, and agent accountability
 - A five-stage security-data architecture answer: collect, normalize, add context, prioritize, and deliver
-- Cloud security governance and AI-agent guardrails
+- Forward-looking proposals, clearly labelled as proposals rather than past work: a tiered AI autonomy model, a paved road for agentic development, an agent identity plane, and the architecture mapped to AWS services
 - Eight expandable STAR cases with credibility checks and proof points to prepare
 - A time-boxed study plan with 15 primary-source learning links
 - A quick-reference acronym glossary and independently saved rehearsal checklist
