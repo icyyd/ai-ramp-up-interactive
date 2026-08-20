@@ -15,11 +15,13 @@ Thirteen chapters, roughly 230 to 280 hours total. Each chapter includes:
 - A hands-on field exercise, several of which double as portfolio artifacts
 - A self-check quiz with instant feedback
 
+The connected Interview Lab is a separate module with a JD-aligned architecture cheatsheet, cloud security and governance evidence, AI guardrails, concise talk tracks, an eight-case STAR bank, a time-boxed study plan with primary-source links, a quick-reference acronym glossary, and an independent rehearsal checklist for senior cloud security and platform leadership interviews.
+
 ## Running it
 
 It is a single HTML file with no build step and no dependencies beyond Google Fonts.
 
-- Open `index.html` directly in a browser, or
+- Open `index.html` directly in a browser and use the connected-module link to open `interview-lab.html`, or
 - Serve it: `python3 -m http.server` then visit `http://localhost:8000`, or
 - Host it on GitHub Pages: Settings → Pages → deploy from the main branch root.
 
@@ -36,3 +38,5 @@ Progress is keyed as `airampup:v2`. Clearing site data resets it.
 ## Structure
 
 All content lives in the `CHAPTERS` array at the top of the script block in `index.html`. Each chapter is one object: id, number, title, tag, time estimate, tech chips, objectives, resources, project, and quiz. To add or edit a chapter, edit that array; numbering on the dial and navigation adapts automatically. Chapter `id` values key saved progress, so keep them stable across edits.
+
+The Interview Lab is intentionally separate in `interview-lab.html`. It links back to the main ramp-up and stores its rehearsal checklist under its own `airampup:interview-lab:v1` key.
