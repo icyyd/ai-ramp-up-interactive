@@ -165,12 +165,52 @@ details[open] summary::after{content:"−"}
 .source:hover{border-color:var(--amber);color:var(--amber)}
 .source span{display:block;font-family:'Spline Sans Mono',monospace;color:var(--muted);font-size:.55rem;letter-spacing:.11em;text-transform:uppercase;margin-top:2px}
 footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);font-size:.76rem}
+/* ---------- live cheatsheet ---------- */
+.mode-toggle{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,94,.1);border:1px solid rgba(255,107,94,.4);color:var(--coral);border-radius:100px;padding:7px 14px;font-family:'Spline Sans Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+.mode-toggle:hover{background:rgba(255,107,94,.18)}
+.mode-toggle[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:var(--ink);font-weight:700}
+.mode-toggle:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.cheat{background:linear-gradient(150deg,rgba(255,107,94,.09),var(--panel));border:1px solid rgba(255,107,94,.34);border-radius:16px;padding:22px}
+.cheat>p{color:var(--muted);font-size:.88rem;max-width:72ch}
+.cheat h2{font-family:'Fraunces',serif;font-size:1.18rem;color:var(--amber);margin-bottom:7px}
+.cheat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:15px}
+.cheat-card{background:rgba(13,27,30,.55);border:1px solid var(--line);border-radius:11px;padding:15px 16px;min-width:0}
+.cheat-card.wide{grid-column:1/-1}
+.cheat-card h3{font-family:'Fraunces',serif;font-size:.99rem;line-height:1.25;margin-bottom:9px}
+.cheat-card>p{color:var(--muted);font-size:.83rem}
+.say{color:var(--bone);border-left:2px solid var(--amber);padding-left:13px;font-size:.87rem}
+.say+.say{margin-top:11px}
+.say em{font-style:normal;color:var(--amber)}
+.stat-strip{display:flex;flex-wrap:wrap;gap:8px}
+.stat{background:var(--ink);border:1px solid rgba(232,163,61,.3);border-radius:9px;padding:9px 12px;flex:1 1 118px;min-width:0}
+.stat b{display:block;font-family:'Fraunces',serif;color:var(--amber);font-size:1.12rem;line-height:1.12}
+.stat span{font-family:'Spline Sans Mono',monospace;color:var(--muted);font-size:.52rem;letter-spacing:.09em;text-transform:uppercase}
+.router{width:100%;border-collapse:collapse;font-size:.79rem}
+.router th,.router td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.router th{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.router td:first-child{color:var(--bone);width:27%}
+.router td:nth-child(2){color:var(--muted);width:39%}
+.router td:last-child{color:var(--muted)}
+.router tr:last-child td{border-bottom:0}
+.guard-list,.ask-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.guard-list li,.ask-list li{padding-left:21px;position:relative;color:var(--muted);font-size:.82rem}
+.guard-list li::before{content:"✕";position:absolute;left:0;top:1px;color:var(--coral);font-size:.72rem}
+.ask-list li::before{content:"→";position:absolute;left:0;color:var(--ok)}
+.guard-list strong,.ask-list strong{color:var(--bone)}
+.flow-strip{display:flex;flex-wrap:wrap;gap:7px}
+.flow-pill{background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px;flex:1 1 158px;min-width:0}
+.flow-pill b{display:block;font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.flow-pill span{color:var(--muted);font-size:.74rem}
+body.live .hero .lede,body.live .hero .chips,body.live .section-intro,body.live #study-plan,body.live #rehearsal,body.live #credibility,body.live #sources,body.live .live-hint{display:none}
+body.live .hero{padding:30px 0 16px}
+body.live .section-label{margin:30px 0 13px}
 @media(max-width:940px){
   .hero{grid-template-columns:1fr 250px;gap:30px}.content-layout{grid-template-columns:1fr;grid-template-areas:"rail" "main"}.reference-rail{position:static;max-height:none;overflow:visible;display:grid;grid-template-columns:1fr 1fr}.rail-panel{min-width:0}
 }
 @media(max-width:700px){
   .hero{grid-template-columns:1fr;padding-top:42px;gap:24px}.scope-card{max-width:none}.module-mark{display:none}.reference-rail{grid-template-columns:1fr}
-  .req-grid,.evidence-grid,.governance-grid,.answer-grid,.risk-grid,.guardrail-grid,.source-grid,.friday-list{grid-template-columns:1fr}.req-card:first-child{grid-column:auto}
+  .req-grid,.evidence-grid,.governance-grid,.answer-grid,.risk-grid,.guardrail-grid,.source-grid,.friday-list,.cheat-grid{grid-template-columns:1fr}.req-card:first-child{grid-column:auto}
+  .router{display:block;overflow-x:auto}.router td:first-child,.router td:nth-child(2){width:auto}
   .study-brief,.study-day-head{align-items:flex-start;flex-direction:column}.study-total{text-align:left}.study-item-head{align-items:flex-start}.study-item h3{max-width:25ch}
   .case-card summary{grid-template-columns:1fr;padding-right:49px}.case-use{text-align:left;max-width:none;padding-right:0}.star-row{grid-template-columns:1fr;gap:3px}
   .explain-step{grid-template-columns:28px 1fr}.step-text{grid-column:2}.case-selector{display:block;overflow-x:auto;white-space:nowrap}
@@ -185,7 +225,7 @@ footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display
 <div class="wrap">
   <nav class="module-nav" aria-label="Module navigation">
     <a class="back-link" href="index.html"><span aria-hidden="true">←</span> AI Ramp-Up</a>
-    <span class="module-mark">Connected module · Interview Lab</span>
+    <button class="mode-toggle" id="modeToggle" type="button" aria-pressed="false" title="Strip the page to glanceable essentials for use during a live interview"><span class="mode-text">Live mode</span></button>
   </nav>
 
   <header class="hero">
@@ -202,11 +242,104 @@ footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display
   </header>
 
   <nav class="jump-nav" aria-label="Interview Lab sections">
-    <a class="jump-link" href="#jd-map">JD map</a><a class="jump-link" href="#evidence">Security evidence</a><a class="jump-link" href="#talk-tracks">Talk tracks</a><a class="jump-link" href="#architecture">Technical answer</a><a class="jump-link" href="#governance">Governance</a><a class="jump-link" href="#ai-guardrails">AI guardrails</a><a class="jump-link" href="#cases">STAR cases</a><a class="jump-link" href="#study-plan">Study plan</a><a class="jump-link" href="#reference">Acronyms</a>
+    <a class="jump-link" href="#cheatsheet">Live cheatsheet</a><a class="jump-link" href="#jd-map">JD map</a><a class="jump-link" href="#evidence">Security evidence</a><a class="jump-link" href="#talk-tracks">Talk tracks</a><a class="jump-link" href="#architecture">Technical answer</a><a class="jump-link" href="#governance">Governance</a><a class="jump-link" href="#ai-guardrails">AI guardrails</a><a class="jump-link" href="#cases">STAR cases</a><a class="jump-link" href="#study-plan">Study plan</a><a class="jump-link" href="#reference">Acronyms</a>
   </nav>
 
   <div class="content-layout">
     <main class="main-content">
+      <section id="cheatsheet" aria-labelledby="cheatTitle">
+        <div class="section-label" id="cheatTitle">Live cheatsheet</div>
+        <p class="section-intro live-hint">Everything below is glanceable during the call. Turn on <strong>Live mode</strong> in the top bar to collapse the study material and leave only this, the JD map, the talk-track titles, and the technical answer.</p>
+        <article class="cheat">
+          <h2>Open, route, close</h2>
+          <p>Three things decide the interview: the first twenty seconds, whether each answer lands on a requirement, and the boundary you refuse to overstate.</p>
+
+          <div class="cheat-grid">
+            <div class="cheat-card wide">
+              <h3>First twenty seconds</h3>
+              <p class="say">Cloud platform and security engineering leader. I have owned multi-cloud roadmap and architecture, shipped an internal developer platform that took provisioning from weeks to hours, and grown a team from 3 to 14 supporting more than 150 developers.</p>
+              <p class="say">My security work runs the whole delivery lifecycle: secrets and dependency prevention inside the engineering workflow, Kubernetes runtime coverage, vulnerability remediation through to audit evidence, and privileged access I recently refactored to just-in-time. <em>This role is the intersection: turning security data into guidance application teams will actually use.</em></p>
+            </div>
+
+            <div class="cheat-card wide">
+              <h3>Numbers you can defend</h3>
+              <div class="stat-strip">
+                <div class="stat"><b>3 → 14</b><span>Team grown</span></div>
+                <div class="stat"><b>150+</b><span>Developers supported</span></div>
+                <div class="stat"><b>Weeks → hours</b><span>Provisioning time</span></div>
+                <div class="stat"><b>8+</b><span>Product teams self-serving</span></div>
+                <div class="stat"><b>4</b><span>Acquisitions integrated</span></div>
+                <div class="stat"><b>$1M+</b><span>Annual cloud savings</span></div>
+                <div class="stat"><b>$1M+</b><span>AI operational savings</span></div>
+                <div class="stat"><b>All orgs</b><span>GitGuardian coverage</span></div>
+              </div>
+            </div>
+
+            <div class="cheat-card wide">
+              <h3>Question router</h3>
+              <table class="router">
+                <thead><tr><th>If they ask</th><th>Lead with</th><th>Then prove</th></tr></thead>
+                <tbody>
+                  <tr><td>Walk me through your background</td><td>The twenty-second open, unchanged</td><td>Platform, then security, then the team number</td></tr>
+                  <tr><td>Design a security data platform</td><td>The decision first: what should this team fix, why, how</td><td>Collect → normalize → context → prioritize → deliver, one example each</td></tr>
+                  <tr><td>How do you prioritize vulnerabilities</td><td>CVSS starts the conversation, it does not end it</td><td>KEV, EPSS, exposure, reachability, owner, closure evidence</td></tr>
+                  <tr><td>Shift-left or AppSec</td><td>Prevention at the point of change, not a release gate</td><td>GitGuardian and Snyk before protected branches; block-versus-warn; exception expiry</td></tr>
+                  <tr><td>Identity and least privilege</td><td>Eligible roles, not standing production access</td><td>Entra PIM JIT activation, access packages, reviews, break-glass</td></tr>
+                  <tr><td>Kubernetes or runtime</td><td>Coverage of the deployed workload, gaps are defects</td><td>CrowdStrike Falcon on Kubernetes — state your coverage boundary precisely</td></tr>
+                  <tr><td>Compliance or SOC 2</td><td>Evidence produced continuously, not reconstructed at audit time</td><td>Finding → owner → action → approval → closure, traceable</td></tr>
+                  <tr><td>How hands-on are you</td><td>Architecture, spikes, design and code review</td><td>The JIT identity redesign, then handing off clear ownership</td></tr>
+                  <tr><td>Data engineering depth</td><td>Name the boundary before they find it</td><td>Ingestion, schema evolution, idempotency, replay, lineage — with the engineers who run it</td></tr>
+                  <tr><td>AI, agents, or automation</td><td>AI raises the need for deterministic controls</td><td>Scoped workload identity, approval for material writes, audit and rollback</td></tr>
+                  <tr><td>Technical disagreement</td><td>Make the constraints explicit, compare designs against them</td><td>Reversible gets an experiment; identity boundaries need stronger evidence</td></tr>
+                  <tr><td>People leadership</td><td>Ownership by platform area, leads grown through review</td><td>3 to 14, ticket queue replaced by self-service capability</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="cheat-card wide">
+              <h3>The five stages, in order</h3>
+              <div class="flow-strip">
+                <div class="flow-pill"><b>1 · Collect</b><span>Scanner, runtime, cloud, identity, code, asset — authenticated sources</span></div>
+                <div class="flow-pill"><b>2 · Normalize</b><span>One versioned finding model, raw evidence preserved</span></div>
+                <div class="flow-pill"><b>3 · Context</b><span>Owner, service criticality, exposure, reachability, access path</span></div>
+                <div class="flow-pill"><b>4 · Prioritize</b><span>Exploitation, likelihood, impact, compensating controls, reason codes</span></div>
+                <div class="flow-pill"><b>5 · Deliver</b><span>Into pull requests and tickets; measure risk retired, not findings created</span></div>
+              </div>
+            </div>
+
+            <div class="cheat-card">
+              <h3>Do not say</h3>
+              <ul class="guard-list">
+                <li><strong>Never imply Morgan Stanley-scale telemetry operations.</strong> Name the boundary, then pivot to what you do bring.</li>
+                <li><strong>The AI agent work is a proof of concept.</strong> Keep proposed architecture, implemented controls, and measured results separate.</li>
+                <li><strong>Do not claim controls outside your scope.</strong> Say the CrowdStrike coverage model you worked with, not ownership of the whole control.</li>
+                <li><strong>No invented precision.</strong> A concrete control flow beats a number you cannot source.</li>
+                <li><strong>Keep attribution exact.</strong> "My team rolled out" and "I designed" are different claims.</li>
+                <li><strong>Do not open with the tool name.</strong> Control objective first, product as evidence second.</li>
+              </ul>
+            </div>
+
+            <div class="cheat-card">
+              <h3>Ask them</h3>
+              <ul class="ask-list">
+                <li>How is the platform measured today — findings created, or risk actually retired?</li>
+                <li>Where does the platform's responsibility end and the application team's begin?</li>
+                <li>What is the largest source of noise in the finding pipeline right now?</li>
+                <li>How are exceptions and their expiry governed at your scale?</li>
+                <li>How does the team split between building the platform and running the operating model?</li>
+                <li>What would you want visibly different ninety days in?</li>
+                <li>Where does agentic tooling sit on the roadmap, and who owns its guardrails?</li>
+              </ul>
+            </div>
+
+            <div class="cheat-card wide">
+              <h3>Last thirty seconds</h3>
+              <p class="say">What I have built is the operating model underneath this mission: controls that live in the engineering workflow, findings that reach an accountable owner, and evidence that exists because the system produced it. <em>Morgan Stanley adds the scale and the risk discipline — that is the part I want to work at next.</em></p>
+            </div>
+          </div>
+        </article>
+      </section>
+
       <section id="jd-map" aria-labelledby="jdTitle">
         <div class="section-label" id="jdTitle">Job-description alignment</div>
         <p class="section-intro">Use this as the spine of the interview. Every answer should prove one or more requirements from the role, not simply describe a tool.</p>
@@ -359,7 +492,7 @@ footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display
         </div><aside class="rehearsal-status" aria-live="polite"><div class="score"><span id="doneCount">0</span>/4</div><div class="score-label">Passes complete</div><button class="reset-btn" id="resetProgress" type="button">Reset</button></aside></div>
       </section>
 
-      <section aria-labelledby="sourcesTitle"><div class="section-label" id="sourcesTitle">Primary references</div><div class="source-grid">
+      <section id="sources" aria-labelledby="sourcesTitle"><div class="section-label" id="sourcesTitle">Primary references</div><div class="source-grid">
         <a class="source" href="https://morganstanley.eightfold.ai/careers/job/549799409227" target="_blank" rel="noopener">Role description<span>Morgan Stanley</span></a>
         <a class="source" href="https://www.morganstanley.com/people-opportunities/students-graduates/resources/interview-preparation/" target="_blank" rel="noopener">Interview preparation<span>Morgan Stanley Careers</span></a>
         <a class="source" href="https://www.first.org/epss/" target="_blank" rel="noopener">Exploit Prediction Scoring System<span>FIRST</span></a>
@@ -382,9 +515,11 @@ footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display
 </div>
 <script>
 const KEY="airampup:interview-lab:v1";
+const MODEKEY="airampup:interview-lab:mode:v1";
 const checks=[...document.querySelectorAll('[data-step]')];
 const count=document.getElementById('doneCount');
 const glossaryPanel=document.getElementById('acronymPanel');
+const modeBtn=document.getElementById('modeToggle');
 const store={
   async get(k){if(typeof window.storage!=="undefined"){const r=await window.storage.get(k);return r?r.value:null}try{return localStorage.getItem(k)}catch(e){return null}},
   async set(k,v){if(typeof window.storage!=="undefined")return window.storage.set(k,v);try{localStorage.setItem(k,v)}catch(e){}}
@@ -392,10 +527,27 @@ const store={
 function updateCount(){count.textContent=checks.filter(x=>x.checked).length}
 async function save(){const state={};checks.forEach(x=>state[x.dataset.step]=x.checked);await store.set(KEY,JSON.stringify(state));updateCount()}
 async function load(){try{const raw=await store.get(KEY);const state=raw?JSON.parse(raw):{};checks.forEach(x=>x.checked=Boolean(state[x.dataset.step]))}catch(e){}updateCount()}
+function applyMode(on){
+  document.body.classList.toggle('live',on);
+  modeBtn.setAttribute('aria-pressed',on?'true':'false');
+  modeBtn.querySelector('.mode-text').textContent=on?'Live mode on':'Live mode';
+  if(on){
+    document.querySelectorAll('.main-content details[open]').forEach(d=>d.open=false);
+    glossaryPanel.open=true;
+  }
+}
+async function loadMode(){let on=false;try{on=await store.get(MODEKEY)==="1"}catch(e){}applyMode(on)}
+modeBtn.addEventListener('click',async()=>{
+  const on=!document.body.classList.contains('live');
+  applyMode(on);
+  await store.set(MODEKEY,on?"1":"0");
+  if(on)document.getElementById('cheatsheet').scrollIntoView({block:'start'});
+});
 checks.forEach(x=>x.addEventListener('change',save));
 document.getElementById('resetProgress').addEventListener('click',async()=>{checks.forEach(x=>x.checked=false);await save()});
 if(window.matchMedia('(min-width: 941px)').matches)glossaryPanel.open=true;
 load();
+loadMode();
 </script>
 </body>
 </html>
