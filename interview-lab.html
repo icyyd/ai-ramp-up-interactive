@@ -201,6 +201,27 @@ footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display
 .flow-pill{background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px;flex:1 1 158px;min-width:0}
 .flow-pill b{display:block;font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
 .flow-pill span{color:var(--muted);font-size:.74rem}
+/* ---------- proposals, tiers, AWS map ---------- */
+.proposal-banner{background:rgba(123,196,150,.07);border:1px solid rgba(123,196,150,.32);border-radius:12px;padding:14px 17px;margin-bottom:12px;color:var(--muted);font-size:.84rem}
+.proposal-banner strong{color:var(--ok)}
+.thesis{background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid rgba(232,163,61,.34);border-radius:14px;padding:20px 22px;margin-bottom:12px}
+.thesis h2{font-family:'Fraunces',serif;font-size:1.16rem;color:var(--amber);margin-bottom:8px}
+.thesis p{color:var(--muted);font-size:.88rem}
+.tier-table{width:100%;border-collapse:collapse;font-size:.79rem;margin-top:4px}
+.tier-table th,.tier-table td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tier-table th{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.tier-table td:first-child{color:var(--ok);font-family:'Spline Sans Mono',monospace;font-size:.61rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.tier-table td:nth-child(2){color:var(--bone);width:27%}
+.tier-table td:last-child{color:var(--muted)}
+.tier-table tr:last-child td{border-bottom:0}
+.svc{font-family:'Spline Sans Mono',monospace;font-size:.7rem;color:var(--amber);background:rgba(232,163,61,.08);border:1px solid rgba(232,163,61,.24);border-radius:5px;padding:1px 6px;white-space:nowrap}
+.aws-row{display:grid;grid-template-columns:100px 1fr;gap:13px;padding:11px 0;border-top:1px solid var(--line);align-items:start}
+.aws-row:first-child{border-top:0}
+.aws-stage{font-family:'Spline Sans Mono',monospace;color:var(--coral);font-size:.59rem;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.aws-detail{color:var(--muted);font-size:.82rem}
+.aws-detail .svc{margin-right:3px}
+.buy-build{margin-top:12px;padding:12px 14px;border-radius:9px;background:rgba(232,163,61,.08);color:var(--muted);font-size:.82rem}
+.buy-build strong{color:var(--bone)}
 body.live .hero .lede,body.live .hero .chips,body.live .section-intro,body.live #study-plan,body.live #rehearsal,body.live #credibility,body.live #sources,body.live .live-hint{display:none}
 body.live .hero{padding:30px 0 16px}
 body.live .section-label{margin:30px 0 13px}
@@ -210,7 +231,8 @@ body.live .section-label{margin:30px 0 13px}
 @media(max-width:700px){
   .hero{grid-template-columns:1fr;padding-top:42px;gap:24px}.scope-card{max-width:none}.module-mark{display:none}.reference-rail{grid-template-columns:1fr}
   .req-grid,.evidence-grid,.governance-grid,.answer-grid,.risk-grid,.guardrail-grid,.source-grid,.friday-list,.cheat-grid{grid-template-columns:1fr}.req-card:first-child{grid-column:auto}
-  .router{display:block;overflow-x:auto}.router td:first-child,.router td:nth-child(2){width:auto}
+  .router,.tier-table{display:block;overflow-x:auto}.router td:first-child,.router td:nth-child(2),.tier-table td:nth-child(2){width:auto}
+  .aws-row{grid-template-columns:1fr;gap:5px}
   .study-brief,.study-day-head{align-items:flex-start;flex-direction:column}.study-total{text-align:left}.study-item-head{align-items:flex-start}.study-item h3{max-width:25ch}
   .case-card summary{grid-template-columns:1fr;padding-right:49px}.case-use{text-align:left;max-width:none;padding-right:0}.star-row{grid-template-columns:1fr;gap:3px}
   .explain-step{grid-template-columns:28px 1fr}.step-text{grid-column:2}.case-selector{display:block;overflow-x:auto;white-space:nowrap}
@@ -242,7 +264,7 @@ body.live .section-label{margin:30px 0 13px}
   </header>
 
   <nav class="jump-nav" aria-label="Interview Lab sections">
-    <a class="jump-link" href="#cheatsheet">Live cheatsheet</a><a class="jump-link" href="#jd-map">JD map</a><a class="jump-link" href="#evidence">Security evidence</a><a class="jump-link" href="#talk-tracks">Talk tracks</a><a class="jump-link" href="#architecture">Technical answer</a><a class="jump-link" href="#governance">Governance</a><a class="jump-link" href="#ai-guardrails">AI guardrails</a><a class="jump-link" href="#cases">STAR cases</a><a class="jump-link" href="#study-plan">Study plan</a><a class="jump-link" href="#reference">Acronyms</a>
+    <a class="jump-link" href="#cheatsheet">Live cheatsheet</a><a class="jump-link" href="#jd-map">JD map</a><a class="jump-link" href="#evidence">Security evidence</a><a class="jump-link" href="#talk-tracks">Talk tracks</a><a class="jump-link" href="#architecture">Technical answer</a><a class="jump-link" href="#governance">Governance</a><a class="jump-link" href="#ai-guardrails">AI guardrails</a><a class="jump-link" href="#proposals">What I'd build</a><a class="jump-link" href="#cases">STAR cases</a><a class="jump-link" href="#study-plan">Study plan</a><a class="jump-link" href="#reference">Acronyms</a>
   </nav>
 
   <div class="content-layout">
@@ -290,6 +312,11 @@ body.live .section-label{margin:30px 0 13px}
                   <tr><td>How hands-on are you</td><td>Architecture, spikes, design and code review</td><td>The JIT identity redesign, then handing off clear ownership</td></tr>
                   <tr><td>Data engineering depth</td><td>Name the boundary before they find it</td><td>Ingestion, schema evolution, idempotency, replay, lineage — with the engineers who run it</td></tr>
                   <tr><td>AI, agents, or automation</td><td>AI raises the need for deterministic controls</td><td>Scoped workload identity, approval for material writes, audit and rollback</td></tr>
+                  <tr><td>Letting developers use AI freely</td><td>Govern the blast radius, not the keyboard</td><td>Tier 0 and 1 frictionless; governance concentrated where writes happen</td></tr>
+                  <tr><td>Securing an agentic system</td><td>Four questions: identity, tools, trust, aftermath</td><td>Short-lived creds, policy check before execution, context is data, one audit record</td></tr>
+                  <tr><td>Reviewing AI-generated code</td><td>Same pipeline; the risk is volume and review decay</td><td>Review depth as volume rises, author can explain it, invented dependencies</td></tr>
+                  <tr><td>Who is accountable for an agent</td><td>The named owner who authorized it</td><td>Explicit, revocable, expiring grant; reversibility makes accountability real</td></tr>
+                  <tr><td>Show me AWS specifics</td><td>Stage first, service second</td><td>Security Lake to OCSF; buy stages 1–2, build context and policy</td></tr>
                   <tr><td>Technical disagreement</td><td>Make the constraints explicit, compare designs against them</td><td>Reversible gets an experiment; identity boundaries need stronger evidence</td></tr>
                   <tr><td>People leadership</td><td>Ownership by platform area, leads grown through review</td><td>3 to 14, ticket queue replaced by self-service capability</td></tr>
                 </tbody>
@@ -316,6 +343,7 @@ body.live .section-label{margin:30px 0 13px}
                 <li><strong>No invented precision.</strong> A concrete control flow beats a number you cannot source.</li>
                 <li><strong>Keep attribution exact.</strong> "My team rolled out" and "I designed" are different claims.</li>
                 <li><strong>Do not open with the tool name.</strong> Control objective first, product as evidence second.</li>
+                <li><strong>Proposals are not history.</strong> Everything in the point-of-view section is “here is how I would approach it,” never “here is what I built.”</li>
               </ul>
             </div>
 
@@ -329,6 +357,7 @@ body.live .section-label{margin:30px 0 13px}
                 <li>How does the team split between building the platform and running the operating model?</li>
                 <li>What would you want visibly different ninety days in?</li>
                 <li>Where does agentic tooling sit on the roadmap, and who owns its guardrails?</li>
+                <li>What can a developer do with AI today without asking permission — and where does that line sit?</li>
               </ul>
             </div>
 
@@ -372,6 +401,10 @@ body.live .section-label{margin:30px 0 13px}
           <details><summary><div class="card-label">30 seconds</div><div class="card-title">How hands-on are you?</div></summary><div class="answer-body script"><p>I stay hands-on at the architecture, technical spike, design-review, and code-review level. The recent identity redesign is a good example: I worked through the JIT access model, Microsoft Entra Privileged Identity Management enablement, access-package lifecycle, and audit path with the team and IT. I build or validate the first path when that retires uncertainty, then create clear engineering ownership so I do not become the delivery bottleneck.</p></div></details>
           <details><summary><div class="card-label">Credibility</div><div class="card-title">Bridge the data-engineering boundary</div></summary><div class="answer-body script"><p>My depth is large-scale cloud platforms, security posture, and developer-facing products. I understand durable ingestion, schema evolution, idempotency, replay, quality, lineage, and tiered serving, and I have led governed data and machine-learning products. I have not operated a security telemetry platform at Morgan Stanley's volume, so I would not overstate that. What I bring is the ability to define the decision, architecture, standards, and team operating model with the data engineers who will run it.</p></div></details>
           <details><summary><div class="card-label">Leadership</div><div class="card-title">Handle technical disagreement</div></summary><div class="answer-body script"><p>I make the constraints explicit and compare designs against security boundary, failure modes, operational cost, reversibility, and delivery time. If an engineer's design wins against those constraints, we use it even when it is not my stylistic preference. Reversible decisions get a bounded experiment; changes to identity or another hard-to-reverse security boundary require stronger evidence and a documented decision.</p></div></details>
+          <details><summary><div class="card-label">Governance · 60 seconds</div><div class="card-title">AI freedom for developers without losing control</div></summary><div class="answer-body script"><p>I would start by separating two things that usually get conflated: which model a developer uses, and what the system is allowed to touch. Restricting the first buys almost no risk reduction and costs you adoption — and the usage does not stop, it moves to personal accounts where you have no visibility at all.</p><p>So I would make exploration genuinely free: any approved model, sandboxed, non-production data, default-on, no ticket. Then concentrate governance where actions become consequential — an agent holding production credentials, or one that can write. Those tiers get a scoped identity, tools from a reviewed catalog, a deterministic policy check on every call, human approval for material writes, and an expiry on the authorization.</p><p>The way you make it stick is the same lesson as the identity work: the governed path has to be the fastest path. If the paved road hands you guardrails, logging, and identity for free, teams take it because it is quicker, not because a policy told them to.</p><div class="script-note">JD tie: actionable developer guidance, developer-facing platform, governance, and technical strategy in one answer.</div></div></details>
+          <details><summary><div class="card-label">Agentic · 45 seconds</div><div class="card-title">How would you secure an agentic system</div></summary><div class="answer-body script"><p>Four questions, ordered by how much damage the answer can do. What identity is it acting as — a scoped workload identity with short-lived credentials, never a shared key, read separated from write. What can it call — tools from a reviewed catalog, with a deterministic policy check before execution rather than the model deciding whether it is allowed. What does it trust — retrieved documents and tool output are data, never instructions, which is the prompt-injection boundary. And what happens afterward — one audit record per action covering model and prompt version, context, tool calls, approvals, and outcome, plus a revocation path that works in seconds.</p><p>The unifying principle is that the model may propose anything, but the control plane stays deterministic.</p></div></details>
+          <details><summary><div class="card-label">AppSec · 30 seconds</div><div class="card-title">Is reviewing AI-generated code different</div></summary><div class="answer-body script"><p>The pipeline should not care who wrote it — the same secret scanning, dependency analysis, tests, and review apply. What changes is volume and review posture. You get more code, faster, and it looks plausible, which is exactly the condition under which human review quietly degrades into approval. So I would watch two signals: whether review depth holds as volume rises, and whether the author can explain the change they are submitting. The other real shift is supply chain — generated code will confidently invent a plausible package name, so dependency verification carries more weight than it used to.</p></div></details>
+          <details><summary><div class="card-label">Accountability · 30 seconds</div><div class="card-title">Who is responsible when an agent acts badly</div></summary><div class="answer-body script"><p>The person or team who authorized it — and that has to be a named owner, not “the platform.” Which means the authorization must be an explicit, revocable, expiring grant rather than something that accumulated quietly over time. Every agent gets a registered owner, a defined blast radius, and a review date. When something goes wrong the questions are the ordinary incident questions: what identity, which permission allowed it, what evidence exists, what is the revert path. My insistence on reversibility at the highest autonomy tier is not philosophical — accountability without a revert path is just blame.</p></div></details>
         </div>
       </section>
 
@@ -422,6 +455,67 @@ body.live .section-label{margin:30px 0 13px}
           </div>
           <div class="script-note"><strong>Live line:</strong> “AI does not replace the control plane. It makes least privilege, deterministic gates, human approval, traceability, and rollback more important because one incorrect decision can execute at machine speed.”</div>
         </article>
+      </section>
+
+      <section id="proposals" aria-labelledby="proposalsTitle">
+        <div class="section-label" id="proposalsTitle">Point of view · what I would build here</div>
+        <div class="proposal-banner"><strong>These are proposals, not history.</strong> Introduce every one of them as forward-looking — “here is how I would approach it,” “the model I would propose” — never as work already delivered. At VP level the interviewer expects a point of view; they will lose trust instantly if a proposal is dressed up as a result.</div>
+
+        <article class="thesis">
+          <h2>Govern the blast radius, not the keyboard</h2>
+          <p>The failure mode of restrictive AI policy is not that developers stop using AI. It is that the usage moves somewhere you cannot see, on personal accounts, with production data pasted into it. Governance should be almost invisible at the point of exploration and very strict at the point of consequence. That is the same lesson as the identity work: the control gets adopted when the governed path is also the fastest path.</p>
+        </article>
+
+        <div class="cheat-grid">
+          <div class="cheat-card wide">
+            <h3>Proposal one · A tiered autonomy model</h3>
+            <p>One framework replaces the endless case-by-case debate. What matters is not which model a team uses, it is what the system is allowed to touch and whether the action can be undone.</p>
+            <table class="tier-table">
+              <thead><tr><th>Tier</th><th>What the developer gets</th><th>What the platform requires in exchange</th></tr></thead>
+              <tbody>
+                <tr><td>0 · Explore</td><td>Any approved model, sandboxed, synthetic or public data</td><td>Nothing. Default-on for every engineer, no ticket, no review. This tier is where creative freedom lives and it should be genuinely unrestricted.</td></tr>
+                <tr><td>1 · Assist</td><td>AI writing code in the IDE and in pull requests</td><td>No new gate. The existing pipeline is the control: secret scanning, dependency and code analysis, tests, and human review apply exactly as they do to hand-written code.</td></tr>
+                <tr><td>2 · Supervised</td><td>An agent reading production telemetry and proposing changes</td><td>Scoped read-only workload identity, registration in the tool catalog, and a human who merges. The agent proposes; it never applies.</td></tr>
+                <tr><td>3 · Autonomous</td><td>An agent acting without a human in each loop</td><td>Reversible actions only, an explicitly bounded blast radius, named accountable owner, approval for material writes, monitoring, and an expiry date on the authorization.</td></tr>
+              </tbody>
+            </table>
+            <div class="buy-build"><strong>The line to say:</strong> “Tier 0 and tier 1 cover the overwhelming majority of developer usage, and I would deliberately put almost no friction there. The governance effort belongs at tiers 2 and 3, where an action becomes hard to reverse.”</div>
+          </div>
+
+          <div class="cheat-card">
+            <h3>Proposal two · A paved road for agentic development</h3>
+            <p>Freedom comes from good defaults, not from permission. A team that builds on the platform default should get identity, guardrails, logging, and an approved tool catalog for free, and should reach production faster than a team that rolls its own.</p>
+            <ul class="ask-list">
+              <li>Model access through one governed endpoint, with <span class="svc">Bedrock Guardrails</span> attached centrally. Because the <span class="svc">ApplyGuardrail</span> API evaluates independently of the model call, teams keep free model choice while the control stays constant.</li>
+              <li>Tools drawn from a reviewed catalog rather than hand-wired per project — <span class="svc">AgentCore Registry</span> gives that a publish, review, and approve workflow.</li>
+              <li>Deterministic policy on every tool call before it executes, authored in Cedar — <span class="svc">AgentCore Policy</span> and <span class="svc">Verified Permissions</span>.</li>
+              <li>Tracing pre-wired, not retrofitted: <span class="svc">AgentCore Observability</span> over OpenTelemetry into <span class="svc">CloudWatch</span>, plus <span class="svc">Bedrock</span> model invocation logging.</li>
+            </ul>
+          </div>
+
+          <div class="cheat-card">
+            <h3>Proposal three · An agent identity and action plane</h3>
+            <p>Most agent risk is not the model, it is the credential and the write path. An agent is a workload, so it gets the same treatment every other workload gets — which is exactly the identity model already in place.</p>
+            <ul class="ask-list">
+              <li>A distinct workload identity per agent with short-lived credentials from <span class="svc">STS</span> — never a shared or long-lived key. <span class="svc">AgentCore Identity</span> federates existing providers including Microsoft Entra, so this extends the identity work rather than replacing it.</li>
+              <li>Read and write permissions separated, with just-in-time elevation for anything privileged — the same PIM pattern, applied to non-human identity.</li>
+              <li>Material writes routed through the existing CI/CD path so changes stay reviewable and revertible. Agents open pull requests; they do not touch production directly.</li>
+              <li>One audit record per action: model and prompt version, retrieved context, tool calls, approvals, identity, and outcome.</li>
+              <li>A revocation path that works in seconds, tested like a break-glass procedure.</li>
+            </ul>
+          </div>
+
+          <div class="cheat-card wide">
+            <h3>Proposal four · The security data platform, in AWS services</h3>
+            <p>Same five stages as the technical answer, made concrete. Use this only if they ask for AWS specifics, and lead with the stage, not the service name.</p>
+            <div class="aws-row"><div class="aws-stage">1 · Collect</div><div class="aws-detail"><span class="svc">CloudTrail</span> management and data events, <span class="svc">EKS</span> audit logs, <span class="svc">VPC Flow Logs</span>, <span class="svc">GuardDuty</span>, <span class="svc">Inspector</span> for workload CVEs, <span class="svc">Config</span>, <span class="svc">Security Hub</span> — with Rapid7, CrowdStrike, GitGuardian, Snyk, and Entra arriving as custom sources.</div></div>
+            <div class="aws-row"><div class="aws-stage">2 · Normalize</div><div class="aws-detail"><span class="svc">Security Lake</span> converts to the OCSF schema in Parquet on <span class="svc">S3</span>, catalogued through <span class="svc">Glue</span> and <span class="svc">Lake Formation</span> — the managed version of the common finding model.</div></div>
+            <div class="aws-row"><div class="aws-stage">3 · Context</div><div class="aws-detail">Join ownership, service criticality, environment, and exposure from the asset catalog; <span class="svc">Lake Formation</span> governs who can read which columns of sensitive telemetry.</div></div>
+            <div class="aws-row"><div class="aws-stage">4 · Prioritize</div><div class="aws-detail">A versioned policy layer over KEV, EPSS, reachability, and compensating controls, run in <span class="svc">Athena</span> or <span class="svc">Lambda</span>, emitting a priority with reason codes rather than a bare score.</div></div>
+            <div class="aws-row"><div class="aws-stage">5 · Deliver</div><div class="aws-detail"><span class="svc">EventBridge</span> into <span class="svc">Step Functions</span> to open the pull request or ticket against the owning team, with human approval as an explicit state; adoption and risk retired measured in <span class="svc">QuickSight</span> or <span class="svc">OpenSearch</span>.</div></div>
+            <div class="buy-build"><strong>The senior signal:</strong> “Stages one and two are largely a managed capability now — Security Lake gives you OCSF normalization without building it. The differentiated engineering is stage three and four, ownership context and an explainable policy layer, and that is where I would put the team. I would not spend headcount rebuilding a normalizer.”</div>
+          </div>
+        </div>
       </section>
 
       <section id="cases" aria-labelledby="casesTitle">
@@ -505,7 +599,7 @@ body.live .section-label{margin:30px 0 13px}
     <aside class="reference-rail" id="reference" aria-label="Quick reference">
       <details class="rail-panel" open><summary><div class="card-label">Quick reference</div><div class="card-title">JD lens</div></summary><div class="rail-body"><ul class="rail-list"><li><strong>Security data</strong>Rapid7, CrowdStrike, GitGuardian, Snyk, Entra, cloud and asset context</li><li><strong>Actionable guidance</strong>Owner, reason, priority, fix path, due date, exception</li><li><strong>Architecture</strong>Reliable ingestion, common model, governance, serving, measurement</li><li><strong>Leadership</strong>Direction, standards, coaching, accountability, cross-functional trust</li><li><strong>Regulated delivery</strong>SOC 2 evidence, access governance, traceability, expiry</li></ul></div></details>
       <details class="rail-panel" id="acronymPanel"><summary><div class="card-label">Quick reference</div><div class="card-title">Acronym glossary</div></summary><div class="rail-body"><dl class="glossary">
-        <dt>AI</dt><dd>Artificial Intelligence</dd><dt>AICPA</dt><dd>American Institute of Certified Public Accountants</dd><dt>API</dt><dd>Application Programming Interface</dd><dt>AppSec</dt><dd>Application Security</dd><dt>AWS</dt><dd>Amazon Web Services</dd><dt>CI/CD</dt><dd>Continuous Integration and Continuous Delivery/Deployment</dd><dt>CISA</dt><dd>Cybersecurity and Infrastructure Security Agency</dd><dt>CVE</dt><dd>Common Vulnerabilities and Exposures</dd><dt>CVSS</dt><dd>Common Vulnerability Scoring System</dd><dt>EPSS</dt><dd>Exploit Prediction Scoring System</dd><dt>FIRST</dt><dd>Forum of Incident Response and Security Teams</dd><dt>GCP</dt><dd>Google Cloud Platform</dd><dt>IAM</dt><dd>Identity and Access Management</dd><dt>IaC</dt><dd>Infrastructure as Code</dd><dt>IT</dt><dd>Information Technology</dd><dt>JD</dt><dd>Job Description</dd><dt>JIT</dt><dd>Just-in-Time access</dd><dt>K8s</dt><dd>Kubernetes</dd><dt>KEV</dt><dd>Known Exploited Vulnerabilities</dd><dt>KPI</dt><dd>Key Performance Indicator</dd><dt>LLM</dt><dd>Large Language Model</dd><dt>MFA</dt><dd>Multi-Factor Authentication</dd><dt>ML</dt><dd>Machine Learning</dd><dt>MTTR</dt><dd>Mean Time to Remediate or Recover; define usage</dd><dt>NIST</dt><dd>National Institute of Standards and Technology</dd><dt>OCSF</dt><dd>Open Cybersecurity Schema Framework</dd><dt>OWASP</dt><dd>Open Worldwide Application Security Project</dd><dt>PIM</dt><dd>Privileged Identity Management</dd><dt>RAG</dt><dd>Retrieval-Augmented Generation</dd><dt>RBAC</dt><dd>Role-Based Access Control</dd><dt>RMF</dt><dd>Risk Management Framework</dd><dt>SDLC</dt><dd>Software Development Life Cycle</dd><dt>SIEM</dt><dd>Security Information and Event Management</dd><dt>SLA</dt><dd>Service-Level Agreement</dd><dt>SLO</dt><dd>Service-Level Objective</dd><dt>SOC 2</dt><dd>System and Organization Controls 2</dd><dt>SP</dt><dd>Special Publication</dd><dt>SSO</dt><dd>Single Sign-On</dd><dt>STAR</dt><dd>Situation, Task, Action, Result</dd><dt>TSC</dt><dd>Trust Services Criteria</dd><dt>VP</dt><dd>Vice President</dd>
+        <dt>AI</dt><dd>Artificial Intelligence</dd><dt>AICPA</dt><dd>American Institute of Certified Public Accountants</dd><dt>API</dt><dd>Application Programming Interface</dd><dt>AppSec</dt><dd>Application Security</dd><dt>AWS</dt><dd>Amazon Web Services</dd><dt>CI/CD</dt><dd>Continuous Integration and Continuous Delivery/Deployment</dd><dt>CISA</dt><dd>Cybersecurity and Infrastructure Security Agency</dd><dt>CSPM</dt><dd>Cloud Security Posture Management</dd><dt>CVE</dt><dd>Common Vulnerabilities and Exposures</dd><dt>CVSS</dt><dd>Common Vulnerability Scoring System</dd><dt>EKS</dt><dd>Elastic Kubernetes Service (AWS)</dd><dt>EPSS</dt><dd>Exploit Prediction Scoring System</dd><dt>FIRST</dt><dd>Forum of Incident Response and Security Teams</dd><dt>GCP</dt><dd>Google Cloud Platform</dd><dt>IAM</dt><dd>Identity and Access Management</dd><dt>IaC</dt><dd>Infrastructure as Code</dd><dt>IT</dt><dd>Information Technology</dd><dt>JD</dt><dd>Job Description</dd><dt>JIT</dt><dd>Just-in-Time access</dd><dt>K8s</dt><dd>Kubernetes</dd><dt>KEV</dt><dd>Known Exploited Vulnerabilities</dd><dt>KPI</dt><dd>Key Performance Indicator</dd><dt>LLM</dt><dd>Large Language Model</dd><dt>MCP</dt><dd>Model Context Protocol</dd><dt>MFA</dt><dd>Multi-Factor Authentication</dd><dt>ML</dt><dd>Machine Learning</dd><dt>MTTR</dt><dd>Mean Time to Remediate or Recover; define usage</dd><dt>NIST</dt><dd>National Institute of Standards and Technology</dd><dt>OCSF</dt><dd>Open Cybersecurity Schema Framework</dd><dt>OTEL</dt><dd>OpenTelemetry</dd><dt>OWASP</dt><dd>Open Worldwide Application Security Project</dd><dt>PIM</dt><dd>Privileged Identity Management</dd><dt>RAG</dt><dd>Retrieval-Augmented Generation</dd><dt>RBAC</dt><dd>Role-Based Access Control</dd><dt>RMF</dt><dd>Risk Management Framework</dd><dt>SCP</dt><dd>Service Control Policy (AWS Organizations)</dd><dt>SDLC</dt><dd>Software Development Life Cycle</dd><dt>SIEM</dt><dd>Security Information and Event Management</dd><dt>SLA</dt><dd>Service-Level Agreement</dd><dt>SLO</dt><dd>Service-Level Objective</dd><dt>SOC 2</dt><dd>System and Organization Controls 2</dd><dt>SP</dt><dd>Special Publication</dd><dt>SSO</dt><dd>Single Sign-On</dd><dt>STAR</dt><dd>Situation, Task, Action, Result</dd><dt>STS</dt><dd>Security Token Service (AWS short-lived credentials)</dd><dt>TSC</dt><dd>Trust Services Criteria</dd><dt>VP</dt><dd>Vice President</dd>
       </dl></div></details>
       <details class="rail-panel"><summary><div class="card-label">Answer formula</div><div class="card-title">Keep it structured</div></summary><div class="rail-body"><ul class="rail-list"><li><strong>Technical</strong>Decision → five-stage flow → trade-off → failure → measure</li><li><strong>Behavioral</strong>Result headline → situation → task → action → result → lesson</li><li><strong>Credibility</strong>What I owned → what the team owned → what I would do here</li></ul></div></details>
     </aside>
