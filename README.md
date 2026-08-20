@@ -21,16 +21,15 @@ Thirteen chapters, roughly 230 to 280 hours total. Each chapter includes:
 
 ### Connected Interview Lab
 
-The Interview Lab is a separate, connected module for senior cloud security and platform leadership interviews. It is built around two things: anticipating the question, and having a work sample ready to prove the answer.
+The Interview Lab is a separate, connected module for a senior cloud and AI security leadership interview. It is structured as questions with the answer underneath, built from the STAR work examples and VP framework source document.
 
-- A **question bank** of 42 likely questions in six groups — opening and positioning, platform and architecture, security and scenarios, AI and agentic, leadership, and curveballs. Each row is *if they ask → lead with → go to*, where "go to" names the work sample or deep answer that proves it.
-- **Eight STAR work samples**, each with situation, task, action, result, lesson, and the proof points to have ready
-- A compact open-and-close card: the twenty-second opening, defensible numbers, a do-not-say list, questions to ask the interviewer, and a closing line
-- A **Call index** pinned in the sidebar linking straight to each question group, so navigation stays fast under pressure
-- A **Live mode** toggle that hides instructional prose, collapses long-form answers to scannable titles, and remembers the setting
-- Deep answers behind the hints: the five-stage security-data architecture answer, a cloud security program model of five planes (identity, delivery, runtime, data, assurance) each with an explicit "what AI changes" column, and talk tracks covering developer AI freedom versus control, securing an agentic system, reviewing AI-generated code, and agent accountability
-- Forward-looking proposals, clearly labelled as proposals rather than past work: a tiered AI autonomy model, the paved road that implements it, and the architecture mapped to AWS services
-- A quick-reference acronym glossary and JD lens
+- **Morgan Stanley core values** — all five, with their published sub-points, each mapped to where it naturally lands in an answer rather than recited
+- **Answer shape and claim discipline** — the 10/15/45–75/15-second answer structure, the hiring-manager versus senior-developer lens, and the rule that an unverified estimate never becomes a fact
+- **27 questions in eight groups** — opening and fit, identity and privileged access, AI and agents, incident response, secure delivery, compliance assurance, program and strategy, and a credibility self-check. Each opens to a result-first line plus the track that matches the room.
+- **Four work examples and an incident-response lifecycle** — consolidated JIT privileged access, the multi-cloud Cloud Engineering Agent, shift-left delivery, and agentic SOC 2 continuous control assurance, each with hiring-manager and developer talk tracks, technical depth on request, and metrics left as fill-in placeholders
+- **VP cloud and AI security program** — Govern, Enable, Control, Observe, Prove; five AI autonomy tiers from open experimentation to privileged action; eight non-negotiable agent guardrails; the operating model; executive metrics; and a 30/90/6-month/12-month roadmap
+- A **Call index** pinned in the sidebar, a **Live mode** toggle that collapses answers and hides instructional prose, an answer-formula card, and an acronym glossary
+- Reference frameworks: NIST CSF 2.0, SP 800-61r3, AI RMF and GenAI Profile, Fed SR 26-2, NY DFS, CSA CCM and AICM, OWASP Agentic Top 10, MITRE ATLAS, CISA, and AICPA TSC
 
 ## Running it
 
@@ -53,6 +52,6 @@ The main curriculum is keyed as `airampup:v2`; the Interview Lab stores only its
 ## Structure
 
 - `index.html` contains the main experience and the `CHAPTERS` curriculum array. Each chapter object defines its id, number, title, tag, time estimate, tech chips, objectives, resources, project, and quiz.
-- `interview-lab.html` contains the standalone interview-preparation module, built around a question bank and a STAR work-sample library, and links back to the main curriculum.
+- `interview-lab.html` contains the standalone interview-preparation module, structured as a question-and-answer reference over four STAR work examples and a VP program framework, and links back to the main curriculum.
 
 Chapter `id` values key saved progress, so keep them stable when editing the curriculum. The chapter dial and navigation adapt automatically when the `CHAPTERS` array changes.

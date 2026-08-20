@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A connected interview preparation module for cloud security architecture, governance, agentic security, and STAR work samples.">
+<meta name="description" content="Question-and-answer interview reference for a senior cloud and AI security leadership role: work examples, program framework, and values alignment.">
 <title>Interview Lab · Cloud Security Platform Leadership</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Schibsted+Grotesk:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,12 +21,14 @@ abbr{cursor:help;text-decoration:underline dotted rgba(232,163,61,.65);text-unde
 .atmos::after{content:"";position:absolute;inset:0;opacity:.3;background-image:repeating-radial-gradient(circle at 86% 10%,transparent 0 58px,rgba(239,231,216,.035) 58px 59px)}
 .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px 100px}
 .module-nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
-.back-link{font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase}
-.back-link{display:inline-flex;align-items:center;gap:9px;color:var(--muted);text-decoration:none;padding:7px 0;transition:color .2s}
+.back-link{display:inline-flex;align-items:center;gap:9px;color:var(--muted);text-decoration:none;padding:7px 0;font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;transition:color .2s}
 .back-link:hover{color:var(--amber)}
-.back-link:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.hero{padding:58px 0 34px;display:grid;grid-template-columns:1fr 290px;gap:52px;align-items:end}
-.eyebrow,.section-label,.card-label,.star-key,.case-use{font-family:'Spline Sans Mono',monospace;text-transform:uppercase;letter-spacing:.14em}
+.back-link:focus-visible,.mode-toggle:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.mode-toggle{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,94,.1);border:1px solid rgba(255,107,94,.4);color:var(--coral);border-radius:100px;padding:7px 14px;font-family:'Spline Sans Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+.mode-toggle:hover{background:rgba(255,107,94,.18)}
+.mode-toggle[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:var(--ink);font-weight:700}
+.hero{padding:54px 0 30px;display:grid;grid-template-columns:1fr 290px;gap:52px;align-items:end}
+.eyebrow,.section-label,.card-label,.mini,.idx-label,.track-tag{font-family:'Spline Sans Mono',monospace;text-transform:uppercase;letter-spacing:.14em}
 .eyebrow{font-size:.68rem;color:var(--coral);margin-bottom:15px}
 h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.5rem,5.5vw,4.15rem);line-height:1.02;letter-spacing:-.01em;margin-bottom:18px}
 h1 em{font-style:italic;font-weight:300;color:var(--amber)}
@@ -36,17 +38,13 @@ h1 em{font-style:italic;font-weight:300;color:var(--amber)}
 .scope-card .label{font-family:'Spline Sans Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--coral)}
 .scope-card .role{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:600;line-height:1.25;margin:8px 0}
 .scope-card p{color:var(--muted);font-size:.84rem}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chips{margin-top:17px}
-.chip{font-size:.59rem;padding:4px 9px;border-radius:6px}
-.chip{font-family:'Spline Sans Mono',monospace;letter-spacing:.07em;background:rgba(232,163,61,.08);border:1px solid rgba(232,163,61,.28);color:var(--amber)}
 .content-layout{display:grid;grid-template-columns:minmax(0,1fr) 268px;grid-template-areas:"main rail";gap:32px;align-items:start}
 .main-content{grid-area:main;min-width:0}
 .reference-rail{grid-area:rail;position:sticky;top:18px;display:flex;flex-direction:column;gap:12px;max-height:calc(100vh - 36px);overflow:auto;scrollbar-width:thin}
 section{scroll-margin-top:24px}
-.section-label{font-size:.65rem;color:var(--amber);margin:42px 0 16px;display:flex;align-items:center;gap:13px}
+.section-label{font-size:.65rem;color:var(--amber);margin:40px 0 14px;display:flex;align-items:center;gap:13px}
 .section-label::after{content:"";flex:1;height:1px;background:var(--line)}
-.section-intro{color:var(--muted);font-size:.92rem;max-width:72ch;margin:-4px 0 16px}
+.section-intro{color:var(--muted);font-size:.9rem;max-width:74ch;margin:-2px 0 14px}
 .rail-panel{background:rgba(20,38,43,.96);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .rail-panel summary{padding:15px 42px 15px 16px}
 .rail-panel .card-title{font-size:.98rem}
@@ -55,129 +53,84 @@ section{scroll-margin-top:24px}
 .rail-list strong{display:block;color:var(--bone);font-size:.82rem}
 .glossary{display:grid;grid-template-columns:auto 1fr;gap:7px 10px}
 .glossary dt{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.68rem;font-weight:500}
-.glossary dd{color:var(--muted);font-size:.74rem;line-height:1.45}.risk-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}.risk-card h3{font-family:'Fraunces',serif;font-size:1.02rem;line-height:1.25;margin-bottom:7px}.risk-card p,.risk-card li{color:var(--muted);font-size:.84rem}.risk-card ul{padding-left:18px;margin-top:7px}.risk-card li+li{margin-top:5px}
-.answer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.glossary dd{color:var(--muted);font-size:.74rem;line-height:1.45}
 details{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:border-color .2s,background .2s}
 details:hover{border-color:rgba(232,163,61,.38)}
 details[open]{background:var(--panel2);border-color:rgba(232,163,61,.42)}
-summary{list-style:none;cursor:pointer;padding:17px 49px 17px 18px;position:relative}
+summary{list-style:none;cursor:pointer;padding:16px 48px 16px 18px;position:relative}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--amber);font-family:'Spline Sans Mono',monospace;font-size:1.1rem}
-details[open] summary::after{content:"−"}
-.card-label{font-size:.56rem;color:var(--coral);margin-bottom:4px}
-.card-title{font-family:'Fraunces',serif;font-weight:600;font-size:1.06rem;line-height:1.25}
-.answer-body,.case-body{padding:0 18px 18px;color:var(--muted);font-size:.88rem}
-.answer-body p+p{margin-top:10px}
-.script{color:var(--bone);border-left:2px solid var(--amber);padding-left:13px}
-.script-note{margin-top:11px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem}
-.live-answer{background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid rgba(232,163,61,.32);border-radius:14px;padding:22px}
-.live-answer h2{font-family:'Fraunces',serif;font-size:1.18rem;color:var(--amber);margin-bottom:8px}
-.live-answer blockquote{border-left:2px solid var(--amber);padding-left:14px;color:var(--bone);font-size:.91rem}
-.deeper{margin-top:11px}
-.deeper ul{padding-left:18px}
-.deeper li+li{margin-top:5px}
-.risk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:11px}
-.tier-list{list-style:none!important;padding-left:0!important}
-.tier-list li{padding:7px 0;border-top:1px solid var(--line)}
-.tier-list li:first-child{border-top:0}
-.tier-list strong{color:var(--bone)}
-.guardrail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:13px}
-.guardrail{background:rgba(13,27,30,.55);border:1px solid var(--line);border-radius:9px;padding:13px}
-.guardrail strong{display:block;color:var(--bone);font-size:.86rem;margin-bottom:3px}
-.guardrail span{color:var(--muted);font-size:.78rem}
-.case-stack{display:flex;flex-direction:column;gap:10px}
-.case-card summary{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
-.case-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600}
-.case-use{font-size:.53rem;color:var(--muted);text-align:right;max-width:34ch;padding-right:16px}
-.star-row{display:grid;grid-template-columns:78px 1fr;gap:11px;padding:7px 0;border-top:1px solid var(--line)}
-.star-row:first-child{border-top:0;padding-top:0}
-.star-key{font-size:.56rem;color:var(--amber);padding-top:2px}
-.star-value{color:var(--bone)}
-.proof{margin-top:11px;padding:11px 13px;border-radius:8px;background:rgba(232,163,61,.08);color:var(--muted)}
-.source-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
-.source{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--bone);transition:border-color .2s,color .2s;font-size:.86rem}
-.source:hover{border-color:var(--amber);color:var(--amber)}
-.source span{display:block;font-family:'Spline Sans Mono',monospace;color:var(--muted);font-size:.55rem;letter-spacing:.11em;text-transform:uppercase;margin-top:2px}
-footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);font-size:.76rem}
-/* ---------- live cheatsheet ---------- */
-.mode-toggle{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,94,.1);border:1px solid rgba(255,107,94,.4);color:var(--coral);border-radius:100px;padding:7px 14px;font-family:'Spline Sans Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
-.mode-toggle:hover{background:rgba(255,107,94,.18)}
-.mode-toggle[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:var(--ink);font-weight:700}
-.mode-toggle:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.cheat{background:linear-gradient(150deg,rgba(255,107,94,.09),var(--panel));border:1px solid rgba(255,107,94,.34);border-radius:16px;padding:22px}
-.cheat>p{color:var(--muted);font-size:.88rem;max-width:72ch}
-.cheat h2{font-family:'Fraunces',serif;font-size:1.18rem;color:var(--amber);margin-bottom:7px}
-.cheat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:15px}
-.cheat-card{background:rgba(13,27,30,.55);border:1px solid var(--line);border-radius:11px;padding:15px 16px;min-width:0}
-.cheat-card.wide{grid-column:1/-1}
-.cheat-card h3{font-family:'Fraunces',serif;font-size:.99rem;line-height:1.25;margin-bottom:9px}
-.cheat-card>p{color:var(--muted);font-size:.83rem}
-.say{color:var(--bone);border-left:2px solid var(--amber);padding-left:13px;font-size:.87rem}
+details[open] summary::after{content:"\2212"}
+.card-label{font-size:.55rem;color:var(--coral);margin-bottom:4px}
+.card-title{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;line-height:1.3}
+.qa-body{padding:0 18px 18px;color:var(--muted);font-size:.88rem}
+.qa-stack{display:flex;flex-direction:column;gap:9px}
+.qgroup-label{font-family:'Spline Sans Mono',monospace;font-size:.57rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral);margin:20px 0 9px}
+.say{color:var(--bone);border-left:2px solid var(--amber);padding-left:13px;font-size:.88rem}
 .say+.say{margin-top:11px}
 .say em{font-style:normal;color:var(--amber)}
-.stat-strip{display:flex;flex-wrap:wrap;gap:8px}
-.stat{background:var(--ink);border:1px solid rgba(232,163,61,.3);border-radius:9px;padding:9px 12px;flex:1 1 118px;min-width:0}
-.stat b{display:block;font-family:'Fraunces',serif;color:var(--amber);font-size:1.12rem;line-height:1.12}
-.stat span{font-family:'Spline Sans Mono',monospace;color:var(--muted);font-size:.52rem;letter-spacing:.09em;text-transform:uppercase}
-.router{width:100%;border-collapse:collapse;font-size:.79rem}
-.router th,.router td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-.router th{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
-.router td:first-child{color:var(--bone);width:27%}
-.router td:nth-child(2){color:var(--muted);width:39%}
-.router td:last-child{color:var(--muted)}
-.router tr:last-child td{border-bottom:0}
-.guard-list,.ask-list{list-style:none;display:flex;flex-direction:column;gap:9px}
-.guard-list li,.ask-list li{padding-left:21px;position:relative;color:var(--muted);font-size:.82rem}
-.guard-list li::before{content:"✕";position:absolute;left:0;top:1px;color:var(--coral);font-size:.72rem}
-.ask-list li::before{content:"→";position:absolute;left:0;color:var(--ok)}
-.guard-list strong,.ask-list strong{color:var(--bone)}
-.flow-strip{display:flex;flex-wrap:wrap;gap:7px}
-.flow-pill{background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px;flex:1 1 158px;min-width:0}
-.flow-pill b{display:block;font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
-.flow-pill span{color:var(--muted);font-size:.74rem}
-/* ---------- question bank ---------- */
-.qgroup{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 17px}
-.qgroup+.qgroup{margin-top:10px}
-.qgroup-label{font-family:'Spline Sans Mono',monospace;font-size:.57rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral);margin-bottom:9px}
-/* ---------- call index ---------- */
+.track-tag{font-size:.53rem;color:var(--ok);display:block;margin:14px 0 6px}
+.track-tag.dev{color:var(--amber)}
+.note{margin-top:11px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:.79rem}
+.note strong{color:var(--bone)}
+.fill{display:inline-block;font-family:'Spline Sans Mono',monospace;font-size:.72rem;color:var(--coral);background:rgba(255,107,94,.08);border:1px dashed rgba(255,107,94,.45);border-radius:5px;padding:0 6px}
+.qa-body ul{padding-left:19px;margin-top:8px}
+.qa-body li+li{margin-top:5px}
+.qa-body p+p{margin-top:10px}
+.tbl{width:100%;border-collapse:collapse;font-size:.79rem;margin-top:10px}
+.tbl th,.tbl td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.tbl td:first-child{color:var(--bone)}
+.tbl tr:last-child td{border-bottom:0}
+.svc{font-family:'Spline Sans Mono',monospace;font-size:.7rem;color:var(--amber);background:rgba(232,163,61,.08);border:1px solid rgba(232,163,61,.24);border-radius:5px;padding:1px 6px;white-space:nowrap}
+.value-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.value-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 17px}
+.value-card:first-child{grid-column:1/-1;background:linear-gradient(135deg,var(--panel2),var(--panel));border-color:rgba(232,163,61,.3)}
+.value-card h3{font-family:'Fraunces',serif;font-size:1.02rem;margin-bottom:7px}
+.value-card ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.value-card li{color:var(--muted);font-size:.79rem;padding-left:13px;position:relative}
+.value-card li::before{content:"\00B7";position:absolute;left:2px;color:var(--amber)}
+.value-card .use{margin-top:9px;padding-top:8px;border-top:1px solid var(--line);color:var(--bone);font-size:.79rem}
+.value-card .use span{color:var(--ok);font-family:'Spline Sans Mono',monospace;font-size:.53rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px}
+.banner{background:rgba(123,196,150,.07);border:1px solid rgba(123,196,150,.32);border-radius:12px;padding:14px 17px;margin-bottom:12px;color:var(--muted);font-size:.84rem}
+.banner strong{color:var(--ok)}
+.thesis{background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid rgba(232,163,61,.34);border-radius:14px;padding:20px 22px;margin-bottom:12px}
+.thesis h2{font-family:'Fraunces',serif;font-size:1.16rem;color:var(--amber);margin-bottom:8px}
+.thesis p{color:var(--muted);font-size:.88rem}
+.thesis p+p{margin-top:9px}
+.shape{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.shape-step{background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px;flex:1 1 150px;min-width:0}
+.shape-step b{display:block;font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.shape-step span{color:var(--muted);font-size:.75rem}
+.pillar{display:grid;grid-template-columns:112px 1fr;gap:13px;padding:11px 0;border-top:1px solid var(--line);align-items:start}
+.pillar:first-child{border-top:0}
+.pillar-name{font-family:'Spline Sans Mono',monospace;color:var(--coral);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.pillar-text{color:var(--muted);font-size:.83rem}
 .idx-group+.idx-group{margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
-.idx-label{font-family:'Spline Sans Mono',monospace;font-size:.52rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+.idx-label{font-size:.52rem;letter-spacing:.13em;color:var(--coral);margin-bottom:6px}
 .idx-group a{display:block;color:var(--bone);text-decoration:none;font-size:.81rem;padding:4px 0 4px 10px;border-left:2px solid transparent;transition:color .2s,border-color .2s}
 .idx-group a:hover{color:var(--amber);border-left-color:var(--amber)}
 .idx-group.muted .idx-label{color:var(--muted)}
 .idx-group.muted a{color:var(--muted);font-size:.78rem}
-/* ---------- proposals, tiers, AWS map ---------- */
-.proposal-banner{background:rgba(123,196,150,.07);border:1px solid rgba(123,196,150,.32);border-radius:12px;padding:14px 17px;margin-bottom:12px;color:var(--muted);font-size:.84rem}
-.proposal-banner strong{color:var(--ok)}
-.thesis{background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid rgba(232,163,61,.34);border-radius:14px;padding:20px 22px;margin-bottom:12px}
-.thesis h2{font-family:'Fraunces',serif;font-size:1.16rem;color:var(--amber);margin-bottom:8px}
-.thesis p{color:var(--muted);font-size:.88rem}
-.tier-table{width:100%;border-collapse:collapse;font-size:.79rem;margin-top:4px}
-.tier-table th,.tier-table td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-.tier-table th{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
-.tier-table td:first-child{color:var(--ok);font-family:'Spline Sans Mono',monospace;font-size:.61rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.tier-table td:nth-child(2){color:var(--bone);width:27%}
-.tier-table td:last-child{color:var(--muted)}
-.tier-table tr:last-child td{border-bottom:0}
-.svc{font-family:'Spline Sans Mono',monospace;font-size:.7rem;color:var(--amber);background:rgba(232,163,61,.08);border:1px solid rgba(232,163,61,.24);border-radius:5px;padding:1px 6px;white-space:nowrap}
-.aws-row{display:grid;grid-template-columns:100px 1fr;gap:13px;padding:11px 0;border-top:1px solid var(--line);align-items:start}
-.aws-row:first-child{border-top:0}
-.aws-stage{font-family:'Spline Sans Mono',monospace;color:var(--coral);font-size:.59rem;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
-.aws-detail{color:var(--muted);font-size:.82rem}
-.aws-detail .svc{margin-right:3px}
-.buy-build{margin-top:12px;padding:12px 14px;border-radius:9px;background:rgba(232,163,61,.08);color:var(--muted);font-size:.82rem}
-.buy-build strong{color:var(--bone)}
-body.live .hero .lede,body.live .hero .chips,body.live .section-intro,body.live .live-hint{display:none}
-body.live .hero{padding:30px 0 16px}
-body.live .section-label{margin:30px 0 13px}
+.src-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.src{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--bone);transition:border-color .2s,color .2s;font-size:.83rem}
+.src:hover{border-color:var(--amber);color:var(--amber)}
+.src span{display:block;font-family:'Spline Sans Mono',monospace;color:var(--muted);font-size:.55rem;letter-spacing:.11em;text-transform:uppercase;margin-top:2px}
+footer{margin-top:54px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);font-size:.76rem}
+body.live .hero .lede,body.live .section-intro,body.live .live-hint,body.live #reference{display:none}
+body.live .hero{padding:28px 0 14px}
 @media(max-width:940px){
-  .hero{grid-template-columns:1fr 250px;gap:30px}.content-layout{grid-template-columns:1fr;grid-template-areas:"rail" "main"}.reference-rail{position:static;max-height:none;overflow:visible;display:grid;grid-template-columns:1fr 1fr}.rail-panel{min-width:0}
+  .hero{grid-template-columns:1fr 250px;gap:30px}
+  .content-layout{grid-template-columns:1fr;grid-template-areas:"rail" "main"}
+  .reference-rail{position:static;max-height:none;overflow:visible;display:grid;grid-template-columns:1fr 1fr}
+  .rail-panel{min-width:0}
 }
 @media(max-width:700px){
-  .hero{grid-template-columns:1fr;padding-top:42px;gap:24px}.scope-card{max-width:none}.reference-rail{grid-template-columns:1fr}.answer-grid,.risk-grid,.guardrail-grid,.source-grid,.cheat-grid{grid-template-columns:1fr}
-  .router,.tier-table{display:block;overflow-x:auto}.router td:first-child,.router td:nth-child(2),.tier-table td:nth-child(2){width:auto}
-  .aws-row{grid-template-columns:1fr;gap:5px}
-  .case-card summary{grid-template-columns:1fr;padding-right:49px}.case-use{text-align:left;max-width:none;padding-right:0}.star-row{grid-template-columns:1fr;gap:3px}
+  .hero{grid-template-columns:1fr;padding-top:38px;gap:24px}
+  .reference-rail,.value-grid,.src-grid{grid-template-columns:1fr}
+  .value-card:first-child{grid-column:auto}
+  .tbl{display:block;overflow-x:auto}
+  .pillar{grid-template-columns:1fr;gap:4px}
   footer{align-items:flex-start;flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -187,377 +140,436 @@ body.live .section-label{margin:30px 0 13px}
 <div class="atmos" aria-hidden="true"></div>
 <div class="wrap">
   <nav class="module-nav" aria-label="Module navigation">
-    <a class="back-link" href="index.html"><span aria-hidden="true">←</span> AI Ramp-Up</a>
-    <button class="mode-toggle" id="modeToggle" type="button" aria-pressed="false" title="Strip the page to glanceable essentials for use during a live interview"><span class="mode-text">Live mode</span></button>
+    <a class="back-link" href="index.html"><span aria-hidden="true">&larr;</span> AI Ramp-Up</a>
+    <button class="mode-toggle" id="modeToggle" type="button" aria-pressed="false" title="Strip instructional prose and collapse answers for use during a live interview"><span class="mode-text">Live mode</span></button>
   </nav>
 
   <header class="hero">
     <div>
       <div class="eyebrow">Cloud Security Platform Leadership</div>
       <h1>Interview <em>Lab</em></h1>
-      <p class="lede">A readable, evidence-first prep module for explaining <strong>cloud security architecture, governance, developer guardrails, vulnerability remediation, and technical leadership</strong> to a senior engineer or hiring manager.</p>
-      <div class="chips"><span class="chip">Cloud security</span><span class="chip">Security data</span><span class="chip">IAM</span><span class="chip">Kubernetes</span><span class="chip">AppSec</span><span class="chip">Governance</span></div>
+      <p class="lede">Questions with the answer underneath. Four work examples, an incident-response lifecycle, and a <strong>VP cloud and AI security program</strong> &mdash; each written to be said out loud, not recited.</p>
     </div>
     <aside class="scope-card" aria-label="Target role">
       <div class="label">Target role</div><div class="role">Manager, Cyber Security Engineering</div>
-      <p>Cloud and Platform Security · Vice President · technical strategy, high-volume telemetry, actionable developer guidance, and people leadership.</p>
+      <p>Cloud and Platform Security &middot; Vice President &middot; technical strategy, high-volume telemetry, actionable developer guidance, and people leadership.</p>
     </aside>
   </header>
 
   <div class="content-layout">
     <main class="main-content">
-      <section id="cheatsheet" aria-labelledby="cheatTitle">
-        <div class="section-label" id="cheatTitle">Live cheatsheet</div>
-        <p class="section-intro live-hint">Turn on <strong>Live mode</strong> in the top bar to hide the study material and leave only what is useful mid-call. Navigate from the <strong>Call index</strong>.</p>
-        <article class="cheat">
-          <h2>Open, route, close</h2>
-          <p>Three things decide the interview: the first twenty seconds, whether each answer lands on a requirement, and the boundary you refuse to overstate.</p>
 
-          <div class="cheat-grid">
-            <div class="cheat-card wide">
-              <h3>First twenty seconds</h3>
-              <p class="say">Cloud platform and security engineering leader. I have owned multi-cloud roadmap and architecture, shipped an internal developer platform that took provisioning from weeks to hours, and grown a team from 3 to 14 supporting more than 150 developers.</p>
-              <p class="say">My security work runs the whole delivery lifecycle: secrets and dependency prevention inside the engineering workflow, Kubernetes runtime coverage, vulnerability remediation through to audit evidence, and privileged access I recently refactored to just-in-time. <em>This role is the intersection: turning security data into guidance application teams will actually use.</em></p>
-            </div>
-
-            <div class="cheat-card wide">
-              <h3>Numbers you can defend</h3>
-              <div class="stat-strip">
-                <div class="stat"><b>3 → 14</b><span>Team grown</span></div>
-                <div class="stat"><b>150+</b><span>Developers supported</span></div>
-                <div class="stat"><b>Weeks → hours</b><span>Provisioning time</span></div>
-                <div class="stat"><b>8+</b><span>Product teams self-serving</span></div>
-                <div class="stat"><b>4</b><span>Acquisitions integrated</span></div>
-                <div class="stat"><b>$1M+</b><span>Annual cloud savings</span></div>
-                <div class="stat"><b>$1M+</b><span>AI operational savings</span></div>
-                <div class="stat"><b>All orgs</b><span>GitGuardian coverage</span></div>
-              </div>
-            </div>
-
-
-            <div class="cheat-card wide">
-              <h3>The five stages, in order</h3>
-              <div class="flow-strip">
-                <div class="flow-pill"><b>1 · Collect</b><span>Scanner, runtime, cloud, identity, code, asset — authenticated sources</span></div>
-                <div class="flow-pill"><b>2 · Normalize</b><span>One versioned finding model, raw evidence preserved</span></div>
-                <div class="flow-pill"><b>3 · Context</b><span>Owner, service criticality, exposure, reachability, access path</span></div>
-                <div class="flow-pill"><b>4 · Prioritize</b><span>Exploitation, likelihood, impact, compensating controls, reason codes</span></div>
-                <div class="flow-pill"><b>5 · Deliver</b><span>Into pull requests and tickets; measure risk retired, not findings created</span></div>
-              </div>
-            </div>
-
-            <div class="cheat-card">
-              <h3>Do not say</h3>
-              <ul class="guard-list">
-                <li><strong>Never imply Morgan Stanley-scale telemetry operations.</strong> Name the boundary, then pivot to what you do bring.</li>
-                <li><strong>The AI agent work is a proof of concept.</strong> Keep proposed architecture, implemented controls, and measured results separate.</li>
-                <li><strong>Do not claim controls outside your scope.</strong> Say the CrowdStrike coverage model you worked with, not ownership of the whole control.</li>
-                <li><strong>No invented precision.</strong> A concrete control flow beats a number you cannot source.</li>
-                <li><strong>Keep attribution exact.</strong> "My team rolled out" and "I designed" are different claims.</li>
-                <li><strong>Do not open with the tool name.</strong> Control objective first, product as evidence second.</li>
-                <li><strong>Proposals are not history.</strong> Everything in the point-of-view section is “here is how I would approach it,” never “here is what I built.”</li>
-              </ul>
-            </div>
-
-            <div class="cheat-card">
-              <h3>Ask them</h3>
-              <ul class="ask-list">
-                <li>How is the platform measured today — findings created, or risk actually retired?</li>
-                <li>Where does the platform's responsibility end and the application team's begin?</li>
-                <li>What is the largest source of noise in the finding pipeline right now?</li>
-                <li>How are exceptions and their expiry governed at your scale?</li>
-                <li>How does the team split between building the platform and running the operating model?</li>
-                <li>What would you want visibly different ninety days in?</li>
-                <li>Where does agentic tooling sit on the roadmap, and who owns its guardrails?</li>
-                <li>What can a developer do with AI today without asking permission — and where does that line sit?</li>
-              </ul>
-            </div>
-
-            <div class="cheat-card wide">
-              <h3>Last thirty seconds</h3>
-              <p class="say">What I have built is the operating model underneath this mission: controls that live in the engineering workflow, findings that reach an accountable owner, and evidence that exists because the system produced it. <em>Morgan Stanley adds the scale and the risk discipline — that is the part I want to work at next.</em></p>
-            </div>
+      <section id="method" aria-labelledby="methodTitle">
+        <div class="section-label" id="methodTitle">Answer shape and claim discipline</div>
+        <article class="thesis">
+          <h2>Lead with the outcome, spend the middle on your decisions</h2>
+          <p>Do not recite detail. Give the audience-specific track, then let the interviewer choose where to go deeper.</p>
+          <div class="shape">
+            <div class="shape-step"><b>10 seconds</b><span>The result, stated first</span></div>
+            <div class="shape-step"><b>15 seconds</b><span>Situation and task</span></div>
+            <div class="shape-step"><b>45&ndash;75 seconds</b><span>The decisions and actions you owned</span></div>
+            <div class="shape-step"><b>15 seconds</b><span>Result, plus one honest improvement</span></div>
           </div>
         </article>
-      </section>
-
-      <section id="questions" aria-labelledby="questionsTitle">
-        <div class="section-label" id="questionsTitle">Question bank</div>
-        <p class="section-intro">Find the question, take the hint, land on a case. “Go to” names the work sample or deep answer that proves it.</p>
-
-        <div class="qgroup" id="q-open">
-          <div class="qgroup-label">Opening and positioning</div>
-          <table class="router">
-            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
-            <tbody>
-              <tr><td>Walk me through your background</td><td>The twenty-second open, unchanged</td><td>Platform, then security, then the team number</td></tr>
-              <tr><td>Why this role, why here</td><td>The mission is curated, actionable guidance to app teams — the intersection I have been building toward</td><td>Scale and risk discipline are what this adds to what I have done</td></tr>
-              <tr><td>Why are you leaving</td><td>Toward, never away. The scope here is larger than a platform team can reach</td><td>Never criticise the current employer; it reads as future behaviour</td></tr>
-              <tr><td>How hands-on are you</td><td>Architecture, spikes, design and code review</td><td>JIT identity redesign, then handing off ownership</td></tr>
-              <tr><td>What is your management philosophy</td><td>Ownership by area, leads grown through review, output measured as capability not tickets</td><td>Team 3 to 14</td></tr>
-              <tr><td>Where do you want to be in three years</td><td>Running a larger security platform org; depth in regulated scale is the gap I am closing</td><td>Ambition aimed at their org, not away from it</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="qgroup" id="q-technical">
-          <div class="qgroup-label">Security data platform and architecture</div>
-          <table class="router">
-            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
-            <tbody>
-              <tr><td>Design a security data platform</td><td>The decision first: what should this team fix, why, and how</td><td>Five-stage answer, one example per stage</td></tr>
-              <tr><td>How do you prioritize vulnerabilities</td><td>CVSS starts the conversation, it does not end it</td><td>KEV, EPSS, exposure, reachability, owner, closure evidence</td></tr>
-              <tr><td>How would you measure this platform</td><td>Risk retired and time to remediate — never findings created</td><td>Counting findings rewards noise; a platform that creates work is not a platform</td></tr>
-              <tr><td>Build or buy the pipeline</td><td>Buy normalization, build context and policy</td><td>Security Lake gives OCSF free; ownership and explainable priority are the differentiated work</td></tr>
-              <tr><td>What breaks first at ten times the volume</td><td>Not storage — enrichment and owner mapping</td><td>Ownership confidence is the quiet failure; findings arrive with nobody attached</td></tr>
-              <tr><td>How do you handle false positives</td><td>Treat precision as a product metric with a feedback path from the developer</td><td>Block-versus-warn tuning before enforcement · shift-left case</td></tr>
-              <tr><td>Data quality strategy</td><td>Coverage, freshness, completeness, schema version, dedup, owner-mapping confidence</td><td>“If I cannot tell you coverage, I cannot tell you risk”</td></tr>
-              <tr><td>Show me AWS specifics</td><td>Stage first, service second</td><td>AWS service map</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="qgroup" id="q-security">
-          <div class="qgroup-label">Security domain and scenarios</div>
-          <table class="router">
-            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
-            <tbody>
-              <tr><td>Shift-left or AppSec</td><td>Prevention at the point of change, not a release gate</td><td>GitGuardian and Snyk case</td></tr>
-              <tr><td>Identity and least privilege</td><td>Eligible roles, not standing production access</td><td>JIT access with Entra case</td></tr>
-              <tr><td>Kubernetes or runtime</td><td>Coverage of the deployed workload; gaps are defects</td><td>CrowdStrike case — state the coverage boundary precisely</td></tr>
-              <tr><td>Compliance or SOC 2</td><td>Evidence produced continuously, not reconstructed at audit</td><td>Rapid7 to audit-evidence case</td></tr>
-              <tr><td>A secret just leaked to a public repo</td><td>Revoke first, investigate second — rotation before forensics</td><td>Then blast radius, then why prevention missed it, then the control change</td></tr>
-              <tr><td>A team refuses to remediate</td><td>Make the risk and the owner visible rather than escalating first</td><td>Exception with a named owner, compensating control, and expiry</td></tr>
-              <tr><td>Multi-cloud: same controls everywhere</td><td>Common control objectives, provider-specific implementation</td><td>Four-acquisition governance case</td></tr>
-              <tr><td>Where would you start here</td><td>Identity first — it bounds every other plane and is hardest to retrofit</td><td>Program model sequencing</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="qgroup" id="q-ai">
-          <div class="qgroup-label">AI and agentic</div>
-          <table class="router">
-            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
-            <tbody>
-              <tr><td>Letting developers use AI freely</td><td>Govern the blast radius, not the keyboard</td><td>Tiered autonomy model · tiers 0–1 frictionless</td></tr>
-              <tr><td>Securing an agentic system</td><td>Four questions: identity, tools, trust, aftermath</td><td>Full talk track</td></tr>
-              <tr><td>Reviewing AI-generated code</td><td>Same pipeline; the risk is volume and review decay</td><td>Invented dependencies, review depth as a metric</td></tr>
-              <tr><td>Who is accountable for an agent</td><td>The named owner who authorized it</td><td>Explicit, revocable, expiring grant</td></tr>
-              <tr><td>Would you let an agent remediate on its own</td><td>Yes, where the action is reversible and the blast radius is bounded — patch a dev dependency, not rotate production identity</td><td>The tier decides, not the tool</td></tr>
-              <tr><td>How do you know the AI is working</td><td>Evaluate retrieval and reasoning separately; abstention is a valid result</td><td>Adoption and risk retired, not model benchmarks</td></tr>
-              <tr><td>Will AI replace security engineers</td><td>It moves the work up the stack — less triage, more control design and adjudication</td><td>Volume of decisions rises; the judgement is what stays scarce</td></tr>
-              <tr><td>How does AI change the program</td><td>It does not add a plane; it changes what each plane must handle</td><td>Program model, “what AI changes” column</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="qgroup" id="q-leadership">
-          <div class="qgroup-label">Leadership and behavioural</div>
-          <table class="router">
-            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
-            <tbody>
-              <tr><td>Technical disagreement with an engineer</td><td>Make constraints explicit, compare designs against them</td><td>Reversible gets an experiment; identity needs stronger evidence</td></tr>
-              <tr><td>Growing and developing people</td><td>Area ownership, leads grown through design and code review</td><td>Team 3 to 14 case</td></tr>
-              <tr><td>An underperformer on your team</td><td>Name the gap early and specifically; most cases are unclear expectations</td><td>Concrete expectations, support, a timeline, and a decision you actually make</td></tr>
-              <tr><td>Telling an executive no</td><td>Reframe as sequencing and cost, not refusal</td><td>Governance before re-platforming case</td></tr>
-              <tr><td>Competing roadmap: security debt or features</td><td>Price the debt in exposure, then let the trade-off be explicit and owned</td><td>FinOps case — the same move applied to cost</td></tr>
-              <tr><td>Influencing without authority</td><td>Make the secure path the fast path; adoption beats mandate</td><td>Every control I have shipped that stuck did this</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="qgroup" id="q-curveball">
-          <div class="qgroup-label">Curveballs and credibility</div>
-          <table class="router">
-            <thead><tr><th>If they ask</th><th>Lead with</th><th>Go to</th></tr></thead>
-            <tbody>
-              <tr><td>Data engineering depth</td><td>Name the boundary before they find it</td><td>Ingestion, schema evolution, idempotency, replay, lineage — with the engineers who run it</td></tr>
-              <tr><td>Your biggest failure</td><td>A real one with a control change attached</td><td>Parity-before-value on the platform: broad requirement nearly delayed all value</td></tr>
-              <tr><td>What frustrates your team about you</td><td>Answer it honestly and show the correction</td><td>Going deep on design longer than the team wants; fixed with clearer decision deadlines</td></tr>
-              <tr><td>What do you not know about this domain</td><td>Telemetry at their volume, and their regulatory surface</td><td>Strength is the operating model; I would learn the scale from their engineers</td></tr>
-              <tr><td>Questions for us</td><td>Ask about measurement and ownership, not perks</td><td>Ask-them list</td></tr>
-              <tr><td>Anything else we should know</td><td>The closing line</td><td>Operating model underneath the mission</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="talk-tracks" aria-labelledby="talkTitle">
-        <div class="section-label" id="talkTitle">Core talk tracks</div>
-        <div class="answer-grid">
-          <details open><summary><div class="card-label">60 seconds</div><div class="card-title">Elevator pitch</div></summary><div class="answer-body script"><p>I am a cloud platform and security engineering leader who has owned roadmap, architecture, and delivery across AWS, Azure, and GCP. At Tricentis, I shipped an internal developer platform that cut provisioning from weeks to hours and grew the team from 3 to 14 supporting more than 150 developers.</p><p>My security work spans the delivery lifecycle: GitGuardian across all company organizations and repositories, Snyk controls before merge and deployment, Rapid7 vulnerability remediation, CrowdStrike Falcon coverage for Kubernetes, and SOC 2 audit participation. Most recently, I refactored privileged access through Microsoft Entra Privileged Identity Management and access packages to remove standing production access, simplify IT provisioning, and automate access review evidence. This role fits because it needs someone who can turn that security data and policy into a platform application teams will actually use.</p></div></details>
-          <details><summary><div class="card-label">45 seconds</div><div class="card-title">Describe your security depth</div></summary><div class="answer-body script"><p>I think about cloud security in four connected layers. First is identity: least privilege, JIT elevation, governed provisioning, and reviewable access. Second is software delivery: GitGuardian and Snyk preventing secrets and vulnerable code from entering protected branches. Third is runtime: Kubernetes workload coverage with CrowdStrike Falcon and cloud-native controls. Fourth is governance: Rapid7 remediation workflows, SOC 2 evidence, exceptions, and accountable owners. My role has been to connect those layers into the platform and operating model, not run them as separate security projects.</p><div class="script-note">JD tie: cloud/platform security, developer-facing tooling, cross-functional problem synthesis, and governance.</div></div></details>
-          <details><summary><div class="card-label">30 seconds</div><div class="card-title">Why Morgan Stanley and this role</div></summary><div class="answer-body script"><p>The role combines the parts of my background that are usually separated: multi-cloud platforms, security engineering, data products, developer experience, and people leadership. The mission that stands out is delivering curated, actionable security guidance to application teams. I have implemented the underlying controls and operating model; Morgan Stanley adds the scale, telemetry depth, and risk discipline to build that into a mature security data platform.</p></div></details>
-          <details><summary><div class="card-label">30 seconds</div><div class="card-title">How hands-on are you?</div></summary><div class="answer-body script"><p>I stay hands-on at the architecture, technical spike, design-review, and code-review level. The recent identity redesign is a good example: I worked through the JIT access model, Microsoft Entra Privileged Identity Management enablement, access-package lifecycle, and audit path with the team and IT. I build or validate the first path when that retires uncertainty, then create clear engineering ownership so I do not become the delivery bottleneck.</p></div></details>
-          <details><summary><div class="card-label">Credibility</div><div class="card-title">Bridge the data-engineering boundary</div></summary><div class="answer-body script"><p>My depth is large-scale cloud platforms, security posture, and developer-facing products. I understand durable ingestion, schema evolution, idempotency, replay, quality, lineage, and tiered serving, and I have led governed data and machine-learning products. I have not operated a security telemetry platform at Morgan Stanley's volume, so I would not overstate that. What I bring is the ability to define the decision, architecture, standards, and team operating model with the data engineers who will run it.</p></div></details>
-          <details><summary><div class="card-label">Leadership</div><div class="card-title">Handle technical disagreement</div></summary><div class="answer-body script"><p>I make the constraints explicit and compare designs against security boundary, failure modes, operational cost, reversibility, and delivery time. If an engineer's design wins against those constraints, we use it even when it is not my stylistic preference. Reversible decisions get a bounded experiment; changes to identity or another hard-to-reverse security boundary require stronger evidence and a documented decision.</p></div></details>
-          <details><summary><div class="card-label">Governance · 60 seconds</div><div class="card-title">AI freedom for developers without losing control</div></summary><div class="answer-body script"><p>I would start by separating two things that usually get conflated: which model a developer uses, and what the system is allowed to touch. Restricting the first buys almost no risk reduction and costs you adoption — and the usage does not stop, it moves to personal accounts where you have no visibility at all.</p><p>So I would make exploration genuinely free: any approved model, sandboxed, non-production data, default-on, no ticket. Then concentrate governance where actions become consequential — an agent holding production credentials, or one that can write. Those tiers get a scoped identity, tools from a reviewed catalog, a deterministic policy check on every call, human approval for material writes, and an expiry on the authorization.</p><p>The way you make it stick is the same lesson as the identity work: the governed path has to be the fastest path. If the paved road hands you guardrails, logging, and identity for free, teams take it because it is quicker, not because a policy told them to.</p><div class="script-note">JD tie: actionable developer guidance, developer-facing platform, governance, and technical strategy in one answer.</div></div></details>
-          <details><summary><div class="card-label">Agentic · 45 seconds</div><div class="card-title">How would you secure an agentic system</div></summary><div class="answer-body script"><p>Four questions, ordered by how much damage the answer can do. What identity is it acting as — a scoped workload identity with short-lived credentials, never a shared key, read separated from write. What can it call — tools from a reviewed catalog, with a deterministic policy check before execution rather than the model deciding whether it is allowed. What does it trust — retrieved documents and tool output are data, never instructions, which is the prompt-injection boundary. And what happens afterward — one audit record per action covering model and prompt version, context, tool calls, approvals, and outcome, plus a revocation path that works in seconds.</p><p>The unifying principle is that the model may propose anything, but the control plane stays deterministic.</p></div></details>
-          <details><summary><div class="card-label">AppSec · 30 seconds</div><div class="card-title">Is reviewing AI-generated code different</div></summary><div class="answer-body script"><p>The pipeline should not care who wrote it — the same secret scanning, dependency analysis, tests, and review apply. What changes is volume and review posture. You get more code, faster, and it looks plausible, which is exactly the condition under which human review quietly degrades into approval. So I would watch two signals: whether review depth holds as volume rises, and whether the author can explain the change they are submitting. The other real shift is supply chain — generated code will confidently invent a plausible package name, so dependency verification carries more weight than it used to.</p></div></details>
-          <details><summary><div class="card-label">Accountability · 30 seconds</div><div class="card-title">Who is responsible when an agent acts badly</div></summary><div class="answer-body script"><p>The person or team who authorized it — and that has to be a named owner, not “the platform.” Which means the authorization must be an explicit, revocable, expiring grant rather than something that accumulated quietly over time. Every agent gets a registered owner, a defined blast radius, and a review date. When something goes wrong the questions are the ordinary incident questions: what identity, which permission allowed it, what evidence exists, what is the revert path. My insistence on reversibility at the highest autonomy tier is not philosophical — accountability without a revert path is just blame.</p></div></details>
-        </div>
-      </section>
-
-      <section id="architecture" aria-labelledby="architectureTitle">
-        <div class="section-label" id="architectureTitle">Technical cheatsheet · live explanation</div>
-        <p class="section-intro">Name the five stages, one example each, then let them choose where to go deeper.</p>
-        <article class="live-answer">
-          <h2>Design a security telemetry and developer-guidance platform</h2>
-          <blockquote>Start with the decision: an application team needs to know what to fix first, why it matters, and how to fix it. I would collect signals from cloud platforms, Rapid7, CrowdStrike, GitGuardian, Snyk, CI/CD, Microsoft Entra, and the asset catalog. I would normalize them into a common finding model, then add owner, service criticality, exposure, reachability, identity context, and compensating controls. A versioned policy layer would produce an explainable priority and due date. Finally, I would deliver that guidance in the developer workflow and measure whether teams acted. Detection and compliance can reuse the same governed data, but with their own latency and retention requirements.</blockquote>
-        </article>
-        <details class="deeper"><summary><div class="card-label">If they go deeper</div><div class="card-title">Reliability, governance, and access controls</div></summary><div class="answer-body"><ul><li><strong>Reliability:</strong> durable buffering, at-least-once delivery, stable finding IDs, idempotent consumers, dead-letter handling, and replay from immutable raw storage.</li><li><strong>Data quality:</strong> source coverage, freshness, completeness, schema version, deduplication, enrichment misses, and owner-mapping confidence.</li><li><strong>Governance:</strong> data classification, retention by purpose, lineage, source evidence, transformation version, and auditable policy decisions.</li><li><strong>Access:</strong> workload identity, least privilege, JIT elevation for operators, separation of duties, and controlled access to sensitive telemetry.</li><li><strong>Success:</strong> time to triage, time to remediate, overdue material exposure, exception age, action rate, and risk retired—not the number of findings created.</li></ul></div></details>
-        <div class="risk-grid">
-          <article class="risk-card"><h3>Explain vulnerability priority</h3><ul class="tier-list"><li><strong>Urgent:</strong> known exploited, exposed or reachable, and on a material service.</li><li><strong>Short SLA:</strong> high exploit likelihood or attack-path relevance on an important service.</li><li><strong>Planned:</strong> serious severity but not currently exposed or reachable.</li><li><strong>Monitor or accept:</strong> low evidence, with a named owner, rationale, compensating control, and expiry.</li></ul></article>
-          <article class="risk-card"><h3>Signals and measurement</h3><ul><li>CVSS for technical severity</li><li>CISA KEV for known exploitation</li><li>EPSS for near-term exploit likelihood</li><li>Rapid7 finding state and remediation evidence</li><li>Exposure, reachability, asset criticality, identity path, and controls</li><li>Measure risk retired, overdue exposure, reopen rate, and exception aging</li></ul></article>
-        </div>
-      </section>
-
-      <section id="program" aria-labelledby="programTitle">
-        <div class="section-label" id="programTitle">Cloud security program model</div>
-        <p class="section-intro">The spine answer for “how would you run this.” Five planes, one governing loop, and an explicit column for what AI changes — so enablement is part of the model rather than an exception to it.</p>
-
-        <article class="thesis">
-          <h2>Secure defaults, provable outcomes</h2>
-          <p>Every plane answers the same three questions: what is the control objective, how is it enforced automatically, and what evidence does it leave behind. A control that depends on someone remembering is not a control; a control that produces no evidence cannot be audited; and a control that makes the secure path slower will be routed around.</p>
-        </article>
-
-        <table class="tier-table">
-          <thead><tr><th>Plane</th><th>Control objective</th><th>What AI changes</th></tr></thead>
+        <div class="banner"><strong>Claim discipline.</strong> Say &ldquo;I&rdquo; for decisions you directly owned, &ldquo;we&rdquo; for team delivery, and name the partner function when it matters. Never turn an unverified estimate into a fact. Every <span class="fill">[x &rarr; y]</span> below is a number to fill in before the call or leave out of the answer entirely.</div>
+        <table class="tbl">
+          <thead><tr><th>Audience</th><th>Emphasize</th></tr></thead>
           <tbody>
-            <tr><td>Identity</td><td>Every actor, human or machine, is named, least-privileged, and time-bound</td><td>Agents are non-human identities. Scoped workload identity, short-lived credentials, read separated from write, no shared keys, just-in-time for anything privileged.</td></tr>
-            <tr><td>Delivery</td><td>Prevent at the point of change rather than at a release gate</td><td>Generated code passes the same gates as written code. Volume rises, so review depth becomes something you measure; dependency verification matters more because models invent plausible packages.</td></tr>
-            <tr><td>Runtime</td><td>Observe and contain what is actually deployed</td><td>An agent's tool calls are runtime events. Bounded blast radius, reversible actions, every call logged, and a revocation path tested like break-glass.</td></tr>
-            <tr><td>Data</td><td>Classify, minimize, and control where data comes to rest</td><td>Prompt and retrieved context are an egress path. Retrieval inherits source permissions and never widens them; sensitive data is filtered before it reaches a model, not after.</td></tr>
-            <tr><td>Assurance</td><td>Prove continuously that the control operated</td><td>Evidence extends to model and prompt version, retrieved context, tool calls, and approvals. The system must also be able to decline: insufficient evidence is a valid result.</td></tr>
+            <tr><td>Hiring manager</td><td>Ownership, prioritization, influence, risk reduction, developer and operator experience, and how you scaled the outcome through people and platforms.</td></tr>
+            <tr><td>Senior software developer</td><td>Boundaries, data flow, source-of-truth decisions, authorization, reliability, observability, failure modes, and the trade-off you deliberately made.</td></tr>
           </tbody>
         </table>
-
-        <div class="guardrail-grid">
-          <div class="guardrail"><strong>Secure default beats secure policy</strong><span>Policy documents get read once. Defaults get used every day. If the paved path is not the fastest path, you have written a policy, not built a control.</span></div>
-          <div class="guardrail"><strong>Govern the action, not the exploration</strong><span>Friction belongs where writes and production data are, not where a developer is trying something. Restricting exploration only relocates it out of view.</span></div>
-          <div class="guardrail"><strong>Keep the control plane deterministic</strong><span>The model may propose anything. Enforcement stays deterministic, reviewable, and independent of the model's judgement.</span></div>
-        </div>
-
-        <div class="buy-build"><strong>If they ask where you would start:</strong> identity first, because it bounds every other plane and it is the hardest to retrofit. Then delivery gates, then runtime containment, then data controls. Assurance is not a phase — each plane ships with its evidence, or it is not done. <br><br><strong>Live line:</strong> “AI does not replace the control plane. It makes least privilege, deterministic gates, human approval, traceability, and rollback more important, because one incorrect decision can now execute at machine speed.”</div>
       </section>
 
-      <section id="proposals" aria-labelledby="proposalsTitle">
-        <div class="section-label" id="proposalsTitle">Point of view · what I would build here</div>
-        <div class="proposal-banner"><strong>These are proposals, not history.</strong> Introduce every one of them as forward-looking — “here is how I would approach it,” “the model I would propose” — never as work already delivered. At VP level the interviewer expects a point of view; they will lose trust instantly if a proposal is dressed up as a result.</div>
+      <section id="values" aria-labelledby="valuesTitle">
+        <div class="section-label" id="valuesTitle">Morgan Stanley core values</div>
+        <p class="section-intro">Five values, held since 1935 under &ldquo;first-class business in a first-class way.&rdquo; Do not recite them. Land one naturally where it fits the answer you are already giving.</p>
+        <div class="value-grid">
+          <article class="value-card">
+            <h3>Do the right thing</h3>
+            <ul><li>Act with integrity</li><li>Think like an owner to create long-term shareholder value</li><li>Value and reward honesty and character</li></ul>
+            <div class="use"><span>Where it lands</span>Your strongest natural fit. The exception register with a named owner and an expiry, revoking a secret before investigating, and refusing to let an agent own residual risk are all this value expressed as engineering.</div>
+          </article>
+          <article class="value-card">
+            <h3>Put clients first</h3>
+            <ul><li>Keep the client&rsquo;s interests first</li><li>Work with colleagues to deliver the best of the Firm to every client</li><li>Listen to what the client is saying and needs</li></ul>
+            <div class="use"><span>Where it lands</span>Application teams are your client. The shift-left case is this value: precision and guidance before enforcement, because a control teams route around protects nobody.</div>
+          </article>
+          <article class="value-card">
+            <h3>Lead with exceptional ideas</h3>
+            <ul><li>Win by breaking new ground</li><li>Leverage different perspectives to gain new insight</li><li>Drive innovation</li></ul>
+            <div class="use"><span>Where it lands</span>The Cloud Engineering Agent and continuous control assurance &mdash; new ground, but tied to blast radius rather than novelty for its own sake.</div>
+          </article>
+          <article class="value-card">
+            <h3>Commit to diversity and inclusion</h3>
+            <ul><li>Value individual and cultural differences as a defining strength</li><li>Champion an environment where all employees feel a sense of belonging &mdash; are heard, seen and respected</li><li>Expect everyone to challenge behavior counter to our culture of inclusion</li></ul>
+            <div class="use"><span>Where it lands</span>Hiring across regions and growing technical leads through design and code review. &ldquo;Different perspectives&rdquo; is also literal in design review: the engineer&rsquo;s design wins when it wins on the constraints.</div>
+          </article>
+          <article class="value-card">
+            <h3>Give back</h3>
+            <ul><li>Serve our communities generously with our expertise, time and money</li><li>Build a better firm for the future by contributing to our culture</li><li>Develop our talent through mentoring and sponsorship</li></ul>
+            <div class="use"><span>Where it lands</span>Mentoring and sponsorship are named explicitly. Use your coaching example here rather than as a generic leadership answer.</div>
+          </article>
+        </div>
+      </section>
+      <section id="qa" aria-labelledby="qaTitle">
+        <div class="section-label" id="qaTitle">Questions and answers</div>
+        <p class="section-intro">Open the question, read the track that matches the room. Hiring-manager answers lead with ownership and outcome; developer answers lead with boundaries and failure modes.</p>
 
-        <article class="thesis">
-          <h2>Govern the blast radius, not the keyboard</h2>
-          <p>The failure mode of restrictive AI policy is not that developers stop using AI. It is that the usage moves somewhere you cannot see, on personal accounts, with production data pasted into it. Governance should be almost invisible at the point of exploration and very strict at the point of consequence. That is the same lesson as the identity work: the control gets adopted when the governed path is also the fastest path.</p>
-        </article>
+        <div class="qgroup-label" id="qa-open">Opening and fit</div>
+        <div class="qa-stack">
+          <details open><summary><div class="card-label">60 seconds</div><div class="card-title">Tell me about yourself</div></summary><div class="qa-body">
+            <p class="say">I&rsquo;m a cloud engineering and security leader who works at the intersection of platform architecture, governance, and automation. The consistent theme in my work is turning security requirements into engineering products that teams can adopt at scale. Recently that has included eliminating standing production write access through Entra PIM and access packages, embedding GitGuardian and Snyk across the delivery lifecycle, supporting vulnerability remediation from Rapid7 and runtime visibility from CrowdStrike, and designing multi-cloud and agentic workflows for security analysis and continuous control evidence.</p>
+            <p class="say">What I bring is both the architecture depth and the operating discipline. I can work through ingestion, normalization, identity boundaries, data quality, failure modes, and observability with engineers, then translate those choices into risk, roadmap, and measurable outcomes for leadership. <em>I don&rsquo;t see security as a separate approval function &mdash; I see it as a platform capability:</em> central standards and evidence, paved roads for teams, and stronger guardrails as data sensitivity and blast radius increase.</p>
+          </div></details>
 
-        <div class="cheat-grid">
-          <div class="cheat-card wide">
-            <h3>Proposal one · A tiered autonomy model</h3>
-            <p>One framework replaces the endless case-by-case debate. What matters is not which model a team uses, it is what the system is allowed to touch and whether the action can be undone.</p>
-            <table class="tier-table">
-              <thead><tr><th>Tier</th><th>What the developer gets</th><th>What the platform requires in exchange</th></tr></thead>
+          <details><summary><div class="card-label">Fit</div><div class="card-title">Why this role, and why here</div></summary><div class="qa-body">
+            <p>Map the answer to what the role actually asks for. Name the requirement, then the evidence.</p>
+            <table class="tbl">
+              <thead><tr><th>Role requirement</th><th>Evidence to use</th></tr></thead>
               <tbody>
-                <tr><td>0 · Explore</td><td>Any approved model, sandboxed, synthetic or public data</td><td>Nothing. Default-on for every engineer, no ticket, no review. This tier is where creative freedom lives and it should be genuinely unrestricted.</td></tr>
-                <tr><td>1 · Assist</td><td>AI writing code in the IDE and in pull requests</td><td>No new gate. The existing pipeline is the control: secret scanning, dependency and code analysis, tests, and human review apply exactly as they do to hand-written code.</td></tr>
-                <tr><td>2 · Supervised</td><td>An agent reading production telemetry and proposing changes</td><td>Scoped read-only workload identity, registration in the tool catalog, and a human who merges. The agent proposes; it never applies.</td></tr>
-                <tr><td>3 · Autonomous</td><td>An agent acting without a human in each loop</td><td>Reversible actions only, an explicitly bounded blast radius, named accountable owner, approval for material writes, monitoring, and an expiry date on the authorization.</td></tr>
+                <tr><td>Technical strategy and roadmap</td><td>VP framework; risk-tiered rollout in Cases 1 and 3</td></tr>
+                <tr><td>Multi-cloud pipelines and telemetry</td><td>Case 2 common resource and finding model, lineage, correlation</td></tr>
+                <tr><td>Reliability, data quality, governance</td><td>Case 2 source hierarchy and evaluation model; Case 4 evidence contracts</td></tr>
+                <tr><td>Actionable products for developers</td><td>Case 3 in-workflow findings, guidance, governed exception path</td></tr>
+                <tr><td>Vulnerability management</td><td>Rapid7 and Snyk correlation, exploitability, reachability, ownership</td></tr>
+                <tr><td>Cloud, platform, application security</td><td>Cases 1&ndash;3 across identity, Kubernetes, code, dependencies, IaC, CI/CD</td></tr>
+                <tr><td>Incident response and resilience</td><td>Lifecycle answer: evidence-led triage, scoped containment, trusted recovery</td></tr>
+                <tr><td>Regulated-industry assurance</td><td>Case 4 continuous SOC 2 assurance and the VP governance model</td></tr>
               </tbody>
             </table>
-            <div class="buy-build"><strong>The line to say:</strong> “Tier 0 and tier 1 cover the overwhelming majority of developer usage, and I would deliberately put almost no friction there. The governance effort belongs at tiers 2 and 3, where an action becomes hard to reverse.”</div>
-          </div>
+          </div></details>
 
-          <div class="cheat-card wide">
-            <h3>Proposal two · The paved road that makes it real</h3>
-            <p>Freedom comes from good defaults, not from permission. A team on the platform default should get identity, guardrails, logging, and an approved tool catalog for free — and reach production faster than a team rolling its own.</p>
-            <ul class="ask-list">
-              <li>One governed model endpoint with <span class="svc">Bedrock Guardrails</span> attached centrally. Because <span class="svc">ApplyGuardrail</span> evaluates independently of the model call, teams keep free model choice while the control stays constant.</li>
-              <li>A distinct workload identity per agent with short-lived <span class="svc">STS</span> credentials, never a shared key — <span class="svc">AgentCore Identity</span> federates Microsoft Entra, so this extends the identity work rather than replacing it.</li>
-              <li>Tools from a reviewed catalog with deterministic Cedar policy on every call before it executes — <span class="svc">AgentCore Registry</span> and <span class="svc">AgentCore Policy</span>.</li>
-              <li>Material writes routed through existing CI/CD; agents open pull requests, never touch production directly. Tracing pre-wired via <span class="svc">AgentCore Observability</span> and <span class="svc">Bedrock</span> invocation logging.</li>
+          <details><summary><div class="card-label">Leadership</div><div class="card-title">How do you lead senior engineers</div></summary><div class="qa-body">
+            <p class="say">I set clear outcomes, constraints, and decision rights, then give senior engineers room to own the design. For a security platform I&rsquo;d be explicit about the non-negotiables &mdash; identity boundaries, data handling, evidence, production-change controls &mdash; but I would not prescribe every implementation detail.</p>
+            <p class="say">I use design reviews to expose assumptions and trade-offs, code reviews to improve maintainability and operational safety, and measurable service outcomes to resolve opinion-based debate. I also make ownership visible: each platform capability has a named owner, users, service levels, adoption measures, and a roadmap. <em>My job is to keep the team connected to the risk and the customer problem</em>, remove cross-functional blockers, and make sure we learn from incidents and failed assumptions rather than merely ship features.</p>
+          </div></details>
+
+          <details><summary><div class="card-label">Depth</div><div class="card-title">How hands-on are you</div></summary><div class="qa-body">
+            <p class="say">Hands-on at the architecture, technical spike, design-review, and code-review level. The identity consolidation is a good example: I worked through the JIT model, PIM enablement, access-package lifecycle, and the audit path with the team and IT. I build or validate the first path when that retires uncertainty, then create clear engineering ownership so I don&rsquo;t become the delivery bottleneck.</p>
+          </div></details>
+        </div>
+
+        <div class="qgroup-label" id="qa-identity">Identity and privileged access &middot; Case 1</div>
+        <div class="qa-stack">
+          <details><summary><div class="card-label">Case 1 &middot; result first</div><div class="card-title">Tell me about a time you reduced privileged access</div></summary><div class="qa-body">
+            <p class="say">I led the transition from fragmented standing privilege to a consolidated Microsoft Entra identity-governance model. Production access became read-only by default; write and administrative privilege became eligible, time-bound, strongly authenticated, approved where required, and fully auditable.</p>
+            <span class="track-tag">Hiring manager &mdash; say this</span>
+            <p>We had accumulated several provisioning paths and standing group assignments, which increased blast radius, created work for IT, and made access reviews harder to defend. My goal was to reduce privilege without making normal engineering or incident response slower.</p>
+            <p>I started by mapping personas to the production tasks they actually performed and identifying inherited access, rather than simply migrating the existing groups. We made read-only the standing baseline and moved write and administrative roles into PIM. Activations were time-bound and required MFA, a business reason, a ticket or incident reference, and risk-based approval. I used access packages to standardize request, approval, expiry, and deprovisioning, and treated break-glass as a separately monitored control.</p>
+            <p>The key judgment was balancing least privilege against operational responsiveness, so we rolled out by risk and tested normal support and incident scenarios before expanding. <strong>If I repeated it, I would baseline activation and approval latency earlier</strong> so I could quantify both the risk reduction and the user-experience improvement from day one.</p>
+            <div class="note"><strong>Proof to quantify:</strong> standing privileged assignments before and after <span class="fill">[x &rarr; y]</span> &middot; production write roles moved to JIT <span class="fill">[x%]</span> &middot; median provisioning time <span class="fill">[x &rarr; y]</span> &middot; access-review completion and automatic expiry rate <span class="fill">[x%]</span></div>
+          </div></details>
+
+          <details><summary><div class="card-label">Case 1 &middot; architecture</div><div class="card-title">How does the JIT model actually work</div></summary><div class="qa-body">
+            <span class="track-tag dev">Senior developer &mdash; say this</span>
+            <p>I treated Entra as the governance plane rather than another manual group store. Access packages defined the entitlement lifecycle; PIM converted privileged role assignments from permanent to eligible. At activation the control evaluated role and scope, enforced MFA, justification, duration, and approval where risk required it, and emitted an auditable activation record.</p>
+            <p>The detail I paid most attention to was <strong>effective permission, not the visible assignment</strong>. Nested groups, inherited cloud roles, and service principals can preserve privilege even after the obvious user group is cleaned up. We inventoried those paths, separated human access from workload identity, and kept emergency identities outside the normal workflow with direct monitoring and post-use review. For workloads the preferred pattern was managed identity or federation, because human PIM does not solve long-lived application secrets.</p>
+            <p>The failure mode was making JIT so slow that engineers sought exceptions. That is why we used pre-defined role bundles, automated expiry, and risk-based approval instead of one workflow for both read-only support and high-impact administration.</p>
+            <div class="note"><strong>Monitor as service and security indicators:</strong> activation latency, approval latency, failed expirations, break-glass use, and effective standing privilege.</div>
+          </div></details>
+
+          <details><summary><div class="card-label">Depth on request</div><div class="card-title">Identity technical detail, if they push</div></summary><div class="qa-body">
+            <ul>
+              <li><strong>Standing versus eligible:</strong> read-only can remain standing where justified; write and admin are eligible and activated only for the required window.</li>
+              <li><strong>Activation policy:</strong> MFA, justification, risk-based approval, ticket reference, notification, maximum duration.</li>
+              <li><strong>Lifecycle:</strong> joiner/mover/leaver signals feed access packages; assignments expire automatically; recurring reviews verify continuing need.</li>
+              <li><strong>Segregation of duties:</strong> requester, approver, access administrator, and reviewer separated for high-impact roles.</li>
+              <li><strong>Workload identities:</strong> managed identity or workload identity federation over long-lived client secrets.</li>
+              <li><strong>Evidence:</strong> activation event, approver, role, scope, duration, business reason, ticket, actions taken, expiry, review outcome.</li>
+              <li><strong>Failure modes:</strong> approval bottlenecks, overly broad role bundles, nested-group privilege, unmanaged service principals, untested break-glass.</li>
             </ul>
-          </div>
+          </div></details>
+        </div>
+        <div class="qgroup-label" id="qa-ai">AI, agents, and autonomy &middot; Case 2</div>
+        <div class="qa-stack">
+          <details><summary><div class="card-label">Case 2 &middot; result first</div><div class="card-title">Tell me about an AI system you designed</div></summary><div class="qa-body">
+            <p class="say">I designed a Cloud Engineering Agent as the central first-pass analysis layer for CloudOps and SecOps across AWS, Azure, and GCP. It gathered evidence, correlated findings, removed provable noise, recommended remediations and preventive controls, and escalated decisions according to blast radius.</p>
+            <span class="track-tag">Hiring manager &mdash; say this</span>
+            <p>The problem was not a lack of alerts. Engineers had to reconstruct context across cloud logs, asset inventory, identity, deployments, Rapid7, CrowdStrike, GitGuardian, and Snyk before they could make a risk decision.</p>
+            <p>I owned the operating model and core architecture. We normalized resources and findings, enriched them with owner, environment, service criticality, exposure, and deployment context, then correlated duplicate or stale records before recommending remediation. The agent could consolidate one CVE reported by three tools, prove a finding referred to a deleted resource, or identify that an internet-facing load balancer was intentional and protected &mdash; rather than mislabel every low-risk result a false positive.</p>
+            <p><strong>My most important decision was to tie autonomy to blast radius.</strong> Read-only evidence gathering could be highly automated. A change recommendation had to include evidence, a diff, validation, and rollback. Material production actions stayed behind deterministic policy and human approval. The lesson was that inventory and ownership quality mattered more than model sophistication, so I would establish those data contracts and evaluation sets before expanding the agent&rsquo;s tools.</p>
+            <div class="note"><strong>Proof to quantify:</strong> sources and accounts covered <span class="fill">[x]</span> &middot; median time to first credible hypothesis <span class="fill">[x &rarr; y]</span> &middot; findings auto-enriched with owner and service <span class="fill">[x%]</span> &middot; duplicate or stale findings consolidated <span class="fill">[x%]</span> &middot; recommendation acceptance, correct abstention, false-closure <span class="fill">[x% / x% / x%]</span></div>
+          </div></details>
 
-          <div class="cheat-card wide">
-            <h3>Proposal three · The security data platform, in AWS services</h3>
-            <p>Same five stages as the technical answer, made concrete. Use this only if they ask for AWS specifics, and lead with the stage, not the service name.</p>
-            <div class="aws-row"><div class="aws-stage">1 · Collect</div><div class="aws-detail"><span class="svc">CloudTrail</span> management and data events, <span class="svc">EKS</span> audit logs, <span class="svc">VPC Flow Logs</span>, <span class="svc">GuardDuty</span>, <span class="svc">Inspector</span> for workload CVEs, <span class="svc">Config</span>, <span class="svc">Security Hub</span> — with Rapid7, CrowdStrike, GitGuardian, Snyk, and Entra arriving as custom sources.</div></div>
-            <div class="aws-row"><div class="aws-stage">2 · Normalize</div><div class="aws-detail"><span class="svc">Security Lake</span> converts to the OCSF schema in Parquet on <span class="svc">S3</span>, catalogued through <span class="svc">Glue</span> and <span class="svc">Lake Formation</span> — the managed version of the common finding model.</div></div>
-            <div class="aws-row"><div class="aws-stage">3 · Context</div><div class="aws-detail">Join ownership, service criticality, environment, and exposure from the asset catalog; <span class="svc">Lake Formation</span> governs who can read which columns of sensitive telemetry.</div></div>
-            <div class="aws-row"><div class="aws-stage">4 · Prioritize</div><div class="aws-detail">A versioned policy layer over KEV, EPSS, reachability, and compensating controls, run in <span class="svc">Athena</span> or <span class="svc">Lambda</span>, emitting a priority with reason codes rather than a bare score.</div></div>
-            <div class="aws-row"><div class="aws-stage">5 · Deliver</div><div class="aws-detail"><span class="svc">EventBridge</span> into <span class="svc">Step Functions</span> to open the pull request or ticket against the owning team, with human approval as an explicit state; adoption and risk retired measured in <span class="svc">QuickSight</span> or <span class="svc">OpenSearch</span>.</div></div>
-            <div class="buy-build"><strong>The senior signal:</strong> “Stages one and two are largely a managed capability now — Security Lake gives you OCSF normalization without building it. The differentiated engineering is stage three and four, ownership context and an explainable policy layer, and that is where I would put the team. I would not spend headcount rebuilding a normalizer.”</div>
-          </div>
+          <details><summary><div class="card-label">Case 2 &middot; architecture</div><div class="card-title">How would you architect that agent</div></summary><div class="qa-body">
+            <span class="track-tag dev">Senior developer &mdash; say this</span>
+            <p>It is a security-data pipeline with an agent at the reasoning layer, <strong>not a chatbot with broad cloud credentials</strong>. Provider and tool connectors wrote source events with immutable raw references. A versioned normalization layer created common resource, identity, finding, deployment, and control objects while retaining source-specific fields. Enrichment resolved ownership, environment, business service, exposure, and recent changes. Correlation grouped records by resource identity, image digest, CVE, principal, deployment, and time window before the agent formed a hypothesis.</p>
+            <p>The pipeline needed the same engineering controls as any high-volume platform: idempotent ingestion, schema versioning, checkpoints and replay, dead-letter handling, freshness and completeness SLOs, lineage, tenant boundaries, and explicit source-of-truth precedence. <em>A missing feed had to produce &ldquo;insufficient evidence,&rdquo; not a confident closure.</em> Each recommendation carried resolvable evidence, confidence, policy results, expected impact, validation, and rollback.</p>
+            <p>Tool access used short-lived task-scoped identity. Reads were broadly allowlisted; writes produced a pull request or went through the existing deployment and approval path. I&rsquo;d evaluate retrieval, groundedness, expert agreement, abstention, unsafe tool calls, and operational value separately &mdash; because a correct recommendation on incomplete telemetry is still an unsafe system.</p>
+          </div></details>
+
+          <details><summary><div class="card-label">Noise</div><div class="card-title">How do you handle false positives</div></summary><div class="qa-body">
+            <p>Close automatically only when evidence is deterministic. <strong>&ldquo;Low risk&rdquo; and &ldquo;accepted risk&rdquo; are not false positives.</strong></p>
+            <table class="tbl">
+              <thead><tr><th>Finding</th><th>First-pass analysis</th><th>Correct disposition</th></tr></thead>
+              <tbody>
+                <tr><td>Same CVE from registry, Rapid7, and a cloud tool</td><td>Match CVE, image digest, workload, deployment version</td><td>Consolidate into one finding with multiple references; do not count three risks</td></tr>
+                <tr><td>Finding references a deleted resource</td><td>Verify deletion via provider API, inventory, IaC state, next scan</td><td>Close as stale only after authoritative confirmation; retain evidence</td></tr>
+                <tr><td><span class="svc">0.0.0.0/0</span> on port 443</td><td>Confirm intended public load balancer, WAF attached, TLS policy compliant, backends private, owner known</td><td>Intentional exposure with verified controls &mdash; not a false positive; keep monitoring</td></tr>
+                <tr><td>IAM policy contains a wildcard</td><td>Evaluate resource conditions, permissions boundary, session policy, principal scope, effective permissions</td><td>Close only if effective privilege is constrained as intended; otherwise remediate</td></tr>
+                <tr><td>Vulnerable library, no reachable path</td><td>Confirm deployed artifact, call-path reachability, runtime use, exploit prerequisites, compensating controls</td><td>Mark not currently exploitable with expiry and re-evaluation trigger; never permanently suppress</td></tr>
+                <tr><td>Secret detector flags an example value</td><td>Test detector confidence, path, entropy, format, provider validation, whether active</td><td>Close only if provably non-secret; if uncertain, revoke or rotate first and investigate second</td></tr>
+              </tbody>
+            </table>
+          </div></details>
+
+          <details><summary><div class="card-label">Evaluation</div><div class="card-title">How do you know the agent is working</div></summary><div class="qa-body">
+            <ul>
+              <li><strong>Retrieval quality:</strong> did it find the authoritative records?</li>
+              <li><strong>Groundedness:</strong> what share of material claims cite evidence that resolves?</li>
+              <li><strong>Decision quality:</strong> did the recommendation match expert review?</li>
+              <li><strong>Abstention quality:</strong> did it stop when evidence was inadequate?</li>
+              <li><strong>Safety:</strong> did it stay within tool, identity, data, and action boundaries?</li>
+              <li><strong>Operational value:</strong> time to hypothesis, engineer time saved, remediation acceptance, recurrence reduction.</li>
+            </ul>
+            <div class="note">Evaluate these <strong>separately</strong>. A single blended score hides the failure that matters.</div>
+          </div></details>
+
+          <details><summary><div class="card-label">Governance</div><div class="card-title">How much autonomy would you give an agent</div></summary><div class="qa-body">
+            <p class="say">Freedom proportional to blast radius. I would not use a binary allow-or-ban policy &mdash; I&rsquo;d tier autonomy by data sensitivity, reversibility, customer impact, and blast radius.</p>
+            <table class="tbl">
+              <thead><tr><th>Tier</th><th>Example</th><th>Permitted autonomy</th><th>Required guardrails</th></tr></thead>
+              <tbody>
+                <tr><td>0 &mdash; Open experimentation</td><td>Ideation with public or synthetic data</td><td>No enterprise tools or sensitive data</td><td>Approved model, isolated workspace, budget and rate limits, no retention into training</td></tr>
+                <tr><td>1 &mdash; Enterprise read-only</td><td>Search, summarization, security analysis</td><td>Retrieval and approved read-only queries</td><td>User and data authorization, source citations, prompt-injection defenses, full logging, abstention</td></tr>
+                <tr><td>2 &mdash; Recommend</td><td>Root cause, remediation plan, code or IaC generation</td><td>Produce plan, diff, ticket, or pull request</td><td>Evidence, confidence, tests, policy checks, human review, no direct production write</td></tr>
+                <tr><td>3 &mdash; Bounded execution</td><td>Reversible low-risk operations</td><td>Execute allowlisted actions within explicit scope</td><td>Short-lived identity, deterministic preconditions, approval policy, canary, post-action verification, automatic rollback</td></tr>
+                <tr><td>4 &mdash; Privileged or material</td><td>Customer-impacting, regulated, financial, identity-admin, destructive</td><td>No unsupervised execution</td><td>Dual control, segregation of duties, independent validation, transaction limits, immutable audit, tested kill switch</td></tr>
+              </tbody>
+            </table>
+          </div></details>
+
+          <details><summary><div class="card-label">Non-negotiables</div><div class="card-title">What guardrails would you never trade away</div></summary><div class="qa-body">
+            <ul>
+              <li><strong>Inventory and ownership:</strong> register every model, agent, tool, data source, vendor, material use case, and accountable owner.</li>
+              <li><strong>Scoped identity and tools:</strong> short-lived least privilege through narrow allowlisted tools; human and agent identity stay distinct.</li>
+              <li><strong>Untrusted context:</strong> retrieved content and tool output are data, never authority; external instructions cannot override policy.</li>
+              <li><strong>Deterministic boundaries:</strong> authorization, data-loss prevention, transaction limits, production gates, and destructive-action rules live outside the model.</li>
+              <li><strong>Evidence and accountability:</strong> authoritative evidence and impact-based human approval; the agent never owns residual risk.</li>
+              <li><strong>Safe failure and recovery:</strong> abstention, iteration limits, isolation, circuit breakers, credential revocation, post-action validation, rollback.</li>
+              <li><strong>Audit and evaluation:</strong> record sources, versions, identity, tool calls, policy results, approvals, actions, outcomes; test retrieval, reasoning, safety, and business value separately.</li>
+              <li><strong>Supply chain:</strong> validate providers, tool servers, plugins, packages, datasets, fine-tunes, and updates before promotion.</li>
+            </ul>
+          </div></details>
+        </div>
+
+        <div class="qgroup-label" id="qa-incident">Incident response</div>
+        <div class="qa-stack">
+          <details><summary><div class="card-label">90 seconds</div><div class="card-title">Walk me through how you handle an incident</div></summary><div class="qa-body">
+            <p class="say">I treat incident response as a continuous risk-management loop aligned to NIST CSF 2.0: Govern, Identify, and Protect prepare the organization; Detect, Respond, and Recover handle the event and feed improvements back into prevention.</p>
+            <p>Operationally, five steps. <strong>Prepare</strong> with ownership, severity criteria, playbooks, logging, forensics access, communications, and tested isolation and recovery paths. <strong>Detect and analyze</strong> by correlating the alert with identity, cloud, deployment, vulnerability, and runtime evidence, then determining scope, impact, confidence, and priority. <strong>Contain</strong> using the least disruptive action that stops further harm &mdash; revoking a credential, isolating a Kubernetes workload, restricting a security group &mdash; while preserving evidence. <strong>Eradicate and recover</strong> by removing root cause, rebuilding from trusted artifacts, restoring in stages, and validating the indicators and attack path are gone. <strong>Learn and improve</strong> by documenting the timeline and decisions, updating detections and playbooks, and creating a preventive control with a named owner.</p>
+            <p>Automation can collect and correlate evidence, recommend containment, and execute pre-approved reversible actions. Material shutdowns, destructive actions, customer-impacting changes, and regulatory notifications stay with the incident commander and accountable functions. <em>Success is not just time to close</em> &mdash; I look at time to detect, contain, recover, recurrence, evidence completeness, and whether the lesson became a durable control.</p>
+            <div class="note">SP 800-61 Rev. 3 integrates incident response across all six CSF 2.0 functions rather than treating it as an isolated security-team activity.</div>
+          </div></details>
+
+          <details><summary><div class="card-label">Scenarios</div><div class="card-title">Scenario drills &mdash; four openings</div></summary><div class="qa-body">
+            <ul>
+              <li><strong>GitGuardian detects a production secret.</strong> Verify whether it is active, but revoke or rotate first when uncertain. Search cloud and application audit logs for use, invalidate derived sessions, remove the value from history, redeploy from clean source, and add a central merge control so a bypassed local hook cannot recur.</li>
+              <li><strong>Falcon flags suspicious Kubernetes behavior.</strong> Correlate process, network, pod, node, image, service-account, and deployment evidence. Isolate the workload rather than immediately taking down the cluster; revoke affected identity, preserve evidence, rebuild from a trusted signed image, validate adjacent workloads for the same indicators.</li>
+              <li><strong>Rapid7 reports a critical internet-facing vulnerability.</strong> Confirm ownership, deployed version, reachability, exposure, known exploitation, compensating controls. Apply temporary network containment if needed, patch or rebuild through CI/CD, rescan the deployed asset, then fix the base image or IaC module so remediation scales beyond one host.</li>
+              <li><strong>Suspicious privileged cloud activation.</strong> Correlate PIM activation, approver, ticket, source device, cloud audit trail, and subsequent actions. Revoke the session and contain affected identities and resources, validate whether approval was legitimate, recover changed configuration from code, and tighten activation or conditional-access policy based on root cause.</li>
+            </ul>
+            <div class="note"><strong>The pattern in all four:</strong> reversible containment first, evidence preserved, rebuild from a trusted source, and the fix pushed upstream so it scales past the single asset.</div>
+          </div></details>
+        </div>
+        <div class="qgroup-label" id="qa-sdlc">Secure delivery and shift-left &middot; Case 3</div>
+        <div class="qa-stack">
+          <details><summary><div class="card-label">Case 3 &middot; result first</div><div class="card-title">Tell me about shifting security left</div></summary><div class="qa-body">
+            <p class="say">I moved security controls from late review into the engineering workflow using commit hooks, GitGuardian, Snyk Code, open-source dependency and IaC scanning, plus env0 for governed infrastructure delivery. The goal was to stop new risk at the point of change while giving developers a fast, understandable remediation path.</p>
+            <span class="track-tag">Hiring manager &mdash; say this</span>
+            <p>GitGuardian was rolled out across the company&rsquo;s organizations and repositories, and my team applied Snyk across code, open-source dependencies, and infrastructure as code, paired with commit hooks for fast local feedback and env0 for consistent governed infrastructure delivery.</p>
+            <p><strong>The leadership challenge was adoption, not tool installation.</strong> I aligned Security, Platform Engineering, and application teams on which outcomes were non-negotiable, then separated legacy debt from new risk. High-confidence new secrets, exploitable vulnerabilities, and dangerous infrastructure changes could block. Existing findings entered an owned, risk-ranked backlog, while low-confidence rules began in warning mode until we proved their precision. Every exception required a rationale, compensating control, owner, and expiry.</p>
+            <p>My key learning was <em>not to equate a stricter gate with a stronger control</em>. If precision and guidance are poor, teams create bypasses. I would measure false-positive rate and remediation time before promoting any new rule from warn to block.</p>
+            <div class="note"><strong>Proof to quantify:</strong> organizations and repositories covered <span class="fill">[x / x]</span> &middot; repositories or pipelines on Snyk <span class="fill">[x / x%]</span> &middot; secrets prevented or rotated <span class="fill">[x]</span> &middot; new critical findings reaching protected branches <span class="fill">[x &rarr; y]</span> &middot; mean remediation time and exception-expiry compliance <span class="fill">[x / x%]</span> &middot; production changes through governed pipelines <span class="fill">[x%]</span></div>
+          </div></details>
+
+          <details><summary><div class="card-label">Case 3 &middot; architecture</div><div class="card-title">How were the controls layered</div></summary><div class="qa-body">
+            <span class="track-tag dev">Senior developer &mdash; say this</span>
+            <p>Deliberately layered, because <strong>a local hook is useful feedback but not a trust boundary</strong>. Commit hooks caught likely secrets and inexpensive issues early. Protected pull requests reran GitGuardian plus Snyk Code, Open Source, and IaC centrally, and required status checks prevented a local bypass from becoming a merge bypass. env0 standardized the Terraform plan and apply path, remote state, environment permissions, policy checks, approval, drift visibility, and evidence.</p>
+            <p>I used a new-versus-existing policy so rollout did not freeze delivery. A verified active secret was blocked and revoked or rotated &mdash; the fix is not merely deleting the commit. New high-confidence exploitable findings could block or require a time-bound exception. Legacy findings got an SLA based on exploitability, reachability, exposure, and service criticality.</p>
+            <p>The important interfaces were stable finding identifiers, repository and service ownership, deduplication across scans, and an exception object with owner, scope, compensating control, and expiration. Post-deployment Rapid7 and CrowdStrike signals then checked whether preventive controls matched reality &mdash; <em>tuning policy from runtime evidence instead of treating CI as an isolated gate.</em></p>
+          </div></details>
+
+          <details><summary><div class="card-label">Policy</div><div class="card-title">What blocks, and what only warns</div></summary><div class="qa-body">
+            <table class="tbl">
+              <thead><tr><th>Finding class</th><th>Default behavior</th><th>Reason</th></tr></thead>
+              <tbody>
+                <tr><td>Verified active secret</td><td>Block, revoke or rotate, investigate history</td><td>Deleting the commit does not invalidate an exposed credential</td></tr>
+                <tr><td>New critical or high exploitable vulnerability</td><td>Block or require explicit security exception</td><td>Preventable new risk should not become backlog</td></tr>
+                <tr><td>Legacy vulnerability</td><td>Prioritized backlog with owner and SLA</td><td>Avoid freezing delivery while preserving accountability</td></tr>
+                <tr><td>High-risk IaC misconfiguration</td><td>Block plan or apply</td><td>Misconfiguration is cheapest to fix before provisioning</td></tr>
+                <tr><td>Low-confidence finding</td><td>Warn, collect feedback, tune the rule</td><td>False-positive friction reduces control adoption</td></tr>
+                <tr><td>Exception</td><td>Time-bound, owned, logged, compensating control</td><td>An exception is a governed risk decision, not a suppression forever</td></tr>
+              </tbody>
+            </table>
+          </div></details>
+        </div>
+
+        <div class="qgroup-label" id="qa-assurance">Compliance and continuous assurance &middot; Case 4</div>
+        <div class="qa-stack">
+          <details><summary><div class="card-label">Case 4 &middot; result first</div><div class="card-title">How do you handle SOC 2 evidence at scale</div></summary><div class="qa-body">
+            <p class="say">I designed agentic workflows that mapped SOC 2 controls to authoritative system evidence, collected and validated that evidence continuously, and routed exceptions to accountable control owners. The agent automated the evidence workflow; humans retained control ownership and attestation.</p>
+            <span class="track-tag">Hiring manager &mdash; say this</span>
+            <p>I reframed evidence collection as continuous control assurance rather than an annual screenshot exercise. Control owners were rebuilding evidence near the audit: formats differed, stale artifacts were hard to spot, and skilled people spent time assembling proof instead of improving controls.</p>
+            <p>I designed a machine-readable control catalog defining owner, system boundary, evidence requirement, authoritative source, collection frequency, validation rule, retention, and escalation path for each control. Agentic workflows selected approved collectors, gathered minimum evidence with read-only identities, validated freshness and completeness, packaged it with lineage, and opened an owned remediation item when evidence was missing or failed policy &mdash; across PIM reviews, repository protections, GitGuardian and Snyk results, env0 deployment records, cloud logging and encryption, Rapid7 remediation, and CrowdStrike coverage.</p>
+            <p><strong>The governance decision was that the workflow could identify missing or inconsistent evidence, but could not declare the company compliant.</strong> Control owners retained review and attestation, with Compliance and Audit providing challenge. My lesson: control semantics and source ownership must be resolved first &mdash; automating an ambiguous control only produces ambiguous evidence faster.</p>
+            <div class="note"><strong>Proof to quantify:</strong> controls and evidence sources automated <span class="fill">[x / x]</span> &middot; evidence current before audit kickoff <span class="fill">[x%]</span> &middot; manual preparation hours <span class="fill">[x &rarr; y]</span> &middot; evidence rejection or rework rate <span class="fill">[x%]</span> &middot; control gaps found early and time to owner <span class="fill">[x / x]</span></div>
+          </div></details>
+
+          <details><summary><div class="card-label">Case 4 &middot; architecture</div><div class="card-title">What does the evidence pipeline look like</div></summary><div class="qa-body">
+            <span class="track-tag dev">Senior developer &mdash; say this</span>
+            <p><strong>The foundation was an evidence contract, not the language model.</strong> For each control we defined the authoritative system, query or API version, scope and population, sampling rule, expected fields, freshness window, validation logic, and owner. A scheduler invoked allowlisted read-only collectors with short-lived identities. Deterministic code reconciled the population and checked freshness, completeness, and expected configuration; the model summarized exceptions and routed work, but did not make the compliance decision.</p>
+            <p>Each artifact was normalized with control ID, system boundary, collection time, source reference, query version, hash, lineage, and redaction status, then written to immutable storage. Collection and approval were separate identities. Retries were idempotent, source unavailability was explicit, and <em>a partial population failed closed into review rather than appearing complete.</em></p>
+            <p>Main failure modes: silent source changes, evidence that proves configuration but not operation, sampling drift, over-collection of sensitive data, and an agent approving its own output. I&rsquo;d monitor collector success, evidence freshness, population reconciliation, rejection and rework, exception age, and time to accountable owner.</p>
+            <div class="pillar"><div class="pillar-name">Flow</div><div class="pillar-text">Control catalog &rarr; scheduler or audit request &rarr; allowlisted read-only collectors &rarr; deterministic validation and population reconciliation &rarr; metadata, hash, timestamp, lineage, redaction &rarr; immutable evidence store &rarr; control-owner review and attestation &rarr; auditor package or exception remediation.</div></div>
+          </div></details>
+        </div>
+
+        <div class="qgroup-label" id="qa-program">Program and strategy &middot; VP proposal</div>
+        <div class="qa-stack">
+          <details><summary><div class="card-label">The big one</div><div class="card-title">How would you build the cloud and AI security program here</div></summary><div class="qa-body">
+            <span class="track-tag">Hiring manager &mdash; say this</span>
+            <p class="say">I&rsquo;d start with the business services and risk decisions, not with a list of security products. For a global financial institution I&rsquo;d build one control model across AWS, Azure, and GCP and implement it through five capabilities: <em>Govern, Enable, Control, Observe, and Prove.</em></p>
+            <div class="pillar"><div class="pillar-name">Govern</div><div class="pillar-text">Inventory, ownership, data classification, risk appetite, decision rights, and a control catalog mapped to regulatory obligations.</div></div>
+            <div class="pillar"><div class="pillar-name">Enable</div><div class="pillar-text">Approved landing zones, CI/CD patterns, identity, telemetry, and AI reference architectures &mdash; so the secure route is the fastest route.</div></div>
+            <div class="pillar"><div class="pillar-name">Control</div><div class="pillar-text">Deterministic boundaries for identity, data, software supply chain, and production change.</div></div>
+            <div class="pillar"><div class="pillar-name">Observe</div><div class="pillar-text">A common security-data platform with measurable freshness, completeness, lineage, and service ownership.</div></div>
+            <div class="pillar"><div class="pillar-name">Prove</div><div class="pillar-text">Continuous evidence generated from those control planes, with failures routed to an accountable owner.</div></div>
+            <p>For AI I would not use a binary allow-or-ban policy &mdash; I&rsquo;d tier autonomy by data sensitivity, reversibility, customer impact, and blast radius. Broad freedom with synthetic or public data in isolated environments; read-only enterprise use requires authorization, citations, logging, and abstention; recommendations require tests and human review; bounded execution adds short-lived identity, allowlisted tools, deterministic preconditions, post-action validation, and rollback; privileged or material actions retain dual control and independent validation.</p>
+            <p>My first 90 days would establish truth and decision rights, close the most material identity and telemetry gaps, launch paved-road patterns, and define the measures. I&rsquo;d report material attack paths, JIT coverage, critical vulnerability exposure, control-feed quality, exception age, developer adoption, and AI policy violations &mdash; <strong>not scanner volume.</strong></p>
+          </div></details>
+
+          <details><summary><div class="card-label">Architecture</div><div class="card-title">What would the control model look like technically</div></summary><div class="qa-body">
+            <span class="track-tag dev">Senior developer &mdash; say this</span>
+            <p>I&rsquo;d separate the platform into <strong>policy, identity, data, telemetry, evidence, and action planes.</strong> The policy plane holds versioned control definitions and maps common outcomes to provider-specific enforcement. Identity uses workforce JIT for human privilege and federation or managed identity for workloads; agent planning, retrieval, and action use separate task-scoped identities. The data plane enforces classification, purpose, residency, retention, and authorization <em>at retrieval time, not only when an index is created.</em></p>
+            <p>For telemetry, connectors preserve immutable raw references and normalize cloud resources, principals, findings, deployments, controls, and business services into versioned schemas. The pipeline needs idempotency, replay, dead-letter handling, lineage, access boundaries, and freshness and completeness SLOs. Correlation should combine vulnerability severity with known exploitation, exploit probability, reachability, internet exposure, compensating controls, and service criticality before prioritizing work. Application teams receive an owned finding with evidence and a remediation path, <strong>not another dashboard count.</strong></p>
+            <p>For an agent, retrieved content is untrusted data and the model is never the authorization layer. It can gather evidence, reason, and propose a diff, but deterministic services enforce permissions, data-loss controls, transaction limits, policy, and production gates. Each material action needs authoritative evidence, short-lived credentials, an allowlisted narrow tool, preconditions, an approval decision where required, post-action verification, and rollback.</p>
+            <div class="note"><strong>Dependency order:</strong> inventory and ownership &rarr; identity and data boundaries &rarr; secure delivery patterns &rarr; trustworthy telemetry &rarr; continuous evidence &rarr; bounded action. That sequencing prevents automating on top of unknown assets, weak authorization, or incomplete data.</div>
+          </div></details>
+
+          <details><summary><div class="card-label">First 90 days</div><div class="card-title">What would you do in your first 90 days</div></summary><div class="qa-body">
+            <div class="pillar"><div class="pillar-name">First 30 days</div><div class="pillar-text"><strong>Establish truth and decision rights.</strong> Confirm business services, critical data, regulatory scope, cloud and AI inventory, and accountable owners. Baseline privileged access, logging coverage, material exposure, critical vulnerabilities, third parties, and existing AI use. Agree risk taxonomy, autonomy tiers, exception authority, and the top ten enterprise control outcomes.</div></div>
+            <div class="pillar"><div class="pillar-name">Days 31&ndash;90</div><div class="pillar-text"><strong>Secure the control planes.</strong> Enforce production JIT access and machine-identity standards for highest-risk services. Define landing-zone and CI/CD minimum baselines; close critical telemetry gaps. Launch the approved AI sandbox and the Tier 1 read-only pattern. Establish the control and evidence catalog and the executive dashboard.</div></div>
+            <div class="pillar"><div class="pillar-name">Months 3&ndash;6</div><div class="pillar-text"><strong>Scale paved roads and continuous assurance.</strong> Expand policy-as-code, secure templates, artifact provenance, vulnerability prioritization, and ownership mapping. Normalize telemetry and implement continuous evidence for high-value controls. Add AI threat modeling, red-team evaluation, tool gateway, runtime monitoring, and kill-switch patterns.</div></div>
+            <div class="pillar"><div class="pillar-name">Months 6&ndash;12</div><div class="pillar-text"><strong>Authorize bounded autonomy.</strong> Permit Tier 3 actions only after identity, policy, evidence, approval, validation, and rollback controls are proven. Run resilience and agent-compromise exercises against critical services. Use control-performance data to retire redundant gates and redirect investment to residual risk.</div></div>
+            <div class="note"><strong>Critical path:</strong> inventory and ownership &rarr; identity and data boundaries &rarr; secure paved roads &rarr; trustworthy telemetry &rarr; continuous evidence &rarr; bounded automation. <em>Autonomous action is the last capability added, not the first.</em></div>
+          </div></details>
+
+          <details><summary><div class="card-label">Metrics</div><div class="card-title">What would you report to executives</div></summary><div class="qa-body">
+            <table class="tbl">
+              <thead><tr><th>Domain</th><th>Decision-grade signals</th></tr></thead>
+              <tbody>
+                <tr><td>Exposure and identity</td><td>JIT production-write coverage; standing privilege; stale machine credentials; material attack paths; known-exploited vulnerabilities outside SLA</td></tr>
+                <tr><td>Prevention and delivery</td><td>Repository, pipeline, and IaC coverage; critical findings prevented; exception age and expiry; paved-road adoption; secure-delivery lead time</td></tr>
+                <tr><td>Detection and resilience</td><td>Telemetry freshness and completeness; time to detect, contain, recover; restore success; recurring incidents and control failures</td></tr>
+                <tr><td>AI and agents</td><td>Inventory coverage; autonomy tier and data class; groundedness and abstention; unsafe tool calls; approval and rejection; rollback and revocation success</td></tr>
+              </tbody>
+            </table>
+            <div class="note">Report in business terms: material services, customer impact, financial exposure, regulatory obligation, and resilience &mdash; not scanner volume.</div>
+          </div></details>
+
+          <details><summary><div class="card-label">Operating model</div><div class="card-title">Who owns what</div></summary><div class="qa-body">
+            <table class="tbl">
+              <thead><tr><th>Layer</th><th>Accountability</th></tr></thead>
+              <tbody>
+                <tr><td>Board / executive risk committee</td><td>Risk appetite, material-risk oversight, investment, regulatory accountability</td></tr>
+                <tr><td>CISO and Cloud/AI Security leadership</td><td>Control objectives, threat model, central policy, independent challenge, enterprise telemetry</td></tr>
+                <tr><td>Platform engineering</td><td>Secure landing zones, identity and delivery paved roads, reusable controls, developer experience</td></tr>
+                <tr><td>Product and application teams</td><td>Workload ownership, data and use-case classification, remediation, SLOs, local risk decisions within delegation</td></tr>
+                <tr><td>Model risk, privacy, legal, compliance</td><td>Independent validation and regulatory interpretation proportional to materiality</td></tr>
+                <tr><td>Internal audit</td><td>Independent assurance that control design and operation are effective</td></tr>
+              </tbody>
+            </table>
+            <div class="note"><strong>Federated in delivery, centralized in policy and evidence.</strong> A central team cannot review every change; fully decentralized policy produces inconsistent risk. The agent owns nothing &mdash; it executes delegated tasks while a named human or function stays accountable.</div>
+          </div></details>
+
+          <details><summary><div class="card-label">The close</div><div class="card-title">Board-level closing line</div></summary><div class="qa-body">
+            <p class="say">The goal is not zero experimentation and it is not unlimited autonomy. It is <em>maximum safe velocity</em>: broad creative freedom inside low-blast-radius sandboxes, paved roads for production, deterministic controls for non-negotiable risk, and evidence that lets us increase autonomy only when the system has earned it.</p>
+          </div></details>
+        </div>
+
+        <div class="qgroup-label" id="qa-credibility">Credibility check &middot; ask yourself first</div>
+        <div class="qa-stack">
+          <details><summary><div class="card-label">Before the call</div><div class="card-title">Six questions to answer for every case</div></summary><div class="qa-body">
+            <p>Be ready for each of these without inventing a number.</p>
+            <ul>
+              <li>What did <strong>you</strong> own versus the team, IT, Security, Compliance, or a vendor?</li>
+              <li>What was the hardest architecture or policy decision?</li>
+              <li>What failed or created friction?</li>
+              <li>What evidence proved the control worked?</li>
+              <li>Which metric changed, and how was it measured?</li>
+              <li>What would you do differently at global financial-services scale?</li>
+            </ul>
+            <div class="note"><strong>The boundary to hold:</strong> name what you have not operated at this scale before they find it. Retain implementation detail only where it matches what you actually built or directly led.</div>
+          </div></details>
         </div>
       </section>
-
-      <section id="cases" aria-labelledby="casesTitle">
-        <div class="section-label" id="casesTitle">Eight-case STAR bank</div>
-        <div class="case-stack">
-          <details class="case-card"><summary><div class="case-title">Shift-left security across every repository</div><div class="case-use">AppSec · developer guidance · secure SDLC</div></summary><div class="case-body"><div class="star-row"><div class="star-key">Situation</div><div class="star-value">Secrets and vulnerable code were most expensive when found after merge or deployment, and coverage varied across company organizations and repositories.</div></div><div class="star-row"><div class="star-key">Task</div><div class="star-value">Create consistent prevention without turning Security into a manual release gate.</div></div><div class="star-row"><div class="star-key">Action</div><div class="star-value">My team rolled GitGuardian across all company organizations and repositories and implemented Snyk in the same shift-left model. Checks ran in the engineering workflow so high-confidence secret, code, dependency, and Infrastructure as Code findings could be addressed before protected branches and deployment. We paired policy with central visibility, triage, developer guidance, and exception handling.</div></div><div class="star-row"><div class="star-key">Result</div><div class="star-value">Security feedback moved to the point of change and controls became consistently applied across the code estate rather than dependent on opt-in review.</div></div><div class="star-row"><div class="star-key">Lesson</div><div class="star-value">Separate new-code prevention from legacy backlog remediation and tune blocking thresholds before enforcement.</div></div><div class="proof"><strong>Proof to prepare:</strong> rollout scope and sequence, one real GitGuardian and Snyk finding, block-versus-warn policy, false-positive handling, and exception expiry.</div></div></details>
-
-          <details class="case-card"><summary><div class="case-title">Remove standing production access with JIT IAM</div><div class="case-use">Identity · governance · cross-functional delivery</div></summary><div class="case-body"><div class="star-row"><div class="star-key">Situation</div><div class="star-value">Standing production access increased risk, while manual provisioning created work for IT and inconsistent evidence for review.</div></div><div class="star-row"><div class="star-key">Task</div><div class="star-value">Reduce persistent privilege while making legitimate access faster and easier to govern.</div></div><div class="star-row"><div class="star-key">Action</div><div class="star-value">I worked on refactoring IAM through Microsoft Entra Privileged Identity Management so privileged roles became eligible and activated just in time. We used access packages to standardize request, approval, assignment, and expiry, streamlined IT provisioning, and introduced automated access auditing and review evidence through Entra.</div></div><div class="star-row"><div class="star-key">Result</div><div class="star-value">The design revoked standing production access, created a repeatable provisioning path for IT, and made privileged-access evidence easier to review.</div></div><div class="star-row"><div class="star-key">Lesson</div><div class="star-value">Identity controls are adopted when the secure path also improves the user and operator experience.</div></div><div class="proof"><strong>Proof to prepare:</strong> roles in scope, activation duration, approval and MFA requirements, access-package lifecycle, review cadence, break-glass handling, and before/after standing-access count if available.</div></div></details>
-
-          <details class="case-card"><summary><div class="case-title">Close the loop from runtime finding to audit evidence</div><div class="case-use">Rapid7 · CrowdStrike · SOC 2 · remediation</div></summary><div class="case-body"><div class="star-row"><div class="star-key">Situation</div><div class="star-value">The team supported Kubernetes runtime protection through CrowdStrike Falcon, received vulnerability findings through Rapid7, and had to demonstrate control operation during SOC 2 audits.</div></div><div class="star-row"><div class="star-key">Task</div><div class="star-value">Turn security-tool output into owned remediation and defensible evidence rather than disconnected alerts.</div></div><div class="star-row"><div class="star-key">Action</div><div class="star-value">We treated each finding as a lifecycle: validate and deduplicate it, map it to the deployed asset and owner, prioritize it by exposure and impact, assign remediation, record exceptions, verify closure, and preserve evidence. CrowdStrike coverage and Rapid7 remediation records supported the broader assurance story during SOC 2 audit participation.</div></div><div class="star-row"><div class="star-key">Result</div><div class="star-value">The operating model connected detection, ownership, remediation, and audit evidence, improving the team's ability to explain both risk and control effectiveness.</div></div><div class="star-row"><div class="star-key">Lesson</div><div class="star-value">A scanner is a source, not a vulnerability-management program; ownership data and closure evidence are the real control.</div></div><div class="proof"><strong>Proof to prepare:</strong> one Rapid7 finding, prioritization basis, remediation owner, validation method, CrowdStrike coverage boundary, and one SOC 2 evidence request you supported.</div></div></details>
-
-          <details class="case-card"><summary><div class="case-title">Internal developer platform: value before parity</div><div class="case-use">Ambiguity · roadmap · architecture trade-off</div></summary><div class="case-body"><div class="star-row"><div class="star-key">Situation</div><div class="star-value">Provisioning took weeks and product teams depended on tickets. The initial platform requirement was feature parity across all three clouds at launch.</div></div><div class="star-row"><div class="star-key">Task</div><div class="star-value">Deliver self-service for more than eight product teams without letting the broadest requirement delay all value.</div></div><div class="star-row"><div class="star-key">Action</div><div class="star-value">Compared the parity request with actual demand and cost, sequenced the highest-value workflows first, documented the compatibility contract, and standardized Terraform and CloudFormation delivery patterns with embedded guardrails.</div></div><div class="star-row"><div class="star-key">Result</div><div class="star-value">Provisioning fell from weeks to hours across more than eight product teams.</div></div><div class="star-row"><div class="star-key">Lesson</div><div class="star-value">Bring usage and demand evidence into discovery before a broad requirement becomes a commitment.</div></div><div class="proof"><strong>Proof to prepare:</strong> state isolation, policy checks, drift, tenancy, rollback, and what deliberately stayed provider-specific.</div></div></details>
-
-          <details class="case-card"><summary><div class="case-title">Four acquisitions: governance before re-platforming</div><div class="case-use">Security strategy · regulated change · influence</div></summary><div class="case-body"><div class="star-row"><div class="star-key">Situation</div><div class="star-value">Four acquisitions arrived with different cloud estates, identities, and security postures. Full re-platforming would take quarters while governance risk was immediate.</div></div><div class="star-row"><div class="star-key">Task</div><div class="star-value">Reduce risk without stalling integration or product roadmaps.</div></div><div class="star-row"><div class="star-key">Action</div><div class="star-value">Sequenced identity boundaries, logging and evidence, minimum guardrails, and accountable owners before workload migration. Presented the interim state as a time-bound risk burn-down plan.</div></div><div class="star-row"><div class="star-key">Result</div><div class="star-value">All four acquisitions came under one platform governance and security direction without making full migration a prerequisite.</div></div><div class="star-row"><div class="star-key">Lesson</div><div class="star-value">Standardize the integration playbook and automate repeatable identity and evidence steps after the first acquisition.</div></div><div class="proof"><strong>Proof to prepare:</strong> explain only the identity, logging, evidence, and policy controls actually implemented.</div></div></details>
-
-          <details class="case-card"><summary><div class="case-title">Grow the platform team from 3 to 14</div><div class="case-use">People leadership · coaching · operating model</div></summary><div class="case-body"><div class="star-row"><div class="star-key">Situation</div><div class="star-value">A three-person cloud operations team supported a growing engineering organization through a ticket queue.</div></div><div class="star-row"><div class="star-key">Task</div><div class="star-value">Scale capability, ownership, and delivery without relying on headcount alone.</div></div><div class="star-row"><div class="star-key">Action</div><div class="star-value">Hired across regions, created platform-area ownership, developed technical leads through design and code reviews, and shifted output from tickets to self-service capabilities.</div></div><div class="star-row"><div class="star-key">Result</div><div class="star-value">The team grew from 3 to 14 and supported more than 150 developers.</div></div><div class="star-row"><div class="star-key">Lesson</div><div class="star-value">Formalize career expectations and adoption metrics earlier as the team scales.</div></div><div class="proof"><strong>Proof to prepare:</strong> one anonymized coaching example: gap, intervention, observable change, and expanded ownership.</div></div></details>
-
-          <details class="case-card"><summary><div class="case-title">FinOps as an actionable data product</div><div class="case-use">Data product · user guidance · measured value</div></summary><div class="case-body"><div class="star-row"><div class="star-key">Situation</div><div class="star-value">Cloud spend grew across three providers, but centralized reporting did not connect architecture decisions to team-level unit economics.</div></div><div class="star-row"><div class="star-key">Task</div><div class="star-value">Change engineering decisions, not produce another finance report.</div></div><div class="star-row"><div class="star-key">Action</div><div class="star-value">Defined unit-cost KPIs, standardized ownership and allocation data, and delivered guidance in teams' existing workflows.</div></div><div class="star-row"><div class="star-key">Result</div><div class="star-value">Delivered more than $1 million in annual cloud savings through distributed ownership.</div></div><div class="star-row"><div class="star-key">Lesson</div><div class="star-value">Standardize tagging and allocation before the reporting layer and make cost an input to planning.</div></div><div class="proof"><strong>Proof to prepare:</strong> unit-cost definition, largest allocation gap, data freshness, and one changed decision.</div></div></details>
-
-          <details class="case-card"><summary><div class="case-title">AI Center of Excellence from zero</div><div class="case-use">0-to-1 · regulated industry · requirements</div></summary><div class="case-body"><div class="star-row"><div class="star-key">Situation</div><div class="star-value">The insurer wanted AI and automation but had no team, intake model, or production governance.</div></div><div class="star-row"><div class="star-key">Task</div><div class="star-value">Build the function, roadmap, team, and delivery standards.</div></div><div class="star-row"><div class="star-key">Action</div><div class="star-value">Worked directly with claims users, translated pain into a scored backlog, matched rules, natural language processing, or machine learning to the problem, and established model validation, risk review, and responsible-AI gates.</div></div><div class="star-row"><div class="star-key">Result</div><div class="star-value">The portfolio delivered more than $1 million in measured operational savings and the governance framework became the enterprise production standard.</div></div><div class="star-row"><div class="star-key">Lesson</div><div class="star-value">Publish intake criteria earlier and give post-release monitoring the same weight as pre-release approval.</div></div><div class="proof"><strong>Proof to prepare:</strong> savings method, one declined request, and actual governance and monitoring controls.</div></div></details>
+      <section id="reference" aria-labelledby="refTitle">
+        <div class="section-label" id="refTitle">Reference frameworks</div>
+        <p class="section-intro">Design inputs and crosswalks, not competing checklists. Name at most one or two in an answer.</p>
+        <div class="src-grid">
+          <a class="src" href="https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20" target="_blank" rel="noopener">Cybersecurity Framework 2.0<span>NIST &middot; governance taxonomy</span></a>
+          <a class="src" href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener">SP 800-61 Rev. 3<span>NIST &middot; incident response</span></a>
+          <a class="src" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">AI Risk Management Framework<span>NIST &middot; govern, map, measure, manage</span></a>
+          <a class="src" href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank" rel="noopener">Generative AI Profile<span>NIST AI 600-1</span></a>
+          <a class="src" href="https://csrc.nist.gov/pubs/ir/8596/iprd" target="_blank" rel="noopener">Cyber AI Profile<span>NIST &middot; preliminary draft</span></a>
+          <a class="src" href="https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm" target="_blank" rel="noopener">SR 26-2 Model Risk Management<span>Federal Reserve &middot; superseded SR 11-7</span></a>
+          <a class="src" href="https://www.dfs.ny.gov/cybersecurity" target="_blank" rel="noopener">Cybersecurity Resource Center<span>New York DFS</span></a>
+          <a class="src" href="https://www.dfs.ny.gov/industry-guidance/industry-letters/20260521-heightened-cybersecurity-risks-assoc-with-frontier-ai-models" target="_blank" rel="noopener">Frontier AI Advisory 2026<span>New York DFS</span></a>
+          <a class="src" href="https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4-1" target="_blank" rel="noopener">Cloud Controls Matrix v4.1<span>CSA</span></a>
+          <a class="src" href="https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1" target="_blank" rel="noopener">AI Controls Matrix v1.1<span>CSA</span></a>
+          <a class="src" href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener">Top 10 for Agentic Applications<span>OWASP &middot; 2026</span></a>
+          <a class="src" href="https://atlas.mitre.org/" target="_blank" rel="noopener">ATLAS<span>MITRE &middot; AI threat techniques</span></a>
+          <a class="src" href="https://www.cisa.gov/sites/default/files/2023-06/principles_approaches_for_security-by-design-default_508c.pdf" target="_blank" rel="noopener">Secure by Design<span>CISA</span></a>
+          <a class="src" href="https://www.cisa.gov/sites/default/files/2023-04/zero_trust_maturity_model_v2_508.pdf" target="_blank" rel="noopener">Zero Trust Maturity Model v2<span>CISA</span></a>
+          <a class="src" href="https://archive.fdic.gov/view/fdic/15465" target="_blank" rel="noopener">Third-Party Relationships<span>Interagency guidance</span></a>
+          <a class="src" href="https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022" target="_blank" rel="noopener">Trust Services Criteria<span>AICPA &middot; SOC 2</span></a>
+          <a class="src" href="https://morganstanley.eightfold.ai/careers/job/549799409227" target="_blank" rel="noopener">Role description<span>Morgan Stanley</span></a>
+          <a class="src" href="https://www.morganstanley.com/about-us/morgan-stanley-core-values" target="_blank" rel="noopener">Core values<span>Morgan Stanley</span></a>
         </div>
       </section>
-
-      <section id="sources" aria-labelledby="sourcesTitle"><div class="section-label" id="sourcesTitle">Primary references</div><div class="source-grid">
-        <a class="source" href="https://morganstanley.eightfold.ai/careers/job/549799409227" target="_blank" rel="noopener">Role description<span>Morgan Stanley</span></a>
-        <a class="source" href="https://www.morganstanley.com/people-opportunities/students-graduates/resources/interview-preparation/" target="_blank" rel="noopener">Interview preparation<span>Morgan Stanley Careers</span></a>
-        <a class="source" href="https://www.first.org/epss/" target="_blank" rel="noopener">Exploit Prediction Scoring System<span>FIRST</span></a>
-        <a class="source" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">Known Exploited Vulnerabilities<span>CISA</span></a>
-        <a class="source" href="https://ocsf.io/" target="_blank" rel="noopener">Open Cybersecurity Schema Framework<span>OCSF</span></a>
-        <a class="source" href="https://csrc.nist.gov/pubs/sp/800/218/final" target="_blank" rel="noopener">Secure Software Development Framework<span>NIST SP 800-218</span></a>
-      </div></section>
     </main>
 
-    <aside class="reference-rail" id="reference" aria-label="Quick reference">
+    <aside class="reference-rail" aria-label="Quick reference">
       <details class="rail-panel" id="callIndex" open><summary><div class="card-label">Navigate</div><div class="card-title">Call index</div></summary><div class="rail-body">
         <div class="idx-group">
-          <div class="idx-label">Open and close</div>
-          <a href="#cheatsheet">Twenty seconds, numbers, close</a>
+          <div class="idx-label">Start here</div>
+          <a href="#method">Answer shape</a>
+          <a href="#values">Morgan Stanley values</a>
         </div>
         <div class="idx-group">
           <div class="idx-label">Questions</div>
-          <a href="#q-open">Opening and positioning</a>
-          <a href="#q-technical">Platform and architecture</a>
-          <a href="#q-security">Security and scenarios</a>
-          <a href="#q-ai">AI and agentic</a>
-          <a href="#q-leadership">Leadership</a>
-          <a href="#q-curveball">Curveballs</a>
-        </div>
-        <div class="idx-group">
-          <div class="idx-label">Work samples</div>
-          <a href="#cases">STAR bank · eight cases</a>
+          <a href="#qa-open">Opening and fit</a>
+          <a href="#qa-identity">Identity &middot; Case 1</a>
+          <a href="#qa-ai">AI and agents &middot; Case 2</a>
+          <a href="#qa-incident">Incident response</a>
+          <a href="#qa-sdlc">Shift-left &middot; Case 3</a>
+          <a href="#qa-assurance">Assurance &middot; Case 4</a>
+          <a href="#qa-program">Program &middot; VP proposal</a>
+          <a href="#qa-credibility">Credibility check</a>
         </div>
         <div class="idx-group muted">
-          <div class="idx-label">Deep answers</div>
-          <a href="#architecture">Technical answer</a>
-          <a href="#program">Program model</a>
-          <a href="#proposals">What I'd build</a>
-          <a href="#talk-tracks">Full talk tracks</a>
-          <a href="#sources">Sources</a>
+          <div class="idx-label">Reference</div>
+          <a href="#reference">Frameworks</a>
         </div>
       </div></details>
-      <details class="rail-panel" open><summary><div class="card-label">Quick reference</div><div class="card-title">JD lens</div></summary><div class="rail-body"><ul class="rail-list"><li><strong>Security data</strong>Rapid7, CrowdStrike, GitGuardian, Snyk, Entra, cloud and asset context</li><li><strong>Actionable guidance</strong>Owner, reason, priority, fix path, due date, exception</li><li><strong>Architecture</strong>Reliable ingestion, common model, governance, serving, measurement</li><li><strong>Leadership</strong>Direction, standards, coaching, accountability, cross-functional trust</li><li><strong>Regulated delivery</strong>SOC 2 evidence, access governance, traceability, expiry</li></ul></div></details>
+
+      <details class="rail-panel" open><summary><div class="card-label">Quick reference</div><div class="card-title">Answer formula</div></summary><div class="rail-body"><ul class="rail-list">
+        <li><strong>Any case</strong>Result &rarr; situation &rarr; your decisions &rarr; result and one honest improvement</li>
+        <li><strong>Technical</strong>Decision &rarr; boundaries &rarr; data flow &rarr; failure mode &rarr; how you measure it</li>
+        <li><strong>Credibility</strong>What I owned &rarr; what the team owned &rarr; what I would do here</li>
+        <li><strong>Autonomy</strong>Tier by data sensitivity, reversibility, customer impact, blast radius</li>
+        <li><strong>Never</strong>An unverified estimate stated as a fact</li>
+      </ul></div></details>
+
       <details class="rail-panel" id="acronymPanel"><summary><div class="card-label">Quick reference</div><div class="card-title">Acronym glossary</div></summary><div class="rail-body"><dl class="glossary">
-        <dt>AI</dt><dd>Artificial Intelligence</dd><dt>AICPA</dt><dd>American Institute of Certified Public Accountants</dd><dt>API</dt><dd>Application Programming Interface</dd><dt>AppSec</dt><dd>Application Security</dd><dt>AWS</dt><dd>Amazon Web Services</dd><dt>CI/CD</dt><dd>Continuous Integration and Continuous Delivery/Deployment</dd><dt>CISA</dt><dd>Cybersecurity and Infrastructure Security Agency</dd><dt>CSPM</dt><dd>Cloud Security Posture Management</dd><dt>CVE</dt><dd>Common Vulnerabilities and Exposures</dd><dt>CVSS</dt><dd>Common Vulnerability Scoring System</dd><dt>EKS</dt><dd>Elastic Kubernetes Service (AWS)</dd><dt>EPSS</dt><dd>Exploit Prediction Scoring System</dd><dt>FIRST</dt><dd>Forum of Incident Response and Security Teams</dd><dt>GCP</dt><dd>Google Cloud Platform</dd><dt>IAM</dt><dd>Identity and Access Management</dd><dt>IaC</dt><dd>Infrastructure as Code</dd><dt>IT</dt><dd>Information Technology</dd><dt>JD</dt><dd>Job Description</dd><dt>JIT</dt><dd>Just-in-Time access</dd><dt>K8s</dt><dd>Kubernetes</dd><dt>KEV</dt><dd>Known Exploited Vulnerabilities</dd><dt>KPI</dt><dd>Key Performance Indicator</dd><dt>LLM</dt><dd>Large Language Model</dd><dt>MCP</dt><dd>Model Context Protocol</dd><dt>MFA</dt><dd>Multi-Factor Authentication</dd><dt>ML</dt><dd>Machine Learning</dd><dt>MTTR</dt><dd>Mean Time to Remediate or Recover; define usage</dd><dt>NIST</dt><dd>National Institute of Standards and Technology</dd><dt>OCSF</dt><dd>Open Cybersecurity Schema Framework</dd><dt>OTEL</dt><dd>OpenTelemetry</dd><dt>OWASP</dt><dd>Open Worldwide Application Security Project</dd><dt>PIM</dt><dd>Privileged Identity Management</dd><dt>RAG</dt><dd>Retrieval-Augmented Generation</dd><dt>RBAC</dt><dd>Role-Based Access Control</dd><dt>RMF</dt><dd>Risk Management Framework</dd><dt>SCP</dt><dd>Service Control Policy (AWS Organizations)</dd><dt>SDLC</dt><dd>Software Development Life Cycle</dd><dt>SIEM</dt><dd>Security Information and Event Management</dd><dt>SLA</dt><dd>Service-Level Agreement</dd><dt>SLO</dt><dd>Service-Level Objective</dd><dt>SOC 2</dt><dd>System and Organization Controls 2</dd><dt>SP</dt><dd>Special Publication</dd><dt>SSO</dt><dd>Single Sign-On</dd><dt>STAR</dt><dd>Situation, Task, Action, Result</dd><dt>STS</dt><dd>Security Token Service (AWS short-lived credentials)</dd><dt>TSC</dt><dd>Trust Services Criteria</dd><dt>VP</dt><dd>Vice President</dd>
+        <dt>AICPA</dt><dd>American Institute of Certified Public Accountants</dd><dt>ATLAS</dt><dd>Adversarial Threat Landscape for AI Systems (MITRE)</dd><dt>CCM</dt><dd>Cloud Controls Matrix (CSA)</dd><dt>CI/CD</dt><dd>Continuous Integration and Continuous Delivery</dd><dt>CISA</dt><dd>Cybersecurity and Infrastructure Security Agency</dd><dt>CSA</dt><dd>Cloud Security Alliance</dd><dt>CSF</dt><dd>Cybersecurity Framework (NIST)</dd><dt>CVE</dt><dd>Common Vulnerabilities and Exposures</dd><dt>CVSS</dt><dd>Common Vulnerability Scoring System</dd><dt>DFS</dt><dd>Department of Financial Services (New York)</dd><dt>EPSS</dt><dd>Exploit Prediction Scoring System</dd><dt>IaC</dt><dd>Infrastructure as Code</dd><dt>IAM</dt><dd>Identity and Access Management</dd><dt>JIT</dt><dd>Just-in-Time access</dd><dt>KEV</dt><dd>Known Exploited Vulnerabilities (CISA)</dd><dt>MFA</dt><dd>Multi-Factor Authentication</dd><dt>PIM</dt><dd>Privileged Identity Management (Microsoft Entra)</dd><dt>RCA</dt><dd>Root Cause Analysis</dd><dt>SBOM</dt><dd>Software Bill of Materials</dd><dt>SLA</dt><dd>Service-Level Agreement</dd><dt>SLO</dt><dd>Service-Level Objective</dd><dt>SOC 2</dt><dd>System and Organization Controls 2</dd><dt>SoD</dt><dd>Segregation of Duties</dd><dt>SR</dt><dd>Supervision and Regulation letter (Federal Reserve)</dd><dt>STAR</dt><dd>Situation, Task, Action, Result</dd><dt>TSC</dt><dd>Trust Services Criteria</dd><dt>VP</dt><dd>Vice President</dd>
       </dl></div></details>
-      <details class="rail-panel"><summary><div class="card-label">Answer formula</div><div class="card-title">Keep it structured</div></summary><div class="rail-body"><ul class="rail-list"><li><strong>Technical</strong>Decision → five-stage flow → trade-off → failure → measure</li><li><strong>Behavioral</strong>Result headline → situation → task → action → result → lesson</li><li><strong>Credibility</strong>What I owned → what the team owned → what I would do here</li></ul></div></details>
     </aside>
   </div>
 
-  <footer><span>Interview Lab · connected to The AI Ramp-Up</span><a class="back-link" href="index.html">Return to the 13-chapter program <span aria-hidden="true">→</span></a></footer>
+  <footer><span>Interview Lab &middot; connected to The AI Ramp-Up</span><a class="back-link" href="index.html">Return to the 13-chapter program <span aria-hidden="true">&rarr;</span></a></footer>
 </div>
 <script>
 const MODEKEY="airampup:interview-lab:mode:v1";
@@ -580,7 +592,7 @@ modeBtn.addEventListener('click',async()=>{
   const on=!document.body.classList.contains('live');
   applyMode(on);
   await store.set(MODEKEY,on?"1":"0");
-  if(on)document.getElementById('questions').scrollIntoView({block:'start'});
+  if(on)document.getElementById('qa').scrollIntoView({block:'start'});
 });
 (async()=>{
   if(window.matchMedia('(min-width: 941px)').matches)glossaryPanel.open=true;
