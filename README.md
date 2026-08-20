@@ -23,12 +23,12 @@ Thirteen chapters, roughly 230 to 280 hours total. Each chapter includes:
 
 The Interview Lab is a separate, connected module for a senior cloud and AI security leadership interview. It is structured as questions with the answer underneath, built from the STAR work examples and VP framework source document.
 
-- **Morgan Stanley core values** — all five, with their published sub-points, each mapped to where it naturally lands in an answer rather than recited
-- **Answer shape and claim discipline** — the 10/15/45–75/15-second answer structure, the hiring-manager versus senior-developer lens, and the rule that an unverified estimate never becomes a fact
-- **27 questions in eight groups** — opening and fit, identity and privileged access, AI and agents, incident response, secure delivery, compliance assurance, program and strategy, and a credibility self-check. Each opens to a result-first line plus the track that matches the room.
-- **Four work examples and an incident-response lifecycle** — consolidated JIT privileged access, the multi-cloud Cloud Engineering Agent, shift-left delivery, and agentic SOC 2 continuous control assurance, each with hiring-manager and developer talk tracks, technical depth on request, and metrics left as fill-in placeholders
+- **Target-organization values** — each mapped to where it naturally lands in an answer rather than recited
+- **36 questions in eight groups** — opening and fit, identity and privileged access, AI and agents, secure delivery, compliance assurance, incident response, program and strategy, and a credibility self-check. Each opens to a result-first line plus the track that matches the room.
+- **Four work examples and an incident-response lifecycle** — consolidated JIT privileged access, the production Cloud Engineering Agent, shift-left delivery, and agentic SOC 2 continuous control assurance, each with hiring-manager and developer talk tracks, technical depth on request, and clearly labeled résumé-verified figures, calibrated estimates, or proposed targets
+- **Claim boundaries** — aligned to the August 19, 2026 Platform Engineering résumé plus direct clarification: the Tricentis remit consistently combined Cloud Platform Security and governance, Cloud Platform/Infrastructure Engineering, and DevOps; SecOps was the analyst partner; and the Cloud Engineering Agent progressed from pilot to production use for performance and security RCA
 - **VP cloud and AI security program** — Govern, Enable, Control, Observe, Prove; five AI autonomy tiers from open experimentation to privileged action; eight non-negotiable agent guardrails; the operating model; executive metrics; and a 30/90/6-month/12-month roadmap
-- A **Call index** pinned in the sidebar, a **Live mode** toggle that collapses answers and hides instructional prose, an answer-formula card, and an acronym glossary
+- A **Call index** pinned in the sidebar, a **Live mode** toggle that collapses answers and hides instructional prose, and an acronym glossary
 - Reference frameworks: NIST CSF 2.0, SP 800-61r3, AI RMF and GenAI Profile, Fed SR 26-2, NY DFS, CSA CCM and AICM, OWASP Agentic Top 10, MITRE ATLAS, CISA, and AICPA TSC
 
 ## Running it

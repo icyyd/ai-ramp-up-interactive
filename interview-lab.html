@@ -49,8 +49,6 @@ section{scroll-margin-top:24px}
 .rail-panel summary{padding:15px 42px 15px 16px}
 .rail-panel .card-title{font-size:.98rem}
 .rail-body{padding:0 16px 17px;color:var(--muted);font-size:.79rem}
-.rail-list{list-style:none;display:flex;flex-direction:column;gap:9px}
-.rail-list strong{display:block;color:var(--bone);font-size:.82rem}
 .glossary{display:grid;grid-template-columns:auto 1fr;gap:7px 10px}
 .glossary dt{font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.68rem;font-weight:500}
 .glossary dd{color:var(--muted);font-size:.74rem;line-height:1.45}
@@ -92,16 +90,6 @@ details[open] summary::after{content:"\2212"}
 .value-card li::before{content:"\00B7";position:absolute;left:2px;color:var(--amber)}
 .value-card .use{margin-top:9px;padding-top:8px;border-top:1px solid var(--line);color:var(--bone);font-size:.79rem}
 .value-card .use span{color:var(--ok);font-family:'Spline Sans Mono',monospace;font-size:.53rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px}
-.banner{background:rgba(123,196,150,.07);border:1px solid rgba(123,196,150,.32);border-radius:12px;padding:14px 17px;margin-bottom:12px;color:var(--muted);font-size:.84rem}
-.banner strong{color:var(--ok)}
-.thesis{background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid rgba(232,163,61,.34);border-radius:14px;padding:20px 22px;margin-bottom:12px}
-.thesis h2{font-family:'Fraunces',serif;font-size:1.16rem;color:var(--amber);margin-bottom:8px}
-.thesis p{color:var(--muted);font-size:.88rem}
-.thesis p+p{margin-top:9px}
-.shape{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
-.shape-step{background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px;flex:1 1 150px;min-width:0}
-.shape-step b{display:block;font-family:'Spline Sans Mono',monospace;color:var(--amber);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
-.shape-step span{color:var(--muted);font-size:.75rem}
 .pillar{display:grid;grid-template-columns:112px 1fr;gap:13px;padding:11px 0;border-top:1px solid var(--line);align-items:start}
 .pillar:first-child{border-top:0}
 .pillar-name{font-family:'Spline Sans Mono',monospace;color:var(--coral);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
@@ -159,28 +147,6 @@ body.live .hero{padding:28px 0 14px}
   <div class="content-layout">
     <main class="main-content">
 
-      <section id="method" aria-labelledby="methodTitle">
-        <div class="section-label" id="methodTitle">Answer shape and claim discipline</div>
-        <article class="thesis">
-          <h2>Lead with the outcome, spend the middle on your decisions</h2>
-          <p>Do not recite detail. Give the audience-specific track, then let the interviewer choose where to go deeper.</p>
-          <div class="shape">
-            <div class="shape-step"><b>10 seconds</b><span>The result, stated first</span></div>
-            <div class="shape-step"><b>15 seconds</b><span>Situation and task</span></div>
-            <div class="shape-step"><b>45&ndash;75 seconds</b><span>The decisions and actions you owned</span></div>
-            <div class="shape-step"><b>15 seconds</b><span>Result, plus one honest improvement</span></div>
-          </div>
-        </article>
-        <div class="banner"><strong>Claim discipline.</strong> Say &ldquo;I&rdquo; for decisions you directly owned, &ldquo;we&rdquo; for team delivery, and name the partner function when it matters. Never turn an unverified estimate into a fact. Every <span class="fill">[x &rarr; y]</span> below is a number to fill in before the call or leave out of the answer entirely.</div>
-        <table class="tbl">
-          <thead><tr><th>Audience</th><th>Emphasize</th></tr></thead>
-          <tbody>
-            <tr><td>Hiring manager</td><td>Ownership, prioritization, influence, risk reduction, developer and operator experience, and how you scaled the outcome through people and platforms.</td></tr>
-            <tr><td>Senior software developer</td><td>Boundaries, data flow, source-of-truth decisions, authorization, reliability, observability, failure modes, and the trade-off you deliberately made.</td></tr>
-          </tbody>
-        </table>
-      </section>
-
       <section id="values" aria-labelledby="valuesTitle">
         <div class="section-label" id="valuesTitle">Morgan Stanley core values</div>
         <p class="section-intro">Five values, held since 1935 under &ldquo;first-class business in a first-class way.&rdquo; Do not recite them. Land one naturally where it fits the answer you are already giving.</p>
@@ -221,9 +187,9 @@ body.live .hero{padding:28px 0 14px}
           <details open><summary><div class="card-label">90 seconds &middot; I &middot; C &middot; A &middot; N &middot; P</div><div class="card-title">Tell me about yourself</div></summary><div class="qa-body">
             <p>Five beats, in order. This question is never about your history &mdash; it is whether you can structure a narrative when nothing is forcing you to. Land the beats and stop; do not drift into a career recital.</p>
 
-            <div class="pillar"><div class="pillar-name">Introduction</div><div class="pillar-text">&ldquo;I&rsquo;m an engineering leader with <strong>eight-plus years</strong> building and scaling global teams and owning cloud platform and AI programs &mdash; most recently <strong>Senior Manager, Cloud Platform Engineering at Tricentis</strong>. I work at the intersection of platform architecture, security governance, and automation.&rdquo;</div></div>
+            <div class="pillar"><div class="pillar-name">Introduction</div><div class="pillar-text">&ldquo;I&rsquo;m an engineering leader with <strong>nine years</strong> across cloud platforms, AI, and enterprise technology strategy &mdash; most recently <strong>Senior Manager, Cloud Platform Engineering at Tricentis</strong>. My role there has always sat at the intersection of <strong>Cloud Platform Security and governance, Cloud Platform and Infrastructure Engineering, and DevOps</strong>.&rdquo;</div></div>
 
-            <div class="pillar"><div class="pillar-name">Career</div><div class="pillar-text">&ldquo;My trajectory has moved from delivering AI products for enterprise clients, to founding an AI Center of Excellence at an insurer, to owning a cloud platform organization. Three recent pieces are most relevant here. <strong>First</strong>, I owned cloud security posture across AWS, Azure, and GCP &mdash; partnering with SecOps to establish enterprise policy, standards, and guardrails, and embedding them into the platform so <em>compliance was enforced by default rather than audited after the fact</em>. That included consolidating production identity into a just-in-time model and moving secrets, dependency, and IaC controls into the delivery path. <strong>Second</strong>, I shipped an internal developer platform from concept to production that took provisioning from weeks to hours, adopted by more than eight product teams, while growing the organization from three to fourteen engineers supporting over 150 developers. <strong>Third</strong>, I piloted agentic AI workflows on AWS Bedrock and AgentCore with evaluation and guardrails &mdash; building on the AI lifecycle governance framework I built at Economical, which became that enterprise&rsquo;s standard for shipping ML products.&rdquo;</div></div>
+            <div class="pillar"><div class="pillar-name">Career</div><div class="pillar-text">&ldquo;My trajectory has moved from delivering AI products for enterprise clients, to founding an AI Center of Excellence at an insurer, to directing a global cloud platform organization. At Tricentis, those three disciplines were one operating model: my organization engineered the cloud platform and delivery paths, owned Cloud Security across AWS, Azure, and GCP, and converted governance requirements into reusable guardrails. SecOps was primarily the security-analysis partner. That remit included JIT production access; secrets, dependency, and IaC controls in delivery; vulnerability remediation; and acquisition integration. I also directed an internal developer platform that reduced provisioning from weeks to hours across more than eight product teams, and took a Cloud Engineering Agent from pilot into production for platform automation and first-pass RCA across performance and security incidents.&rdquo;</div></div>
 
             <div class="pillar"><div class="pillar-name">Attributes</div><div class="pillar-text">&ldquo;Three things I&rsquo;d bring. <strong>I translate in both directions</strong> &mdash; I can work through ingestion, normalization, identity boundaries, and failure modes with engineers, then turn those same choices into risk, roadmap, and measurable outcomes for leadership. <strong>Change leadership is what I&rsquo;ve become known for</strong> &mdash; change has been the friction point in every role I&rsquo;ve held, and I position it so the value is visible through each stakeholder group&rsquo;s own lens rather than mandating it. <strong>And I carry governance judgment at the architecture level</strong> &mdash; I sit on our change management committee and architecture review board, and when the trade-off is speed against doing it correctly, I have consistently chosen quality.&rdquo;</div></div>
 
@@ -234,12 +200,12 @@ body.live .hero{padding:28px 0 14px}
             <div class="note"><strong>Why this ordering works:</strong> achievements land before strengths, so the strengths read as evidenced rather than claimed &mdash; and &ldquo;Next&rdquo; closes on their mission instead of your history, which hands the interviewer the obvious follow-up. <strong>Do not</strong> open with the twenty-second version and then keep going; pick the length and commit to it.</div>
           </div></details>
 
-          <details><summary><div class="card-label">The likely challenge</div><div class="card-title">You are a platform leader &mdash; why a security role</div></summary><div class="qa-body">
-            <p>Expect this, in some form. Your title has been Cloud Platform Engineering, and the role is Cyber Security Engineering. Answer it before they have to press, and answer it as a strength rather than a defence.</p>
-            <p class="say">My title has said platform, but security posture has been mine to own for the last several years. At Tricentis I owned cloud security posture across AWS, Azure, and GCP &mdash; partnering with SecOps to set enterprise policy, standards, and guardrails, and then embedding them into the platform so <em>compliance was enforced by default rather than audited after the fact</em>. That is the same sentence as this role&rsquo;s mission, from the platform side of the table.</p>
+          <details><summary><div class="card-label">The likely challenge</div><div class="card-title">Your title says platform &mdash; how central was security</div></summary><div class="qa-body">
+            <p>Do not accept the premise that security was adjacent to your role. Explain the integrated remit and then make the ownership boundary precise.</p>
+            <p class="say">At Tricentis, my role always operated at the intersection of Cloud Platform Security and governance, Cloud Platform and Infrastructure Engineering, and DevOps. Security was not a downstream review: I owned Cloud Security across AWS, Azure, and GCP, and my organization engineered the platform controls and delivery guardrails that enforced it. SecOps was primarily our security-analysis partner, helping surface and assess risk.</p>
             <p class="say">Concretely that meant consolidating production identity into just-in-time access, moving secrets, dependency, and IaC controls into the delivery path, running CVE remediation as a workstream, integrating four acquisitions&rsquo; security postures, and supporting SOC 2 evidence. My formal training is in this too &mdash; my post-graduate diploma is in Information Security Management.</p>
-            <p class="say">What I would not claim is that I have run a SOC or been the security function itself. I have been the engineering leader who made security controls real in a platform that 150 developers used every day. <em>That is the harder half of most security programs, and it is the half this role is asking for.</em></p>
-            <div class="note"><strong>The boundary, stated precisely:</strong> &ldquo;partnering with SecOps&rdquo; is the honest framing &mdash; you owned posture and enforcement inside the platform, alongside a security function. Say it that way and it reads as credibility. Overclaim it and one follow-up question undoes the whole interview.</div>
+            <p class="say">I would not claim that I ran the broader security operations center. I owned the cloud-security remit and the engineering systems that made its controls real for more than 150 developers. <em>That combination of control ownership, platform engineering, and DevOps execution is the direct through-line to this role.</em></p>
+            <div class="note"><strong>The boundary, stated precisely:</strong> you owned Cloud Security and the cloud control plane; SecOps was the analyst partner. Do not imply that you ran the broader enterprise security function or the security operations center.</div>
           </div></details>
 
           <details><summary><div class="card-label">Numbers</div><div class="card-title">Figures you can defend from your resume</div></summary><div class="qa-body">
@@ -247,12 +213,12 @@ body.live .hero{padding:28px 0 14px}
             <table class="tbl">
               <thead><tr><th>Figure</th><th>What it is</th><th>Where it lands</th></tr></thead>
               <tbody>
-                <tr><td>8+ years</td><td>Engineering leadership experience</td><td>Opening line</td></tr>
+                <tr><td>9 years</td><td>Cloud platform, AI, and enterprise technology experience since August 2017</td><td>Opening line</td></tr>
                 <tr><td>3 &rarr; 14</td><td>Platform organization grown, across regions</td><td>People leadership</td></tr>
                 <tr><td>150+</td><td>Product engineers supported by the platform</td><td>Scale of the internal customer</td></tr>
                 <tr><td>Weeks &rarr; hours</td><td>Infrastructure provisioning, via the IDP</td><td>Developer experience, paved roads</td></tr>
                 <tr><td>8+ teams</td><td>Product teams that adopted the IDP</td><td>Adoption as the proof of a platform</td></tr>
-                <tr><td>3 clouds</td><td>AWS, Azure, GCP security posture owned</td><td>Multi-cloud control model</td></tr>
+                <tr><td>3 clouds</td><td>Cloud Security ownership across AWS, Azure, and GCP; SecOps provided analyst support</td><td>Multi-cloud control model</td></tr>
                 <tr><td>4</td><td>Acquisitions integrated, roadmap through governance</td><td>M&amp;A security integration, C-level alignment</td></tr>
                 <tr><td>$1M+</td><td>Annual cloud savings via unit-cost KPIs and FinOps</td><td>Actionable data product; owning economics</td></tr>
                 <tr><td>$1M+</td><td>Measured operational savings, NLP and ML claims products</td><td>Regulated-industry delivery at Economical</td></tr>
@@ -277,6 +243,7 @@ body.live .hero{padding:28px 0 14px}
               <thead><tr><th>Role requirement</th><th>Evidence to use</th></tr></thead>
               <tbody>
                 <tr><td>Technical strategy and roadmap</td><td>VP framework; risk-tiered rollout in Cases 1 and 3</td></tr>
+                <tr><td>Application architecture and IT strategy</td><td>IDP roadmap across 8+ product teams; four acquisitions integrated into a unified platform and governance model</td></tr>
                 <tr><td>Multi-cloud pipelines and telemetry</td><td>Case 2 common resource and finding model, lineage, correlation</td></tr>
                 <tr><td>Reliability, data quality, governance</td><td>Case 2 source hierarchy and evaluation model; Case 4 evidence contracts</td></tr>
                 <tr><td>Actionable products for developers</td><td>Case 3 in-workflow findings, guidance, governed exception path</td></tr>
@@ -306,7 +273,7 @@ body.live .hero{padding:28px 0 14px}
             <p>We had accumulated several provisioning paths and standing group assignments, which increased blast radius, created work for IT, and made access reviews harder to defend. My goal was to reduce privilege without making normal engineering or incident response slower.</p>
             <p>I started by mapping personas to the production tasks they actually performed and identifying inherited access, rather than simply migrating the existing groups. We made read-only the standing baseline and moved write and administrative roles into PIM. Activations were time-bound and required MFA, a business reason, a ticket or incident reference, and risk-based approval. I used access packages to standardize request, approval, expiry, and deprovisioning, and treated break-glass as a separately monitored control.</p>
             <p>The key judgment was balancing least privilege against operational responsiveness, so we rolled out by risk and tested normal support and incident scenarios before expanding. <strong>If I repeated it, I would baseline activation and approval latency earlier</strong> so I could quantify both the risk reduction and the user-experience improvement from day one.</p>
-            <div class="note"><strong>Proof to quantify:</strong> standing privileged assignments before and after <span class="fill">[x &rarr; y]</span> &middot; production write roles moved to JIT <span class="fill">[x%]</span> &middot; median provisioning time <span class="fill">[x &rarr; y]</span> &middot; access-review completion and automatic expiry rate <span class="fill">[x%]</span></div>
+            <div class="note"><strong>Calibrated estimate &mdash; validate before saying:</strong> approximately 40&ndash;60 engineers and operators eligible for elevated access &middot; 100% of human production write/admin entitlements moved to JIT &middot; activation typically 5&ndash;15 minutes once eligible &middot; 95%+ access reviews on time &middot; 99%+ elevated sessions automatically expired. If Entra does not support a number, use the verified outcome: no standing production write access beyond read-only.</div>
           </div></details>
 
           <details><summary><div class="card-label">Case 1 &middot; architecture</div><div class="card-title">How does the JIT model actually work</div></summary><div class="qa-body">
@@ -332,19 +299,20 @@ body.live .hero{padding:28px 0 14px}
         <div class="qgroup-label" id="qa-ai">AI, agents, and autonomy &middot; Case 2</div>
         <div class="qa-stack">
           <details><summary><div class="card-label">Case 2 &middot; result first</div><div class="card-title">Tell me about an AI system you designed</div></summary><div class="qa-body">
-            <p class="say">I designed a Cloud Engineering Agent as the central first-pass analysis layer for CloudOps and SecOps across AWS, Azure, and GCP. It gathered evidence, correlated findings, removed provable noise, recommended remediations and preventive controls, and escalated decisions according to blast radius.</p>
+            <p class="say">I took a Cloud Engineering Agent from pilot into production for recurring CloudOps analysis and first-pass RCA across performance and security incidents. It correlated logs from AWS, Azure, and GCP with operational context and security findings, cited its evidence, formed bounded recommendations, and escalated decisions according to blast radius.</p>
             <span class="track-tag">Hiring manager &mdash; say this</span>
-            <p>The problem was not a lack of alerts. Engineers had to reconstruct context across cloud logs, asset inventory, identity, deployments, Rapid7, CrowdStrike, GitGuardian, and Snyk before they could make a risk decision.</p>
-            <p>I owned the operating model and core architecture. We normalized resources and findings, enriched them with owner, environment, service criticality, exposure, and deployment context, then correlated duplicate or stale records before recommending remediation. The agent could consolidate one CVE reported by three tools, prove a finding referred to a deleted resource, or identify that an internet-facing load balancer was intentional and protected &mdash; rather than mislabel every low-risk result a false positive.</p>
-            <p><strong>My most important decision was to tie autonomy to blast radius.</strong> Read-only evidence gathering could be highly automated. A change recommendation had to include evidence, a diff, validation, and rollback. Material production actions stayed behind deterministic policy and human approval. The lesson was that inventory and ownership quality mattered more than model sophistication, so I would establish those data contracts and evaluation sets before expanding the agent&rsquo;s tools.</p>
-            <div class="note"><strong>Proof to quantify:</strong> sources and accounts covered <span class="fill">[x]</span> &middot; median time to first credible hypothesis <span class="fill">[x &rarr; y]</span> &middot; findings auto-enriched with owner and service <span class="fill">[x%]</span> &middot; duplicate or stale findings consolidated <span class="fill">[x%]</span> &middot; recommendation acceptance, correct abstention, false-closure <span class="fill">[x% / x% / x%]</span></div>
+            <p>The problem was not a lack of alerts. The repeatable cost was reconstructing context across observability, incident timelines, cloud APIs, security findings, deployments, runbooks, and postmortems before an engineer or analyst could form a useful hypothesis.</p>
+            <p>I owned the architecture, productionization, and guardrail model. SecOps analysts were partners and consumers of the security analysis; my organization owned the cloud platform and its security controls. Evidence gathering was separated from hypothesis formation, every material claim had to cite a resolvable source, and &ldquo;insufficient evidence&rdquo; was an acceptable result. A common model normalized resources, identities, deployments, incidents, and findings.</p>
+            <p><strong>My most important decision was to tie autonomy to blast radius.</strong> Read-only evidence gathering and first-pass RCA could be automated. Proposed changes needed evidence, a diff, validation, and rollback; material production actions remained behind deterministic policy and human approval. In production, the agent made the initial analysis more consistent and shortened the path to a credible hypothesis without transferring incident accountability to the model.</p>
+            <div class="note"><strong>Realistic production range &mdash; validate before saying:</strong> a golden set of 25&ndash;40 past incidents &middot; time to first credible hypothesis approximately 30 minutes &rarr; 10&ndash;15 minutes &middot; 90&ndash;95% of material claims resolving to evidence &middot; 70&ndash;80% expert acceptance &middot; 15&ndash;25% correct abstention on incomplete cases &middot; zero ungated production writes. These are calibrated evaluation ranges, not résumé-verified achievements.</div>
           </div></details>
 
           <details><summary><div class="card-label">Case 2 &middot; architecture</div><div class="card-title">How would you architect that agent</div></summary><div class="qa-body">
             <span class="track-tag dev">Senior developer &mdash; say this</span>
-            <p>It is a security-data pipeline with an agent at the reasoning layer, <strong>not a chatbot with broad cloud credentials</strong>. Provider and tool connectors wrote source events with immutable raw references. A versioned normalization layer created common resource, identity, finding, deployment, and control objects while retaining source-specific fields. Enrichment resolved ownership, environment, business service, exposure, and recent changes. Correlation grouped records by resource identity, image digest, CVE, principal, deployment, and time window before the agent formed a hypothesis.</p>
-            <p>The pipeline needed the same engineering controls as any high-volume platform: idempotent ingestion, schema versioning, checkpoints and replay, dead-letter handling, freshness and completeness SLOs, lineage, tenant boundaries, and explicit source-of-truth precedence. <em>A missing feed had to produce &ldquo;insufficient evidence,&rdquo; not a confident closure.</em> Each recommendation carried resolvable evidence, confidence, policy results, expected impact, validation, and rollback.</p>
-            <p>Tool access used short-lived task-scoped identity. Reads were broadly allowlisted; writes produced a pull request or went through the existing deployment and approval path. I&rsquo;d evaluate retrieval, groundedness, expert agreement, abstention, unsafe tool calls, and operational value separately &mdash; because a correct recommendation on incomplete telemetry is still an unsafe system.</p>
+            <p>It is an operations and security-data pipeline with an agent at the reasoning layer, <strong>not a chatbot with broad cloud credentials</strong>. AgentCore supplies runtime isolation, scoped identity, and a gateway to approved tools. Observability and incident systems provide operational context; connectors for AWS, Azure, GCP, security findings, deployments, runbooks, and postmortems preserve raw references. A versioned model normalizes resource, identity, finding, deployment, incident, and control objects.</p>
+            <p>The production pipeline uses idempotent ingestion, schema versioning, replay, dead-letter handling, lineage, tenant boundaries, and freshness and completeness SLOs. Hybrid lexical and semantic retrieval matters because error codes and cloud resource IDs need exact matching while incident descriptions benefit from semantic search. <em>A missing feed produces &ldquo;insufficient evidence,&rdquo; not a confident closure.</em></p>
+            <p>Tool access uses short-lived, task-scoped identity. Reads are allowlisted; a write produces a plan or pull request and follows the existing approval path. Evaluate retrieval, groundedness, expert agreement, abstention, unsafe tool calls, and operational value separately &mdash; because a plausible answer on incomplete telemetry is still unsafe.</p>
+            <div class="note"><strong>Boundary to state:</strong> the résumé captures the pilot phase; the agent subsequently ran in production across the three-cloud operating context and assisted performance and security RCA. It did not replace the incident commander, service owner, or SecOps analyst, and it could not make ungated material production changes.</div>
           </div></details>
 
           <details><summary><div class="card-label">Noise</div><div class="card-title">How do you handle false positives</div></summary><div class="qa-body">
@@ -402,25 +370,6 @@ body.live .hero{padding:28px 0 14px}
           </div></details>
         </div>
 
-        <div class="qgroup-label" id="qa-incident">Incident response</div>
-        <div class="qa-stack">
-          <details><summary><div class="card-label">90 seconds</div><div class="card-title">Walk me through how you handle an incident</div></summary><div class="qa-body">
-            <p class="say">I treat incident response as a continuous risk-management loop aligned to NIST CSF 2.0: Govern, Identify, and Protect prepare the organization; Detect, Respond, and Recover handle the event and feed improvements back into prevention.</p>
-            <p>Operationally, five steps. <strong>Prepare</strong> with ownership, severity criteria, playbooks, logging, forensics access, communications, and tested isolation and recovery paths. <strong>Detect and analyze</strong> by correlating the alert with identity, cloud, deployment, vulnerability, and runtime evidence, then determining scope, impact, confidence, and priority. <strong>Contain</strong> using the least disruptive action that stops further harm &mdash; revoking a credential, isolating a Kubernetes workload, restricting a security group &mdash; while preserving evidence. <strong>Eradicate and recover</strong> by removing root cause, rebuilding from trusted artifacts, restoring in stages, and validating the indicators and attack path are gone. <strong>Learn and improve</strong> by documenting the timeline and decisions, updating detections and playbooks, and creating a preventive control with a named owner.</p>
-            <p>Automation can collect and correlate evidence, recommend containment, and execute pre-approved reversible actions. Material shutdowns, destructive actions, customer-impacting changes, and regulatory notifications stay with the incident commander and accountable functions. <em>Success is not just time to close</em> &mdash; I look at time to detect, contain, recover, recurrence, evidence completeness, and whether the lesson became a durable control.</p>
-            <div class="note">SP 800-61 Rev. 3 integrates incident response across all six CSF 2.0 functions rather than treating it as an isolated security-team activity.</div>
-          </div></details>
-
-          <details><summary><div class="card-label">Scenarios</div><div class="card-title">Scenario drills &mdash; four openings</div></summary><div class="qa-body">
-            <ul>
-              <li><strong>GitGuardian detects a production secret.</strong> Verify whether it is active, but revoke or rotate first when uncertain. Search cloud and application audit logs for use, invalidate derived sessions, remove the value from history, redeploy from clean source, and add a central merge control so a bypassed local hook cannot recur.</li>
-              <li><strong>Falcon flags suspicious Kubernetes behavior.</strong> Correlate process, network, pod, node, image, service-account, and deployment evidence. Isolate the workload rather than immediately taking down the cluster; revoke affected identity, preserve evidence, rebuild from a trusted signed image, validate adjacent workloads for the same indicators.</li>
-              <li><strong>Rapid7 reports a critical internet-facing vulnerability.</strong> Confirm ownership, deployed version, reachability, exposure, known exploitation, compensating controls. Apply temporary network containment if needed, patch or rebuild through CI/CD, rescan the deployed asset, then fix the base image or IaC module so remediation scales beyond one host.</li>
-              <li><strong>Suspicious privileged cloud activation.</strong> Correlate PIM activation, approver, ticket, source device, cloud audit trail, and subsequent actions. Revoke the session and contain affected identities and resources, validate whether approval was legitimate, recover changed configuration from code, and tighten activation or conditional-access policy based on root cause.</li>
-            </ul>
-            <div class="note"><strong>The pattern in all four:</strong> reversible containment first, evidence preserved, rebuild from a trusted source, and the fix pushed upstream so it scales past the single asset.</div>
-          </div></details>
-        </div>
         <div class="qgroup-label" id="qa-sdlc">Secure delivery and shift-left &middot; Case 3</div>
         <div class="qa-stack">
           <details><summary><div class="card-label">Case 3 &middot; result first</div><div class="card-title">Tell me about shifting security left</div></summary><div class="qa-body">
@@ -429,7 +378,7 @@ body.live .hero{padding:28px 0 14px}
             <p>GitGuardian was rolled out across the company&rsquo;s organizations and repositories, and my team applied Snyk across code, open-source dependencies, and infrastructure as code, paired with commit hooks for fast local feedback and env0 for consistent governed infrastructure delivery.</p>
             <p><strong>The leadership challenge was adoption, not tool installation.</strong> I aligned Security, Platform Engineering, and application teams on which outcomes were non-negotiable, then separated legacy debt from new risk. High-confidence new secrets, exploitable vulnerabilities, and dangerous infrastructure changes could block. Existing findings entered an owned, risk-ranked backlog, while low-confidence rules began in warning mode until we proved their precision. Every exception required a rationale, compensating control, owner, and expiry.</p>
             <p>My key learning was <em>not to equate a stricter gate with a stronger control</em>. If precision and guidance are poor, teams create bypasses. I would measure false-positive rate and remediation time before promoting any new rule from warn to block.</p>
-            <div class="note"><strong>Proof to quantify:</strong> organizations and repositories covered <span class="fill">[x / x]</span> &middot; repositories or pipelines on Snyk <span class="fill">[x / x%]</span> &middot; secrets prevented or rotated <span class="fill">[x]</span> &middot; new critical findings reaching protected branches <span class="fill">[x &rarr; y]</span> &middot; mean remediation time and exception-expiry compliance <span class="fill">[x / x%]</span> &middot; production changes through governed pipelines <span class="fill">[x%]</span></div>
+            <div class="note"><strong>Calibrated estimate &mdash; validate before saying:</strong> GitGuardian across 100% of company source-control organizations and repositories &middot; Snyk on approximately 85&ndash;95% of active eligible repositories after excluding archives and unsupported stacks &middot; 80&ndash;90% fewer new critical findings reaching protected branches after enforcement stabilized &middot; new-critical remediation typically 7&ndash;14 days &middot; 90%+ of exceptions expired or re-approved on time &middot; 90&ndash;95% of production infrastructure changes through governed IaC. Never quote the raw secret-detector count as confirmed exposure.</div>
           </div></details>
 
           <details><summary><div class="card-label">Case 3 &middot; architecture</div><div class="card-title">How were the controls layered</div></summary><div class="qa-body">
@@ -462,7 +411,7 @@ body.live .hero{padding:28px 0 14px}
             <p>I reframed evidence collection as continuous control assurance rather than an annual screenshot exercise. Control owners were rebuilding evidence near the audit: formats differed, stale artifacts were hard to spot, and skilled people spent time assembling proof instead of improving controls.</p>
             <p>I designed a machine-readable control catalog defining owner, system boundary, evidence requirement, authoritative source, collection frequency, validation rule, retention, and escalation path for each control. Agentic workflows selected approved collectors, gathered minimum evidence with read-only identities, validated freshness and completeness, packaged it with lineage, and opened an owned remediation item when evidence was missing or failed policy &mdash; across PIM reviews, repository protections, GitGuardian and Snyk results, env0 deployment records, cloud logging and encryption, Rapid7 remediation, and CrowdStrike coverage.</p>
             <p><strong>The governance decision was that the workflow could identify missing or inconsistent evidence, but could not declare the company compliant.</strong> Control owners retained review and attestation, with Compliance and Audit providing challenge. My lesson: control semantics and source ownership must be resolved first &mdash; automating an ambiguous control only produces ambiguous evidence faster.</p>
-            <div class="note"><strong>Proof to quantify:</strong> controls and evidence sources automated <span class="fill">[x / x]</span> &middot; evidence current before audit kickoff <span class="fill">[x%]</span> &middot; manual preparation hours <span class="fill">[x &rarr; y]</span> &middot; evidence rejection or rework rate <span class="fill">[x%]</span> &middot; control gaps found early and time to owner <span class="fill">[x / x]</span></div>
+            <div class="note"><strong>Calibrated estimate &mdash; validate before saying:</strong> first wave of 25&ndash;40 recurring evidence checks across roughly 15&ndash;20 authoritative systems &middot; 30&ndash;45% of recurring evidence automated &middot; audit-ready evidence approximately 60&ndash;70% &rarr; 90&ndash;95% before kickoff &middot; manual preparation reduced roughly 50&ndash;60% &middot; evidence rejection or rework approximately 15&ndash;20% &rarr; 5&ndash;8%. A phased result is more credible than claiming the whole SOC 2 program.</div>
           </div></details>
 
           <details><summary><div class="card-label">Case 4 &middot; architecture</div><div class="card-title">What does the evidence pipeline look like</div></summary><div class="qa-body">
@@ -471,6 +420,37 @@ body.live .hero{padding:28px 0 14px}
             <p>Each artifact was normalized with control ID, system boundary, collection time, source reference, query version, hash, lineage, and redaction status, then written to immutable storage. Collection and approval were separate identities. Retries were idempotent, source unavailability was explicit, and <em>a partial population failed closed into review rather than appearing complete.</em></p>
             <p>Main failure modes: silent source changes, evidence that proves configuration but not operation, sampling drift, over-collection of sensitive data, and an agent approving its own output. I&rsquo;d monitor collector success, evidence freshness, population reconciliation, rejection and rework, exception age, and time to accountable owner.</p>
             <div class="pillar"><div class="pillar-name">Flow</div><div class="pillar-text">Control catalog &rarr; scheduler or audit request &rarr; allowlisted read-only collectors &rarr; deterministic validation and population reconciliation &rarr; metadata, hash, timestamp, lineage, redaction &rarr; immutable evidence store &rarr; control-owner review and attestation &rarr; auditor package or exception remediation.</div></div>
+          </div></details>
+        </div>
+
+        <div class="qgroup-label" id="qa-incident">Incident response</div>
+        <div class="qa-stack">
+          <details><summary><div class="card-label">90 seconds</div><div class="card-title">Walk me through how you handle an incident</div></summary><div class="qa-body">
+            <p class="say">I treat incident response as a continuous risk-management loop aligned to NIST CSF 2.0: Govern, Identify, and Protect prepare the organization; Detect, Respond, and Recover handle the event and feed improvements back into prevention.</p>
+            <p>Operationally, five steps. <strong>Prepare</strong> with ownership, severity criteria, playbooks, logging, forensics access, communications, and tested isolation and recovery paths. <strong>Detect and analyze</strong> by correlating the alert with identity, cloud, deployment, vulnerability, and runtime evidence, then determining scope, impact, confidence, and priority. <strong>Contain</strong> using the least disruptive action that stops further harm &mdash; revoking a credential, isolating a Kubernetes workload, restricting a security group &mdash; while preserving evidence. <strong>Eradicate and recover</strong> by removing root cause, rebuilding from trusted artifacts, restoring in stages, and validating the indicators and attack path are gone. <strong>Learn and improve</strong> by documenting the timeline and decisions, updating detections and playbooks, and creating a preventive control with a named owner.</p>
+            <p>Automation can collect and correlate evidence, recommend containment, and execute pre-approved reversible actions. Material shutdowns, destructive actions, customer-impacting changes, and regulatory notifications stay with the incident commander and accountable functions. <em>Success is not just time to close</em> &mdash; I look at time to detect, contain, recover, recurrence, evidence completeness, and whether the lesson became a durable control.</p>
+            <div class="note">SP 800-61 Rev. 3 integrates incident response across all six CSF 2.0 functions rather than treating it as an isolated security-team activity.</div>
+          </div></details>
+
+          <details><summary><div class="card-label">Scenarios</div><div class="card-title">Scenario drills &mdash; four openings</div></summary><div class="qa-body">
+            <ul>
+              <li><strong>GitGuardian detects a production secret.</strong> Verify whether it is active, but revoke or rotate first when uncertain. Search cloud and application audit logs for use, invalidate derived sessions, remove the value from history, redeploy from clean source, and add a central merge control so a bypassed local hook cannot recur.</li>
+              <li><strong>Falcon flags suspicious Kubernetes behavior.</strong> Correlate process, network, pod, node, image, service-account, and deployment evidence. Isolate the workload rather than immediately taking down the cluster; revoke affected identity, preserve evidence, rebuild from a trusted signed image, validate adjacent workloads for the same indicators.</li>
+              <li><strong>Rapid7 reports a critical internet-facing vulnerability.</strong> Confirm ownership, deployed version, reachability, exposure, known exploitation, compensating controls. Apply temporary network containment if needed, patch or rebuild through CI/CD, rescan the deployed asset, then fix the base image or IaC module so remediation scales beyond one host.</li>
+              <li><strong>Suspicious privileged cloud activation.</strong> Correlate PIM activation, approver, ticket, source device, cloud audit trail, and subsequent actions. Revoke the session and contain affected identities and resources, validate whether approval was legitimate, recover changed configuration from code, and tighten activation or conditional-access policy based on root cause.</li>
+            </ul>
+            <div class="note"><strong>The pattern in all four:</strong> reversible containment first, evidence preserved, rebuild from a trusted source, and the fix pushed upstream so it scales past the single asset.</div>
+          </div></details>
+
+          <details><summary><div class="card-label">Operating targets</div><div class="card-title">What response targets would you set</div></summary><div class="qa-body">
+            <table class="tbl">
+              <thead><tr><th>Severity</th><th>Command</th><th>Initial scope</th><th>Contain</th><th>Recover</th></tr></thead>
+              <tbody>
+                <tr><td>Severity 1 &mdash; active material impact</td><td>&lt;10 min</td><td>&lt;30 min</td><td>&lt;60 min</td><td>&lt;4 hours or agreed RTO</td></tr>
+                <tr><td>Severity 2 &mdash; confirmed, limited impact</td><td>&lt;30 min</td><td>&lt;2 hours</td><td>&lt;4 hours</td><td>&lt;1 business day</td></tr>
+              </tbody>
+            </table>
+            <div class="note"><strong>Proposed targets, not historical claims:</strong> preserve required evidence in 95%+ of incidents, complete post-incident review within five business days, close 90%+ of corrective actions on time, and keep recurrence from the same root cause below 10%.</div>
           </div></details>
         </div>
 
@@ -537,12 +517,12 @@ body.live .hero{padding:28px 0 14px}
           </div></details>
         </div>
 
-        <div class="qgroup-label" id="qa-credibility">Credibility check &middot; four answered, two open</div>
+        <div class="qgroup-label" id="qa-credibility">Credibility check &middot; four answered, one bounded, one open</div>
         <div class="qa-stack">
           <details><summary><div class="card-label">Question 1 &middot; answered</div><div class="card-title">What did you own versus the team</div></summary><div class="qa-body">
             <p class="say">I owned team engagement, prioritization, architectural decisions, and stakeholder awareness &mdash; and I stayed in code reviews throughout. I also sat on several company boards, including the <em>change management committee and the architecture review board</em>.</p>
             <div class="note"><strong>Say the boards out loud.</strong> Standing membership on change management and architecture review is a governance credential most candidates at this level cannot claim, and it answers &ldquo;can you operate inside a regulated change process&rdquo; before they ask it. Follow with one decision each board actually made with you in the room.</div>
-            <div class="note"><strong>Three boundaries your resume fixes precisely.</strong> You <em>partnered with</em> SecOps rather than being the security function. You <em>piloted</em> agentic workflows on Bedrock and AgentCore rather than running them at production scale. Your certifications are delivery and agile credentials &mdash; Information Security Management is the formal security training, and it is a post-graduate diploma worth naming. Each of these is defensible said accurately and fragile said loosely.</div>
+            <div class="note"><strong>Three boundaries to state precisely.</strong> Your Tricentis role consistently combined Cloud Platform Security and governance, Cloud Platform/Infrastructure Engineering, and DevOps. Within that remit, you owned Cloud Security and the cloud control plane; SecOps was primarily the analyst partner. The résumé records the Cloud Engineering Agent&rsquo;s pilot phase; you have clarified that it progressed into production and assisted performance and security RCA. Information Security Management is your formal security training, and it is a post-graduate diploma worth naming.</div>
           </div></details>
 
           <details><summary><div class="card-label">Question 2 &middot; answered</div><div class="card-title">What was the hardest decision</div></summary><div class="qa-body">
@@ -566,9 +546,9 @@ body.live .hero{padding:28px 0 14px}
             <div class="note">Pick <strong>one per case</strong> and be able to describe it end to end. A single concrete artifact beats four vague claims.</div>
           </div></details>
 
-          <details><summary><div class="card-label">Question 5 &middot; needs your input</div><div class="card-title">Which metric changed, and how was it measured</div></summary><div class="qa-body">
-            <p>Not yet answered. This is the same gap as every dashed placeholder in the cases above &mdash; and it is the difference between a story and a result.</p>
-            <div class="note"><strong>Tonight&rsquo;s highest-value hour:</strong> fill in what you can verify and delete the rest. &ldquo;I did not baseline that, which I would do differently&rdquo; is a strong answer &mdash; you already say exactly that about activation latency in Case 1. An invented number is the only version of this answer that can end the interview.</div>
+          <details><summary><div class="card-label">Question 5 &middot; bounded</div><div class="card-title">Which metric changed, and how was it measured</div></summary><div class="qa-body">
+            <p>The résumé-verified results are your safest lead: provisioning from weeks to hours across 8+ product teams, a 3-to-14 organization supporting 150+ product engineers, and $1M+ annual cloud savings from unit-cost KPIs. The case cards now include realistic ranges for rehearsal, clearly labeled as estimates rather than achievements.</p>
+            <div class="note"><strong>Measurement answer:</strong> name the system of record with the number. Entra activation and review logs for JIT; repository and required-check coverage for shift-left; a labeled historical incident set plus production incident records for the agent; control-catalog and evidence-workflow records for assurance. If you cannot name the source, omit the number. &ldquo;I did not baseline that, which I would change&rdquo; is stronger than a fabricated result.</div>
           </div></details>
 
           <details><summary><div class="card-label">Question 6 &middot; answered</div><div class="card-title">What would you do differently at this scale</div></summary><div class="qa-body">
@@ -607,7 +587,6 @@ body.live .hero{padding:28px 0 14px}
       <details class="rail-panel" id="callIndex" open><summary><div class="card-label">Navigate</div><div class="card-title">Call index</div></summary><div class="rail-body">
         <div class="idx-group">
           <div class="idx-label">Start here</div>
-          <a href="#method">Answer shape</a>
           <a href="#values">Morgan Stanley values</a>
         </div>
         <div class="idx-group">
@@ -615,9 +594,9 @@ body.live .hero{padding:28px 0 14px}
           <a href="#qa-open">Opening and fit</a>
           <a href="#qa-identity">Identity &middot; Case 1</a>
           <a href="#qa-ai">AI and agents &middot; Case 2</a>
-          <a href="#qa-incident">Incident response</a>
           <a href="#qa-sdlc">Shift-left &middot; Case 3</a>
           <a href="#qa-assurance">Assurance &middot; Case 4</a>
+          <a href="#qa-incident">Incident response</a>
           <a href="#qa-program">Program &middot; VP proposal</a>
           <a href="#qa-credibility">Credibility check</a>
         </div>
@@ -627,16 +606,8 @@ body.live .hero{padding:28px 0 14px}
         </div>
       </div></details>
 
-      <details class="rail-panel" open><summary><div class="card-label">Quick reference</div><div class="card-title">Answer formula</div></summary><div class="rail-body"><ul class="rail-list">
-        <li><strong>Any case</strong>Result &rarr; situation &rarr; your decisions &rarr; result and one honest improvement</li>
-        <li><strong>Technical</strong>Decision &rarr; boundaries &rarr; data flow &rarr; failure mode &rarr; how you measure it</li>
-        <li><strong>Credibility</strong>What I owned &rarr; what the team owned &rarr; what I would do here</li>
-        <li><strong>Autonomy</strong>Tier by data sensitivity, reversibility, customer impact, blast radius</li>
-        <li><strong>Never</strong>An unverified estimate stated as a fact</li>
-      </ul></div></details>
-
       <details class="rail-panel" id="acronymPanel"><summary><div class="card-label">Quick reference</div><div class="card-title">Acronym glossary</div></summary><div class="rail-body"><dl class="glossary">
-        <dt>AICPA</dt><dd>American Institute of Certified Public Accountants</dd><dt>ATLAS</dt><dd>Adversarial Threat Landscape for AI Systems (MITRE)</dd><dt>CCM</dt><dd>Cloud Controls Matrix (CSA)</dd><dt>CI/CD</dt><dd>Continuous Integration and Continuous Delivery</dd><dt>CISA</dt><dd>Cybersecurity and Infrastructure Security Agency</dd><dt>CSA</dt><dd>Cloud Security Alliance</dd><dt>CSF</dt><dd>Cybersecurity Framework (NIST)</dd><dt>CVE</dt><dd>Common Vulnerabilities and Exposures</dd><dt>CVSS</dt><dd>Common Vulnerability Scoring System</dd><dt>DFS</dt><dd>Department of Financial Services (New York)</dd><dt>EPSS</dt><dd>Exploit Prediction Scoring System</dd><dt>IaC</dt><dd>Infrastructure as Code</dd><dt>IAM</dt><dd>Identity and Access Management</dd><dt>JIT</dt><dd>Just-in-Time access</dd><dt>KEV</dt><dd>Known Exploited Vulnerabilities (CISA)</dd><dt>MFA</dt><dd>Multi-Factor Authentication</dd><dt>PIM</dt><dd>Privileged Identity Management (Microsoft Entra)</dd><dt>RCA</dt><dd>Root Cause Analysis</dd><dt>SBOM</dt><dd>Software Bill of Materials</dd><dt>SLA</dt><dd>Service-Level Agreement</dd><dt>SLO</dt><dd>Service-Level Objective</dd><dt>SOC 2</dt><dd>System and Organization Controls 2</dd><dt>SoD</dt><dd>Segregation of Duties</dd><dt>SR</dt><dd>Supervision and Regulation letter (Federal Reserve)</dd><dt>STAR</dt><dd>Situation, Task, Action, Result</dd><dt>TSC</dt><dd>Trust Services Criteria</dd><dt>VP</dt><dd>Vice President</dd>
+        <dt>AICPA</dt><dd>American Institute of Certified Public Accountants</dd><dt>ATLAS</dt><dd>Adversarial Threat Landscape for AI Systems (MITRE)</dd><dt>CCM</dt><dd>Cloud Controls Matrix (CSA)</dd><dt>CI/CD</dt><dd>Continuous Integration and Continuous Delivery</dd><dt>CISA</dt><dd>Cybersecurity and Infrastructure Security Agency</dd><dt>CSA</dt><dd>Cloud Security Alliance</dd><dt>CSF</dt><dd>Cybersecurity Framework (NIST)</dd><dt>CVE</dt><dd>Common Vulnerabilities and Exposures</dd><dt>CVSS</dt><dd>Common Vulnerability Scoring System</dd><dt>DFS</dt><dd>Department of Financial Services (New York)</dd><dt>EPSS</dt><dd>Exploit Prediction Scoring System</dd><dt>IaC</dt><dd>Infrastructure as Code</dd><dt>IAM</dt><dd>Identity and Access Management</dd><dt>JIT</dt><dd>Just-in-Time access</dd><dt>KEV</dt><dd>Known Exploited Vulnerabilities (CISA)</dd><dt>MFA</dt><dd>Multi-Factor Authentication</dd><dt>PIM</dt><dd>Privileged Identity Management (Microsoft Entra)</dd><dt>RCA</dt><dd>Root Cause Analysis</dd><dt>RTO</dt><dd>Recovery Time Objective</dd><dt>SBOM</dt><dd>Software Bill of Materials</dd><dt>SLA</dt><dd>Service-Level Agreement</dd><dt>SLO</dt><dd>Service-Level Objective</dd><dt>SOC 2</dt><dd>System and Organization Controls 2</dd><dt>SoD</dt><dd>Segregation of Duties</dd><dt>SR</dt><dd>Supervision and Regulation letter (Federal Reserve)</dd><dt>STAR</dt><dd>Situation, Task, Action, Result</dd><dt>TSC</dt><dd>Trust Services Criteria</dd><dt>VP</dt><dd>Vice President</dd>
       </dl></div></details>
     </aside>
   </div>
